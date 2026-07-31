@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Local config / secrets
+.env
+
+# Cached source payloads (Sleeper JSON, nflverse CSVs). Large and re-fetchable;
+# never committed.
+data/
