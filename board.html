@@ -185,7 +185,8 @@
       <button id="reset">Reset board</button>
     </div>
     <div id="meta"></div>
-    <div id="foot">ADP data courtesy of <b>Fantasy Football Calculator</b> (fantasyfootballcalculator.com).</div>
+    <div id="foot">ADP data courtesy of <b>Fantasy Football Calculator</b> (fantasyfootballcalculator.com).
+      Rankings include <b>WalterFootball</b>'s PPR cheat sheet (walterfootball.com).</div>
   </section>
 </main>
 
@@ -753,6 +754,7 @@ if (typeof document !== "undefined") (function () {
         var p = a.p, tk = p.position + ":" + p.tier, t = d.tiers[tk];
         var bar = t ? '<span class="bar' + (t.left <= 1 ? " low" : "") + '"><i style="width:' + Math.round(100 * t.left / t.total) + '%"></i></span> <span class="dim">' + t.left + '/' + t.total + '</span>' : "";
         var srcs = p.sources ? Object.keys(p.sources).map(function (k) { return k + " " + p.sources[k]; }).join("  ") : "";
+        if (p.wf_value) srcs += (srcs ? "  " : "") + "wf$" + p.wf_value;
         // P = model (projection) rank, M = market consensus (fc/ffc/sadp mean).
         // ▲ proj better than market (buy) / ▼ proj worse (fade). Caveat: when
         // the market sources cluster and only proj diverges, trust the market.

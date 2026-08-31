@@ -113,6 +113,7 @@ Enter; Ctrl+Z undoes; state persists in localStorage (namespaced per league)
 and can be copied as JSON.
 
 ADP data courtesy of [Fantasy Football Calculator](https://fantasyfootballcalculator.com).
+Rankings include [WalterFootball](https://walterfootball.com)'s PPR cheat sheet.
 
 ## Setup
 

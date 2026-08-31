@@ -98,6 +98,9 @@ GAMES_URL = "https://github.com/nflverse/nfldata/raw/master/data/games.csv"
 SLEEPER_URL = "https://api.sleeper.app/v1/players/nfl"
 FP_URL = ("https://api.fantasypros.com/public/v2/json/nfl/{season}/consensus-rankings"
           "?position=ALL&scoring=PPR")
+# WalterFootball's PPR cheat sheet: server-rendered HTML, ~310 players in rank
+# order with Walt's auction $ values (robots.txt allows; cached daily).
+WF_URL = "https://debacled.walterfootball.com/fantasy/cheatsheet/ppr"
 
 TEMPLATE_HTML = "board.html"
 
@@ -372,6 +375,41 @@ def fetch_fantasypros():
     return rows, f"FantasyPros: {len(rows)} ECR rows loaded"
 
 
+def fetch_walterfootball(force, notes):
+    """WalterFootball PPR cheat sheet -> {(norm_name, pos): {rank, value}}.
+
+    rank is the skill-only overall rank (K/DEF excluded from the count so it
+    is comparable to the other sources' overall ranks); value is Walt's
+    auction dollar figure. Parsed with a narrow regex over the rendered list
+    items; if the layout changes the parse count collapses and the source is
+    skipped with a note rather than joining garbage."""
+    import html as htmllib
+    path = os.path.join(DATA_DIR, "walterfootball_ppr.html")
+    try:
+        text = _cached(path, lambda: http_get(WF_URL, expect="text"), force, max_age_h=24)
+        pat = re.compile(
+            r'<li data-player-id="\d+" class="player">\s*<span class="player-summary">\s*'
+            r'([^,<]+),\s*([A-Z/]+),\s*[^.<]+\.\s*Bye:\s*\S*\s*'
+            r'<strong class="player-value">\$(\d+)</strong>', re.S)
+        rows = pat.findall(text)
+        if len(rows) < 100:
+            raise ValueError(f"only {len(rows)} players parsed - page layout changed?")
+        out, skill_rank = {}, 0
+        for name, pos, val in rows:
+            if pos not in SKILL:
+                continue
+            skill_rank += 1
+            key = (norm_name(htmllib.unescape(name)), pos)
+            if key not in out:
+                out[key] = {"rank": skill_rank, "value": int(val)}
+        notes.append(f"WalterFootball: {len(rows)} players parsed from the PPR cheat sheet "
+                     f"({len(out)} skill ranks + auction $)")
+        return out
+    except Exception as exc:  # noqa: BLE001 — optional source, must not fail the build
+        notes.append(f"WalterFootball: unavailable ({exc}) - wf rank skipped")
+        return {}
+
+
 def pick_six_data(force, notes):
     """data/pick_six.json: per-season per-passer pick-six counts + league
     INT->pick-six rate, distilled from nflverse play-by-play (~19MB gz per
@@ -627,7 +665,7 @@ def assign_tiers(players):
 # =============================================================================
 # Source disagreement — separate ranks kept, never blended into the price.
 # =============================================================================
-def assign_sources(players, ffc, proj):
+def assign_sources(players, ffc, proj, wf):
     ffc_rank = {}
     for i, r in enumerate(ffc):
         ffc_rank.setdefault((norm_name(r.get("name")), r.get("position")), i + 1)
@@ -646,7 +684,7 @@ def assign_sources(players, ffc, proj):
     for p in players:
         if p["position"] not in SKILL:
             p["sources"] = p["consensus_rank"] = p["spread"] = p["disagreement"] = None
-            p["mkt_rank"] = None
+            p["mkt_rank"] = p["wf_value"] = None
             continue
         src = {}
         if p["fc_rank"]:
@@ -658,6 +696,10 @@ def assign_sources(players, ffc, proj):
             src["proj"] = proj_rank[p["player_id"]]
         if p["player_id"] in sadp_rank:
             src["sadp"] = sadp_rank[p["player_id"]]
+        w = wf.get((norm_name(p["name"]), p["position"]))
+        p["wf_value"] = w["value"] if w else None
+        if w:
+            src["wf"] = w["rank"]
         if p.get("ecr"):
             src["ecr"] = int(p["ecr"])
         p["sources"] = src or None
@@ -851,6 +893,7 @@ def main(argv=None):
     fc = fetch_fantasycalc(cfg, args.force, notes)
     ffc = fetch_ffc(cfg, args.force, notes)
     proj = fetch_projections(args.force, notes)
+    wf = fetch_walterfootball(args.force, notes)
     p6_data, p6_rate = pick_six_data(args.force, notes)
     seasons, sack_rates, lg_sack_rate, fumble_ratio = load_history(args.force, p6_data)
     notes.append(f"sacks: per-QB rate from nflverse sacks_suffered (league avg "
@@ -882,7 +925,7 @@ def main(argv=None):
                  f"{sum(1 for p in players if p.get('points_source') == 'curve')} from historical curve")
     assign_tiers(players)
     vorp_to_dollars(cfg, players, starter_rank, roster_rank)
-    assign_sources(players, ffc, proj)   # after dollars: proj rank uses vorp_roster
+    assign_sources(players, ffc, proj, wf)   # after dollars: proj rank uses vorp_roster
     qb_penalty_report(cfg, players, proj, sack_rates, lg_sack_rate, p6_rate, fumble_ratio)
     history = league_history_file(players)
 
@@ -908,6 +951,7 @@ def main(argv=None):
             "tier": p["tier"], "sources": p.get("sources"),
             "consensus_rank": p.get("consensus_rank"), "mkt_rank": p.get("mkt_rank"),
             "spread": p.get("spread"), "disagreement": p.get("disagreement"),
+            "wf_value": p.get("wf_value"),
             "ecr": p["ecr"], "ecr_stddev": p["ecr_stddev"],
             "ecr_best": p["ecr_best"], "ecr_worst": p["ecr_worst"],
             "trend30": p["trend30"], "roster_pct": p["roster_pct"],
