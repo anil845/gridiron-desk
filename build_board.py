@@ -989,6 +989,7 @@ def board_config(cfg):
         "OVERPAY_FLAG": 1.15, "OVERPAY_MIN_VALUE": 20, "DISAGREE_MIN": 0.4,
         "CUFF_INSURANCE": 0.15, "CUFF_INS_CAP": 12,
         "QUALITY_MIN": 10, "URGENT_REMAINING": 3, "URGENT_CAP": 12,
+        "BYE_STACK_WARN": 2,
         "POSITIONS": list(ALL_POS),
     }
 

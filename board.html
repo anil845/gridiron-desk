@@ -122,6 +122,7 @@
   .mkv { color: var(--good); font-weight: 800; }
   .mkm { color: #ff9d4d; font-weight: 800; }
   .urg { color: #fff; background: #b3261e; border-radius: 6px; padding: 1px 6px; font-size: 11px; font-weight: 800; }
+  .byewarn { color: var(--bad); font-weight: 800; }
   #legend { font-size: 11px; color: var(--dim); margin: 2px 0 6px; line-height: 1.9; border: 1px solid var(--line);
             border-radius: 10px; padding: 6px 10px; background: var(--panel2); }
   #legend .lg { color: var(--gold); letter-spacing: .12em; font-size: 9px; font-weight: 800; margin-right: 4px; }
@@ -195,7 +196,8 @@
         <span class="bar" style="width:36px"><i style="width:70%"></i></span> players left in tier · <span class="bar low" style="width:36px"><i style="width:20%"></i></span> tier almost gone</div>
       <div><b class="lg">STATUS</b> <span class="inj">Q</span> <span class="inj">IR</span> <span class="inj">PUP</span> injury, hover for body part ·
         <span class="cuff">CUFF</span> handcuff — backup who inherits a stud's role (hover names the starter) · <span class="cuff mine">MY CUFF</span> backs up YOUR starter — its <span class="mkv">+$N ins</span> = extra you alone can justify paying (never shown to keep Pay honest, never nominated for you) ·
-        📰 news this build (hover) · <span class="dim">* faded = no projection, trust the price less · bn only / no slot = your roster can't start / can't fit them</span></div>
+        📰 news this build (hover) · <span class="byewarn">6×2</span> bye stack — that many of your skill players already share that bye ·
+        <span class="dim">* faded = no projection, trust the price less · bn only / no slot = your roster can't start / can't fit them</span></div>
       <div><b class="lg">URGENT</b> <span class="urg">LAST 2 · to $34</span> = a position YOU still need is nearly dry and rivals outnumber the supply — musical chairs; the $ is your licensed overbid ceiling (Pay + half the drop to the cliff)</div>
       <div><b class="lg">ROOM</b> gold bars = money left · <span class="flag">1.25x ⚠</span> manager overpaying · heat <span class="hot">red</span> = position going over value, <span class="cold">green</span> = bargains there · max bid <span class="hot">red</span> = you're pot-committed</div>
     </div>
@@ -212,6 +214,7 @@
   <section>
     <h2>My squad <span id="need" class="dim"></span></h2>
     <table id="roster"></table>
+    <div id="byes" class="dim" style="margin-top:4px;font-size:11px"></div>
     <div class="btns">
       <button id="copy">Copy state JSON</button>
       <button id="load">Load JSON</button>
@@ -290,6 +293,9 @@ var CONFIG = /*LEAGUE_CONFIG*/{
   QUALITY_MIN: 10,
   URGENT_REMAINING: 3,
   URGENT_CAP: 12,
+  // Bye stacking: warn on a player's bye when I already roster this many
+  // skill players (QB/RB/WR/TE) sharing that week. K/DEF are streamable.
+  BYE_STACK_WARN: 2,
   POSITIONS: ["QB", "RB", "WR", "TE", "K", "DEF"]
 }/*END_LEAGUE_CONFIG*/;
 
@@ -570,6 +576,14 @@ function derive(state, idx, cfg) {
   cfg.POSITIONS.forEach(function (pos) { myFit[pos] = { start: openStart[pos] > 0, bench: openBench }; });
   var myPids = {};
   me.picks.forEach(function (pk) { myPids[pk.pid] = 1; });
+  // My bye-week exposure, skill players only (K/DEF are streamable).
+  var myByes = {};
+  me.picks.forEach(function (pk) {
+    var p = idx.byId[pk.pid];
+    if (p && p.bye && ["QB", "RB", "WR", "TE"].indexOf(p.position) >= 0) {
+      myByes[p.bye] = (myByes[p.bye] || 0) + 1;
+    }
+  });
 
   // Nominations: high value, at positions where all MY starting slots are
   // already full — but NEVER the handcuffs of my own starters (nominating
@@ -613,7 +627,7 @@ function derive(state, idx, cfg) {
     myMaxBid: me.maxBid, inflation: inflation, adj: adj,
     remainingMoney: remainingMoney, remainingSlots: remainingSlots, remainingDisc: remainingDisc,
     heat: heat, tiers: tiers, available: available, noms: noms,
-    myFit: myFit, myPids: myPids, demand: demand, liveRepl: liveRepl,
+    myFit: myFit, myPids: myPids, myByes: myByes, demand: demand, liveRepl: liveRepl,
     urgent: urgent, rivalsNeed: rivalsNeed
   };
 }
@@ -916,6 +930,11 @@ if (typeof document !== "undefined") (function () {
           var ins = Math.min(CONFIG.CUFF_INS_CAP, Math.round(CONFIG.CUFF_INSURANCE * ((starter && starter.value) || 0)));
           if (ins > 0) mk += ' <span class="mkv" title="insurance premium: handcuff of YOUR ' + esc(starter.name) + ' — worth this much extra to you alone">+$' + ins + ' ins</span>';
         }
+        var bn = p.bye && ["QB", "RB", "WR", "TE"].indexOf(p.position) >= 0 ? (d.myByes[p.bye] || 0) : 0;
+        var byeCell = !p.bye ? "" : bn >= CONFIG.BYE_STACK_WARN
+          ? '<span class="byewarn" title="bye stack: you already roster ' + bn + ' skill player' + (bn > 1 ? "s" : "") + ' on bye week ' + p.bye + '">' + p.bye + '×' + bn + '</span>'
+          : bn === 1 ? '<span class="dim">' + p.bye + '</span><span class="dim" style="font-size:9px">×1</span>'
+          : '<span class="dim">' + p.bye + '</span>';
         var u = d.urgent[p.position];
         if (u && a.adj >= CONFIG.QUALITY_MIN) {
           var bidTo = Math.round(a.adj + Math.min(CONFIG.URGENT_CAP, 0.5 * (a.adj - u.cliffAdj)));
@@ -928,7 +947,7 @@ if (typeof document !== "undefined") (function () {
           '" title="handcuff of ' + esc(p.handcuff_of) + '">' + (myPids[p.handcuff_pid] ? 'MY CUFF' : 'CUFF') + '</span>';
         if (p.news) badges += ' <span title="' + esc(p.news) + '">📰</span>';
         return '<tr data-pid="' + p.player_id + '"' + (cls.trim() ? ' class="' + cls.trim() + '"' : "") + '><td class="r num adj">' + money(a.adj) + mk + '</td><td title="' + esc(srcs) + '">' + esc(p.name) + (mut ? " *" : "") + badges + fitTag + '</td><td class="pos ' + p.position + '">' + p.position + '</td><td>' + esc(p.team || "") +
-          '</td><td class="r num dim">' + (p.bye || "") + '</td><td class="r num base">' + money(p.value) + '</td><td class="r num">' + sp + '</td><td class="r num dim">' + (p.vorp == null ? "" : Math.round(p.vorp)) +
+          '</td><td class="r num">' + byeCell + '</td><td class="r num base">' + money(p.value) + '</td><td class="r num">' + sp + '</td><td class="r num dim">' + (p.vorp == null ? "" : Math.round(p.vorp)) +
           '</td><td class="num">' + (p.tier == null ? "" : '<span class="tier t' + Math.min(p.tier, 4) + '">T' + p.tier + '</span> ' + bar) + '</td></tr>';
       }).join("");
 
@@ -959,6 +978,13 @@ if (typeof document !== "undefined") (function () {
       return '<tr' + (pk ? "" : ' class="empty"') + '><td class="slot">' + s.slot + '</td><td>' + (pk ? esc(pk.name) + ' <span class="pos ' + (p ? p.position : "") + '">' + (p ? p.position : "") + '</span>' : '<span class="dim">—</span>') +
         '</td><td class="r num">' + (pk ? money(pk.price) + (p ? ' <span class="base">/' + money(p.value) + '</span>' : "") : "") + '</td></tr>';
     }).join("") + '<tr><td class="slot">Σ</td><td class="dim">' + me.picks.length + ' players</td><td class="r num">' + money(me.spent) + '</td></tr>';
+
+    // my bye exposure
+    var bw = Object.keys(d.myByes).sort(function (x, y) { return d.myByes[y] - d.myByes[x] || x - y; });
+    $("byes").innerHTML = bw.length ? "skill byes: " + bw.map(function (w) {
+      var n = d.myByes[w];
+      return n >= CONFIG.BYE_STACK_WARN ? '<span class="byewarn">wk ' + w + ' ×' + n + '</span>' : 'wk ' + w + ' ×' + n;
+    }).join(" · ") : "";
 
     // recent
     var rec = state.picks.slice(-6).reverse();
