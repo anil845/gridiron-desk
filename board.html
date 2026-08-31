@@ -755,6 +755,7 @@ if (typeof document !== "undefined") (function () {
         var bar = t ? '<span class="bar' + (t.left <= 1 ? " low" : "") + '"><i style="width:' + Math.round(100 * t.left / t.total) + '%"></i></span> <span class="dim">' + t.left + '/' + t.total + '</span>' : "";
         var srcs = p.sources ? Object.keys(p.sources).map(function (k) { return k + " " + p.sources[k]; }).join("  ") : "";
         if (p.wf_value) srcs += (srcs ? "  " : "") + "wf$" + p.wf_value;
+        if (p.espn_aav) srcs += (srcs ? "  " : "") + "espn$" + p.espn_aav;
         // P = model (projection) rank, M = market consensus (fc/ffc/sadp mean).
         // ▲ proj better than market (buy) / ▼ proj worse (fade). Caveat: when
         // the market sources cluster and only proj diverges, trust the market.

@@ -38,7 +38,7 @@ import sys
 import time
 from collections import Counter, defaultdict
 
-from ingest.common import DATA_DIR, http_get, log  # no DB import happens here
+from ingest.common import DATA_DIR, USER_AGENT, http_get, log  # no DB import happens here
 
 # =============================================================================
 # Cross-league constants. League-specific settings live in leagues/*.json.
@@ -101,6 +101,14 @@ FP_URL = ("https://api.fantasypros.com/public/v2/json/nfl/{season}/consensus-ran
 # WalterFootball's PPR cheat sheet: server-rendered HTML, ~310 players in rank
 # order with Walt's auction $ values (robots.txt allows; cached daily).
 WF_URL = "https://debacled.walterfootball.com/fantasy/cheatsheet/ppr"
+# FantasyPros public PPR cheat-sheet page embeds the full ECR dataset (~510
+# players, ~100 experts) as `var ecrData = {...}` — no API key required.
+FP_PAGE_URL = "https://www.fantasypros.com/nfl/rankings/ppr-cheatsheets.php"
+# ESPN's fantasy read API: live ownership data including auctionValueAverage —
+# the average price actually paid in real ESPN auction drafts. No auth.
+ESPN_URL = ("https://lm-api-reads.fantasy.espn.com/apis/v3/games/ffl/seasons/"
+            f"{SEASON}/segments/0/leaguedefaults/3?view=kona_player_info")
+ESPN_POS = {1: "QB", 2: "RB", 3: "WR", 4: "TE", 5: "K", 16: "DEF"}
 
 TEMPLATE_HTML = "board.html"
 
@@ -355,24 +363,96 @@ def fetch_sleeper_players(force):
     return json.loads(text)
 
 
-def fetch_fantasypros():
+def fetch_fantasypros(force):
+    """ECR + expert spread. Uses the official API when FANTASYPROS_API_KEY is
+    set; otherwise scrapes the `var ecrData = {...}` JSON embedded in the
+    public PPR cheat-sheet page (~510 players, ~100 experts, updated daily).
+
+    The `ecr` value stored per player is the SKILL-ONLY rank (K/DST removed
+    and re-ranked) so it is comparable to the other sources' overall ranks;
+    rank_min / rank_max / rank_std are kept on FantasyPros's own scale as the
+    expert-disagreement signal."""
     key = os.environ.get("FANTASYPROS_API_KEY")
-    if not key:
-        return {}, "FantasyPros: FANTASYPROS_API_KEY not set - ECR fields left null"
-    try:
-        import requests
-        resp = requests.get(FP_URL.format(season=SEASON), headers={"x-api-key": key}, timeout=30)
-        resp.raise_for_status()
-        data = resp.json()
-    except Exception as exc:  # noqa: BLE001
-        return {}, f"FantasyPros: fetch failed ({exc}) - ECR fields left null"
+    import requests
+    if key:
+        try:
+            resp = requests.get(FP_URL.format(season=SEASON), headers={"x-api-key": key}, timeout=30)
+            resp.raise_for_status()
+            players = resp.json().get("players", [])
+            note = f"FantasyPros: {len(players)} ECR rows from the API"
+        except Exception as exc:  # noqa: BLE001
+            return {}, f"FantasyPros: API fetch failed ({exc}) - ECR fields left null"
+    else:
+        path = os.path.join(DATA_DIR, "fantasypros_ppr.html")
+
+        def _get():
+            r = requests.get(FP_PAGE_URL, headers={"User-Agent": USER_AGENT}, timeout=60)
+            r.raise_for_status()
+            if "ecrData" not in r.text:
+                raise ValueError("no ecrData in page")
+            return r.text
+
+        try:
+            text = _cached(path, _get, force, max_age_h=12)
+            m = re.search(r"var ecrData\s*=\s*(\{.*?\});\s*\n", text, re.S)
+            data = json.loads(m.group(1))
+            players = data.get("players", [])
+            note = (f"FantasyPros: {len(players)} ECR rows scraped from the public page "
+                    f"({data.get('total_experts')} experts, updated {data.get('last_updated')})")
+        except Exception as exc:  # noqa: BLE001 — optional source, must not fail the build
+            return {}, f"FantasyPros: page scrape failed ({exc}) - ECR fields left null"
+    skill = sorted((p for p in players if p.get("player_position_id") in SKILL),
+                   key=lambda p: p.get("rank_ecr") or 9999)
     rows = {}
-    for p in data.get("players", []):
-        rows[norm_name(p.get("player_name", ""))] = {
-            "ecr": _num(p.get("rank_ecr")), "ecr_stddev": _num(p.get("rank_std")),
+    for i, p in enumerate(skill):
+        rows.setdefault(norm_name(p.get("player_name", "")), {
+            "ecr": float(i + 1),
+            "ecr_stddev": _num(p.get("rank_std")),
             "ecr_best": _num(p.get("rank_min")), "ecr_worst": _num(p.get("rank_max")),
-        }
-    return rows, f"FantasyPros: {len(rows)} ECR rows loaded"
+        })
+    return rows, note
+
+
+def fetch_espn(force, notes):
+    """ESPN live draft market -> {(norm_name, pos): {rank, aav}}.
+
+    auctionValueAverage is the average price paid in real completed ESPN
+    auction drafts — the only real-money market signal available anywhere
+    without Yahoo OAuth. rank is the skill-only order by ESPN ADP. Cached 6h
+    because these move intraday as more drafts complete."""
+    import requests
+    path = os.path.join(DATA_DIR, "espn_kona.json")
+
+    def _get():
+        flt = json.dumps({"players": {"limit": 400,
+                                      "sortPercOwned": {"sortAsc": False, "sortPriority": 1}}})
+        r = requests.get(ESPN_URL, headers={"x-fantasy-filter": flt, "User-Agent": USER_AGENT},
+                         timeout=60)
+        r.raise_for_status()
+        return r.text
+    try:
+        d = json.loads(_cached(path, _get, force, max_age_h=6))
+        rows = []
+        for p in d.get("players", []):
+            pl = p.get("player") or {}
+            own = pl.get("ownership") or {}
+            pos = ESPN_POS.get(pl.get("defaultPositionId"))
+            if pos in SKILL and own.get("auctionValueAverage") is not None \
+                    and own.get("averageDraftPosition") is not None:
+                rows.append((own["averageDraftPosition"], norm_name(pl.get("fullName", "")),
+                             pos, own["auctionValueAverage"]))
+        rows.sort()
+        out = {}
+        for i, (adp, nn, pos, aav) in enumerate(rows):
+            out.setdefault((nn, pos), {"rank": i + 1, "aav": int(round(aav))})
+        if len(out) < 100:
+            raise ValueError(f"only {len(out)} usable rows")
+        notes.append(f"ESPN: {len(out)} skill players with live auction-value averages "
+                     "(rank by ESPN ADP, cached 6h)")
+        return out
+    except Exception as exc:  # noqa: BLE001 — optional source, must not fail the build
+        notes.append(f"ESPN: unavailable ({exc}) - espn rank/AAV skipped")
+        return {}
 
 
 def fetch_walterfootball(force, notes):
@@ -665,7 +745,7 @@ def assign_tiers(players):
 # =============================================================================
 # Source disagreement — separate ranks kept, never blended into the price.
 # =============================================================================
-def assign_sources(players, ffc, proj, wf):
+def assign_sources(players, ffc, proj, wf, espn):
     ffc_rank = {}
     for i, r in enumerate(ffc):
         ffc_rank.setdefault((norm_name(r.get("name")), r.get("position")), i + 1)
@@ -684,7 +764,7 @@ def assign_sources(players, ffc, proj, wf):
     for p in players:
         if p["position"] not in SKILL:
             p["sources"] = p["consensus_rank"] = p["spread"] = p["disagreement"] = None
-            p["mkt_rank"] = p["wf_value"] = None
+            p["mkt_rank"] = p["wf_value"] = p["espn_aav"] = None
             continue
         src = {}
         if p["fc_rank"]:
@@ -700,6 +780,10 @@ def assign_sources(players, ffc, proj, wf):
         p["wf_value"] = w["value"] if w else None
         if w:
             src["wf"] = w["rank"]
+        e = espn.get((norm_name(p["name"]), p["position"]))
+        p["espn_aav"] = e["aav"] if e else None
+        if e:
+            src["espn"] = e["rank"]
         if p.get("ecr"):
             src["ecr"] = int(p["ecr"])
         p["sources"] = src or None
@@ -709,10 +793,17 @@ def assign_sources(players, ffc, proj, wf):
         mkt = [v for k, v in src.items() if k != "proj"]
         p["mkt_rank"] = int(round(sum(mkt) / len(mkt))) if mkt else None
         if len(src) >= 2:
+            import statistics
             ranks = list(src.values())
             p["consensus_rank"] = round(sum(ranks) / len(ranks), 1)
             p["spread"] = max(ranks) - min(ranks)
-            p["disagreement"] = round(min(1.0, p["spread"] / (p["consensus_rank"] + DISAGREE_NORM)), 2)
+            # disagreement uses 2*stddev, not max-min: with 7 sources the raw
+            # range inflates mechanically and one outlier source flags half
+            # the board. 2*pstdev equals |a-b| for exactly two sources (so the
+            # 0.4 threshold keeps its original meaning) and damps lone
+            # outliers when there are many.
+            p["disagreement"] = round(min(1.0, 2 * statistics.pstdev(ranks)
+                                          / (p["consensus_rank"] + DISAGREE_NORM)), 2)
         else:
             p["consensus_rank"] = src.get("fc") if src else None
             p["spread"] = p["disagreement"] = None
@@ -894,13 +985,14 @@ def main(argv=None):
     ffc = fetch_ffc(cfg, args.force, notes)
     proj = fetch_projections(args.force, notes)
     wf = fetch_walterfootball(args.force, notes)
+    espn = fetch_espn(args.force, notes)
     p6_data, p6_rate = pick_six_data(args.force, notes)
     seasons, sack_rates, lg_sack_rate, fumble_ratio = load_history(args.force, p6_data)
     notes.append(f"sacks: per-QB rate from nflverse sacks_suffered (league avg "
                  f"{lg_sack_rate:.3f}/dropback); total fumbles = fum_lost x {fumble_ratio:.2f}")
     byes_csv = fetch_games(args.force)
     sleeper = fetch_sleeper_players(args.force)
-    fp, fp_note = fetch_fantasypros()
+    fp, fp_note = fetch_fantasypros(args.force)
     notes.append(fp_note)
 
     curve = points_curve(seasons, cfg["scoring"])
@@ -925,7 +1017,7 @@ def main(argv=None):
                  f"{sum(1 for p in players if p.get('points_source') == 'curve')} from historical curve")
     assign_tiers(players)
     vorp_to_dollars(cfg, players, starter_rank, roster_rank)
-    assign_sources(players, ffc, proj, wf)   # after dollars: proj rank uses vorp_roster
+    assign_sources(players, ffc, proj, wf, espn)   # after dollars: proj rank uses vorp_roster
     qb_penalty_report(cfg, players, proj, sack_rates, lg_sack_rate, p6_rate, fumble_ratio)
     history = league_history_file(players)
 
@@ -951,7 +1043,7 @@ def main(argv=None):
             "tier": p["tier"], "sources": p.get("sources"),
             "consensus_rank": p.get("consensus_rank"), "mkt_rank": p.get("mkt_rank"),
             "spread": p.get("spread"), "disagreement": p.get("disagreement"),
-            "wf_value": p.get("wf_value"),
+            "wf_value": p.get("wf_value"), "espn_aav": p.get("espn_aav"),
             "ecr": p["ecr"], "ecr_stddev": p["ecr_stddev"],
             "ecr_best": p["ecr_best"], "ecr_worst": p["ecr_worst"],
             "trend30": p["trend30"], "roster_pct": p["roster_pct"],
