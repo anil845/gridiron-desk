@@ -114,8 +114,11 @@
   tr.tstripe1 td:first-child { box-shadow: inset 3px 0 0 var(--gold); }
   tr.tstripe2 td:first-child { box-shadow: inset 3px 0 0 var(--violet); }
   tr.tstripe3 td:first-child { box-shadow: inset 3px 0 0 var(--cyan); }
-  .inj { color: #ff7b86; font-size: 10px; font-weight: 800; border: 1px solid rgba(255,93,107,.5);
-         background: rgba(255,93,107,.12); border-radius: 6px; padding: 0 5px; }
+  /* Injury chips: amber = Questionable (think twice), grey = IR/PUP/SUS/OUT
+     (ignore — effectively off the board). Red stays reserved for buy-now. */
+  .inj { color: #ffb454; font-size: 10px; font-weight: 800; border: 1px solid rgba(255,180,84,.45);
+         background: rgba(255,180,84,.10); border-radius: 6px; padding: 0 5px; }
+  .inj.out { color: var(--faint); border-color: var(--line2); background: rgba(255,255,255,.03); }
   .cuff { color: #2fd6c3; font-size: 10px; font-weight: 800; border: 1px solid rgba(47,214,195,.45);
           background: rgba(47,214,195,.10); border-radius: 6px; padding: 0 5px; }
   .cuff.mine { color: #0c0f16; background: #2fd6c3; border-color: #2fd6c3; }
@@ -194,7 +197,7 @@
         <span class="sprd"><span class="fade">▼</span>P8/M4</span> model worse than market = let others pay · bright white P/M = sources genuinely split (hover for who)</div>
       <div><b class="lg">TIERS</b> left stripe + pill <span class="tier t1">T1</span> <span class="tier t2">T2</span> <span class="tier t3">T3</span> <span class="tier t4">T4+</span> ·
         <span class="bar" style="width:36px"><i style="width:70%"></i></span> players left in tier · <span class="bar low" style="width:36px"><i style="width:20%"></i></span> tier almost gone</div>
-      <div><b class="lg">STATUS</b> <span class="inj">Q</span> <span class="inj">IR</span> <span class="inj">PUP</span> injury, hover for body part ·
+      <div><b class="lg">STATUS</b> <span class="inj">Q</span> questionable — think twice (hover for body part) · <span class="inj out">IR</span> <span class="inj out">PUP</span> <span class="inj out">SUS</span> likely out — ignore · red is only ever buy-now ·
         <span class="cuff">CUFF</span> handcuff — backup who inherits a stud's role (hover names the starter) · <span class="cuff mine">MY CUFF</span> backs up YOUR starter — its <span class="mkv">+$N ins</span> = extra you alone can justify paying (never shown to keep Pay honest, never nominated for you) ·
         📰 news this build (hover) · <span class="byewarn">6×2</span> amber = bye stack, a tiebreaker between similar players (red is reserved for injury &amp; buy-now) ·
         <span class="dim">* faded = no projection, trust the price less · bn only / no slot = your roster can't start / can't fit them</span></div>
@@ -941,7 +944,7 @@ if (typeof document !== "undefined") (function () {
           mk += ' <span class="urg" title="you still need ' + p.position + ': only ' + u.remQ + ' startable left and ' + u.rivals + ' rivals also need one — losing all of them means the $' + Math.round(u.cliffAdj) + ' cliff. Licensed to bid up to $' + bidTo + '">LAST ' + u.remQ + ' · to $' + bidTo + '</span>';
         }
         var badges = "";
-        if (p.injury_status) badges += ' <span class="inj" title="' + esc(p.injury_note || "") + '">' +
+        if (p.injury_status) badges += ' <span class="inj' + (p.injury_status === "Questionable" ? "" : " out") + '" title="' + esc(p.injury_note || "") + '">' +
           esc(p.injury_status === "Questionable" ? "Q" : String(p.injury_status).toUpperCase().slice(0, 3)) + '</span>';
         if (p.handcuff_of) badges += ' <span class="cuff' + (myPids[p.handcuff_pid] ? ' mine' : '') +
           '" title="handcuff of ' + esc(p.handcuff_of) + '">' + (myPids[p.handcuff_pid] ? 'MY CUFF' : 'CUFF') + '</span>';
