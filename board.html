@@ -5,72 +5,129 @@
 <title>Draft Board</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+  /* Single-theme by design: a dim-room draft cockpit. Every surface and color
+     painted explicitly. Fonts are Windows-native (offline constraint). */
+  :root {
+    --bg:#0c0f16; --panel:#141926; --panel2:#10151f; --line:#232b3e; --line2:#2e3956;
+    --ink:#e8edf8; --dim:#8b95ac; --faint:#5a6379;
+    --gold:#f6c945; --gold2:#ffe084; --good:#3ddc84; --bad:#ff5d6b;
+    --violet:#c792ff; --cyan:#4cc2ff;
+    --qb:#f07ad2; --rb:#58c6ff; --wr:#a8e05f; --te:#ffb066; --kdef:#93a0b8;
+  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { background: #000; color: #e8e8e8; height: 100%; }
-  body { font: 15px/1.25 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 8px 10px; }
-  .num { font-family: "SF Mono", Consolas, "Roboto Mono", Menlo, monospace; font-variant-numeric: tabular-nums; }
-  header { display: grid; grid-template-columns: 240px 1fr 1fr; gap: 12px; align-items: stretch; margin-bottom: 8px; }
-  .box { border: 1px solid #333; padding: 6px 10px; background: #0a0a0a; }
-  .label { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #9a9a9a; }
-  #maxbid { font-size: 84px; line-height: .95; font-weight: 800; color: #fff; }
-  #maxbid.warn { color: #ff5252; }
-  #maxsub { font-size: 13px; color: #9a9a9a; margin-top: 2px; }
-  #infl { font-size: 44px; font-weight: 800; line-height: 1; }
-  #inflmsg { font-size: 16px; margin-top: 4px; }
-  .hot { color: #ff5252; } .cold { color: #4cd964; } .even { color: #ffd60a; }
-  #heat { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; margin-top: 2px; }
-  #heat div { text-align: center; }
-  #heat .p { font-size: 12px; color: #9a9a9a; }
-  #heat .v { font-size: 26px; font-weight: 700; }
-  #cmdrow { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: start; margin-bottom: 6px; }
-  #cmd { width: 100%; font-size: 30px; padding: 6px 10px; background: #111; color: #fff; border: 2px solid #666; outline: none; }
-  #cmd:focus { border-color: #ffd60a; }
-  #status { font-size: 15px; min-height: 20px; padding: 3px 2px; }
-  #status.err { color: #ff5252; } #status.ok { color: #4cd964; }
-  #status.unk { background: #8a3800; color: #fff; font-size: 18px; font-weight: 800; padding: 6px 10px; }
-  .buy { color: #4cd964; font-weight: 800; } .fade { color: #ff5252; font-weight: 800; }
-  tr.curve td { opacity: .45; }
-  #picker { background: #161616; border: 1px solid #444; }
-  #picker div { padding: 3px 10px; font-size: 18px; display: grid; grid-template-columns: 1fr 44px 46px 70px; gap: 8px; }
-  #picker div.sel { background: #ffd60a; color: #000; }
-  #recent { font-size: 14px; color: #bbb; }
-  #recent b { color: #fff; }
-  main { display: grid; grid-template-columns: 1.35fr 1fr .8fr; gap: 10px; }
-  h2 { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #9a9a9a; margin-bottom: 4px; display: flex; gap: 6px; align-items: center; }
+  html { background: var(--bg); }
+  body { background: radial-gradient(1100px 480px at 50% -160px, #1a2238 0%, var(--bg) 62%) fixed;
+         background-color: var(--bg); color: var(--ink); min-height: 100%;
+         padding: 10px 14px 16px; font: 14px/1.3 "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif; }
+  .num { font-family: "Cascadia Mono", Consolas, "Roboto Mono", monospace; font-variant-numeric: tabular-nums; }
+
+  #lgbanner { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 10px; padding: 0 2px; }
+  .lg-name { font-size: 22px; font-weight: 800; letter-spacing: .02em; }
+  .lg-name::before { content: "\25C6  "; color: var(--gold); }
+  .lg-meta { font-size: 12px; color: var(--dim); }
+
+  header { display: grid; grid-template-columns: 290px 1.1fr 1.3fr; gap: 10px; margin-bottom: 10px; }
+  .box { background: linear-gradient(180deg, #171d2c, #121724); border: 1px solid var(--line);
+         border-radius: 14px; padding: 10px 14px;
+         box-shadow: 0 1px 0 rgba(255,255,255,.03) inset, 0 6px 18px rgba(0,0,0,.35); }
+  .box.hero { box-shadow: 0 0 0 1px rgba(246,201,69,.28), 0 0 26px rgba(246,201,69,.07), 0 6px 18px rgba(0,0,0,.4); }
+  .label { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); font-weight: 600; }
+  #maxbid { font-size: 74px; line-height: 1; font-weight: 700; color: var(--gold2);
+            text-shadow: 0 0 24px rgba(246,201,69,.25); margin: 2px 0 7px; }
+  #maxbid.warn { color: var(--bad); text-shadow: 0 0 24px rgba(255,93,107,.3); }
+  .hpbar { height: 8px; border-radius: 99px; background: #090c13; border: 1px solid var(--line); overflow: hidden; margin-bottom: 6px; }
+  .hpbar i { display: block; height: 100%; width: 100%; border-radius: 99px; background: linear-gradient(90deg, var(--gold), var(--gold2)); }
+  .hpbar i.low { background: linear-gradient(90deg, var(--bad), #ffb454); }
+  #maxsub { font-size: 12px; color: var(--dim); }
+  #infl { font-size: 40px; font-weight: 700; margin: 4px 0 2px; }
+  #inflmsg { font-size: 13px; }
+  .hot { color: var(--bad); } .cold { color: var(--good); } .even { color: var(--gold); }
+  #heat { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-top: 6px; }
+  #heat > div { background: var(--panel2); border: 1px solid var(--line); border-radius: 10px; padding: 4px 2px; text-align: center; }
+  #heat .p { font-size: 11px; font-weight: 700; }
+  #heat .v { font-size: 22px; font-weight: 700; }
+
+  #cmdrow { display: grid; grid-template-columns: 1fr 250px; gap: 12px; align-items: start; margin-bottom: 8px; }
+  #cmd { width: 100%; font-size: 26px; padding: 8px 14px; color: var(--ink); background: #0a0e17;
+         border: 1px solid var(--line2); border-radius: 12px; outline: none;
+         font-family: "Cascadia Mono", Consolas, monospace; }
+  #cmd::placeholder { color: var(--faint); }
+  #cmd:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(246,201,69,.15); }
+  #status { font-size: 14px; min-height: 22px; padding: 4px; border-radius: 8px; }
+  #status.err { color: var(--bad); } #status.ok { color: var(--good); }
+  #status.unk { background: #4a2410; border: 1px solid #a3541f; color: #ffd9b0; font-size: 16px; font-weight: 700; padding: 8px 12px; margin-top: 4px; }
+  #picker { background: #101624; border: 1px solid var(--line2); border-radius: 10px; overflow: hidden; margin-top: 4px;
+            box-shadow: 0 12px 30px rgba(0,0,0,.5); }
+  #picker div { padding: 5px 12px; font-size: 16px; display: grid; grid-template-columns: 1fr 44px 46px 96px; gap: 8px; align-items: center; }
+  #picker div.sel { background: var(--gold); }
+  #picker div.sel, #picker div.sel * { color: #161000 !important; background-color: transparent; }
+  #picker div.sel { background: var(--gold); }
+  #recent { font-size: 13px; color: var(--dim); }
+  #recent b { color: var(--ink); }
+
+  main { display: grid; grid-template-columns: 1.4fr 1fr .85fr; gap: 10px; align-items: start; }
+  section { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 10px 12px; }
+  h2 { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); font-weight: 700;
+       margin-bottom: 6px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
   table { width: 100%; border-collapse: collapse; }
-  td, th { padding: 2px 5px; text-align: left; white-space: nowrap; vertical-align: middle; }
-  th { font-size: 11px; color: #9a9a9a; font-weight: normal; border-bottom: 1px solid #333; }
-  tr:nth-child(even) td { background: #0d0d0d; }
+  td, th { padding: 3px 6px; text-align: left; white-space: nowrap; vertical-align: middle; }
+  th { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); font-weight: 600; border-bottom: 1px solid var(--line); }
+  #avail tr:nth-child(even) td, #teams tr:nth-child(even) td { background: rgba(255,255,255,.025); }
+  #avail tr:hover td, #teams tr:hover td { background: #1b2336; }
   td.r, th.r { text-align: right; }
-  .adj { font-size: 24px; font-weight: 800; color: #ffd60a; }
-  .base { color: #888; }
-  .pos { font-weight: 700; }
-  .QB { color: #ff8ad8; } .RB { color: #7fd8ff; } .WR { color: #b8ff7f; } .TE { color: #ffc27f; } .K, .DEF { color: #999; }
-  .bar { display: inline-block; height: 10px; background: #2a2a2a; width: 60px; vertical-align: middle; }
-  .bar i { display: block; height: 100%; background: #4cd964; }
-  .bar.low i { background: #ff5252; }
-  .filters button, .btns button { background: #1a1a1a; color: #ddd; border: 1px solid #444; padding: 2px 8px; font-size: 12px; cursor: pointer; }
-  .filters button.on { background: #ffd60a; color: #000; border-color: #ffd60a; }
-  tr.me td { background: #1b1a00; }
-  .flag { color: #ff5252; font-weight: 800; }
-  .dim { color: #666; }
-  #roster td.slot { color: #9a9a9a; width: 44px; }
+  .adj { font-size: 21px; font-weight: 700; color: var(--gold2); }
+  .base { color: var(--faint); }
+  .QB { color: var(--qb); } .RB { color: var(--rb); } .WR { color: var(--wr); } .TE { color: var(--te); } .K, .DEF { color: var(--kdef); }
+  .pos { display: inline-block; min-width: 34px; text-align: center; padding: 1px 6px; border-radius: 7px;
+         font-size: 11px; font-weight: 800; background: color-mix(in srgb, currentColor 16%, transparent); }
+  .tier { display: inline-block; padding: 0 7px; border-radius: 7px; font-size: 11px; font-weight: 800; line-height: 18px; border: 1px solid; }
+  .tier.t1 { color: var(--gold); border-color: rgba(246,201,69,.5); background: rgba(246,201,69,.10); }
+  .tier.t2 { color: var(--violet); border-color: rgba(199,146,255,.45); background: rgba(199,146,255,.10); }
+  .tier.t3 { color: var(--cyan); border-color: rgba(76,194,255,.4); background: rgba(76,194,255,.08); }
+  .tier.t4 { color: var(--dim); border-color: var(--line2); background: rgba(255,255,255,.03); }
+  .bar { display: inline-block; height: 8px; border-radius: 99px; background: #090c13; border: 1px solid var(--line);
+         width: 56px; vertical-align: middle; overflow: hidden; }
+  .bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--good), #8ef0b6); }
+  .bar.low i { background: linear-gradient(90deg, var(--bad), #ff9aa3); }
+  .filters button, .btns button { background: #101624; color: var(--dim); border: 1px solid var(--line2);
+         border-radius: 99px; padding: 2px 10px; font-size: 11px; font-weight: 700; cursor: pointer; }
+  .filters button:focus-visible, .btns button:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+  .filters button.on { background: var(--gold); border-color: var(--gold); color: #161000; }
   .btns { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
-  #meta { font-size: 11px; color: #555; margin-top: 8px; }
-  #lgbanner { font-size: 20px; font-weight: 800; color: #ffd60a; letter-spacing: .04em; margin-bottom: 6px; }
-  .sprd { color: #c792ff; font-weight: 700; }
-  .sprd.hi { color: #ff5252; }
-  #foot { font-size: 11px; color: #555; margin-top: 10px; }
+
+  .tname { font-weight: 600; }
+  .tbar { display: block; height: 4px; border-radius: 99px; background: #090c13; margin-top: 2px; overflow: hidden; }
+  .tbar i { display: block; height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold2)); }
+  .maxcell { font-size: 19px; font-weight: 800; }
+  #teams tr.me td { background: rgba(246,201,69,.09); }
+  #teams tr.me td:first-child { box-shadow: inset 3px 0 0 var(--gold); }
+  .flag { color: var(--bad); font-weight: 800; }
+  .dim { color: var(--faint); }
+  .sprd { color: var(--violet); font-weight: 700; font-size: 12px; }
+  .sprd.hi { color: var(--ink); font-weight: 800; }
+  .buy { color: var(--good); font-weight: 800; } .fade { color: var(--bad); font-weight: 800; }
+  tr.curve td { opacity: .42; }
+
+  #roster { border-collapse: separate; border-spacing: 0 4px; }
+  #roster td { background: var(--panel2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  #roster td:first-child { border-left: 1px solid var(--line); border-radius: 8px 0 0 8px; }
+  #roster td:last-child { border-right: 1px solid var(--line); border-radius: 0 8px 8px 0; }
+  #roster tr.empty td { background: transparent; border-style: dashed; border-color: var(--line2); }
+  #roster td.slot { color: var(--faint); width: 48px; font-size: 11px; letter-spacing: .06em; }
+
+  #meta { font-size: 11px; color: var(--faint); margin-top: 8px; }
+  #foot { font-size: 11px; color: var(--faint); margin-top: 10px; }
 </style>
 </head>
 <body>
 
-<div id="lgbanner" class="num"></div>
+<div id="lgbanner"></div>
 
 <header>
-  <div class="box">
+  <div class="box hero">
     <div class="label">My max bid</div>
     <div id="maxbid" class="num">—</div>
+    <div class="hpbar"><i id="mybar"></i></div>
     <div id="maxsub" class="num"></div>
   </div>
   <div class="box">
@@ -99,13 +156,13 @@
     <table id="avail"></table>
   </section>
   <section>
-    <h2>Teams — by max bid</h2>
+    <h2>War room · by max bid</h2>
     <table id="teams"></table>
     <h2 style="margin-top:12px">Nominate (drain them, not me)</h2>
     <table id="noms"></table>
   </section>
   <section>
-    <h2>My roster</h2>
+    <h2>My squad</h2>
     <table id="roster"></table>
     <div class="btns">
       <button id="copy">Copy state JSON</button>
@@ -470,6 +527,8 @@ if (typeof document !== "undefined") (function () {
     var me = d.me;
 
     var mb = $("maxbid"); mb.textContent = money(d.myMaxBid); mb.className = "num" + (d.myMaxBid <= 10 ? " warn" : "");
+    var hp = $("mybar"); hp.style.width = Math.max(0, Math.min(100, 100 * me.money / CONFIG.BUDGET)) + "%";
+    hp.className = me.money <= 40 ? "low" : "";
     $("maxsub").textContent = money(me.money) + " left · " + me.open + " slots · " + (me.open > 1 ? "$1 held for " + (me.open - 1) + " more" : me.open === 1 ? "last slot" : "roster full");
 
     var inf = $("infl"), msg = $("inflmsg");
@@ -512,7 +571,7 @@ if (typeof document !== "undefined") (function () {
         var mut = p.points_source === "curve";   // no projection: rank-curve scale, not comparable
         return '<tr' + (mut ? ' class="curve"' : "") + '><td class="r num adj">' + money(a.adj) + '</td><td title="' + esc(srcs) + '">' + esc(p.name) + (mut ? " *" : "") + '</td><td class="pos ' + p.position + '">' + p.position + '</td><td>' + esc(p.team || "") +
           '</td><td class="r num dim">' + (p.bye || "") + '</td><td class="r num base">' + money(p.value) + '</td><td class="r num">' + sp + '</td><td class="r num dim">' + (p.vorp == null ? "" : Math.round(p.vorp)) +
-          '</td><td class="num">' + (p.tier == null ? "" : "T" + p.tier + " " + bar) + '</td></tr>';
+          '</td><td class="num">' + (p.tier == null ? "" : '<span class="tier t' + Math.min(p.tier, 4) + '">T' + p.tier + '</span> ' + bar) + '</td></tr>';
       }).join("");
 
     // teams
@@ -523,7 +582,8 @@ if (typeof document !== "undefined") (function () {
         var op = t.overpay === null ? '<span class="dim">—</span>'
           : t.paidValue < CONFIG.OVERPAY_MIN_VALUE ? '<span class="dim">' + x(t.overpay) + '</span>'
           : t.overpay >= CONFIG.OVERPAY_FLAG ? '<span class="flag">' + x(t.overpay) + ' ⚠</span>' : x(t.overpay);
-        return '<tr' + (t.i === CONFIG.ME ? ' class="me"' : "") + '><td>' + esc(t.name) + '</td><td class="r num" style="font-size:20px;font-weight:800">' + money(t.maxBid) +
+        var bw = Math.max(0, Math.min(100, 100 * t.money / CONFIG.BUDGET));
+        return '<tr' + (t.i === CONFIG.ME ? ' class="me"' : "") + '><td><div class="tname">' + esc(t.name) + '</div><span class="tbar"><i style="width:' + bw + '%"></i></span></td><td class="r num maxcell">' + money(t.maxBid) +
           '</td><td class="r num">' + money(t.money) + '</td><td class="r num">' + t.open + '</td><td class="r num">' + op + '</td></tr>';
       }).join("");
 
@@ -535,7 +595,7 @@ if (typeof document !== "undefined") (function () {
     // my roster
     $("roster").innerHTML = me.slots.map(function (s) {
       var pk = s.pick, p = pk ? IDX.byId[pk.pid] : null;
-      return '<tr><td class="slot">' + s.slot + '</td><td>' + (pk ? esc(pk.name) + ' <span class="pos ' + (p ? p.position : "") + '">' + (p ? p.position : "") + '</span>' : '<span class="dim">—</span>') +
+      return '<tr' + (pk ? "" : ' class="empty"') + '><td class="slot">' + s.slot + '</td><td>' + (pk ? esc(pk.name) + ' <span class="pos ' + (p ? p.position : "") + '">' + (p ? p.position : "") + '</span>' : '<span class="dim">—</span>') +
         '</td><td class="r num">' + (pk ? money(pk.price) + (p ? ' <span class="base">/' + money(p.value) + '</span>' : "") : "") + '</td></tr>';
     }).join("") + '<tr><td class="slot">Σ</td><td class="dim">' + me.picks.length + ' players</td><td class="r num">' + money(me.spent) + '</td></tr>';
 
@@ -547,12 +607,13 @@ if (typeof document !== "undefined") (function () {
 
     var m = BOARD_DATA && BOARD_DATA.meta;
     $("meta").textContent = m ? "data " + m.generated_at + " · " + m.players + " players · " + m.num_teams + " teams · repl " +
-      Object.keys(m.replacement_rank_starter).map(function (k) { return k + m.replacement_rank_starter[k]; }).join(" ") + " · " + m.fantasypros : "NO BOARD DATA — run build_board.py";
+      Object.keys(m.replacement_rank_starter).map(function (k) { return k + m.replacement_rank_starter[k]; }).join(" ") : "NO BOARD DATA — run build_board.py";
   }
 
   document.title = CONFIG.LEAGUE_NAME + " — Draft Board";
-  $("lgbanner").textContent = CONFIG.LEAGUE_NAME + " · " + CONFIG.NUM_TEAMS + " teams · $" + CONFIG.BUDGET +
-    " · built " + (BOARD_DATA && BOARD_DATA.meta ? BOARD_DATA.meta.generated_at.replace("T", " ") : "NO DATA");
+  $("lgbanner").innerHTML = '<span class="lg-name">' + esc(CONFIG.LEAGUE_NAME) + '</span>' +
+    '<span class="lg-meta num">' + CONFIG.NUM_TEAMS + ' teams · $' + CONFIG.BUDGET + ' · built ' +
+    esc(BOARD_DATA && BOARD_DATA.meta ? BOARD_DATA.meta.generated_at.replace("T", " ") : "NO DATA") + '</span>';
   restore();
   render();
   if (!BOARD_DATA) setStatus("NO BOARD DATA embedded — run python build_board.py", "err");
