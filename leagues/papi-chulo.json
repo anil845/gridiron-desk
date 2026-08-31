@@ -1,0 +1,23 @@
+{
+  "name": "The Papi Chulo Invitational",
+  "yahoo_league_id": "701443",
+  "teams": 16,
+  "budget": 200,
+  "roster": {
+    "QB": 1, "WR": 2, "RB": 2, "TE": 1,
+    "W/R/T": 1, "K": 1, "DEF": 1, "BN": 3
+  },
+  "_comment": "IR x2 excluded from active roster. 12 active spots.",
+  "scoring": {
+    "pass_yd": 0.04, "pass_td": 6, "interception": -3,
+    "sack_taken": -1, "pick_six_thrown": -6,
+    "rush_yd": 0.1, "rush_td": 6,
+    "reception": 1.0, "rec_yd": 0.1, "rec_td": 6,
+    "return_td": 6, "two_pt": 2,
+    "fumble": 0, "fumble_lost": -2, "off_fumble_return_td": 6
+  },
+  "team_names": ["Cerveza Loco", "Hurts So Good", "fugazis", "Triple Double no assist",
+                 "Sweet Editions", "Just-In Time", "OHHenry!", "HOOT HOOT Owl-Man",
+                 "AB = MAYB", "Ready Aim Dart", "Never a Dowdle", "Fearless",
+                 "Slot 13", "Slot 14", "Slot 15", "Slot 16"]
+}

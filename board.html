@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Draft Board</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #000; color: #e8e8e8; height: 100%; }
+  body { font: 15px/1.25 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 8px 10px; }
+  .num { font-family: "SF Mono", Consolas, "Roboto Mono", Menlo, monospace; font-variant-numeric: tabular-nums; }
+  header { display: grid; grid-template-columns: 240px 1fr 1fr; gap: 12px; align-items: stretch; margin-bottom: 8px; }
+  .box { border: 1px solid #333; padding: 6px 10px; background: #0a0a0a; }
+  .label { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #9a9a9a; }
+  #maxbid { font-size: 84px; line-height: .95; font-weight: 800; color: #fff; }
+  #maxbid.warn { color: #ff5252; }
+  #maxsub { font-size: 13px; color: #9a9a9a; margin-top: 2px; }
+  #infl { font-size: 44px; font-weight: 800; line-height: 1; }
+  #inflmsg { font-size: 16px; margin-top: 4px; }
+  .hot { color: #ff5252; } .cold { color: #4cd964; } .even { color: #ffd60a; }
+  #heat { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; margin-top: 2px; }
+  #heat div { text-align: center; }
+  #heat .p { font-size: 12px; color: #9a9a9a; }
+  #heat .v { font-size: 26px; font-weight: 700; }
+  #cmdrow { display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: start; margin-bottom: 6px; }
+  #cmd { width: 100%; font-size: 30px; padding: 6px 10px; background: #111; color: #fff; border: 2px solid #666; outline: none; }
+  #cmd:focus { border-color: #ffd60a; }
+  #status { font-size: 15px; min-height: 20px; padding: 3px 2px; }
+  #status.err { color: #ff5252; } #status.ok { color: #4cd964; }
+  #picker { background: #161616; border: 1px solid #444; }
+  #picker div { padding: 3px 10px; font-size: 18px; display: grid; grid-template-columns: 1fr 44px 46px 70px; gap: 8px; }
+  #picker div.sel { background: #ffd60a; color: #000; }
+  #recent { font-size: 14px; color: #bbb; }
+  #recent b { color: #fff; }
+  main { display: grid; grid-template-columns: 1.35fr 1fr .8fr; gap: 10px; }
+  h2 { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #9a9a9a; margin-bottom: 4px; display: flex; gap: 6px; align-items: center; }
+  table { width: 100%; border-collapse: collapse; }
+  td, th { padding: 2px 5px; text-align: left; white-space: nowrap; vertical-align: middle; }
+  th { font-size: 11px; color: #9a9a9a; font-weight: normal; border-bottom: 1px solid #333; }
+  tr:nth-child(even) td { background: #0d0d0d; }
+  td.r, th.r { text-align: right; }
+  .adj { font-size: 24px; font-weight: 800; color: #ffd60a; }
+  .base { color: #888; }
+  .pos { font-weight: 700; }
+  .QB { color: #ff8ad8; } .RB { color: #7fd8ff; } .WR { color: #b8ff7f; } .TE { color: #ffc27f; } .K, .DEF { color: #999; }
+  .bar { display: inline-block; height: 10px; background: #2a2a2a; width: 60px; vertical-align: middle; }
+  .bar i { display: block; height: 100%; background: #4cd964; }
+  .bar.low i { background: #ff5252; }
+  .filters button, .btns button { background: #1a1a1a; color: #ddd; border: 1px solid #444; padding: 2px 8px; font-size: 12px; cursor: pointer; }
+  .filters button.on { background: #ffd60a; color: #000; border-color: #ffd60a; }
+  tr.me td { background: #1b1a00; }
+  .flag { color: #ff5252; font-weight: 800; }
+  .dim { color: #666; }
+  #roster td.slot { color: #9a9a9a; width: 44px; }
+  .btns { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+  #meta { font-size: 11px; color: #555; margin-top: 8px; }
+  #lgbanner { font-size: 20px; font-weight: 800; color: #ffd60a; letter-spacing: .04em; margin-bottom: 6px; }
+  .sprd { color: #c792ff; font-weight: 700; }
+  .sprd.hi { color: #ff5252; }
+  #foot { font-size: 11px; color: #555; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<div id="lgbanner" class="num"></div>
+
+<header>
+  <div class="box">
+    <div class="label">My max bid</div>
+    <div id="maxbid" class="num">—</div>
+    <div id="maxsub" class="num"></div>
+  </div>
+  <div class="box">
+    <div class="label">Live inflation</div>
+    <div id="infl" class="num">—</div>
+    <div id="inflmsg"></div>
+  </div>
+  <div class="box">
+    <div class="label">Positional market heat (paid ÷ value)</div>
+    <div id="heat" class="num"></div>
+  </div>
+</header>
+
+<div id="cmdrow">
+  <div>
+    <input id="cmd" autocomplete="off" spellcheck="false" placeholder="player price team   e.g.  gib 47 kev   |   gib 47 me   |   Ctrl+Z undo">
+    <div id="status"></div>
+    <div id="picker" hidden></div>
+  </div>
+  <div id="recent"></div>
+</div>
+
+<main>
+  <section>
+    <h2>Best available <span class="filters" id="filters"></span></h2>
+    <table id="avail"></table>
+  </section>
+  <section>
+    <h2>Teams — by max bid</h2>
+    <table id="teams"></table>
+    <h2 style="margin-top:12px">Nominate (drain them, not me)</h2>
+    <table id="noms"></table>
+  </section>
+  <section>
+    <h2>My roster</h2>
+    <table id="roster"></table>
+    <div class="btns">
+      <button id="copy">Copy state JSON</button>
+      <button id="load">Load JSON</button>
+      <button id="reset">Reset board</button>
+    </div>
+    <div id="meta"></div>
+    <div id="foot">ADP data courtesy of <b>Fantasy Football Calculator</b> (fantasyfootballcalculator.com).</div>
+  </section>
+</main>
+
+<script>
+// =============================================================================
+// CONFIG — generated by build_board.py from leagues/<league>.json.
+// Edit team_names in the league JSON, not here: a rebuild overwrites this file.
+// =============================================================================
+var CONFIG = /*LEAGUE_CONFIG*/{
+  LEAGUE_NAME: "TEMPLATE — run build_board.py --league <name>",
+  LEAGUE_ID: "42313",
+  NUM_TEAMS: 12,
+  BUDGET: 200,
+  // Team names in draft-room order. Index ME is you; "me" always aliases it.
+  // Edit these before the draft: any unique prefix works as the team token.
+  TEAMS: ["Anil", "Team 2", "Team 3", "Team 4", "Team 5", "Team 6",
+          "Team 7", "Team 8", "Team 9", "Team 10", "Team 11", "Team 12"],
+  ME: 0,
+  // Counted roster slots (IR excluded). Order matters: a pick fills the first
+  // open slot whose eligibility includes the position.
+  ROSTER: [
+    { slot: "QB",   elig: ["QB"] },
+    { slot: "RB",   elig: ["RB"] },
+    { slot: "RB",   elig: ["RB"] },
+    { slot: "W/T",  elig: ["WR", "TE"] },
+    { slot: "W/T",  elig: ["WR", "TE"] },
+    { slot: "FLEX", elig: ["RB", "WR", "TE"] },
+    { slot: "K",    elig: ["K"] },
+    { slot: "DEF",  elig: ["DEF"] },
+    { slot: "BN", elig: ["QB","RB","WR","TE","K","DEF"] },
+    { slot: "BN", elig: ["QB","RB","WR","TE","K","DEF"] },
+    { slot: "BN", elig: ["QB","RB","WR","TE","K","DEF"] },
+    { slot: "BN", elig: ["QB","RB","WR","TE","K","DEF"] },
+    { slot: "BN", elig: ["QB","RB","WR","TE","K","DEF"] }
+  ],
+  OVERPAY_FLAG: 1.15,
+  OVERPAY_MIN_VALUE: 20,
+  DISAGREE_MIN: 0.4,
+  POSITIONS: ["QB", "RB", "WR", "TE", "K", "DEF"]
+}/*END_LEAGUE_CONFIG*/;
+
+// Filled by build_board.py. Do not edit by hand.
+var BOARD_DATA = /*BOARD_DATA*/null/*END_BOARD_DATA*/;
+
+// =============================================================================
+// Pure logic (no DOM) — exported for tests at the bottom.
+// =============================================================================
+function normName(s) {
+  return String(s || "").toLowerCase().replace(/[.'’\-]/g, "").replace(/[^a-z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+}
+
+function indexPlayers(data) {
+  var byId = {}, list = data ? data.players : [];
+  list.forEach(function (p) {
+    p.tokens = normName(p.name).split(" ");
+    if (p.position === "DEF") p.tokens.push(String(p.team || "").toLowerCase(), "def", "dst");
+    byId[p.player_id] = p;
+  });
+  return { list: list, byId: byId };
+}
+
+// "<player-prefix> <price> <team-prefix>": the first all-digit token is the price.
+function parseCommand(text) {
+  var toks = text.trim().split(/\s+/).filter(Boolean);
+  var pi = -1;
+  for (var i = 0; i < toks.length; i++) {
+    if (/^\$?\d+$/.test(toks[i])) { pi = i; break; }
+  }
+  if (pi < 0) return { player: toks.join(" "), price: null, team: "" };
+  return {
+    player: toks.slice(0, pi).join(" "),
+    price: parseInt(toks[pi].replace("$", ""), 10),
+    team: toks.slice(pi + 1).join(" ")
+  };
+}
+
+// Every query token must prefix-match a distinct name token (any order).
+// Ranked: last-name match first, then by value. Drafted players excluded.
+function matchPlayers(query, players, drafted) {
+  var q = normName(query).split(" ").filter(Boolean);
+  if (!q.length) return [];
+  var out = [];
+  players.forEach(function (p) {
+    if (drafted[p.player_id]) return;
+    var used = {}, ok = true, lastHit = false;
+    for (var i = 0; i < q.length && ok; i++) {
+      var hit = -1;
+      for (var j = 0; j < p.tokens.length; j++) {
+        if (!used[j] && p.tokens[j].indexOf(q[i]) === 0) { hit = j; break; }
+      }
+      if (hit < 0) ok = false; else { used[hit] = 1; if (hit === p.tokens.length - 1 || (p.position !== "DEF" && hit === 1)) lastHit = true; }
+    }
+    if (ok) out.push({ p: p, last: lastHit ? 1 : 0 });
+  });
+  out.sort(function (a, b) { return (b.last - a.last) || (b.p.value - a.p.value) || ((a.p.vorp || 0) < (b.p.vorp || 0) ? 1 : -1); });
+  return out.map(function (o) { return o.p; });
+}
+
+function matchTeam(query, cfg) {
+  var q = normName(query);
+  if (!q) return { err: "team?" };
+  if (q === "me") return { idx: cfg.ME };
+  if (/^\d+$/.test(q)) {
+    var n = parseInt(q, 10);
+    if (n >= 1 && n <= cfg.TEAMS.length) return { idx: n - 1 };
+    return { err: "no team #" + n };
+  }
+  // Match on the whole name OR any word of it ("hit" -> "The Hitman").
+  // Exact whole-name match wins, then an exact word match ("ra" -> "Ra Dog"
+  // even though it also prefixes "Bower Rangers"), then a unique prefix.
+  var hits = [];
+  cfg.TEAMS.forEach(function (t, i) {
+    var nn = normName(t);
+    if (nn.indexOf(q) === 0 || nn.split(" ").some(function (w) { return w.indexOf(q) === 0; })) hits.push(i);
+  });
+  if (hits.length === 1) return { idx: hits[0] };
+  if (!hits.length) return { err: "no team '" + query + "'" };
+  var exact = hits.filter(function (i) { return normName(cfg.TEAMS[i]) === q; });
+  if (exact.length === 1) return { idx: exact[0] };
+  exact = hits.filter(function (i) { return normName(cfg.TEAMS[i]).split(" ").indexOf(q) >= 0; });
+  if (exact.length === 1) return { idx: exact[0] };
+  return { err: "team ambiguous: " + hits.map(function (i) { return cfg.TEAMS[i]; }).join(" / ") };
+}
+
+// Assign a team's picks to roster slots in ROSTER order (first eligible open slot).
+function fillSlots(picks, byId, cfg) {
+  var slots = cfg.ROSTER.map(function (s) { return { slot: s.slot, elig: s.elig, pick: null }; });
+  picks.forEach(function (pk) {
+    var pos = byId[pk.pid] ? byId[pk.pid].position : "?";
+    for (var i = 0; i < slots.length; i++) {
+      if (!slots[i].pick && slots[i].elig.indexOf(pos) >= 0) { slots[i].pick = pk; return; }
+    }
+    slots.push({ slot: "??", elig: [], pick: pk });   // over-rostered: still counted
+  });
+  return slots;
+}
+
+// Everything the display needs, from state.picks. Recomputed on every change.
+function derive(state, idx, cfg) {
+  var drafted = {};
+  state.picks.forEach(function (pk) { drafted[pk.pid] = pk; });
+  var rosterSize = cfg.ROSTER.length;
+
+  var teams = cfg.TEAMS.map(function (name, i) {
+    var picks = state.picks.filter(function (pk) { return pk.team === i; });
+    var spent = 0, value = 0;
+    picks.forEach(function (pk) { spent += pk.price; value += (idx.byId[pk.pid] ? idx.byId[pk.pid].value : 1); });
+    var open = Math.max(0, rosterSize - picks.length);
+    var money = cfg.BUDGET - spent;
+    return {
+      i: i, name: name, picks: picks, spent: spent, money: money, open: open,
+      maxBid: open > 0 ? Math.max(0, money - (open - 1)) : 0,
+      paidValue: value, overpay: value > 0 ? spent / value : null,
+      slots: fillSlots(picks, idx.byId, cfg)
+    };
+  });
+  var me = teams[cfg.ME];
+
+  // Inflation: money that is still discretionary vs. value still on the board.
+  var remainingMoney = 0, remainingSlots = 0, remainingDisc = 0;
+  teams.forEach(function (t) { remainingMoney += t.money; remainingSlots += t.open; });
+  idx.list.forEach(function (p) { if (!drafted[p.player_id]) remainingDisc += Math.max(0, p.value - 1); });
+  var inflation = remainingDisc > 0 ? (remainingMoney - remainingSlots) / remainingDisc : null;
+  var adj = function (p) { return inflation === null ? p.value : 1 + (p.value - 1) * inflation; };
+
+  // Positional heat: realized paid/value per position.
+  var heat = {};
+  cfg.POSITIONS.forEach(function (pos) { heat[pos] = { paid: 0, value: 0, n: 0 }; });
+  state.picks.forEach(function (pk) {
+    var p = idx.byId[pk.pid]; if (!p || !heat[p.position]) return;
+    heat[p.position].paid += pk.price; heat[p.position].value += p.value; heat[p.position].n++;
+  });
+
+  // Tier counts: (position, tier) -> total / remaining.
+  var tiers = {};
+  idx.list.forEach(function (p) {
+    if (p.tier == null) return;
+    var k = p.position + ":" + p.tier;
+    tiers[k] = tiers[k] || { total: 0, left: 0 };
+    tiers[k].total++; if (!drafted[p.player_id]) tiers[k].left++;
+  });
+
+  var available = idx.list.filter(function (p) { return !drafted[p.player_id]; })
+    .map(function (p) { return { p: p, adj: adj(p) }; })
+    .sort(function (a, b) { return (b.adj - a.adj) || ((b.p.vorp || 0) - (a.p.vorp || 0)); });
+
+  // Nominations: high value, at positions where all MY starting slots are already full.
+  var openStart = {};
+  cfg.POSITIONS.forEach(function (pos) { openStart[pos] = 0; });
+  me.slots.forEach(function (s) { if (s.slot !== "BN" && !s.pick) s.elig.forEach(function (pos) { openStart[pos]++; }); });
+  var noms = available.filter(function (a) { return openStart[a.p.position] === 0 && a.p.value > 1; }).slice(0, 8);
+
+  return {
+    drafted: drafted, teams: teams, me: me,
+    myMaxBid: me.maxBid, inflation: inflation, adj: adj,
+    remainingMoney: remainingMoney, remainingSlots: remainingSlots, remainingDisc: remainingDisc,
+    heat: heat, tiers: tiers, available: available, noms: noms
+  };
+}
+
+// =============================================================================
+// DOM / app
+// =============================================================================
+if (typeof document !== "undefined") (function () {
+  var KEY = "draftboard:" + CONFIG.LEAGUE_ID;
+  var IDX = indexPlayers(BOARD_DATA);
+  var state = { picks: [] };
+  var redo = [];
+  var filter = "ALL";
+  var pickerSel = 0, cands = [];
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+  var money = function (v) { return "$" + Math.round(v); };
+  var x = function (v, d) { return v === null || v === undefined || !isFinite(v) ? "—" : v.toFixed(d === undefined ? 2 : d) + "x"; };
+
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify({ picks: state.picks, savedAt: new Date().toISOString() })); }
+    catch (e) { setStatus("localStorage write failed: " + e.message, "err"); }
+  }
+  function restore() {
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (raw) { var s = JSON.parse(raw); if (s && Array.isArray(s.picks)) state.picks = s.picks; }
+    } catch (e) { /* start empty */ }
+  }
+  function setStatus(msg, cls) { var el = $("status"); el.textContent = msg; el.className = cls || ""; }
+
+  function commit(p, price, team) {
+    state.picks.push({ pid: p.player_id, name: p.name, pos: p.position, price: price, team: team, at: Date.now() });
+    redo = [];
+    save(); render();
+    setStatus(p.name + " " + money(price) + " → " + CONFIG.TEAMS[team], "ok");
+  }
+  function undo() {
+    if (!state.picks.length) { setStatus("nothing to undo", "err"); return; }
+    var pk = state.picks.pop(); redo.push(pk);
+    save(); render();
+    setStatus("UNDONE: " + pk.name + " " + money(pk.price) + " → " + CONFIG.TEAMS[pk.team], "err");
+  }
+  function redoLast() {
+    if (!redo.length) return;
+    var pk = redo.pop(); state.picks.push(pk); save(); render();
+    setStatus("REDONE: " + pk.name + " " + money(pk.price) + " → " + CONFIG.TEAMS[pk.team], "ok");
+  }
+
+  // --- input ---------------------------------------------------------------
+  function onInput() {
+    var d = derive(state, IDX, CONFIG);
+    var cmd = parseCommand($("cmd").value);
+    cands = cmd.player ? matchPlayers(cmd.player, IDX.list, d.drafted).slice(0, 7) : [];
+    pickerSel = 0;
+    renderPicker(d, cmd);
+  }
+  function renderPicker(d, cmd) {
+    var el = $("picker");
+    if (!cands.length) { el.hidden = true; el.innerHTML = ""; return; }
+    var t = cmd.team ? matchTeam(cmd.team, CONFIG) : null;
+    var tail = (cmd.price !== null ? " " + money(cmd.price) : " price?") + (t ? (t.err ? " · " + t.err : " → " + CONFIG.TEAMS[t.idx]) : " · team?");
+    el.innerHTML = cands.map(function (p, i) {
+      return '<div class="' + (i === pickerSel ? "sel" : "") + '"><span>' + esc(p.name) + (i === pickerSel ? '<span class="dim">' + esc(tail) + '</span>' : "") +
+        '</span><span class="pos ' + p.position + '">' + p.position + '</span><span>' + esc(p.team || "") + '</span><span class="num r">' + money(d.adj(p)) + ' <span class="base">/' + money(p.value) + '</span></span></div>';
+    }).join("");
+    el.hidden = false;
+  }
+  function onEnter() {
+    var cmd = parseCommand($("cmd").value);
+    if (!cmd.player) { setStatus("player?", "err"); return; }
+    if (!cands.length) { setStatus("no undrafted player matches '" + cmd.player + "'", "err"); return; }
+    if (cmd.price === null || cmd.price < 1) { setStatus("price? (e.g. gib 47 kev)", "err"); return; }
+    var t = matchTeam(cmd.team, CONFIG);
+    if (t.err) { setStatus(t.err, "err"); return; }
+    var p = cands[pickerSel];
+    var d = derive(state, IDX, CONFIG);
+    var team = d.teams[t.idx];
+    if (cmd.price > team.money) { setStatus(CONFIG.TEAMS[t.idx] + " only has " + money(team.money) + " — check the price", "err"); return; }
+    if (team.open === 0) { setStatus(CONFIG.TEAMS[t.idx] + " has no open slots — check the team", "err"); return; }
+    $("cmd").value = ""; cands = []; $("picker").hidden = true;
+    commit(p, cmd.price, t.idx);
+  }
+  $("cmd").addEventListener("input", onInput);
+  $("cmd").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") { e.preventDefault(); onEnter(); }
+    else if (e.key === "ArrowDown") { e.preventDefault(); if (cands.length) { pickerSel = (pickerSel + 1) % cands.length; renderPicker(derive(state, IDX, CONFIG), parseCommand($("cmd").value)); } }
+    else if (e.key === "ArrowUp") { e.preventDefault(); if (cands.length) { pickerSel = (pickerSel - 1 + cands.length) % cands.length; renderPicker(derive(state, IDX, CONFIG), parseCommand($("cmd").value)); } }
+    else if (e.key === "Escape") { $("cmd").value = ""; onInput(); setStatus(""); }
+  });
+  document.addEventListener("keydown", function (e) {
+    if ((e.ctrlKey || e.metaKey) && !e.shiftKey && e.key.toLowerCase() === "z") { e.preventDefault(); undo(); }
+    else if ((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === "y" || (e.shiftKey && e.key.toLowerCase() === "z"))) { e.preventDefault(); redoLast(); }
+  });
+  // Keep the box focused. Clicking a filter button steals focus for one click only.
+  document.addEventListener("click", function () { setTimeout(function () { $("cmd").focus(); }, 0); });
+  window.addEventListener("focus", function () { $("cmd").focus(); });
+
+  // --- buttons -------------------------------------------------------------
+  $("copy").addEventListener("click", function () {
+    var txt = JSON.stringify({ league: CONFIG.LEAGUE_ID, savedAt: new Date().toISOString(), picks: state.picks }, null, 1);
+    var done = function () { setStatus("state copied (" + state.picks.length + " picks)", "ok"); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, function () { window.prompt("Copy this:", txt); });
+    else window.prompt("Copy this:", txt);
+  });
+  $("load").addEventListener("click", function () {
+    var txt = window.prompt("Paste state JSON (replaces current board):");
+    if (!txt) return;
+    try {
+      var s = JSON.parse(txt);
+      if (!Array.isArray(s.picks)) throw new Error("no picks array");
+      state.picks = s.picks; redo = []; save(); render(); setStatus("loaded " + s.picks.length + " picks", "ok");
+    } catch (e) { setStatus("bad JSON: " + e.message, "err"); }
+  });
+  $("reset").addEventListener("click", function () {
+    if (!window.confirm("Reset the whole board? (" + state.picks.length + " picks). Copy the JSON first if you want it.")) return;
+    state.picks = []; redo = []; save(); render(); setStatus("board reset", "err");
+  });
+  var fl = $("filters");
+  ["ALL"].concat(CONFIG.POSITIONS).concat(["DIS"]).forEach(function (pos) {
+    var b = document.createElement("button"); b.textContent = pos; b.dataset.pos = pos;
+    b.addEventListener("click", function () { filter = pos; render(); });
+    fl.appendChild(b);
+  });
+
+  // --- render ----------------------------------------------------------------
+  function render() {
+    var d = derive(state, IDX, CONFIG);
+    var me = d.me;
+
+    var mb = $("maxbid"); mb.textContent = money(d.myMaxBid); mb.className = "num" + (d.myMaxBid <= 10 ? " warn" : "");
+    $("maxsub").textContent = money(me.money) + " left · " + me.open + " slots · " + (me.open > 1 ? "$1 held for " + (me.open - 1) + " more" : me.open === 1 ? "last slot" : "roster full");
+
+    var inf = $("infl"), msg = $("inflmsg");
+    if (d.inflation === null) { inf.textContent = "—"; inf.className = "num"; msg.textContent = "no discretionary value left on the board"; }
+    else {
+      var cls = d.inflation > 1.05 ? "hot" : d.inflation < 0.95 ? "cold" : "even";
+      inf.textContent = d.inflation.toFixed(2) + "x"; inf.className = "num " + cls;
+      msg.className = cls;
+      msg.textContent = (d.inflation > 1.05 ? "market is hot, pay up" : d.inflation < 0.95 ? "bargains available" : "market at par") +
+        "  ·  " + money(d.remainingMoney) + " chasing " + money(d.remainingDisc) + " of value · " + d.remainingSlots + " slots";
+    }
+
+    $("heat").innerHTML = CONFIG.POSITIONS.map(function (pos) {
+      var h = d.heat[pos], r = h.value > 0 ? h.paid / h.value : null;
+      var cls = r === null ? "dim" : r > 1.05 ? "hot" : r < 0.95 ? "cold" : "even";
+      return '<div><div class="p ' + pos + '">' + pos + ' <span class="dim">' + h.n + '</span></div><div class="v ' + cls + '">' + x(r) + '</div></div>';
+    }).join("");
+
+    // best available
+    fl.querySelectorAll("button").forEach(function (b) { b.className = b.dataset.pos === filter ? "on" : ""; });
+    var rows = d.available.filter(function (a) {
+      if (filter === "DIS") return (a.p.disagreement || 0) >= CONFIG.DISAGREE_MIN;
+      return filter === "ALL" || a.p.position === filter;
+    }).slice(0, 45);
+    $("avail").innerHTML = '<tr><th class="r">Pay</th><th>Player</th><th>Pos</th><th>Tm</th><th class="r">Bye</th><th class="r">Val</th><th class="r">±</th><th class="r">VORP</th><th>Tier</th></tr>' +
+      rows.map(function (a) {
+        var p = a.p, tk = p.position + ":" + p.tier, t = d.tiers[tk];
+        var bar = t ? '<span class="bar' + (t.left <= 1 ? " low" : "") + '"><i style="width:' + Math.round(100 * t.left / t.total) + '%"></i></span> <span class="dim">' + t.left + '/' + t.total + '</span>' : "";
+        var srcs = p.sources ? Object.keys(p.sources).map(function (k) { return k + " " + p.sources[k]; }).join("  ") : "";
+        var sp = p.disagreement == null ? "" : '<span class="sprd' + (p.disagreement >= CONFIG.DISAGREE_MIN ? " hi" : "") + '" title="' + esc(srcs) + '">' + p.disagreement.toFixed(2) + '</span>';
+        return '<tr><td class="r num adj">' + money(a.adj) + '</td><td title="' + esc(srcs) + '">' + esc(p.name) + '</td><td class="pos ' + p.position + '">' + p.position + '</td><td>' + esc(p.team || "") +
+          '</td><td class="r num dim">' + (p.bye || "") + '</td><td class="r num base">' + money(p.value) + '</td><td class="r num">' + sp + '</td><td class="r num dim">' + (p.vorp == null ? "" : Math.round(p.vorp)) +
+          '</td><td class="num">' + (p.tier == null ? "" : "T" + p.tier + " " + bar) + '</td></tr>';
+      }).join("");
+
+    // teams
+    var ts = d.teams.slice().sort(function (a, b) { return (b.maxBid - a.maxBid) || (b.money - a.money); });
+    $("teams").innerHTML = '<tr><th>Team</th><th class="r">Max</th><th class="r">$ left</th><th class="r">Slots</th><th class="r">Paid/Val</th></tr>' +
+      ts.map(function (t) {
+        // ratio shown from the first pick; ⚠ only once they've bought >= OVERPAY_MIN_VALUE of value ($3 on a $1 DEF is not a tell)
+        var op = t.overpay === null ? '<span class="dim">—</span>'
+          : t.paidValue < CONFIG.OVERPAY_MIN_VALUE ? '<span class="dim">' + x(t.overpay) + '</span>'
+          : t.overpay >= CONFIG.OVERPAY_FLAG ? '<span class="flag">' + x(t.overpay) + ' ⚠</span>' : x(t.overpay);
+        return '<tr' + (t.i === CONFIG.ME ? ' class="me"' : "") + '><td>' + esc(t.name) + '</td><td class="r num" style="font-size:20px;font-weight:800">' + money(t.maxBid) +
+          '</td><td class="r num">' + money(t.money) + '</td><td class="r num">' + t.open + '</td><td class="r num">' + op + '</td></tr>';
+      }).join("");
+
+    // nominations
+    $("noms").innerHTML = d.noms.length ? d.noms.map(function (a) {
+      return '<tr><td class="r num adj" style="font-size:18px">' + money(a.adj) + '</td><td>' + esc(a.p.name) + '</td><td class="pos ' + a.p.position + '">' + a.p.position + '</td><td class="dim">' + esc(a.p.team || "") + '</td></tr>';
+    }).join("") : '<tr><td class="dim">— fill a starting position first —</td></tr>';
+
+    // my roster
+    $("roster").innerHTML = me.slots.map(function (s) {
+      var pk = s.pick, p = pk ? IDX.byId[pk.pid] : null;
+      return '<tr><td class="slot">' + s.slot + '</td><td>' + (pk ? esc(pk.name) + ' <span class="pos ' + (p ? p.position : "") + '">' + (p ? p.position : "") + '</span>' : '<span class="dim">—</span>') +
+        '</td><td class="r num">' + (pk ? money(pk.price) + (p ? ' <span class="base">/' + money(p.value) + '</span>' : "") : "") + '</td></tr>';
+    }).join("") + '<tr><td class="slot">Σ</td><td class="dim">' + me.picks.length + ' players</td><td class="r num">' + money(me.spent) + '</td></tr>';
+
+    // recent
+    var rec = state.picks.slice(-6).reverse();
+    $("recent").innerHTML = '<div class="label">Last picks · #' + state.picks.length + '</div>' + (rec.length ? rec.map(function (pk) {
+      return '<div><b>' + esc(pk.name) + '</b> <span class="num">' + money(pk.price) + '</span> → ' + esc(CONFIG.TEAMS[pk.team]) + '</div>';
+    }).join("") : '<div class="dim">none yet</div>');
+
+    var m = BOARD_DATA && BOARD_DATA.meta;
+    $("meta").textContent = m ? "data " + m.generated_at + " · " + m.players + " players · " + m.num_teams + " teams · repl " +
+      Object.keys(m.replacement_rank_starter).map(function (k) { return k + m.replacement_rank_starter[k]; }).join(" ") + " · " + m.fantasypros : "NO BOARD DATA — run build_board.py";
+  }
+
+  document.title = CONFIG.LEAGUE_NAME + " — Draft Board";
+  $("lgbanner").textContent = CONFIG.LEAGUE_NAME + " · " + CONFIG.NUM_TEAMS + " teams · $" + CONFIG.BUDGET;
+  restore();
+  render();
+  if (!BOARD_DATA) setStatus("NO BOARD DATA embedded — run python build_board.py", "err");
+  else if (state.picks.length) setStatus("restored " + state.picks.length + " picks from this browser", "ok");
+  $("cmd").focus();
+})();
+
+if (typeof module !== "undefined") module.exports = { CONFIG: CONFIG, normName: normName, indexPlayers: indexPlayers, parseCommand: parseCommand, matchPlayers: matchPlayers, matchTeam: matchTeam, fillSlots: fillSlots, derive: derive, data: function () { return BOARD_DATA; } };
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "The League",
+  "yahoo_league_id": "42313",
+  "teams": 12,
+  "budget": 200,
+  "roster": {
+    "QB": 1, "RB": 2, "W/T": 2, "W/R/T": 1,
+    "K": 1, "DEF": 1, "BN": 5
+  },
+  "_comment": "IR excluded. 13 active spots. NO dedicated WR or TE slot.",
+  "scoring": {
+    "pass_yd": 0.04, "pass_td": 6, "interception": -2,
+    "sack_taken": 0, "pick_six_thrown": 0,
+    "rush_yd": 0.1, "rush_td": 6,
+    "reception": 1.0, "rec_yd": 0.1, "rec_td": 6,
+    "return_td": 6, "two_pt": 2,
+    "fumble": -1, "fumble_lost": -1, "off_fumble_return_td": 6
+  },
+  "team_names": ["The Brooklyn Brawlers", "Gangland", "The Hitman", "Lion's Den",
+                 "The Bad Guy", "MilTown", "Band$ Emeka Dance", "OakTown", "HBK",
+                 "PRIME TIME PAPI", "Bower Rangers", "Ra Dog"]
+}

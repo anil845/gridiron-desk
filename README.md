@@ -86,6 +86,34 @@ Not built yet (in rough order):
   access approval).
 - A Next.js draft-board UI on top of the recalibrated data.
 
+## Auction draft boards (no database)
+
+`build_board.py` + the `board.html` template are standalone: no Postgres, no
+`players` table. League settings (teams, budget, roster, scoring, team names)
+live in `leagues/<league>.json`; everything — slot eligibility, replacement
+ranks, the scoring function — derives from that file.
+
+```bash
+pip install requests
+python build_board.py --league papi-chulo   # -> board_data_papi-chulo.json, board_papi-chulo.html
+python build_board.py --league the-league   # -> board_data_the-league.json, board_the-league.html
+# --force re-fetches sources (cached under data/)
+# optional: FANTASYPROS_API_KEY=... adds ECR
+# optional: data/league_history.json [{player_name, price, manager, year}] adds manager tendencies
+```
+
+Points come from Sleeper 2026 season projections scored through the league's
+own settings (including sacks taken, pick-sixes thrown, and both fumble
+fields), with a 2023-25 historical rank curve as fallback; market ranks from
+FantasyCalc, Fantasy Football Calculator ADP, and Sleeper ADP are kept
+separate and turned into a per-player disagreement score, never blended.
+Open the generated `board_<league>.html` from disk; it needs no network.
+In the room: type `gib 47 kev` (player prefix, price, team prefix or `me`),
+Enter; Ctrl+Z undoes; state persists in localStorage (namespaced per league)
+and can be copied as JSON.
+
+ADP data courtesy of [Fantasy Football Calculator](https://fantasyfootballcalculator.com).
+
 ## Setup
 
 Requires Python 3.9+ and Postgres.
