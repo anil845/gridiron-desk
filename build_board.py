@@ -67,6 +67,16 @@ DOLLAR_REPLACEMENT = "roster"
 # (min 2 / max 6 players per tier).
 TIER_DROP, TIER_MIN, TIER_MAX = 0.10, 2, 6
 
+# ESPN public news feed (headline dump + per-player markers).
+ESPN_NEWS_URL = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/news?limit=50"
+# A backup RB is a "high-value handcuff" when his team's starter is worth at
+# least this much — the lottery ticket that inherits a bell-cow role.
+HANDCUFF_MIN_STARTER = 25
+# Market classification: our price vs avg(ESPN AAV, WalterFootball $).
+#   >=75% consensus (fairly priced) / >=40% validated (real support, unpriced
+#   16-team premium = the buy list) / <40% mirage (only our model likes them).
+MKT_CLASS_CONSENSUS, MKT_CLASS_VALIDATED = 0.75, 0.40
+
 # Disagreement is spread scaled by draft slot: a 20-rank spread on a 2nd-round
 # player is a story, on a 12th-round player it's noise.
 # disagreement = min(1, spread / (consensus_rank + 15))
@@ -490,6 +500,75 @@ def fetch_walterfootball(force, notes):
         return {}
 
 
+def fetch_news(force, notes):
+    """ESPN NFL headlines with linked athlete ids. Cached 3h; degrades to []"""
+    import requests
+    path = os.path.join(DATA_DIR, "espn_news.json")
+
+    def _get():
+        r = requests.get(ESPN_NEWS_URL, headers={"User-Agent": USER_AGENT}, timeout=30)
+        r.raise_for_status()
+        return r.text
+    try:
+        d = json.loads(_cached(path, _get, force, max_age_h=3))
+        out = []
+        for a in d.get("articles", []):
+            out.append({"date": (a.get("published") or "")[:10],
+                        "headline": a.get("headline") or "",
+                        "espn_ids": [str(c.get("athleteId")) for c in a.get("categories", [])
+                                     if c.get("type") == "athlete" and c.get("athleteId")]})
+        notes.append(f"ESPN news: {len(out)} headlines (cached 3h)")
+        return out
+    except Exception as exc:  # noqa: BLE001 — optional source, must not fail the build
+        notes.append(f"ESPN news: unavailable ({exc}) - news markers skipped")
+        return []
+
+
+def assign_intel(players, news):
+    """Handcuffs, market classification, and news markers (see constants).
+
+    Handcuff: for each NFL team, the second-best RB by projected points behind
+    a starter worth >= HANDCUFF_MIN_STARTER. mkt_class only for players worth
+    >= $8 with at least one real-market dollar figure. News: latest headline
+    matched by ESPN athlete id, else by full name appearing in the headline.
+    """
+    by_team = defaultdict(list)
+    for p in players:
+        p["handcuff_of"] = p["handcuff_pid"] = p["mkt_class"] = p["news"] = None
+        if p["position"] == "RB" and p["team"] and p.get("points"):
+            by_team[p["team"]].append(p)
+    for team, rbs in by_team.items():
+        rbs.sort(key=lambda q: -q["points"])
+        if len(rbs) >= 2 and rbs[0]["value"] >= HANDCUFF_MIN_STARTER:
+            rbs[1]["handcuff_of"] = rbs[0]["name"]
+            rbs[1]["handcuff_pid"] = rbs[0]["player_id"]
+    for p in players:
+        if p["position"] in SKILL and p["value"] >= 8:
+            ms = [x for x in (p.get("espn_aav"), p.get("wf_value")) if x]
+            if ms:
+                r = (sum(ms) / len(ms)) / p["value"]
+                p["mkt_class"] = ("consensus" if r >= MKT_CLASS_CONSENSUS
+                                  else "validated" if r >= MKT_CLASS_VALIDATED else "mirage")
+    if news:
+        by_espn = {}
+        for p in players:
+            if p.get("espn_id"):
+                by_espn.setdefault(p["espn_id"], p)
+        for item in news:   # feed is newest-first; first match per player wins
+            for eid in item["espn_ids"]:
+                q = by_espn.get(eid)
+                if q is not None and not q["news"]:
+                    q["news"] = item["date"] + ": " + item["headline"]
+            hl = " " + norm_name(item["headline"]) + " "
+            for p in players:
+                if not p["news"] and len(p["name"].split()) >= 2 and (" " + norm_name(p["name"]) + " ") in hl:
+                    p["news"] = item["date"] + ": " + item["headline"]
+    log.info("intel: %d handcuffs, %d news-tagged, classes %s",
+             sum(1 for p in players if p["handcuff_of"]),
+             sum(1 for p in players if p["news"]),
+             dict(Counter(p["mkt_class"] for p in players if p["mkt_class"])))
+
+
 def pick_six_data(force, notes):
     """data/pick_six.json: per-season per-passer pick-six counts + league
     INT->pick-six rate, distilled from nflverse play-by-play (~19MB gz per
@@ -699,6 +778,10 @@ def build_players(fc, sleeper, byes, fp):
                         "tier": None, "trend30": None, "roster_pct": None})
     for p in players:
         p["bye"] = byes.get(p["team"])
+        s = sleeper.get(p["player_id"]) or {}
+        p["injury_status"] = s.get("injury_status")
+        p["injury_note"] = s.get("injury_body_part")
+        p["espn_id"] = str(s.get("espn_id")) if s.get("espn_id") else None
         f = fp.get(norm_name(p["name"]), {})
         p.update(ecr=f.get("ecr"), ecr_stddev=f.get("ecr_stddev"),
                  ecr_best=f.get("ecr_best"), ecr_worst=f.get("ecr_worst"))
@@ -1019,6 +1102,8 @@ def main(argv=None):
     assign_tiers(players)
     vorp_to_dollars(cfg, players, starter_rank, roster_rank)
     assign_sources(players, ffc, proj, wf, espn)   # after dollars: proj rank uses vorp_roster
+    news = fetch_news(args.force, notes)
+    assign_intel(players, news)
     qb_penalty_report(cfg, players, proj, sack_rates, lg_sack_rate, p6_rate, fumble_ratio)
     history = league_history_file(players)
 
@@ -1035,6 +1120,7 @@ def main(argv=None):
             "replacement_rank_starter": {k: round(v, 1) for k, v in starter_rank.items()},
             "replacement_rank_roster": {k: round(v, 1) for k, v in roster_rank.items()},
             "dollar_replacement": DOLLAR_REPLACEMENT,
+            "news": [{"date": n["date"], "headline": n["headline"]} for n in news[:14]],
             "sources": notes, "players": len(players),
         },
         "players": [{
@@ -1045,6 +1131,9 @@ def main(argv=None):
             "consensus_rank": p.get("consensus_rank"), "mkt_rank": p.get("mkt_rank"),
             "spread": p.get("spread"), "disagreement": p.get("disagreement"),
             "wf_value": p.get("wf_value"), "espn_aav": p.get("espn_aav"),
+            "mkt_class": p.get("mkt_class"), "injury_status": p.get("injury_status"),
+            "injury_note": p.get("injury_note"), "handcuff_of": p.get("handcuff_of"),
+            "handcuff_pid": p.get("handcuff_pid"), "news": p.get("news"),
             "ecr": p["ecr"], "ecr_stddev": p["ecr_stddev"],
             "ecr_best": p["ecr_best"], "ecr_worst": p["ecr_worst"],
             "trend30": p["trend30"], "roster_pct": p["roster_pct"],

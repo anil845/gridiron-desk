@@ -111,6 +111,19 @@
   .buy { color: var(--good); font-weight: 800; } .fade { color: var(--bad); font-weight: 800; }
   tr.curve td { opacity: .42; }
   tr.nofit td { opacity: .3; }
+  tr.tstripe1 td:first-child { box-shadow: inset 3px 0 0 var(--gold); }
+  tr.tstripe2 td:first-child { box-shadow: inset 3px 0 0 var(--violet); }
+  tr.tstripe3 td:first-child { box-shadow: inset 3px 0 0 var(--cyan); }
+  .inj { color: #ff7b86; font-size: 10px; font-weight: 800; border: 1px solid rgba(255,93,107,.5);
+         background: rgba(255,93,107,.12); border-radius: 6px; padding: 0 5px; }
+  .cuff { color: #2fd6c3; font-size: 10px; font-weight: 800; border: 1px solid rgba(47,214,195,.45);
+          background: rgba(47,214,195,.10); border-radius: 6px; padding: 0 5px; }
+  .cuff.mine { color: #0c0f16; background: #2fd6c3; border-color: #2fd6c3; }
+  .mkv { color: var(--good); font-weight: 800; }
+  .mkm { color: #ff9d4d; font-weight: 800; }
+  #legend { font-size: 10px; color: var(--faint); margin: 2px 0 4px; line-height: 1.7; }
+  #newsbox div { padding: 3px 0; font-size: 12px; color: var(--dim); border-bottom: 1px solid var(--line); white-space: normal; }
+  #newsbox b { color: var(--ink); font-weight: 600; }
 
   #roster { border-collapse: separate; border-spacing: 0 4px; }
   #roster td { background: var(--panel2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -168,6 +181,9 @@
 <main>
   <section>
     <h2>Best available <span class="filters" id="filters"></span></h2>
+    <div id="legend"><span class="mkv">◆</span> market-validated buy · <span class="mkm">!</span> model-only (pay market $, not board $) ·
+      row stripe = <b style="color:var(--gold)">T1</b>/<b style="color:var(--violet)">T2</b>/<b style="color:var(--cyan)">T3</b> ·
+      <span class="inj">Q</span>/<span class="inj">IR</span> injury · <span class="cuff">CUFF</span> handcuff, <span class="cuff mine">MY CUFF</span> = yours · 📰 news (hover)</div>
     <table id="avail"></table>
   </section>
   <section>
@@ -175,6 +191,8 @@
     <table id="teams"></table>
     <h2 style="margin-top:12px">Nominate (drain them, not me)</h2>
     <table id="noms"></table>
+    <h2 style="margin-top:12px">News · this build</h2>
+    <div id="newsbox"></div>
   </section>
   <section>
     <h2>My squad <span id="need" class="dim"></span></h2>
@@ -763,7 +781,7 @@ if (typeof document !== "undefined") (function () {
   $("bulkcancel").addEventListener("click", closeBulk);
 
   var fl = $("filters");
-  ["ALL"].concat(CONFIG.POSITIONS).concat(["DIS"]).forEach(function (pos) {
+  ["ALL"].concat(CONFIG.POSITIONS).concat(["DIS", "CUFF"]).forEach(function (pos) {
     var b = document.createElement("button"); b.textContent = pos; b.dataset.pos = pos;
     b.addEventListener("click", function () { filter = pos; render(); });
     fl.appendChild(b);
@@ -796,9 +814,12 @@ if (typeof document !== "undefined") (function () {
     }).join("");
 
     // best available
+    var myPids = {};
+    me.picks.forEach(function (pk) { myPids[pk.pid] = 1; });
     fl.querySelectorAll("button").forEach(function (b) { b.className = b.dataset.pos === filter ? "on" : ""; });
     var rows = d.available.filter(function (a) {
       if (filter === "DIS") return (a.p.disagreement || 0) >= CONFIG.DISAGREE_MIN;
+      if (filter === "CUFF") return !!a.p.handcuff_of;
       return filter === "ALL" || a.p.position === filter;
     }).slice(0, 45);
     $("avail").innerHTML = '<tr><th class="r">Pay</th><th>Player</th><th>Pos</th><th>Tm</th><th class="r">Bye</th><th class="r">Val</th><th class="r">±</th><th class="r">VORP</th><th>Tier</th></tr>' +
@@ -820,9 +841,18 @@ if (typeof document !== "undefined") (function () {
         }
         var mut = p.points_source === "curve";   // no projection: rank-curve scale, not comparable
         var fit = d.myFit[p.position];
-        var cls = (mut ? "curve " : "") + (fit && !fit.start && !fit.bench ? "nofit" : "");
+        var cls = (mut ? "curve " : "") + (fit && !fit.start && !fit.bench ? "nofit " : "") +
+                  (p.tier >= 1 && p.tier <= 3 ? "tstripe" + p.tier : "");
         var fitTag = fit && !fit.start ? (fit.bench ? ' <span class="dim">bn only</span>' : ' <span class="dim">no slot</span>') : "";
-        return '<tr data-pid="' + p.player_id + '"' + (cls.trim() ? ' class="' + cls.trim() + '"' : "") + '><td class="r num adj">' + money(a.adj) + '</td><td title="' + esc(srcs) + '">' + esc(p.name) + (mut ? " *" : "") + fitTag + '</td><td class="pos ' + p.position + '">' + p.position + '</td><td>' + esc(p.team || "") +
+        var mk = p.mkt_class === "validated" ? ' <span class="mkv" title="market-validated buy">◆</span>'
+               : p.mkt_class === "mirage" ? ' <span class="mkm" title="model-only price — pay market $, not board $">!</span>' : "";
+        var badges = "";
+        if (p.injury_status) badges += ' <span class="inj" title="' + esc(p.injury_note || "") + '">' +
+          esc(p.injury_status === "Questionable" ? "Q" : String(p.injury_status).toUpperCase().slice(0, 3)) + '</span>';
+        if (p.handcuff_of) badges += ' <span class="cuff' + (myPids[p.handcuff_pid] ? ' mine' : '') +
+          '" title="handcuff of ' + esc(p.handcuff_of) + '">' + (myPids[p.handcuff_pid] ? 'MY CUFF' : 'CUFF') + '</span>';
+        if (p.news) badges += ' <span title="' + esc(p.news) + '">📰</span>';
+        return '<tr data-pid="' + p.player_id + '"' + (cls.trim() ? ' class="' + cls.trim() + '"' : "") + '><td class="r num adj">' + money(a.adj) + mk + '</td><td title="' + esc(srcs) + '">' + esc(p.name) + (mut ? " *" : "") + badges + fitTag + '</td><td class="pos ' + p.position + '">' + p.position + '</td><td>' + esc(p.team || "") +
           '</td><td class="r num dim">' + (p.bye || "") + '</td><td class="r num base">' + money(p.value) + '</td><td class="r num">' + sp + '</td><td class="r num dim">' + (p.vorp == null ? "" : Math.round(p.vorp)) +
           '</td><td class="num">' + (p.tier == null ? "" : '<span class="tier t' + Math.min(p.tier, 4) + '">T' + p.tier + '</span> ' + bar) + '</td></tr>';
       }).join("");
@@ -866,6 +896,10 @@ if (typeof document !== "undefined") (function () {
       Object.keys(m.replacement_rank_starter).map(function (k) { return k + m.replacement_rank_starter[k]; }).join(" ") : "NO BOARD DATA — run build_board.py";
   }
 
+  var newsItems = (BOARD_DATA && BOARD_DATA.meta && BOARD_DATA.meta.news) || [];
+  $("newsbox").innerHTML = newsItems.length ? newsItems.map(function (n) {
+    return '<div><span class="dim num">' + esc((n.date || "").slice(5)) + '</span> <b>' + esc(n.headline) + '</b></div>';
+  }).join("") : '<div class="dim">no headlines in this build — rebuild to refresh</div>';
   document.title = CONFIG.LEAGUE_NAME + " — Draft Board";
   $("lgbanner").innerHTML = '<span class="lg-name">' + esc(CONFIG.LEAGUE_NAME) + '</span>' +
     '<span class="lg-meta num">' + CONFIG.NUM_TEAMS + ' teams · $' + CONFIG.BUDGET + ' · built ' +
