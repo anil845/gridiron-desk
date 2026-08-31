@@ -53,6 +53,9 @@
          font-family: "Cascadia Mono", Consolas, monospace; }
   #cmd::placeholder { color: var(--faint); }
   #cmd:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(246,201,69,.15); }
+  #lockchip { margin-top: 6px; padding: 6px 12px; background: rgba(246,201,69,.12); border: 1px solid rgba(246,201,69,.5);
+              border-radius: 10px; font-size: 16px; color: var(--gold2); }
+  #avail tr[data-pid], #noms tr[data-pid], #picker > div { cursor: pointer; }
   #status { font-size: 14px; min-height: 22px; padding: 4px; border-radius: 8px; }
   #status.err { color: var(--bad); } #status.ok { color: var(--good); }
   #status.unk { background: #4a2410; border: 1px solid #a3541f; color: #ffd9b0; font-size: 16px; font-weight: 700; padding: 8px 12px; margin-top: 4px; }
@@ -143,7 +146,8 @@
 
 <div id="cmdrow">
   <div>
-    <input id="cmd" autocomplete="off" spellcheck="false" placeholder="player price team   e.g.  gib 47 kev   |   gib 47 me   |   Ctrl+Z undo">
+    <input id="cmd" autocomplete="off" spellcheck="false" placeholder="gib 47 kev — or click a player, then type price + team   |   Ctrl+Z undo">
+    <div id="lockchip" hidden></div>
     <div id="status"></div>
     <div id="picker" hidden></div>
   </div>
@@ -381,6 +385,7 @@ if (typeof document !== "undefined") (function () {
   var redo = [];
   var filter = "ALL";
   var pendingUnknown = null;
+  var locked = null;   // player chosen by clicking a row; input then only needs "price team"
   var pickerSel = 0, cands = [];
   var $ = function (id) { return document.getElementById(id); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
@@ -401,6 +406,7 @@ if (typeof document !== "undefined") (function () {
 
   function commit(p, price, team) {
     state.picks.push({ pid: p.player_id, name: p.name, pos: p.position, price: price, team: team, at: Date.now() });
+    locked = null; renderLock();
     redo = [];
     save(); render();
     setStatus(p.name + " " + money(price) + " → " + CONFIG.TEAMS[team], "ok");
@@ -429,10 +435,24 @@ if (typeof document !== "undefined") (function () {
     save(); render();
     setStatus("UNKNOWN committed: " + u.name + " " + money(u.price) + " → " + CONFIG.TEAMS[u.team], "ok");
   }
+  function renderLock() {
+    var el = $("lockchip");
+    if (locked) {
+      el.hidden = false;
+      el.innerHTML = '<b>' + esc(locked.name) + '</b> <span class="pos ' + locked.position + '">' + locked.position + '</span> — type <b>price team</b> (e.g. 47 kev), Enter commits · Esc cancels';
+    } else { el.hidden = true; el.innerHTML = ""; }
+  }
+  function lockPlayer(p) {
+    locked = p; pendingUnknown = null;
+    $("cmd").value = ""; cands = []; $("picker").hidden = true;
+    renderLock(); setStatus("");
+    $("cmd").focus();
+  }
   function onInput() {
     pendingUnknown = null;
     var d = derive(state, IDX, CONFIG);
     var cmd = parseCommand($("cmd").value);
+    if (locked && cmd.player) { locked = null; renderLock(); }   // typing a name overrides the click-lock
     cands = cmd.player ? matchPlayers(cmd.player, IDX.list, d.drafted).slice(0, 7) : [];
     pickerSel = 0;
     renderPicker(d, cmd);
@@ -450,6 +470,18 @@ if (typeof document !== "undefined") (function () {
   }
   function onEnter() {
     var cmd = parseCommand($("cmd").value);
+    if (locked && !cmd.player) {
+      if (cmd.price === null || cmd.price < 1) { setStatus(locked.name + ": price? (e.g. 47 kev)", "err"); return; }
+      var tl = matchTeam(cmd.team, CONFIG);
+      if (tl.err) { setStatus(locked.name + ": " + tl.err, "err"); return; }
+      var dl = derive(state, IDX, CONFIG), tml = dl.teams[tl.idx];
+      if (cmd.price > tml.money) { setStatus(CONFIG.TEAMS[tl.idx] + " only has " + money(tml.money) + " — check the price", "err"); return; }
+      if (tml.open === 0) { setStatus(CONFIG.TEAMS[tl.idx] + " has no open slots — check the team", "err"); return; }
+      var lp = locked;
+      $("cmd").value = ""; cands = []; $("picker").hidden = true;
+      commit(lp, cmd.price, tl.idx);
+      return;
+    }
     if (!cmd.player) { setStatus("player?", "err"); return; }
     if (!cands.length) {
       // Unknown player (deep sleeper not in the dataset). Never committed by
@@ -484,11 +516,28 @@ if (typeof document !== "undefined") (function () {
     else if (e.key === "Enter") { e.preventDefault(); onEnter(); }
     else if (e.key === "ArrowDown") { e.preventDefault(); if (cands.length) { pickerSel = (pickerSel + 1) % cands.length; renderPicker(derive(state, IDX, CONFIG), parseCommand($("cmd").value)); } }
     else if (e.key === "ArrowUp") { e.preventDefault(); if (cands.length) { pickerSel = (pickerSel - 1 + cands.length) % cands.length; renderPicker(derive(state, IDX, CONFIG), parseCommand($("cmd").value)); } }
-    else if (e.key === "Escape") { $("cmd").value = ""; onInput(); setStatus(""); }
+    else if (e.key === "Escape") { locked = null; renderLock(); $("cmd").value = ""; onInput(); setStatus(""); }
   });
   document.addEventListener("keydown", function (e) {
     if ((e.ctrlKey || e.metaKey) && !e.shiftKey && e.key.toLowerCase() === "z") { e.preventDefault(); undo(); }
     else if ((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === "y" || (e.shiftKey && e.key.toLowerCase() === "z"))) { e.preventDefault(); redoLast(); }
+  });
+  // Click a player row -> lock them into the chip; then just "price team" + Enter.
+  function rowClick(e) {
+    var tr = e.target && e.target.closest ? e.target.closest("tr[data-pid]") : null;
+    if (!tr) return;
+    var p = IDX.byId[tr.getAttribute("data-pid")];
+    if (p) lockPlayer(p);
+  }
+  $("avail").addEventListener("click", rowClick);
+  $("noms").addEventListener("click", rowClick);
+  $("picker").addEventListener("click", function (e) {
+    var row = e.target && e.target.closest ? e.target.closest("#picker > div") : null;
+    if (!row) return;
+    pickerSel = Array.prototype.indexOf.call($("picker").children, row);
+    var c = parseCommand($("cmd").value);
+    if (c.price !== null && c.team) onEnter();          // price+team already typed: commit
+    else if (cands[pickerSel]) lockPlayer(cands[pickerSel]);   // else lock the clicked candidate
   });
   // Keep the box focused. Clicking a filter button steals focus for one click only.
   document.addEventListener("click", function () { setTimeout(function () { $("cmd").focus(); }, 0); });
@@ -569,7 +618,7 @@ if (typeof document !== "undefined") (function () {
           sp = '<span class="sprd' + (p.disagreement >= CONFIG.DISAGREE_MIN ? " hi" : "") + '" title="' + esc(srcs) + '">' + arrow + lbl + '</span>';
         }
         var mut = p.points_source === "curve";   // no projection: rank-curve scale, not comparable
-        return '<tr' + (mut ? ' class="curve"' : "") + '><td class="r num adj">' + money(a.adj) + '</td><td title="' + esc(srcs) + '">' + esc(p.name) + (mut ? " *" : "") + '</td><td class="pos ' + p.position + '">' + p.position + '</td><td>' + esc(p.team || "") +
+        return '<tr data-pid="' + p.player_id + '"' + (mut ? ' class="curve"' : "") + '><td class="r num adj">' + money(a.adj) + '</td><td title="' + esc(srcs) + '">' + esc(p.name) + (mut ? " *" : "") + '</td><td class="pos ' + p.position + '">' + p.position + '</td><td>' + esc(p.team || "") +
           '</td><td class="r num dim">' + (p.bye || "") + '</td><td class="r num base">' + money(p.value) + '</td><td class="r num">' + sp + '</td><td class="r num dim">' + (p.vorp == null ? "" : Math.round(p.vorp)) +
           '</td><td class="num">' + (p.tier == null ? "" : '<span class="tier t' + Math.min(p.tier, 4) + '">T' + p.tier + '</span> ' + bar) + '</td></tr>';
       }).join("");
@@ -589,7 +638,7 @@ if (typeof document !== "undefined") (function () {
 
     // nominations
     $("noms").innerHTML = d.noms.length ? d.noms.map(function (a) {
-      return '<tr><td class="r num adj" style="font-size:18px">' + money(a.adj) + '</td><td>' + esc(a.p.name) + '</td><td class="pos ' + a.p.position + '">' + a.p.position + '</td><td class="dim">' + esc(a.p.team || "") + '</td></tr>';
+      return '<tr data-pid="' + a.p.player_id + '"><td class="r num adj" style="font-size:18px">' + money(a.adj) + '</td><td>' + esc(a.p.name) + '</td><td class="pos ' + a.p.position + '">' + a.p.position + '</td><td class="dim">' + esc(a.p.team || "") + '</td></tr>';
     }).join("") : '<tr><td class="dim">— fill a starting position first —</td></tr>';
 
     // my roster
