@@ -121,6 +121,7 @@
   .cuff.mine { color: #0c0f16; background: #2fd6c3; border-color: #2fd6c3; }
   .mkv { color: var(--good); font-weight: 800; }
   .mkm { color: #ff9d4d; font-weight: 800; }
+  .urg { color: #fff; background: #b3261e; border-radius: 6px; padding: 1px 6px; font-size: 11px; font-weight: 800; }
   #legend { font-size: 11px; color: var(--dim); margin: 2px 0 6px; line-height: 1.9; border: 1px solid var(--line);
             border-radius: 10px; padding: 6px 10px; background: var(--panel2); }
   #legend .lg { color: var(--gold); letter-spacing: .12em; font-size: 9px; font-weight: 800; margin-right: 4px; }
@@ -195,6 +196,7 @@
       <div><b class="lg">STATUS</b> <span class="inj">Q</span> <span class="inj">IR</span> <span class="inj">PUP</span> injury, hover for body part ·
         <span class="cuff">CUFF</span> handcuff — backup who inherits a stud's role (hover names the starter) · <span class="cuff mine">MY CUFF</span> backs up YOUR starter — its <span class="mkv">+$N ins</span> = extra you alone can justify paying (never shown to keep Pay honest, never nominated for you) ·
         📰 news this build (hover) · <span class="dim">* faded = no projection, trust the price less · bn only / no slot = your roster can't start / can't fit them</span></div>
+      <div><b class="lg">URGENT</b> <span class="urg">LAST 2 · to $34</span> = a position YOU still need is nearly dry and rivals outnumber the supply — musical chairs; the $ is your licensed overbid ceiling (Pay + half the drop to the cliff)</div>
       <div><b class="lg">ROOM</b> gold bars = money left · <span class="flag">1.25x ⚠</span> manager overpaying · heat <span class="hot">red</span> = position going over value, <span class="cold">green</span> = bargains there · max bid <span class="hot">red</span> = you're pot-committed</div>
     </div>
     <table id="avail"></table>
@@ -280,6 +282,14 @@ var CONFIG = /*LEAGUE_CONFIG*/{
   // on MY CUFF rows — never folded into Pay, so the market price stays honest.
   CUFF_INSURANCE: 0.15,
   CUFF_INS_CAP: 12,
+  // Urgency (musical chairs): fires on a position I still need when quality
+  // supply (adj >= QUALITY_MIN) has shrunk to URGENT_REMAINING or fewer AND
+  // rivals still needing that position outnumber the supply. The bid-to
+  // ceiling licenses an overbid: Pay + half the gap down to the cliff
+  // fallback, capped — because if I lose the chair, the cliff IS my roster.
+  QUALITY_MIN: 10,
+  URGENT_REMAINING: 3,
+  URGENT_CAP: 12,
   POSITIONS: ["QB", "RB", "WR", "TE", "K", "DEF"]
 }/*END_LEAGUE_CONFIG*/;
 
@@ -569,12 +579,42 @@ function derive(state, idx, cfg) {
            !(a.p.handcuff_pid && myPids[a.p.handcuff_pid]);
   }).slice(0, 8);
 
+  // Urgency: for each position I still need, how many quality players remain
+  // vs how many RIVAL teams still have an open starting slot there. When
+  // supply <= URGENT_REMAINING and rival demand >= supply, someone is getting
+  // left at the cliff — overbidding is licensed.
+  var rivalsNeed = {};
+  cfg.POSITIONS.forEach(function (pos) { rivalsNeed[pos] = 0; });
+  teams.forEach(function (t) {
+    if (t.i === cfg.ME) return;
+    var got = {};
+    t.slots.forEach(function (s) {
+      if (!s.pick && s.slot !== "BN") s.elig.forEach(function (pos) {
+        if (!got[pos]) { rivalsNeed[pos]++; got[pos] = 1; }
+      });
+    });
+  });
+  var urgent = {};
+  cfg.POSITIONS.forEach(function (pos) {
+    if (!myFit[pos] || !myFit[pos].start) return;
+    var q = 0, cliffAdj = 1;
+    available.forEach(function (a) {
+      if (a.p.position !== pos) return;
+      if (a.adj >= cfg.QUALITY_MIN) q++;
+      else if (cliffAdj === 1 && a.adj > cliffAdj) cliffAdj = a.adj;
+    });
+    if (q > 0 && q <= cfg.URGENT_REMAINING && rivalsNeed[pos] >= q) {
+      urgent[pos] = { remQ: q, rivals: rivalsNeed[pos], cliffAdj: cliffAdj };
+    }
+  });
+
   return {
     drafted: drafted, teams: teams, me: me,
     myMaxBid: me.maxBid, inflation: inflation, adj: adj,
     remainingMoney: remainingMoney, remainingSlots: remainingSlots, remainingDisc: remainingDisc,
     heat: heat, tiers: tiers, available: available, noms: noms,
-    myFit: myFit, myPids: myPids, demand: demand, liveRepl: liveRepl
+    myFit: myFit, myPids: myPids, demand: demand, liveRepl: liveRepl,
+    urgent: urgent, rivalsNeed: rivalsNeed
   };
 }
 
@@ -875,6 +915,11 @@ if (typeof document !== "undefined") (function () {
           var starter = IDX.byId[p.handcuff_pid];
           var ins = Math.min(CONFIG.CUFF_INS_CAP, Math.round(CONFIG.CUFF_INSURANCE * ((starter && starter.value) || 0)));
           if (ins > 0) mk += ' <span class="mkv" title="insurance premium: handcuff of YOUR ' + esc(starter.name) + ' — worth this much extra to you alone">+$' + ins + ' ins</span>';
+        }
+        var u = d.urgent[p.position];
+        if (u && a.adj >= CONFIG.QUALITY_MIN) {
+          var bidTo = Math.round(a.adj + Math.min(CONFIG.URGENT_CAP, 0.5 * (a.adj - u.cliffAdj)));
+          mk += ' <span class="urg" title="you still need ' + p.position + ': only ' + u.remQ + ' startable left and ' + u.rivals + ' rivals also need one — losing all of them means the $' + Math.round(u.cliffAdj) + ' cliff. Licensed to bid up to $' + bidTo + '">LAST ' + u.remQ + ' · to $' + bidTo + '</span>';
         }
         var badges = "";
         if (p.injury_status) badges += ' <span class="inj" title="' + esc(p.injury_note || "") + '">' +
