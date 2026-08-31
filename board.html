@@ -118,6 +118,16 @@
   #roster tr.empty td { background: transparent; border-style: dashed; border-color: var(--line2); }
   #roster td.slot { color: var(--faint); width: 48px; font-size: 11px; letter-spacing: .06em; }
 
+  #bulk { position: fixed; inset: 0; background: rgba(5,7,12,.72); z-index: 50;
+          display: flex; align-items: flex-start; justify-content: center; padding: 48px 16px; }
+  #bulk[hidden] { display: none; }
+  #bulkpanel { background: var(--panel); border: 1px solid var(--line2); border-radius: 14px; padding: 14px 16px;
+               width: min(980px, 100%); max-height: 85vh; overflow: auto; box-shadow: 0 20px 60px rgba(0,0,0,.6); }
+  #bulktext { width: 100%; height: 150px; background: #0a0e17; color: var(--ink); border: 1px solid var(--line2);
+              border-radius: 10px; padding: 8px 10px; font: 14px/1.45 "Cascadia Mono", Consolas, monospace; resize: vertical; }
+  #bulktext:focus { border-color: var(--gold); outline: none; }
+  #bulkprev { margin-top: 8px; }
+  #bulkprev td { white-space: normal; }
   #meta { font-size: 11px; color: var(--faint); margin-top: 8px; }
   #foot { font-size: 11px; color: var(--faint); margin-top: 10px; }
 </style>
@@ -171,12 +181,29 @@
     <div class="btns">
       <button id="copy">Copy state JSON</button>
       <button id="load">Load JSON</button>
+      <button id="bulkbtn">Paste picks</button>
       <button id="reset">Reset board</button>
     </div>
     <div id="meta"></div>
     <div id="foot">ADP data courtesy of <b>Fantasy Football Calculator</b> (fantasyfootballcalculator.com).</div>
   </section>
 </main>
+
+<div id="bulk" hidden>
+  <div id="bulkpanel">
+    <h2>Bulk paste picks</h2>
+    <div class="dim" style="margin-bottom:6px">One pick per line — player, price, winning team in any order,
+      e.g. “12. Jahmyr Gibbs (DET - RB) $47 Hurts So Good”. Preview shows what each line parsed to;
+      only ✓ lines are applied, the rest are skipped for you to enter by hand.</div>
+    <textarea id="bulktext" spellcheck="false" placeholder="paste the copied draft results here"></textarea>
+    <div class="btns">
+      <button id="bulkprevbtn">Preview</button>
+      <button id="bulkapply" disabled>Apply 0</button>
+      <button id="bulkcancel">Cancel (Esc)</button>
+    </div>
+    <table id="bulkprev"></table>
+  </div>
+</div>
 
 <script>
 // =============================================================================
@@ -297,6 +324,86 @@ function matchTeam(query, cfg) {
   exact = hits.filter(function (i) { return normName(cfg.TEAMS[i]).split(" ").indexOf(q) >= 0; });
   if (exact.length === 1) return { idx: exact[0] };
   return { err: "team ambiguous: " + hits.map(function (i) { return cfg.TEAMS[i]; }).join(" / ") };
+}
+
+// Bulk paste: parse missed picks from copied draft-results text. One pick per
+// line, tolerant of Yahoo-ish noise — leading pick numbers ("12."), position/
+// team parentheticals ("(DET - RB)"), stray position words, $-prefixed or bare
+// prices, and the winning team's name anywhere in the line. Returns one row
+// per non-empty line: {line, player, price, team, guess, err}.
+function parseBulk(text, idx, alreadyDrafted, cfg) {
+  var drafted = {};
+  Object.keys(alreadyDrafted || {}).forEach(function (k) { drafted[k] = 1; });
+  var rows = [];
+  String(text || "").split(/\r?\n/).forEach(function (raw) {
+    var line = raw.trim();
+    if (!line) return;
+    var clean = line.replace(/\([^)]*\)/g, " ").replace(/[|,;:]/g, " ");
+    var toks = clean.split(/\s+/).filter(Boolean);
+    var price = null, priceIdx = -1, i;
+    for (i = 0; i < toks.length; i++) {
+      if (/^\$\d+$/.test(toks[i])) { price = parseInt(toks[i].slice(1), 10); priceIdx = i; break; }
+    }
+    if (price === null) {
+      var nums = [];
+      for (i = 0; i < toks.length; i++) if (/^\d+$/.test(toks[i])) nums.push(i);
+      if (nums.length === 1) priceIdx = nums[0];
+      else if (nums.length > 1) priceIdx = (nums[0] === 0 ? nums[1] : nums[0]);   // a leading number is the pick #
+      if (priceIdx >= 0) price = parseInt(toks[priceIdx], 10);
+    }
+    // team: longest config team whose full normalized name appears in the line;
+    // else the unique team owning a distinctive (3+ letter) word from it
+    var nline = " " + normName(clean) + " ";
+    var teamIdx = null, best = 0;
+    cfg.TEAMS.forEach(function (t, ti) {
+      var nt = normName(t);
+      if (nt && nline.indexOf(" " + nt + " ") >= 0 && nt.length > best) { teamIdx = ti; best = nt.length; }
+    });
+    if (teamIdx === null) {
+      var words = nline.trim().split(" "), hits = {};
+      cfg.TEAMS.forEach(function (t, ti) {
+        normName(t).split(" ").forEach(function (w) {
+          if (w.length >= 3 && words.indexOf(w) >= 0) hits[ti] = 1;
+        });
+      });
+      var ks = Object.keys(hits);
+      if (ks.length === 1) teamIdx = parseInt(ks[0], 10);
+    }
+    // player: the tokens before the price, minus numbering, position words and
+    // the team's words; fall back to shorter leading windows, then to the
+    // tokens after the price
+    function stripTeam(s) {
+      if (teamIdx === null) return s;
+      normName(cfg.TEAMS[teamIdx]).split(" ").forEach(function (w) {
+        if (w.length >= 3) s = s.replace(new RegExp("\\b" + w + "\\b", "ig"), " ");
+      });
+      return s;
+    }
+    var namePart = stripTeam((priceIdx > 0 ? toks.slice(0, priceIdx) : toks.slice()).join(" ")
+      .replace(/^\d+[.)]?\s*/, "").replace(/\b(qb|rb|wr|te|def|dst)\b/ig, " ")).trim();
+    var m = namePart ? matchPlayers(namePart, idx.list, drafted) : [];
+    var fallback = false;
+    if (!m.length && namePart) {
+      var ntoks = namePart.split(/\s+/);
+      for (var L = Math.min(3, ntoks.length - 1); L >= 1 && !m.length; L--) { m = matchPlayers(ntoks.slice(0, L).join(" "), idx.list, drafted); fallback = true; }
+    }
+    if (!m.length && priceIdx >= 0) {
+      var after = stripTeam(toks.slice(priceIdx + 1).join(" ")).trim();
+      if (after) { m = matchPlayers(after, idx.list, drafted); }
+    }
+    var row = { line: line, price: price, team: teamIdx, player: m[0] || null, guess: m.length > 1 || fallback };
+    var dupe = null;
+    if (!row.player && namePart) {
+      var any = matchPlayers(namePart, idx.list, {});
+      if (any.length && drafted[any[0].player_id]) dupe = any[0].name + " already drafted";
+    }
+    row.err = !row.player ? (dupe || "player?")
+      : (price === null || price < 1) ? "price?"
+      : teamIdx === null ? "team?" : null;
+    if (!row.err) drafted[row.player.player_id] = 1;
+    rows.push(row);
+  });
+  return rows;
 }
 
 // Assign a team's picks to roster slots in ROSTER order (first eligible open slot).
@@ -519,6 +626,7 @@ if (typeof document !== "undefined") (function () {
     else if (e.key === "Escape") { locked = null; renderLock(); $("cmd").value = ""; onInput(); setStatus(""); }
   });
   document.addEventListener("keydown", function (e) {
+    if (!$("bulk").hidden) { if (e.key === "Escape") closeBulk(); return; }   // overlay owns the keyboard
     if ((e.ctrlKey || e.metaKey) && !e.shiftKey && e.key.toLowerCase() === "z") { e.preventDefault(); undo(); }
     else if ((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === "y" || (e.shiftKey && e.key.toLowerCase() === "z"))) { e.preventDefault(); redoLast(); }
   });
@@ -540,8 +648,8 @@ if (typeof document !== "undefined") (function () {
     else if (cands[pickerSel]) lockPlayer(cands[pickerSel]);   // else lock the clicked candidate
   });
   // Keep the box focused. Clicking a filter button steals focus for one click only.
-  document.addEventListener("click", function () { setTimeout(function () { $("cmd").focus(); }, 0); });
-  window.addEventListener("focus", function () { $("cmd").focus(); });
+  document.addEventListener("click", function () { if (!$("bulk").hidden) return; setTimeout(function () { $("cmd").focus(); }, 0); });
+  window.addEventListener("focus", function () { if (!$("bulk").hidden) return; $("cmd").focus(); });
 
   // --- buttons -------------------------------------------------------------
   $("copy").addEventListener("click", function () {
@@ -563,6 +671,44 @@ if (typeof document !== "undefined") (function () {
     if (!window.confirm("Reset the whole board? (" + state.picks.length + " picks). Copy the JSON first if you want it.")) return;
     state.picks = []; redo = []; save(); render(); setStatus("board reset", "err");
   });
+  // --- bulk paste overlay ---------------------------------------------------
+  var bulkRows = [];
+  function openBulk() {
+    $("bulk").hidden = false; $("bulktext").value = ""; $("bulkprev").innerHTML = "";
+    bulkRows = []; $("bulkapply").disabled = true; $("bulkapply").textContent = "Apply 0";
+    $("bulktext").focus();
+  }
+  function closeBulk() { $("bulk").hidden = true; $("cmd").focus(); }
+  function previewBulk() {
+    var d = derive(state, IDX, CONFIG);
+    bulkRows = parseBulk($("bulktext").value, IDX, d.drafted, CONFIG);
+    var good = bulkRows.filter(function (r) { return !r.err; });
+    $("bulkprev").innerHTML = '<tr><th></th><th>Player</th><th class="r">$</th><th>To</th><th>Line</th></tr>' +
+      bulkRows.map(function (r) {
+        return '<tr><td>' + (r.err ? '<span class="flag">✗</span>' : r.guess ? '<span class="even">?</span>' : '<span class="cold">✓</span>') +
+          '</td><td>' + (r.player ? esc(r.player.name) + ' <span class="pos ' + r.player.position + '">' + r.player.position + '</span>'
+                                  : '<span class="flag">' + esc(r.err || "?") + '</span>') +
+          '</td><td class="r num">' + (r.price !== null ? money(r.price) : "?") +
+          '</td><td>' + (r.team !== null ? esc(CONFIG.TEAMS[r.team]) : '<span class="flag">?</span>') +
+          '</td><td class="dim">' + esc(r.line) + (r.err && r.player ? ' — ' + esc(r.err) : '') + '</td></tr>';
+      }).join("");
+    $("bulkapply").disabled = !good.length;
+    $("bulkapply").textContent = "Apply " + good.length + (bulkRows.length > good.length ? " · skip " + (bulkRows.length - good.length) : "");
+  }
+  function applyBulk() {
+    var good = bulkRows.filter(function (r) { return !r.err; });
+    if (!good.length) return;
+    good.forEach(function (r) {
+      state.picks.push({ pid: r.player.player_id, name: r.player.name, pos: r.player.position, price: r.price, team: r.team, at: Date.now() });
+    });
+    redo = []; save(); render(); closeBulk();
+    setStatus("bulk: applied " + good.length + " picks" + (bulkRows.length > good.length ? ", skipped " + (bulkRows.length - good.length) + " — enter those by hand" : "") + " · Ctrl+Z steps back one pick at a time", "ok");
+  }
+  $("bulkbtn").addEventListener("click", function (e) { e.stopPropagation(); openBulk(); });
+  $("bulkprevbtn").addEventListener("click", previewBulk);
+  $("bulkapply").addEventListener("click", applyBulk);
+  $("bulkcancel").addEventListener("click", closeBulk);
+
   var fl = $("filters");
   ["ALL"].concat(CONFIG.POSITIONS).concat(["DIS"]).forEach(function (pos) {
     var b = document.createElement("button"); b.textContent = pos; b.dataset.pos = pos;
@@ -670,7 +816,7 @@ if (typeof document !== "undefined") (function () {
   $("cmd").focus();
 })();
 
-if (typeof module !== "undefined") module.exports = { CONFIG: CONFIG, normName: normName, indexPlayers: indexPlayers, parseCommand: parseCommand, matchPlayers: matchPlayers, matchTeam: matchTeam, fillSlots: fillSlots, derive: derive, data: function () { return BOARD_DATA; } };
+if (typeof module !== "undefined") module.exports = { CONFIG: CONFIG, normName: normName, indexPlayers: indexPlayers, parseCommand: parseCommand, matchPlayers: matchPlayers, matchTeam: matchTeam, parseBulk: parseBulk, fillSlots: fillSlots, derive: derive, data: function () { return BOARD_DATA; } };
 </script>
 </body>
 </html>
