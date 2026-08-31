@@ -902,6 +902,7 @@ def board_config(cfg):
         "NUM_TEAMS": cfg["teams"], "BUDGET": cfg["budget"],
         "TEAMS": teams, "ME": 0,
         "ROSTER": cfg["roster_slots"],
+        "FLEX_USAGE": BASE_FLEX_USAGE, "BENCH_SHARE": BENCH_SHARE,
         "OVERPAY_FLAG": 1.15, "OVERPAY_MIN_VALUE": 20, "DISAGREE_MIN": 0.4,
         "POSITIONS": list(ALL_POS),
     }

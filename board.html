@@ -110,6 +110,7 @@
   .sprd.hi { color: var(--ink); font-weight: 800; }
   .buy { color: var(--good); font-weight: 800; } .fade { color: var(--bad); font-weight: 800; }
   tr.curve td { opacity: .42; }
+  tr.nofit td { opacity: .3; }
 
   #roster { border-collapse: separate; border-spacing: 0 4px; }
   #roster td { background: var(--panel2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -176,7 +177,7 @@
     <table id="noms"></table>
   </section>
   <section>
-    <h2>My squad</h2>
+    <h2>My squad <span id="need" class="dim"></span></h2>
     <table id="roster"></table>
     <div class="btns">
       <button id="copy">Copy state JSON</button>
@@ -238,6 +239,8 @@ var CONFIG = /*LEAGUE_CONFIG*/{
     { slot: "BN", elig: ["QB","RB","WR","TE","K","DEF"] },
     { slot: "BN", elig: ["QB","RB","WR","TE","K","DEF"] }
   ],
+  FLEX_USAGE: { RB: 0.35, WR: 0.55, TE: 0.10 },
+  BENCH_SHARE: { QB: 0.10, RB: 0.40, WR: 0.40, TE: 0.10 },
   OVERPAY_FLAG: 1.15,
   OVERPAY_MIN_VALUE: 20,
   DISAGREE_MIN: 0.4,
@@ -442,11 +445,54 @@ function derive(state, idx, cfg) {
   var me = teams[cfg.ME];
 
   // Inflation: money that is still discretionary vs. value still on the board.
+  // Kept as the header summary stat; prices below use the live re-auction.
   var remainingMoney = 0, remainingSlots = 0, remainingDisc = 0;
   teams.forEach(function (t) { remainingMoney += t.money; remainingSlots += t.open; });
   idx.list.forEach(function (p) { if (!drafted[p.player_id]) remainingDisc += Math.max(0, p.value - 1); });
   var inflation = remainingDisc > 0 ? (remainingMoney - remainingSlots) / remainingDisc : null;
-  var adj = function (p) { return inflation === null ? p.value : 1 + (p.value - 1) * inflation; };
+
+  // ---- live pool-aware repricing -------------------------------------------
+  // The adjusted price re-runs the auction math on the CURRENT state: how many
+  // of each position the league's open slots still demand (flex and bench
+  // split by usage shares), replacement = the demand-th best REMAINING player,
+  // live VORP above that, and the remaining discretionary money spread over
+  // it. A position drying up repricing itself is exactly this: its remaining
+  // replacement level deepens or its demand shrinks, and every undrafted
+  // player's number moves with it. At pick zero this reproduces the static
+  // build values (same demand, same pool).
+  var demand = {};
+  cfg.POSITIONS.forEach(function (pos) { demand[pos] = 0; });
+  function addDemand(elig, isBN) {
+    if (elig.length === 1) { demand[elig[0]] += 1; return; }
+    var share = isBN ? cfg.BENCH_SHARE : cfg.FLEX_USAGE, tot = 0, p;
+    for (p in share) if (elig.indexOf(p) >= 0) tot += share[p];
+    if (tot <= 0) { elig.forEach(function (e) { demand[e] += 1 / elig.length; }); return; }
+    for (p in share) if (elig.indexOf(p) >= 0) demand[p] += share[p] / tot;
+  }
+  teams.forEach(function (t) { t.slots.forEach(function (s) { if (!s.pick && s.elig.length) addDemand(s.elig, s.slot === "BN"); }); });
+  var remainingPts = {};
+  idx.list.forEach(function (p) {
+    if (drafted[p.player_id] || p.points == null) return;
+    (remainingPts[p.position] = remainingPts[p.position] || []).push(p.points);
+  });
+  var liveRepl = {};
+  Object.keys(remainingPts).forEach(function (pos) {
+    var arr = remainingPts[pos].sort(function (a, b) { return b - a; });
+    var r = Math.max(1, Math.min(demand[pos] || 1, arr.length));
+    var lo = Math.floor(r), hi = Math.min(lo + 1, arr.length), frac = r - lo;
+    liveRepl[pos] = arr[lo - 1] * (1 - frac) + arr[hi - 1] * frac;
+  });
+  var liveVorp = {}, livePool = 0;
+  idx.list.forEach(function (p) {
+    if (drafted[p.player_id] || p.points == null || liveRepl[p.position] == null) return;
+    var v = p.points - liveRepl[p.position];
+    if (v > 0) { liveVorp[p.player_id] = v; livePool += v; }
+  });
+  var liveDisc = Math.max(0, remainingMoney - remainingSlots);
+  var adj = function (p) {
+    var v = liveVorp[p.player_id];
+    return v && livePool > 0 ? 1 + v / livePool * liveDisc : 1;
+  };
 
   // Positional heat: realized paid/value per position.
   var heat = {};
@@ -469,17 +515,23 @@ function derive(state, idx, cfg) {
     .map(function (p) { return { p: p, adj: adj(p) }; })
     .sort(function (a, b) { return (b.adj - a.adj) || ((b.p.vorp || 0) - (a.p.vorp || 0)); });
 
-  // Nominations: high value, at positions where all MY starting slots are already full.
+  // My need: which positions I can still START, or only bench, or not roster.
   var openStart = {};
   cfg.POSITIONS.forEach(function (pos) { openStart[pos] = 0; });
   me.slots.forEach(function (s) { if (s.slot !== "BN" && !s.pick) s.elig.forEach(function (pos) { openStart[pos]++; }); });
+  var openBench = me.slots.some(function (s) { return s.slot === "BN" && !s.pick; });
+  var myFit = {};
+  cfg.POSITIONS.forEach(function (pos) { myFit[pos] = { start: openStart[pos] > 0, bench: openBench }; });
+
+  // Nominations: high value, at positions where all MY starting slots are already full.
   var noms = available.filter(function (a) { return openStart[a.p.position] === 0 && a.p.value > 1; }).slice(0, 8);
 
   return {
     drafted: drafted, teams: teams, me: me,
     myMaxBid: me.maxBid, inflation: inflation, adj: adj,
     remainingMoney: remainingMoney, remainingSlots: remainingSlots, remainingDisc: remainingDisc,
-    heat: heat, tiers: tiers, available: available, noms: noms
+    heat: heat, tiers: tiers, available: available, noms: noms,
+    myFit: myFit, demand: demand, liveRepl: liveRepl
   };
 }
 
@@ -767,7 +819,10 @@ if (typeof document !== "undefined") (function () {
           sp = '<span class="sprd' + (p.disagreement >= CONFIG.DISAGREE_MIN ? " hi" : "") + '" title="' + esc(srcs) + '">' + arrow + lbl + '</span>';
         }
         var mut = p.points_source === "curve";   // no projection: rank-curve scale, not comparable
-        return '<tr data-pid="' + p.player_id + '"' + (mut ? ' class="curve"' : "") + '><td class="r num adj">' + money(a.adj) + '</td><td title="' + esc(srcs) + '">' + esc(p.name) + (mut ? " *" : "") + '</td><td class="pos ' + p.position + '">' + p.position + '</td><td>' + esc(p.team || "") +
+        var fit = d.myFit[p.position];
+        var cls = (mut ? "curve " : "") + (fit && !fit.start && !fit.bench ? "nofit" : "");
+        var fitTag = fit && !fit.start ? (fit.bench ? ' <span class="dim">bn only</span>' : ' <span class="dim">no slot</span>') : "";
+        return '<tr data-pid="' + p.player_id + '"' + (cls.trim() ? ' class="' + cls.trim() + '"' : "") + '><td class="r num adj">' + money(a.adj) + '</td><td title="' + esc(srcs) + '">' + esc(p.name) + (mut ? " *" : "") + fitTag + '</td><td class="pos ' + p.position + '">' + p.position + '</td><td>' + esc(p.team || "") +
           '</td><td class="r num dim">' + (p.bye || "") + '</td><td class="r num base">' + money(p.value) + '</td><td class="r num">' + sp + '</td><td class="r num dim">' + (p.vorp == null ? "" : Math.round(p.vorp)) +
           '</td><td class="num">' + (p.tier == null ? "" : '<span class="tier t' + Math.min(p.tier, 4) + '">T' + p.tier + '</span> ' + bar) + '</td></tr>';
       }).join("");
@@ -790,7 +845,10 @@ if (typeof document !== "undefined") (function () {
       return '<tr data-pid="' + a.p.player_id + '"><td class="r num adj" style="font-size:18px">' + money(a.adj) + '</td><td>' + esc(a.p.name) + '</td><td class="pos ' + a.p.position + '">' + a.p.position + '</td><td class="dim">' + esc(a.p.team || "") + '</td></tr>';
     }).join("") : '<tr><td class="dim">— fill a starting position first —</td></tr>';
 
-    // my roster
+    // my roster + what I still need to start
+    var needSlots = me.slots.filter(function (s) { return !s.pick && s.slot !== "BN"; }).map(function (s) { return s.slot; });
+    var bnOpen = me.slots.filter(function (s) { return !s.pick && s.slot === "BN"; }).length;
+    $("need").textContent = needSlots.length ? "· need " + needSlots.join(" ") + (bnOpen ? " +" + bnOpen + " BN" : "") : (bnOpen ? "· starters done, " + bnOpen + " BN left" : "· full");
     $("roster").innerHTML = me.slots.map(function (s) {
       var pk = s.pick, p = pk ? IDX.byId[pk.pid] : null;
       return '<tr' + (pk ? "" : ' class="empty"') + '><td class="slot">' + s.slot + '</td><td>' + (pk ? esc(pk.name) + ' <span class="pos ' + (p ? p.position : "") + '">' + (p ? p.position : "") + '</span>' : '<span class="dim">—</span>') +
