@@ -193,7 +193,7 @@
       <div><b class="lg">TIERS</b> left stripe + pill <span class="tier t1">T1</span> <span class="tier t2">T2</span> <span class="tier t3">T3</span> <span class="tier t4">T4+</span> ·
         <span class="bar" style="width:36px"><i style="width:70%"></i></span> players left in tier · <span class="bar low" style="width:36px"><i style="width:20%"></i></span> tier almost gone</div>
       <div><b class="lg">STATUS</b> <span class="inj">Q</span> <span class="inj">IR</span> <span class="inj">PUP</span> injury, hover for body part ·
-        <span class="cuff">CUFF</span> handcuff — backup who inherits a stud's role (hover names the starter) · <span class="cuff mine">MY CUFF</span> backs up YOUR starter — buy the insurance ·
+        <span class="cuff">CUFF</span> handcuff — backup who inherits a stud's role (hover names the starter) · <span class="cuff mine">MY CUFF</span> backs up YOUR starter — its <span class="mkv">+$N ins</span> = extra you alone can justify paying (never shown to keep Pay honest, never nominated for you) ·
         📰 news this build (hover) · <span class="dim">* faded = no projection, trust the price less · bn only / no slot = your roster can't start / can't fit them</span></div>
       <div><b class="lg">ROOM</b> gold bars = money left · <span class="flag">1.25x ⚠</span> manager overpaying · heat <span class="hot">red</span> = position going over value, <span class="cold">green</span> = bargains there · max bid <span class="hot">red</span> = you're pot-committed</div>
     </div>
@@ -275,6 +275,11 @@ var CONFIG = /*LEAGUE_CONFIG*/{
   OVERPAY_FLAG: 1.15,
   OVERPAY_MIN_VALUE: 20,
   DISAGREE_MIN: 0.4,
+  // Insurance premium a handcuff of MY OWN starter justifies on top of the
+  // market price: fraction of the starter's value, capped. Shown as "+$N ins"
+  // on MY CUFF rows — never folded into Pay, so the market price stays honest.
+  CUFF_INSURANCE: 0.15,
+  CUFF_INS_CAP: 12,
   POSITIONS: ["QB", "RB", "WR", "TE", "K", "DEF"]
 }/*END_LEAGUE_CONFIG*/;
 
@@ -553,16 +558,23 @@ function derive(state, idx, cfg) {
   var openBench = me.slots.some(function (s) { return s.slot === "BN" && !s.pick; });
   var myFit = {};
   cfg.POSITIONS.forEach(function (pos) { myFit[pos] = { start: openStart[pos] > 0, bench: openBench }; });
+  var myPids = {};
+  me.picks.forEach(function (pk) { myPids[pk.pid] = 1; });
 
-  // Nominations: high value, at positions where all MY starting slots are already full.
-  var noms = available.filter(function (a) { return openStart[a.p.position] === 0 && a.p.value > 1; }).slice(0, 8);
+  // Nominations: high value, at positions where all MY starting slots are
+  // already full — but NEVER the handcuffs of my own starters (nominating
+  // your insurance early is a tell and invites a bid-up).
+  var noms = available.filter(function (a) {
+    return openStart[a.p.position] === 0 && a.p.value > 1 &&
+           !(a.p.handcuff_pid && myPids[a.p.handcuff_pid]);
+  }).slice(0, 8);
 
   return {
     drafted: drafted, teams: teams, me: me,
     myMaxBid: me.maxBid, inflation: inflation, adj: adj,
     remainingMoney: remainingMoney, remainingSlots: remainingSlots, remainingDisc: remainingDisc,
     heat: heat, tiers: tiers, available: available, noms: noms,
-    myFit: myFit, demand: demand, liveRepl: liveRepl
+    myFit: myFit, myPids: myPids, demand: demand, liveRepl: liveRepl
   };
 }
 
@@ -828,8 +840,7 @@ if (typeof document !== "undefined") (function () {
     }).join("");
 
     // best available
-    var myPids = {};
-    me.picks.forEach(function (pk) { myPids[pk.pid] = 1; });
+    var myPids = d.myPids;
     fl.querySelectorAll("button").forEach(function (b) { b.className = b.dataset.pos === filter ? "on" : ""; });
     var rows = d.available.filter(function (a) {
       if (filter === "DIS") return (a.p.disagreement || 0) >= CONFIG.DISAGREE_MIN;
@@ -860,6 +871,11 @@ if (typeof document !== "undefined") (function () {
         var fitTag = fit && !fit.start ? (fit.bench ? ' <span class="dim">bn only</span>' : ' <span class="dim">no slot</span>') : "";
         var mk = p.mkt_class === "validated" ? ' <span class="mkv" title="market-validated buy">◆</span>'
                : p.mkt_class === "mirage" ? ' <span class="mkm" title="model-only price — pay market $, not board $">!</span>' : "";
+        if (p.handcuff_pid && myPids[p.handcuff_pid]) {
+          var starter = IDX.byId[p.handcuff_pid];
+          var ins = Math.min(CONFIG.CUFF_INS_CAP, Math.round(CONFIG.CUFF_INSURANCE * ((starter && starter.value) || 0)));
+          if (ins > 0) mk += ' <span class="mkv" title="insurance premium: handcuff of YOUR ' + esc(starter.name) + ' — worth this much extra to you alone">+$' + ins + ' ins</span>';
+        }
         var badges = "";
         if (p.injury_status) badges += ' <span class="inj" title="' + esc(p.injury_note || "") + '">' +
           esc(p.injury_status === "Questionable" ? "Q" : String(p.injury_status).toUpperCase().slice(0, 3)) + '</span>';
