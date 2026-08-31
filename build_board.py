@@ -75,9 +75,13 @@ DISAGREE_NORM = 15
 SLEEPER_FILL_DEPTH = 400
 TEAM_ALIAS = {"LA": "LAR", "WSH": "WAS", "JAC": "JAX", "OAK": "LV", "SD": "LAC", "STL": "LAR"}
 
-# FantasyCalc numTeams: 16 verified working 2026-08-31 (returns distinct values
-# vs 14). If it ever 4xx/5xxes the build retries at the largest of 10/12/14.
-FC_SUPPORTED_FALLBACK = [14, 12, 10]
+# FantasyCalc numTeams: supported counts are 10/12/14 ONLY. numTeams=16 returns
+# a clean HTTP 200 whose values are IDENTICAL to numTeams=12 — a silent
+# fallback, verified with same-minute fetches 2026-08-31 (top-30 mean |diff|
+# 16-vs-12 = 0.0 while 14-vs-12 = ~40). Request the closest supported count
+# and let the roster-derived replacement math do the 16-team correction; the
+# build verifies effectiveness empirically on every run (see fetch_fantasycalc).
+FC_SUPPORTED = [10, 12, 14]
 FC_URL = ("https://api.fantasycalc.com/values/current"
           "?isDynasty=false&numQbs=1&numTeams={n}&ppr=1")
 # FFC supports teams 8/10/12/14 (16 -> HTTP 400, verified 2026-08-31); auction
@@ -230,23 +234,65 @@ def _cached(path, fetch, force, max_age_h=None, binary=False):
     return data
 
 
+def _fc_fetch(n, force):
+    path = os.path.join(DATA_DIR, f"fantasycalc_{n}tm.json")
+    text = _cached(path, lambda: json.dumps(http_get(FC_URL.format(n=n))),
+                   force, max_age_h=12)
+    data = json.loads(text)
+    if not (isinstance(data, list) and data):
+        raise ValueError(f"numTeams={n}: unexpected payload")
+    return data
+
+
+def _fc_mean_diff(a, b, top=30):
+    """Mean |value difference| over the common top-`top` players of two payloads."""
+    va = {e["player"]["id"]: e["value"] for e in a[:top]}
+    vb = {e["player"]["id"]: e["value"] for e in b[:top]}
+    common = set(va) & set(vb)
+    if not common:
+        return None
+    return sum(abs(va[i] - vb[i]) for i in common) / len(common)
+
+
 def fetch_fantasycalc(cfg, force, notes):
-    """Request the league's own team count first (16 verified working); fall
-    back to the largest documented count only on an actual error, loudly."""
-    for n in [cfg["teams"]] + [x for x in FC_SUPPORTED_FALLBACK if x < cfg["teams"]]:
-        path = os.path.join(DATA_DIR, f"fantasycalc_{n}tm.json")
-        try:
-            text = _cached(path, lambda n=n: json.dumps(http_get(FC_URL.format(n=n))),
-                           force, max_age_h=12)
-            data = json.loads(text)
-            if isinstance(data, list) and data:
-                notes.append(f"FantasyCalc: requested numTeams={n}"
-                             + ("" if n == cfg["teams"] else
-                                f" (league has {cfg['teams']}; {cfg['teams']} failed upstream)"))
-                return data
-        except Exception as exc:  # noqa: BLE001
-            log.warning("FantasyCalc numTeams=%d failed (%s) — trying fallback", n, exc)
-    raise SystemExit("FantasyCalc unavailable at every team count — cannot build without market values")
+    """Fetch market values at the closest SUPPORTED team count, then verify
+    empirically which count the API actually served.
+
+    The API answers any numTeams with HTTP 200; unsupported counts silently
+    get the 12-team data. So the requested count alone proves nothing — after
+    fetching, the payload is compared value-by-value against a same-vintage
+    numTeams=12 payload. If they match, both are force-refetched once (a
+    stale-cache pair would also match) and re-compared; a persistent match is
+    reported loudly as a silent 12-team fallback. The requested AND effective
+    counts always appear in the log and in meta.sources.
+    """
+    n = max([t for t in FC_SUPPORTED if t <= cfg["teams"]] or [FC_SUPPORTED[0]])
+    data = _fc_fetch(n, force)
+    if n == 12:
+        notes.append("FantasyCalc: requested numTeams=12, effective=12 (baseline count)")
+        return data
+    try:
+        ref = _fc_fetch(12, force)
+        diff = _fc_mean_diff(data, ref)
+        if not diff:
+            log.warning("FantasyCalc: numTeams=%d values match 12-team payload — "
+                        "refetching a fresh same-vintage pair to rule out stale caches", n)
+            data, ref = _fc_fetch(n, True), _fc_fetch(12, True)
+            diff = _fc_mean_diff(data, ref)
+        if diff:
+            msg = (f"FantasyCalc: requested numTeams={n}, effective={n} "
+                   f"(top-30 mean |diff| vs 12tm = {diff:.0f})")
+            log.info(msg)
+        else:
+            msg = (f"FantasyCalc: requested numTeams={n}, EFFECTIVE=12 - SILENT FALLBACK "
+                   f"detected; roster-derived replacement math is the only "
+                   f"{cfg['teams']}-team correction in play")
+            log.warning(msg)
+    except Exception as exc:  # noqa: BLE001 — verification is best-effort
+        msg = f"FantasyCalc: requested numTeams={n}, effective UNVERIFIED ({exc})"
+        log.warning(msg)
+    notes.append(msg)
+    return data
 
 
 def fetch_ffc(cfg, force, notes):
@@ -600,6 +646,7 @@ def assign_sources(players, ffc, proj):
     for p in players:
         if p["position"] not in SKILL:
             p["sources"] = p["consensus_rank"] = p["spread"] = p["disagreement"] = None
+            p["mkt_rank"] = None
             continue
         src = {}
         if p["fc_rank"]:
@@ -614,6 +661,11 @@ def assign_sources(players, ffc, proj):
         if p.get("ecr"):
             src["ecr"] = int(p["ecr"])
         p["sources"] = src or None
+        # market consensus = mean of the market sources only (proj excluded),
+        # so the board can show "what the market thinks" vs "what the model
+        # thinks" as two numbers instead of one blended spread.
+        mkt = [v for k, v in src.items() if k != "proj"]
+        p["mkt_rank"] = int(round(sum(mkt) / len(mkt))) if mkt else None
         if len(src) >= 2:
             ranks = list(src.values())
             p["consensus_rank"] = round(sum(ranks) / len(ranks), 1)
@@ -854,8 +906,8 @@ def main(argv=None):
             "team": p["team"], "bye": p["bye"], "value": p["value"], "vorp": p["vorp"],
             "points": p["points"], "points_source": p.get("points_source"),
             "tier": p["tier"], "sources": p.get("sources"),
-            "consensus_rank": p.get("consensus_rank"), "spread": p.get("spread"),
-            "disagreement": p.get("disagreement"),
+            "consensus_rank": p.get("consensus_rank"), "mkt_rank": p.get("mkt_rank"),
+            "spread": p.get("spread"), "disagreement": p.get("disagreement"),
             "ecr": p["ecr"], "ecr_stddev": p["ecr_stddev"],
             "ecr_best": p["ecr_best"], "ecr_worst": p["ecr_worst"],
             "trend30": p["trend30"], "roster_pct": p["roster_pct"],

@@ -3,7 +3,7 @@
   "league": "The League",
   "slug": "the-league",
   "yahoo_league_id": "42313",
-  "generated_at": "2026-08-31T08:29:40",
+  "generated_at": "2026-08-31T09:53:37",
   "num_teams": 12,
   "budget": 200,
   "roster": [
@@ -150,7 +150,7 @@
   },
   "dollar_replacement": "roster",
   "sources": [
-   "FantasyCalc: requested numTeams=12",
+   "FantasyCalc: requested numTeams=12, effective=12 (baseline count)",
    "FFC ADP: ppr teams=12, 271 players. Auction format not exposed by the API (HTTP 400).",
    "Sleeper projections: 3114 players, season 2026 verified",
    "pick-six: derived from pbp [2023, 2024, 2025]; league rate 0.084 pick-sixes per INT applied to projected INTs",
@@ -179,13 +179,14 @@
     "sadp": 1
    },
    "consensus_rank": 1.0,
+   "mkt_rank": 1,
    "spread": 0,
    "disagreement": 0.0,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 788,
+   "trend30": 702,
    "roster_pct": 0.9827
   },
   {
@@ -206,13 +207,14 @@
     "sadp": 2
    },
    "consensus_rank": 2.0,
+   "mkt_rank": 2,
    "spread": 0,
    "disagreement": 0.0,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -363,
+   "trend30": -278,
    "roster_pct": 0.9825
   },
   {
@@ -233,13 +235,14 @@
     "sadp": 5
    },
    "consensus_rank": 5.2,
+   "mkt_rank": 6,
    "spread": 4,
    "disagreement": 0.2,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 108,
+   "trend30": 115,
    "roster_pct": 0.9847
   },
   {
@@ -260,13 +263,14 @@
     "sadp": 7
    },
    "consensus_rank": 6.8,
+   "mkt_rank": 8,
    "spread": 4,
    "disagreement": 0.18,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -74,
+   "trend30": -81,
    "roster_pct": 0.9745
   },
   {
@@ -287,13 +291,14 @@
     "sadp": 8
    },
    "consensus_rank": 8.8,
+   "mkt_rank": 10,
    "spread": 8,
    "disagreement": 0.34,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 540,
+   "trend30": 499,
    "roster_pct": 0.9871
   },
   {
@@ -314,13 +319,14 @@
     "sadp": 13
    },
    "consensus_rank": 9.8,
+   "mkt_rank": 11,
    "spread": 7,
    "disagreement": 0.28,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -41,
+   "trend30": -25,
    "roster_pct": 0.9797
   },
   {
@@ -333,21 +339,22 @@
    "vorp": 93.0,
    "points": 253.2,
    "points_source": "proj",
-   "tier": 3,
+   "tier": 2,
    "sources": {
-    "fc": 15,
+    "fc": 14,
     "ffc": 14,
     "proj": 7,
     "sadp": 16
    },
-   "consensus_rank": 13.0,
+   "consensus_rank": 12.8,
+   "mkt_rank": 15,
    "spread": 9,
    "disagreement": 0.32,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 590,
+   "trend30": 684,
    "roster_pct": 0.9767
   },
   {
@@ -368,13 +375,14 @@
     "sadp": 12
    },
    "consensus_rank": 12.8,
+   "mkt_rank": 14,
    "spread": 10,
    "disagreement": 0.36,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 12,
+   "trend30": 46,
    "roster_pct": 0.9825
   },
   {
@@ -395,13 +403,14 @@
     "sadp": 20
    },
    "consensus_rank": 15.8,
+   "mkt_rank": 18,
    "spread": 11,
    "disagreement": 0.36,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 7,
+   "trend30": -42,
    "roster_pct": 0.9638
   },
   {
@@ -416,19 +425,20 @@
    "points_source": "proj",
    "tier": 3,
    "sources": {
-    "fc": 17,
+    "fc": 16,
     "ffc": 22,
     "proj": 10,
     "sadp": 19
    },
-   "consensus_rank": 17.0,
+   "consensus_rank": 16.8,
+   "mkt_rank": 19,
    "spread": 12,
    "disagreement": 0.38,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 442,
+   "trend30": 489,
    "roster_pct": 0.969
   },
   {
@@ -441,21 +451,22 @@
    "vorp": 80.7,
    "points": 240.9,
    "points_source": "proj",
-   "tier": 2,
+   "tier": 3,
    "sources": {
-    "fc": 14,
+    "fc": 15,
     "ffc": 24,
     "proj": 11,
     "sadp": 15
    },
-   "consensus_rank": 16.0,
+   "consensus_rank": 16.2,
+   "mkt_rank": 18,
    "spread": 13,
    "disagreement": 0.42,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -266,
+   "trend30": -200,
    "roster_pct": 0.9753
   },
   {
@@ -470,19 +481,20 @@
    "points_source": "proj",
    "tier": 3,
    "sources": {
-    "fc": 21,
+    "fc": 19,
     "ffc": 21,
     "proj": 12,
     "sadp": 14
    },
-   "consensus_rank": 17.0,
+   "consensus_rank": 16.5,
+   "mkt_rank": 18,
    "spread": 9,
-   "disagreement": 0.28,
+   "disagreement": 0.29,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -1642,
+   "trend30": -1554,
    "roster_pct": 0.9688
   },
   {
@@ -503,13 +515,14 @@
     "sadp": 4
    },
    "consensus_rank": 6.0,
+   "mkt_rank": 4,
    "spread": 10,
    "disagreement": 0.48,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -229,
+   "trend30": -140,
    "roster_pct": 0.997
   },
   {
@@ -530,13 +543,14 @@
     "sadp": 3
    },
    "consensus_rank": 6.0,
+   "mkt_rank": 3,
    "spread": 11,
    "disagreement": 0.52,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -139,
+   "trend30": -140,
    "roster_pct": 0.9751
   },
   {
@@ -557,13 +571,14 @@
     "sadp": 33
    },
    "consensus_rank": 29.0,
+   "mkt_rank": 34,
    "spread": 23,
    "disagreement": 0.52,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 242,
+   "trend30": 229,
    "roster_pct": 0.9641
   },
   {
@@ -578,19 +593,20 @@
    "points_source": "proj",
    "tier": 4,
    "sources": {
-    "fc": 27,
+    "fc": 28,
     "ffc": 28,
     "proj": 16,
     "sadp": 26
    },
-   "consensus_rank": 24.2,
+   "consensus_rank": 24.5,
+   "mkt_rank": 27,
    "spread": 12,
-   "disagreement": 0.31,
+   "disagreement": 0.3,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -569,
+   "trend30": -579,
    "roster_pct": 1.0
   },
   {
@@ -611,13 +627,14 @@
     "sadp": 34
    },
    "consensus_rank": 29.5,
+   "mkt_rank": 34,
    "spread": 17,
    "disagreement": 0.38,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -649,
+   "trend30": -587,
    "roster_pct": 0.9627
   },
   {
@@ -632,19 +649,20 @@
    "points_source": "proj",
    "tier": 5,
    "sources": {
-    "fc": 46,
+    "fc": 45,
     "ffc": 44,
     "proj": 18,
     "sadp": 52
    },
-   "consensus_rank": 40.0,
+   "consensus_rank": 39.8,
+   "mkt_rank": 47,
    "spread": 34,
    "disagreement": 0.62,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 469,
+   "trend30": 529,
    "roster_pct": 0.9622
   },
   {
@@ -659,19 +677,20 @@
    "points_source": "proj",
    "tier": 4,
    "sources": {
-    "fc": 39,
+    "fc": 38,
     "ffc": 40,
     "proj": 19,
     "sadp": 44
    },
-   "consensus_rank": 35.5,
+   "consensus_rank": 35.2,
+   "mkt_rank": 41,
    "spread": 25,
    "disagreement": 0.5,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 295,
+   "trend30": 388,
    "roster_pct": 0.971
   },
   {
@@ -692,13 +711,14 @@
     "sadp": 28
    },
    "consensus_rank": 27.5,
+   "mkt_rank": 30,
    "spread": 13,
    "disagreement": 0.31,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 515,
+   "trend30": 422,
    "roster_pct": 0.9803
   },
   {
@@ -713,19 +733,20 @@
    "points_source": "proj",
    "tier": 5,
    "sources": {
-    "fc": 45,
+    "fc": 46,
     "ffc": 59,
     "proj": 21,
     "sadp": 48
    },
-   "consensus_rank": 43.2,
+   "consensus_rank": 43.5,
+   "mkt_rank": 51,
    "spread": 38,
    "disagreement": 0.65,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 109,
+   "trend30": 82,
    "roster_pct": 0.9332
   },
   {
@@ -738,7 +759,7 @@
    "vorp": 40.0,
    "points": 200.2,
    "points_source": "proj",
-   "tier": 4,
+   "tier": 5,
    "sources": {
     "fc": 42,
     "ffc": 42,
@@ -746,13 +767,14 @@
     "sadp": 42
    },
    "consensus_rank": 37.0,
+   "mkt_rank": 42,
    "spread": 20,
    "disagreement": 0.38,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -387,
+   "trend30": -434,
    "roster_pct": 0.8809
   },
   {
@@ -773,13 +795,14 @@
     "sadp": 43
    },
    "consensus_rank": 39.2,
+   "mkt_rank": 45,
    "spread": 24,
    "disagreement": 0.44,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -449,
+   "trend30": -502,
    "roster_pct": 0.966
   },
   {
@@ -794,19 +817,20 @@
    "points_source": "proj",
    "tier": 5,
    "sources": {
-    "fc": 49,
+    "fc": 47,
     "ffc": 50,
     "proj": 24,
     "sadp": 54
    },
-   "consensus_rank": 44.2,
+   "consensus_rank": 43.8,
+   "mkt_rank": 50,
    "spread": 30,
    "disagreement": 0.51,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -634,
+   "trend30": -563,
    "roster_pct": 0.9389
   },
   {
@@ -827,13 +851,14 @@
     "sadp": 6
    },
    "consensus_rank": 10.2,
+   "mkt_rank": 5,
    "spread": 20,
    "disagreement": 0.79,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -133,
+   "trend30": -233,
    "roster_pct": 1.0
   },
   {
@@ -854,13 +879,14 @@
     "sadp": 9
    },
    "consensus_rank": 12.0,
+   "mkt_rank": 7,
    "spread": 20,
    "disagreement": 0.74,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -316,
+   "trend30": -268,
    "roster_pct": 0.9743
   },
   {
@@ -881,13 +907,14 @@
     "sadp": 10
    },
    "consensus_rank": 14.2,
+   "mkt_rank": 10,
    "spread": 17,
    "disagreement": 0.58,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -182,
+   "trend30": -175,
    "roster_pct": 0.9696
   },
   {
@@ -908,13 +935,14 @@
     "sadp": 61
    },
    "consensus_rank": 50.2,
+   "mkt_rank": 58,
    "spread": 33,
    "disagreement": 0.51,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 382,
+   "trend30": 262,
    "roster_pct": 0.6371
   },
   {
@@ -929,19 +957,20 @@
    "points_source": "proj",
    "tier": 6,
    "sources": {
-    "fc": 61,
+    "fc": 62,
     "ffc": 64,
     "proj": 29,
     "sadp": 57
    },
-   "consensus_rank": 52.8,
+   "consensus_rank": 53.0,
+   "mkt_rank": 61,
    "spread": 35,
-   "disagreement": 0.52,
+   "disagreement": 0.51,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -704,
+   "trend30": -712,
    "roster_pct": 0.9792
   },
   {
@@ -962,13 +991,14 @@
     "sadp": 25
    },
    "consensus_rank": 25.2,
+   "mkt_rank": 23,
    "spread": 9,
    "disagreement": 0.22,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 203,
+   "trend30": 252,
    "roster_pct": 0.9825
   },
   {
@@ -989,13 +1019,14 @@
     "sadp": 65
    },
    "consensus_rank": 57.0,
+   "mkt_rank": 66,
    "spread": 44,
    "disagreement": 0.61,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 154,
+   "trend30": 139,
    "roster_pct": 0.9615
   },
   {
@@ -1016,13 +1047,14 @@
     "sadp": 72
    },
    "consensus_rank": 59.0,
+   "mkt_rank": 68,
    "spread": 40,
    "disagreement": 0.54,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -141,
+   "trend30": -146,
    "roster_pct": 0.9532
   },
   {
@@ -1043,13 +1075,14 @@
     "sadp": 81
    },
    "consensus_rank": 61.8,
+   "mkt_rank": 71,
    "spread": 48,
    "disagreement": 0.62,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 468,
+   "trend30": 484,
    "roster_pct": 0.9063
   },
   {
@@ -1064,19 +1097,20 @@
    "points_source": "proj",
    "tier": 8,
    "sources": {
-    "fc": 92,
+    "fc": 90,
     "ffc": 88,
     "proj": 34,
     "sadp": 90
    },
-   "consensus_rank": 76.0,
-   "spread": 58,
-   "disagreement": 0.64,
+   "consensus_rank": 75.5,
+   "mkt_rank": 89,
+   "spread": 56,
+   "disagreement": 0.62,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 52,
+   "trend30": 71,
    "roster_pct": 0.6861
   },
   {
@@ -1097,13 +1131,14 @@
     "sadp": 86
    },
    "consensus_rank": 67.2,
+   "mkt_rank": 78,
    "spread": 51,
    "disagreement": 0.62,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -9,
+   "trend30": 90,
    "roster_pct": 0.9318
   },
   {
@@ -1118,19 +1153,20 @@
    "points_source": "proj",
    "tier": 8,
    "sources": {
-    "fc": 94,
+    "fc": 95,
     "ffc": 70,
     "proj": 36,
     "sadp": 84
    },
-   "consensus_rank": 71.0,
-   "spread": 58,
-   "disagreement": 0.67,
+   "consensus_rank": 71.2,
+   "mkt_rank": 83,
+   "spread": 59,
+   "disagreement": 0.68,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -8,
+   "trend30": -15,
    "roster_pct": 0.8861
   },
   {
@@ -1151,13 +1187,14 @@
     "sadp": 21
    },
    "consensus_rank": 30.2,
+   "mkt_rank": 27,
    "spread": 18,
    "disagreement": 0.4,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -686,
+   "trend30": -735,
    "roster_pct": 0.9874
   },
   {
@@ -1172,19 +1209,20 @@
    "points_source": "proj",
    "tier": 1,
    "sources": {
-    "fc": 20,
+    "fc": 21,
     "ffc": 36,
     "proj": 40,
     "sadp": 23
    },
-   "consensus_rank": 29.8,
-   "spread": 20,
-   "disagreement": 0.45,
+   "consensus_rank": 30.0,
+   "mkt_rank": 27,
+   "spread": 19,
+   "disagreement": 0.42,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 210,
+   "trend30": 187,
    "roster_pct": 0.963
   },
   {
@@ -1205,13 +1243,14 @@
     "sadp": 11
    },
    "consensus_rank": 17.8,
+   "mkt_rank": 11,
    "spread": 26,
    "disagreement": 0.79,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -23,
+   "trend30": -116,
    "roster_pct": 0.9685
   },
   {
@@ -1226,19 +1265,20 @@
    "points_source": "proj",
    "tier": 3,
    "sources": {
-    "fc": 25,
+    "fc": 24,
     "ffc": 12,
     "proj": 38,
     "sadp": 18
    },
-   "consensus_rank": 23.2,
+   "consensus_rank": 23.0,
+   "mkt_rank": 18,
    "spread": 26,
    "disagreement": 0.68,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -928,
+   "trend30": -896,
    "roster_pct": 0.9674
   },
   {
@@ -1253,19 +1293,20 @@
    "points_source": "proj",
    "tier": 3,
    "sources": {
-    "fc": 16,
+    "fc": 17,
     "ffc": 17,
     "proj": 41,
     "sadp": 17
    },
-   "consensus_rank": 22.8,
-   "spread": 25,
-   "disagreement": 0.66,
+   "consensus_rank": 23.0,
+   "mkt_rank": 17,
+   "spread": 24,
+   "disagreement": 0.63,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 733,
+   "trend30": 669,
    "roster_pct": 0.9773
   },
   {
@@ -1280,19 +1321,20 @@
    "points_source": "proj",
    "tier": 9,
    "sources": {
-    "fc": 96,
+    "fc": 99,
     "ffc": 96,
     "proj": 42,
     "sadp": 101
    },
-   "consensus_rank": 83.8,
+   "consensus_rank": 84.5,
+   "mkt_rank": 99,
    "spread": 59,
-   "disagreement": 0.6,
+   "disagreement": 0.59,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 78,
+   "trend30": 54,
    "roster_pct": 0.287
   },
   {
@@ -1307,19 +1349,20 @@
    "points_source": "proj",
    "tier": 3,
    "sources": {
-    "fc": 24,
+    "fc": 25,
     "ffc": 20,
     "proj": 45,
     "sadp": 22
    },
-   "consensus_rank": 27.8,
+   "consensus_rank": 28.0,
+   "mkt_rank": 22,
    "spread": 25,
    "disagreement": 0.58,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -416,
+   "trend30": -456,
    "roster_pct": 0.9737
   },
   {
@@ -1334,19 +1377,20 @@
    "points_source": "proj",
    "tier": 9,
    "sources": {
-    "fc": 101,
+    "fc": 103,
     "ffc": 116,
     "proj": 43,
     "sadp": 98
    },
-   "consensus_rank": 89.5,
+   "consensus_rank": 90.0,
+   "mkt_rank": 106,
    "spread": 73,
    "disagreement": 0.7,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -140,
+   "trend30": -172,
    "roster_pct": 0.9019
   },
   {
@@ -1361,19 +1405,20 @@
    "points_source": "proj",
    "tier": 9,
    "sources": {
-    "fc": 98,
+    "fc": 96,
     "ffc": 122,
     "proj": 44,
     "sadp": 107
    },
-   "consensus_rank": 92.8,
+   "consensus_rank": 92.2,
+   "mkt_rank": 108,
    "spread": 78,
-   "disagreement": 0.72,
+   "disagreement": 0.73,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 220,
+   "trend30": 249,
    "roster_pct": 0.7058
   },
   {
@@ -1386,16 +1431,17 @@
    "vorp": -8.9,
    "points": 151.3,
    "points_source": "proj",
-   "tier": 10,
+   "tier": 11,
    "sources": {
-    "fc": 120,
+    "fc": 123,
     "ffc": 93,
     "proj": 46,
     "sadp": 109
    },
-   "consensus_rank": 92.0,
-   "spread": 74,
-   "disagreement": 0.69,
+   "consensus_rank": 92.8,
+   "mkt_rank": 108,
+   "spread": 77,
+   "disagreement": 0.71,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
@@ -1415,19 +1461,20 @@
    "points_source": "proj",
    "tier": 9,
    "sources": {
-    "fc": 104,
+    "fc": 102,
     "ffc": 156,
     "proj": 47,
     "sadp": 138
    },
-   "consensus_rank": 111.2,
+   "consensus_rank": 110.8,
+   "mkt_rank": 132,
    "spread": 109,
-   "disagreement": 0.86,
+   "disagreement": 0.87,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 881,
+   "trend30": 897,
    "roster_pct": 0.1416
   },
   {
@@ -1442,19 +1489,20 @@
    "points_source": "proj",
    "tier": 8,
    "sources": {
-    "fc": 88,
+    "fc": 86,
     "ffc": 85,
     "proj": 48,
     "sadp": 78
    },
-   "consensus_rank": 74.8,
-   "spread": 40,
-   "disagreement": 0.45,
+   "consensus_rank": 74.2,
+   "mkt_rank": 83,
+   "spread": 38,
+   "disagreement": 0.43,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -836,
+   "trend30": -814,
    "roster_pct": 0.7984
   },
   {
@@ -1475,13 +1523,14 @@
     "sadp": 27
    },
    "consensus_rank": 31.5,
+   "mkt_rank": 26,
    "spread": 26,
    "disagreement": 0.56,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 75,
+   "trend30": 131,
    "roster_pct": 0.8474
   },
   {
@@ -1496,19 +1545,20 @@
    "points_source": "proj",
    "tier": 3,
    "sources": {
-    "fc": 28,
+    "fc": 27,
     "ffc": 19,
     "proj": 51,
     "sadp": 30
    },
-   "consensus_rank": 32.0,
+   "consensus_rank": 31.8,
+   "mkt_rank": 25,
    "spread": 32,
    "disagreement": 0.68,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 841,
+   "trend30": 859,
    "roster_pct": 0.9647
   },
   {
@@ -1529,13 +1579,14 @@
     "sadp": 79
    },
    "consensus_rank": 77.5,
+   "mkt_rank": 87,
    "spread": 47,
    "disagreement": 0.51,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 199,
+   "trend30": 249,
    "roster_pct": 0.9627
   },
   {
@@ -1550,19 +1601,20 @@
    "points_source": "proj",
    "tier": 1,
    "sources": {
-    "fc": 19,
+    "fc": 20,
     "ffc": 29,
     "proj": 52,
     "sadp": 24
    },
-   "consensus_rank": 31.0,
-   "spread": 33,
-   "disagreement": 0.72,
+   "consensus_rank": 31.2,
+   "mkt_rank": 24,
+   "spread": 32,
+   "disagreement": 0.69,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -138,
+   "trend30": -245,
    "roster_pct": 0.977
   },
   {
@@ -1583,13 +1635,14 @@
     "sadp": 32
    },
    "consensus_rank": 36.8,
+   "mkt_rank": 31,
    "spread": 24,
    "disagreement": 0.46,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 18,
+   "trend30": 34,
    "roster_pct": 0.9712
   },
   {
@@ -1610,13 +1663,14 @@
     "sadp": 29
    },
    "consensus_rank": 33.8,
+   "mkt_rank": 27,
    "spread": 40,
    "disagreement": 0.82,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -264,
+   "trend30": -238,
    "roster_pct": 0.9567
   },
   {
@@ -1637,13 +1691,14 @@
     "sadp": 37
    },
    "consensus_rank": 42.2,
+   "mkt_rank": 38,
    "spread": 21,
    "disagreement": 0.37,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 722,
+   "trend30": 710,
    "roster_pct": 0.9701
   },
   {
@@ -1656,21 +1711,22 @@
    "vorp": 19.6,
    "points": 227.2,
    "points_source": "proj",
-   "tier": 5,
+   "tier": 4,
    "sources": {
-    "fc": 41,
+    "fc": 40,
     "ffc": 25,
     "proj": 58,
     "sadp": 41
    },
-   "consensus_rank": 41.2,
+   "consensus_rank": 41.0,
+   "mkt_rank": 35,
    "spread": 33,
    "disagreement": 0.59,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 24,
+   "trend30": 86,
    "roster_pct": 0.9726
   },
   {
@@ -1683,7 +1739,7 @@
    "vorp": -24.1,
    "points": 136.1,
    "points_source": "proj",
-   "tier": 11,
+   "tier": 12,
    "sources": {
     "fc": 134,
     "ffc": 110,
@@ -1691,13 +1747,14 @@
     "sadp": 118
    },
    "consensus_rank": 103.8,
+   "mkt_rank": 121,
    "spread": 81,
    "disagreement": 0.68,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -126,
+   "trend30": -107,
    "roster_pct": 0.8893
   },
   {
@@ -1712,19 +1769,20 @@
    "points_source": "proj",
    "tier": 8,
    "sources": {
-    "fc": 93,
+    "fc": 92,
     "ffc": 128,
     "proj": 57,
     "sadp": 99
    },
-   "consensus_rank": 94.2,
+   "consensus_rank": 94.0,
+   "mkt_rank": 106,
    "spread": 71,
    "disagreement": 0.65,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 367,
+   "trend30": 383,
    "roster_pct": 0.8546
   },
   {
@@ -1739,19 +1797,20 @@
    "points_source": "proj",
    "tier": 4,
    "sources": {
-    "fc": 38,
+    "fc": 39,
     "ffc": 26,
     "proj": 59,
     "sadp": 46
    },
-   "consensus_rank": 42.2,
+   "consensus_rank": 42.5,
+   "mkt_rank": 37,
    "spread": 33,
-   "disagreement": 0.58,
+   "disagreement": 0.57,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 160,
+   "trend30": 42,
    "roster_pct": 0.9274
   },
   {
@@ -1772,13 +1831,14 @@
     "sadp": 35
    },
    "consensus_rank": 42.2,
+   "mkt_rank": 36,
    "spread": 27,
    "disagreement": 0.47,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 144,
+   "trend30": 123,
    "roster_pct": 0.9644
   },
   {
@@ -1799,13 +1859,14 @@
     "sadp": 39
    },
    "consensus_rank": 47.0,
+   "mkt_rank": 42,
    "spread": 25,
    "disagreement": 0.4,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -712,
+   "trend30": -714,
    "roster_pct": 0.9584
   },
   {
@@ -1818,21 +1879,22 @@
    "vorp": 15.4,
    "points": 223.0,
    "points_source": "proj",
-   "tier": 4,
+   "tier": 5,
    "sources": {
-    "fc": 40,
+    "fc": 41,
     "ffc": 31,
     "proj": 63,
     "sadp": 38
    },
-   "consensus_rank": 43.0,
+   "consensus_rank": 43.2,
+   "mkt_rank": 37,
    "spread": 32,
    "disagreement": 0.55,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -276,
+   "trend30": -314,
    "roster_pct": 0.9723
   },
   {
@@ -1845,7 +1907,7 @@
    "vorp": -28.7,
    "points": 131.5,
    "points_source": "proj",
-   "tier": 11,
+   "tier": 12,
    "sources": {
     "fc": 136,
     "ffc": 187,
@@ -1853,13 +1915,14 @@
     "sadp": 128
    },
    "consensus_rank": 127.8,
+   "mkt_rank": 150,
    "spread": 127,
    "disagreement": 0.89,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 63,
+   "trend30": 68,
    "roster_pct": 0.6943
   },
   {
@@ -1874,19 +1937,20 @@
    "points_source": "proj",
    "tier": 7,
    "sources": {
-    "fc": 77,
+    "fc": 76,
     "ffc": 54,
     "proj": 64,
     "sadp": 62
    },
-   "consensus_rank": 64.2,
-   "spread": 23,
-   "disagreement": 0.29,
+   "consensus_rank": 64.0,
+   "mkt_rank": 64,
+   "spread": 22,
+   "disagreement": 0.28,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -787,
+   "trend30": -732,
    "roster_pct": 0.9433
   },
   {
@@ -1901,19 +1965,20 @@
    "points_source": "proj",
    "tier": 5,
    "sources": {
-    "fc": 47,
+    "fc": 48,
     "ffc": 45,
     "proj": 65,
     "sadp": 45
    },
-   "consensus_rank": 50.5,
+   "consensus_rank": 50.8,
+   "mkt_rank": 46,
    "spread": 20,
-   "disagreement": 0.31,
+   "disagreement": 0.3,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 73,
+   "trend30": 67,
    "roster_pct": 0.9567
   },
   {
@@ -1928,19 +1993,20 @@
    "points_source": "proj",
    "tier": 10,
    "sources": {
-    "fc": 117,
+    "fc": 116,
     "ffc": 121,
     "proj": 66,
     "sadp": 124
    },
-   "consensus_rank": 107.0,
+   "consensus_rank": 106.8,
+   "mkt_rank": 120,
    "spread": 58,
    "disagreement": 0.48,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -11,
+   "trend30": -1,
    "roster_pct": 0.6168
   },
   {
@@ -1953,21 +2019,22 @@
    "vorp": -33.3,
    "points": 126.9,
    "points_source": "proj",
-   "tier": 9,
+   "tier": 10,
    "sources": {
-    "fc": 109,
+    "fc": 110,
     "ffc": 120,
     "proj": 67,
     "sadp": 111
    },
-   "consensus_rank": 101.8,
+   "consensus_rank": 102.0,
+   "mkt_rank": 114,
    "spread": 53,
    "disagreement": 0.45,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -110,
+   "trend30": -130,
    "roster_pct": 0.7423
   },
   {
@@ -1988,13 +2055,14 @@
     "sadp": 31
    },
    "consensus_rank": 47.0,
+   "mkt_rank": 40,
    "spread": 37,
    "disagreement": 0.6,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -119,
+   "trend30": -143,
    "roster_pct": 0.9485
   },
   {
@@ -2009,19 +2077,20 @@
    "points_source": "proj",
    "tier": 2,
    "sources": {
-    "fc": 48,
+    "fc": 49,
     "ffc": 51,
     "proj": 72,
     "sadp": 47
    },
-   "consensus_rank": 54.5,
+   "consensus_rank": 54.8,
+   "mkt_rank": 49,
    "spread": 25,
    "disagreement": 0.36,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -197,
+   "trend30": -169,
    "roster_pct": 0.9866
   },
   {
@@ -2042,13 +2111,14 @@
     "sadp": 40
    },
    "consensus_rank": 51.0,
+   "mkt_rank": 44,
    "spread": 34,
    "disagreement": 0.52,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 109,
+   "trend30": 139,
    "roster_pct": 0.8691
   },
   {
@@ -2063,19 +2133,20 @@
    "points_source": "proj",
    "tier": 6,
    "sources": {
-    "fc": 62,
+    "fc": 61,
     "ffc": 49,
     "proj": 69,
     "sadp": 56
    },
-   "consensus_rank": 59.0,
+   "consensus_rank": 58.8,
+   "mkt_rank": 55,
    "spread": 20,
    "disagreement": 0.27,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -220,
+   "trend30": -160,
    "roster_pct": 0.9384
   },
   {
@@ -2096,13 +2167,14 @@
     "sadp": 73
    },
    "consensus_rank": 69.5,
+   "mkt_rank": 69,
    "spread": 8,
    "disagreement": 0.09,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 701,
+   "trend30": 679,
    "roster_pct": 0.7442
   },
   {
@@ -2123,13 +2195,14 @@
     "sadp": 53
    },
    "consensus_rank": 58.8,
+   "mkt_rank": 54,
    "spread": 20,
    "disagreement": 0.27,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -246,
+   "trend30": -267,
    "roster_pct": 0.7844
   },
   {
@@ -2144,19 +2217,20 @@
    "points_source": "proj",
    "tier": 6,
    "sources": {
-    "fc": 67,
+    "fc": 66,
     "ffc": 53,
     "proj": 74,
     "sadp": 64
    },
-   "consensus_rank": 64.5,
+   "consensus_rank": 64.2,
+   "mkt_rank": 61,
    "spread": 21,
-   "disagreement": 0.26,
+   "disagreement": 0.27,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -409,
+   "trend30": -407,
    "roster_pct": 0.923
   },
   {
@@ -2177,13 +2251,14 @@
     "sadp": 69
    },
    "consensus_rank": 68.0,
+   "mkt_rank": 66,
    "spread": 15,
    "disagreement": 0.18,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 587,
+   "trend30": 578,
    "roster_pct": 0.8915
   },
   {
@@ -2196,21 +2271,22 @@
    "vorp": -46.6,
    "points": 113.6,
    "points_source": "proj",
-   "tier": 12,
+   "tier": 13,
    "sources": {
-    "fc": 159,
+    "fc": 154,
     "ffc": 134,
     "proj": 76,
     "sadp": 145
    },
-   "consensus_rank": 128.5,
-   "spread": 83,
-   "disagreement": 0.58,
+   "consensus_rank": 127.2,
+   "mkt_rank": 144,
+   "spread": 78,
+   "disagreement": 0.55,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 54,
+   "trend30": 63,
    "roster_pct": 0.6426
   },
   {
@@ -2231,13 +2307,14 @@
     "sadp": 51
    },
    "consensus_rank": 57.5,
+   "mkt_rank": 51,
    "spread": 35,
    "disagreement": 0.48,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -188,
+   "trend30": -211,
    "roster_pct": 0.957
   },
   {
@@ -2258,13 +2335,14 @@
     "sadp": 59
    },
    "consensus_rank": 61.8,
+   "mkt_rank": 57,
    "spread": 31,
    "disagreement": 0.4,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -126,
+   "trend30": -138,
    "roster_pct": 0.9603
   },
   {
@@ -2277,21 +2355,22 @@
    "vorp": -49.9,
    "points": 110.3,
    "points_source": "proj",
-   "tier": 12,
+   "tier": 13,
    "sources": {
-    "fc": 158,
+    "fc": 160,
     "ffc": 186,
     "proj": 79,
     "sadp": 152
    },
-   "consensus_rank": 143.8,
+   "consensus_rank": 144.2,
+   "mkt_rank": 166,
    "spread": 107,
    "disagreement": 0.67,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -79,
+   "trend30": -83,
    "roster_pct": 0.8661
   },
   {
@@ -2306,19 +2385,20 @@
    "points_source": "proj",
    "tier": 4,
    "sources": {
-    "fc": 66,
+    "fc": 67,
     "ffc": 68,
     "proj": 81,
     "sadp": 77
    },
-   "consensus_rank": 73.0,
-   "spread": 15,
-   "disagreement": 0.17,
+   "consensus_rank": 73.2,
+   "mkt_rank": 71,
+   "spread": 14,
+   "disagreement": 0.16,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 175,
+   "trend30": 104,
    "roster_pct": 0.9354
   },
   {
@@ -2333,19 +2413,20 @@
    "points_source": "proj",
    "tier": 2,
    "sources": {
-    "fc": 53,
+    "fc": 52,
     "ffc": 67,
     "proj": 80,
     "sadp": 49
    },
-   "consensus_rank": 62.2,
+   "consensus_rank": 62.0,
+   "mkt_rank": 56,
    "spread": 31,
    "disagreement": 0.4,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -258,
+   "trend30": -270,
    "roster_pct": 0.9595
   },
   {
@@ -2358,21 +2439,22 @@
    "vorp": -11.0,
    "points": 196.6,
    "points_source": "proj",
-   "tier": 8,
+   "tier": 9,
    "sources": {
-    "fc": 102,
+    "fc": 105,
     "ffc": 98,
     "proj": 82,
     "sadp": 105
    },
-   "consensus_rank": 96.8,
+   "consensus_rank": 97.5,
+   "mkt_rank": 103,
    "spread": 23,
-   "disagreement": 0.21,
+   "disagreement": 0.2,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 58,
+   "trend30": 36,
    "roster_pct": 0.7979
   },
   {
@@ -2385,21 +2467,22 @@
    "vorp": -12.2,
    "points": 195.4,
    "points_source": "proj",
-   "tier": 7,
+   "tier": 8,
    "sources": {
-    "fc": 87,
+    "fc": 88,
     "ffc": 73,
     "proj": 83,
     "sadp": 74
    },
-   "consensus_rank": 79.2,
-   "spread": 14,
-   "disagreement": 0.15,
+   "consensus_rank": 79.5,
+   "mkt_rank": 78,
+   "spread": 15,
+   "disagreement": 0.16,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -612,
+   "trend30": -623,
    "roster_pct": 0.9518
   },
   {
@@ -2414,19 +2497,20 @@
    "points_source": "proj",
    "tier": 6,
    "sources": {
-    "fc": 86,
+    "fc": 91,
     "ffc": 90,
     "proj": 84,
     "sadp": 117
    },
-   "consensus_rank": 94.2,
+   "consensus_rank": 95.5,
+   "mkt_rank": 99,
    "spread": 33,
    "disagreement": 0.3,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -34,
+   "trend30": -100,
    "roster_pct": 0.9145
   },
   {
@@ -2441,19 +2525,20 @@
    "points_source": "proj",
    "tier": 3,
    "sources": {
-    "fc": 72,
+    "fc": 74,
     "ffc": 123,
     "proj": 85,
     "sadp": 58
    },
-   "consensus_rank": 84.5,
+   "consensus_rank": 85.0,
+   "mkt_rank": 85,
    "spread": 65,
    "disagreement": 0.65,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 196,
+   "trend30": 187,
    "roster_pct": 0.8455
   },
   {
@@ -2468,19 +2553,20 @@
    "points_source": "proj",
    "tier": 5,
    "sources": {
-    "fc": 52,
+    "fc": 51,
     "ffc": 43,
     "proj": 86,
     "sadp": 50
    },
-   "consensus_rank": 57.8,
+   "consensus_rank": 57.5,
+   "mkt_rank": 48,
    "spread": 43,
    "disagreement": 0.59,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -75,
+   "trend30": -70,
    "roster_pct": 0.9633
   },
   {
@@ -2501,13 +2587,14 @@
     "sadp": 71
    },
    "consensus_rank": 77.2,
+   "mkt_rank": 73,
    "spread": 35,
    "disagreement": 0.38,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -181,
+   "trend30": -178,
    "roster_pct": 0.8625
   },
   {
@@ -2522,19 +2609,20 @@
    "points_source": "proj",
    "tier": 3,
    "sources": {
-    "fc": 56,
+    "fc": 55,
     "ffc": 81,
     "proj": 90,
     "sadp": 60
    },
-   "consensus_rank": 71.8,
-   "spread": 34,
-   "disagreement": 0.39,
+   "consensus_rank": 71.5,
+   "mkt_rank": 65,
+   "spread": 35,
+   "disagreement": 0.4,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 1,
+   "trend30": 12,
    "roster_pct": 0.9663
   },
   {
@@ -2549,19 +2637,20 @@
    "points_source": "proj",
    "tier": 5,
    "sources": {
-    "fc": 74,
+    "fc": 75,
     "ffc": 94,
     "proj": 91,
     "sadp": 97
    },
-   "consensus_rank": 89.0,
-   "spread": 23,
-   "disagreement": 0.22,
+   "consensus_rank": 89.2,
+   "mkt_rank": 89,
+   "spread": 22,
+   "disagreement": 0.21,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -469,
+   "trend30": -485,
    "roster_pct": 0.8677
   },
   {
@@ -2574,21 +2663,22 @@
    "vorp": -62.7,
    "points": 97.5,
    "points_source": "proj",
-   "tier": 10,
+   "tier": 11,
    "sources": {
-    "fc": 118,
+    "fc": 121,
     "ffc": 163,
     "proj": 87,
     "sadp": 139
    },
-   "consensus_rank": 126.8,
+   "consensus_rank": 127.5,
+   "mkt_rank": 141,
    "spread": 76,
-   "disagreement": 0.54,
+   "disagreement": 0.53,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 530,
+   "trend30": 498,
    "roster_pct": 0.5783
   },
   {
@@ -2601,21 +2691,22 @@
    "vorp": -64.3,
    "points": 95.9,
    "points_source": "proj",
-   "tier": 12,
+   "tier": 13,
    "sources": {
-    "fc": 161,
+    "fc": 162,
     "ffc": 195,
     "proj": 88,
     "sadp": 161
    },
-   "consensus_rank": 151.2,
+   "consensus_rank": 151.5,
+   "mkt_rank": 173,
    "spread": 107,
    "disagreement": 0.64,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 27,
+   "trend30": 24,
    "roster_pct": 0.3029
   },
   {
@@ -2636,13 +2727,14 @@
     "sadp": 66
    },
    "consensus_rank": 72.2,
+   "mkt_rank": 65,
    "spread": 35,
    "disagreement": 0.4,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -340,
+   "trend30": -363,
    "roster_pct": 0.851
   },
   {
@@ -2657,19 +2749,20 @@
    "points_source": "proj",
    "tier": 7,
    "sources": {
-    "fc": 80,
+    "fc": 77,
     "ffc": 66,
     "proj": 92,
     "sadp": 76
    },
-   "consensus_rank": 78.5,
+   "consensus_rank": 77.8,
+   "mkt_rank": 73,
    "spread": 26,
    "disagreement": 0.28,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -587,
+   "trend30": -484,
    "roster_pct": 0.9444
   },
   {
@@ -2682,21 +2775,22 @@
    "vorp": -24.3,
    "points": 183.3,
    "points_source": "proj",
-   "tier": 7,
+   "tier": 8,
    "sources": {
-    "fc": 83,
+    "fc": 85,
     "ffc": 69,
     "proj": 94,
     "sadp": 75
    },
-   "consensus_rank": 80.2,
+   "consensus_rank": 80.8,
+   "mkt_rank": 76,
    "spread": 25,
    "disagreement": 0.26,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -208,
+   "trend30": -203,
    "roster_pct": 0.9063
   },
   {
@@ -2717,13 +2811,14 @@
     "sadp": 82
    },
    "consensus_rank": 87.0,
+   "mkt_rank": 84,
    "spread": 45,
    "disagreement": 0.44,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -118,
+   "trend30": -58,
    "roster_pct": 0.9263
   },
   {
@@ -2738,19 +2833,20 @@
    "points_source": "proj",
    "tier": 5,
    "sources": {
-    "fc": 82,
+    "fc": 81,
     "ffc": 119,
     "proj": 98,
     "sadp": 112
    },
-   "consensus_rank": 102.8,
-   "spread": 37,
-   "disagreement": 0.31,
+   "consensus_rank": 102.5,
+   "mkt_rank": 104,
+   "spread": 38,
+   "disagreement": 0.32,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -23,
+   "trend30": 9,
    "roster_pct": 0.9085
   },
   {
@@ -2763,21 +2859,22 @@
    "vorp": -72.5,
    "points": 87.7,
    "points_source": "proj",
-   "tier": 14,
+   "tier": 15,
    "sources": {
-    "fc": 176,
+    "fc": 175,
     "ffc": 210,
     "proj": 96,
     "sadp": 166
    },
-   "consensus_rank": 162.0,
+   "consensus_rank": 161.8,
+   "mkt_rank": 184,
    "spread": 114,
    "disagreement": 0.64,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 9,
+   "trend30": 12,
    "roster_pct": 0.5207
   },
   {
@@ -2790,21 +2887,22 @@
    "vorp": -74.0,
    "points": 86.2,
    "points_source": "proj",
-   "tier": 5,
+   "tier": 6,
    "sources": {
-    "fc": 51,
+    "fc": 53,
     "ffc": 32,
     "proj": 97,
     "sadp": 36
    },
-   "consensus_rank": 54.0,
+   "consensus_rank": 54.5,
+   "mkt_rank": 40,
    "spread": 65,
    "disagreement": 0.94,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -1711,
+   "trend30": -1808,
    "roster_pct": 0.977
   },
   {
@@ -2819,19 +2917,20 @@
    "points_source": "proj",
    "tier": 6,
    "sources": {
-    "fc": 89,
+    "fc": 93,
     "ffc": 78,
     "proj": 101,
     "sadp": 93
    },
-   "consensus_rank": 90.2,
+   "consensus_rank": 91.2,
+   "mkt_rank": 88,
    "spread": 23,
    "disagreement": 0.22,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 145,
+   "trend30": 79,
    "roster_pct": 0.9384
   },
   {
@@ -2852,13 +2951,14 @@
     "sadp": 106
    },
    "consensus_rank": 98.5,
+   "mkt_rank": 97,
    "spread": 27,
    "disagreement": 0.24,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -427,
+   "trend30": -402,
    "roster_pct": 0.8255
   },
   {
@@ -2873,19 +2973,20 @@
    "points_source": "proj",
    "tier": 7,
    "sources": {
-    "fc": 113,
+    "fc": 115,
     "ffc": 104,
     "proj": 104,
     "sadp": 122
    },
-   "consensus_rank": 110.8,
+   "consensus_rank": 111.2,
+   "mkt_rank": 114,
    "spread": 18,
    "disagreement": 0.14,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 3,
+   "trend30": -43,
    "roster_pct": 0.8732
   },
   {
@@ -2900,19 +3001,20 @@
    "points_source": "proj",
    "tier": 3,
    "sources": {
-    "fc": 76,
+    "fc": 78,
     "ffc": 79,
     "proj": 105,
     "sadp": 70
    },
-   "consensus_rank": 82.5,
+   "consensus_rank": 83.0,
+   "mkt_rank": 76,
    "spread": 35,
    "disagreement": 0.36,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 75,
+   "trend30": 78,
    "roster_pct": 0.9428
   },
   {
@@ -2927,19 +3029,20 @@
    "points_source": "proj",
    "tier": 5,
    "sources": {
-    "fc": 55,
+    "fc": 56,
     "ffc": 48,
     "proj": 99,
     "sadp": 55
    },
-   "consensus_rank": 64.2,
+   "consensus_rank": 64.5,
+   "mkt_rank": 53,
    "spread": 51,
    "disagreement": 0.64,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 794,
+   "trend30": 755,
    "roster_pct": 0.9384
   },
   {
@@ -2954,19 +3057,20 @@
    "points_source": "proj",
    "tier": 9,
    "sources": {
-    "fc": 106,
+    "fc": 104,
     "ffc": 71,
     "proj": 100,
     "sadp": 96
    },
-   "consensus_rank": 93.2,
-   "spread": 35,
-   "disagreement": 0.32,
+   "consensus_rank": 92.8,
+   "mkt_rank": 90,
+   "spread": 33,
+   "disagreement": 0.31,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -511,
+   "trend30": -479,
    "roster_pct": 0.8431
   },
   {
@@ -2979,21 +3083,22 @@
    "vorp": -30.3,
    "points": 177.3,
    "points_source": "proj",
-   "tier": 7,
+   "tier": 6,
    "sources": {
-    "fc": 75,
+    "fc": 72,
     "ffc": 83,
     "proj": 102,
     "sadp": 67
    },
-   "consensus_rank": 81.8,
+   "consensus_rank": 81.0,
+   "mkt_rank": 74,
    "spread": 35,
    "disagreement": 0.36,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -545,
+   "trend30": -442,
    "roster_pct": 0.9843
   },
   {
@@ -3006,21 +3111,22 @@
    "vorp": -77.4,
    "points": 82.8,
    "points_source": "proj",
-   "tier": 11,
+   "tier": 12,
    "sources": {
-    "fc": 132,
+    "fc": 131,
     "ffc": 152,
     "proj": 106,
     "sadp": 141
    },
-   "consensus_rank": 132.8,
+   "consensus_rank": 132.5,
+   "mkt_rank": 141,
    "spread": 46,
    "disagreement": 0.31,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 138,
+   "trend30": 152,
    "roster_pct": 0.8704
   },
   {
@@ -3035,19 +3141,20 @@
    "points_source": "proj",
    "tier": 5,
    "sources": {
-    "fc": 78,
+    "fc": 80,
     "ffc": 124,
     "proj": 110,
     "sadp": 92
    },
-   "consensus_rank": 101.0,
-   "spread": 46,
-   "disagreement": 0.4,
+   "consensus_rank": 101.5,
+   "mkt_rank": 99,
+   "spread": 44,
+   "disagreement": 0.38,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -76,
+   "trend30": -114,
    "roster_pct": 0.8962
   },
   {
@@ -3068,13 +3175,14 @@
     "sadp": 63
    },
    "consensus_rank": 86.2,
+   "mkt_rank": 77,
    "spread": 50,
    "disagreement": 0.49,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 396,
+   "trend30": 373,
    "roster_pct": 0.7625
   },
   {
@@ -3087,21 +3195,22 @@
    "vorp": -33.3,
    "points": 174.3,
    "points_source": "proj",
-   "tier": 8,
+   "tier": 9,
    "sources": {
-    "fc": 103,
+    "fc": 101,
     "ffc": 61,
     "proj": 107,
     "sadp": 80
    },
-   "consensus_rank": 87.8,
+   "consensus_rank": 87.2,
+   "mkt_rank": 81,
    "spread": 46,
    "disagreement": 0.45,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -351,
+   "trend30": -325,
    "roster_pct": 0.9518
   },
   {
@@ -3114,7 +3223,7 @@
    "vorp": -34.0,
    "points": 173.6,
    "points_source": "proj",
-   "tier": 8,
+   "tier": 9,
    "sources": {
     "fc": 100,
     "ffc": 82,
@@ -3122,13 +3231,14 @@
     "sadp": 91
    },
    "consensus_rank": 95.2,
+   "mkt_rank": 91,
    "spread": 26,
    "disagreement": 0.24,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -88,
+   "trend30": -77,
    "roster_pct": 0.8787
   },
   {
@@ -3141,7 +3251,7 @@
    "vorp": -35.3,
    "points": 172.3,
    "points_source": "proj",
-   "tier": 9,
+   "tier": 10,
    "sources": {
     "fc": 112,
     "ffc": 91,
@@ -3149,13 +3259,14 @@
     "sadp": 108
    },
    "consensus_rank": 105.0,
+   "mkt_rank": 104,
    "spread": 21,
    "disagreement": 0.17,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -117,
+   "trend30": -119,
    "roster_pct": 0.6702
   },
   {
@@ -3168,21 +3279,22 @@
    "vorp": -35.9,
    "points": 171.7,
    "points_source": "proj",
-   "tier": 9,
+   "tier": 10,
    "sources": {
-    "fc": 107,
+    "fc": 108,
     "ffc": 100,
     "proj": 111,
     "sadp": 100
    },
-   "consensus_rank": 104.5,
+   "consensus_rank": 104.8,
+   "mkt_rank": 103,
    "spread": 11,
    "disagreement": 0.09,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 208,
+   "trend30": 175,
    "roster_pct": 0.8672
   },
   {
@@ -3197,19 +3309,20 @@
    "points_source": "proj",
    "tier": 8,
    "sources": {
-    "fc": 95,
+    "fc": 94,
     "ffc": 77,
     "proj": 112,
     "sadp": 102
    },
-   "consensus_rank": 96.5,
+   "consensus_rank": 96.2,
+   "mkt_rank": 91,
    "spread": 35,
    "disagreement": 0.31,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -78,
+   "trend30": 13,
    "roster_pct": 0.9178
   },
   {
@@ -3222,21 +3335,22 @@
    "vorp": -36.9,
    "points": 170.7,
    "points_source": "proj",
-   "tier": 9,
+   "tier": 10,
    "sources": {
-    "fc": 110,
+    "fc": 109,
     "ffc": 87,
     "proj": 114,
     "sadp": 113
    },
-   "consensus_rank": 106.0,
+   "consensus_rank": 105.8,
+   "mkt_rank": 103,
    "spread": 27,
    "disagreement": 0.22,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 73,
+   "trend30": 75,
    "roster_pct": 0.9192
   },
   {
@@ -3249,7 +3363,7 @@
    "vorp": -36.9,
    "points": 170.7,
    "points_source": "proj",
-   "tier": 11,
+   "tier": 12,
    "sources": {
     "fc": 128,
     "ffc": 107,
@@ -3257,13 +3371,14 @@
     "sadp": 131
    },
    "consensus_rank": 120.2,
+   "mkt_rank": 122,
    "spread": 24,
    "disagreement": 0.18,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 121,
+   "trend30": 139,
    "roster_pct": 0.8787
   },
   {
@@ -3278,19 +3393,20 @@
    "points_source": "proj",
    "tier": 3,
    "sources": {
-    "fc": 81,
+    "fc": 82,
     "ffc": 80,
     "proj": 120,
     "sadp": 68
    },
-   "consensus_rank": 87.2,
+   "consensus_rank": 87.5,
+   "mkt_rank": 77,
    "spread": 52,
    "disagreement": 0.51,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -338,
+   "trend30": -344,
    "roster_pct": 0.9502
   },
   {
@@ -3305,19 +3421,20 @@
    "points_source": "proj",
    "tier": 4,
    "sources": {
-    "fc": 91,
+    "fc": 89,
     "ffc": 111,
     "proj": 121,
     "sadp": 88
    },
-   "consensus_rank": 102.8,
+   "consensus_rank": 102.2,
+   "mkt_rank": 96,
    "spread": 33,
    "disagreement": 0.28,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -203,
+   "trend30": -186,
    "roster_pct": 0.905
   },
   {
@@ -3330,21 +3447,22 @@
    "vorp": -37.6,
    "points": 170.0,
    "points_source": "proj",
-   "tier": 10,
+   "tier": 11,
    "sources": {
-    "fc": 124,
+    "fc": 120,
     "ffc": 113,
     "proj": 116,
     "sadp": 119
    },
-   "consensus_rank": 118.0,
-   "spread": 11,
-   "disagreement": 0.08,
+   "consensus_rank": 117.0,
+   "mkt_rank": 117,
+   "spread": 7,
+   "disagreement": 0.05,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 19,
+   "trend30": 36,
    "roster_pct": 0.5212
   },
   {
@@ -3357,7 +3475,7 @@
    "vorp": -38.3,
    "points": 169.3,
    "points_source": "proj",
-   "tier": 12,
+   "tier": 13,
    "sources": {
     "fc": 141,
     "ffc": 86,
@@ -3365,13 +3483,14 @@
     "sadp": 116
    },
    "consensus_rank": 115.2,
+   "mkt_rank": 114,
    "spread": 55,
    "disagreement": 0.42,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -307,
+   "trend30": -291,
    "roster_pct": 0.9252
   },
   {
@@ -3384,7 +3503,7 @@
    "vorp": -39.1,
    "points": 168.5,
    "points_source": "proj",
-   "tier": 8,
+   "tier": 9,
    "sources": {
     "fc": 97,
     "ffc": 126,
@@ -3392,13 +3511,14 @@
     "sadp": 89
    },
    "consensus_rank": 107.8,
+   "mkt_rank": 104,
    "spread": 37,
    "disagreement": 0.3,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -94,
+   "trend30": -87,
    "roster_pct": 0.9659
   },
   {
@@ -3411,7 +3531,7 @@
    "vorp": -84.0,
    "points": 76.2,
    "points_source": "proj",
-   "tier": 11,
+   "tier": 12,
    "sources": {
     "fc": 135,
     "ffc": 183,
@@ -3419,13 +3539,14 @@
     "sadp": 132
    },
    "consensus_rank": 141.8,
+   "mkt_rank": 150,
    "spread": 66,
    "disagreement": 0.42,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 102,
+   "trend30": 111,
    "roster_pct": 0.6823
   },
   {
@@ -3440,19 +3561,20 @@
    "points_source": "proj",
    "tier": 8,
    "sources": {
-    "fc": 131,
+    "fc": 133,
     "ffc": 157,
     "proj": 122,
     "sadp": 136
    },
-   "consensus_rank": 136.5,
+   "consensus_rank": 137.0,
+   "mkt_rank": 142,
    "spread": 35,
    "disagreement": 0.23,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -366,
+   "trend30": -353,
    "roster_pct": 0.7634
   },
   {
@@ -3465,21 +3587,22 @@
    "vorp": -27.7,
    "points": 169.3,
    "points_source": "proj",
-   "tier": 4,
+   "tier": 3,
    "sources": {
-    "fc": 85,
+    "fc": 83,
     "ffc": 103,
     "proj": 125,
     "sadp": 83
    },
-   "consensus_rank": 99.0,
+   "consensus_rank": 98.5,
+   "mkt_rank": 90,
    "spread": 42,
    "disagreement": 0.37,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 147,
+   "trend30": 222,
    "roster_pct": 0.9425
   },
   {
@@ -3492,21 +3615,22 @@
    "vorp": -41.6,
    "points": 166.0,
    "points_source": "proj",
-   "tier": 7,
+   "tier": 8,
    "sources": {
-    "fc": 90,
+    "fc": 87,
     "ffc": 76,
     "proj": 123,
     "sadp": 85
    },
-   "consensus_rank": 93.5,
+   "consensus_rank": 92.8,
+   "mkt_rank": 83,
    "spread": 47,
-   "disagreement": 0.43,
+   "disagreement": 0.44,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -170,
+   "trend30": -153,
    "roster_pct": 0.9334
   },
   {
@@ -3519,7 +3643,7 @@
    "vorp": -41.7,
    "points": 165.9,
    "points_source": "proj",
-   "tier": 11,
+   "tier": 12,
    "sources": {
     "fc": 127,
     "ffc": 127,
@@ -3527,13 +3651,14 @@
     "sadp": 133
    },
    "consensus_rank": 127.8,
+   "mkt_rank": 129,
    "spread": 9,
    "disagreement": 0.06,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -5,
+   "trend30": 4,
    "roster_pct": 0.5763
   },
   {
@@ -3546,21 +3671,22 @@
    "vorp": -43.7,
    "points": 163.9,
    "points_source": "proj",
-   "tier": 9,
+   "tier": 10,
    "sources": {
-    "fc": 108,
+    "fc": 106,
     "ffc": 99,
     "proj": 126,
     "sadp": 110
    },
-   "consensus_rank": 110.8,
+   "consensus_rank": 110.2,
+   "mkt_rank": 105,
    "spread": 27,
-   "disagreement": 0.21,
+   "disagreement": 0.22,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 56,
+   "trend30": 90,
    "roster_pct": 0.8655
   },
   {
@@ -3573,21 +3699,22 @@
    "vorp": -90.3,
    "points": 69.9,
    "points_source": "proj",
-   "tier": 12,
+   "tier": 13,
    "sources": {
-    "fc": 154,
+    "fc": 156,
     "ffc": 177,
     "proj": 127,
     "sadp": 148
    },
-   "consensus_rank": 151.5,
+   "consensus_rank": 152.0,
+   "mkt_rank": 160,
    "spread": 50,
    "disagreement": 0.3,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 69,
+   "trend30": 67,
    "roster_pct": 0.5837
   },
   {
@@ -3603,6 +3730,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -3625,6 +3753,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -3647,6 +3776,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -3669,6 +3799,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -3691,6 +3822,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -3713,6 +3845,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -3735,6 +3868,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -3757,6 +3891,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -3779,6 +3914,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -3801,6 +3937,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -3823,6 +3960,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -3845,6 +3983,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -3867,6 +4006,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -3889,6 +4029,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -3911,6 +4052,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -3933,6 +4075,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -3955,6 +4098,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -3977,6 +4121,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -3999,6 +4144,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4021,6 +4167,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4043,6 +4190,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4065,6 +4213,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4087,6 +4236,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4109,6 +4259,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4131,6 +4282,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4153,6 +4305,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4175,6 +4328,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4197,6 +4351,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4219,6 +4374,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4241,6 +4397,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4263,6 +4420,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4285,6 +4443,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4307,6 +4466,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4329,6 +4489,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4351,6 +4512,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4373,6 +4535,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4395,6 +4558,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4417,6 +4581,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4439,6 +4604,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4461,6 +4627,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4483,6 +4650,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4505,6 +4673,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4527,6 +4696,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4549,6 +4719,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4571,6 +4742,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4593,6 +4765,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4615,6 +4788,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4637,6 +4811,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4659,6 +4834,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4681,6 +4857,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4703,6 +4880,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4725,6 +4903,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4747,6 +4926,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4769,6 +4949,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4791,6 +4972,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4813,6 +4995,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4835,6 +5018,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4857,6 +5041,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4879,6 +5064,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4901,6 +5087,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4923,6 +5110,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4945,6 +5133,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4967,6 +5156,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -4989,6 +5179,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -5011,6 +5202,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -5033,6 +5225,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -5055,6 +5248,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -5077,6 +5271,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -5099,6 +5294,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -5121,6 +5317,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -5143,6 +5340,7 @@
    "tier": null,
    "sources": null,
    "consensus_rank": null,
+   "mkt_rank": null,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -5164,19 +5362,20 @@
    "points_source": "proj",
    "tier": 7,
    "sources": {
-    "fc": 116,
+    "fc": 117,
     "ffc": 143,
     "proj": 130,
     "sadp": 142
    },
-   "consensus_rank": 132.8,
-   "spread": 27,
+   "consensus_rank": 133.0,
+   "mkt_rank": 134,
+   "spread": 26,
    "disagreement": 0.18,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 58,
+   "trend30": 47,
    "roster_pct": 0.45
   },
   {
@@ -5191,19 +5390,20 @@
    "points_source": "proj",
    "tier": 8,
    "sources": {
-    "fc": 130,
+    "fc": 129,
     "ffc": 135,
     "proj": 140,
     "sadp": 130
    },
-   "consensus_rank": 133.8,
-   "spread": 10,
+   "consensus_rank": 133.5,
+   "mkt_rank": 131,
+   "spread": 11,
    "disagreement": 0.07,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -577,
+   "trend30": -539,
    "roster_pct": 0.8735
   },
   {
@@ -5218,19 +5418,20 @@
    "points_source": "proj",
    "tier": 8,
    "sources": {
-    "fc": 129,
+    "fc": 132,
     "ffc": 146,
     "proj": 155,
     "sadp": 162
    },
-   "consensus_rank": 148.0,
-   "spread": 33,
-   "disagreement": 0.2,
+   "consensus_rank": 148.8,
+   "mkt_rank": 147,
+   "spread": 30,
+   "disagreement": 0.18,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -261,
+   "trend30": -267,
    "roster_pct": 0.5199
   },
   {
@@ -5245,19 +5446,20 @@
    "points_source": "proj",
    "tier": 9,
    "sources": {
-    "fc": 137,
+    "fc": 138,
     "ffc": 160,
     "proj": 156,
     "sadp": 143
    },
-   "consensus_rank": 149.0,
-   "spread": 23,
-   "disagreement": 0.14,
+   "consensus_rank": 149.2,
+   "mkt_rank": 147,
+   "spread": 22,
+   "disagreement": 0.13,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 47,
+   "trend30": 27,
    "roster_pct": 0.6286
   },
   {
@@ -5270,21 +5472,22 @@
    "vorp": -33.4,
    "points": 163.6,
    "points_source": "proj",
-   "tier": 6,
+   "tier": 5,
    "sources": {
-    "fc": 125,
+    "fc": 126,
     "ffc": 169,
     "proj": 132,
     "sadp": 87
    },
-   "consensus_rank": 128.2,
+   "consensus_rank": 128.5,
+   "mkt_rank": 127,
    "spread": 82,
    "disagreement": 0.57,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 148,
+   "trend30": 134,
    "roster_pct": 0.8505
   },
   {
@@ -5297,21 +5500,22 @@
    "vorp": -34.5,
    "points": 162.5,
    "points_source": "proj",
-   "tier": 6,
+   "tier": 5,
    "sources": {
-    "fc": 126,
+    "fc": 125,
     "ffc": 136,
     "proj": 134,
     "sadp": 120
    },
-   "consensus_rank": 129.0,
+   "consensus_rank": 128.8,
+   "mkt_rank": 127,
    "spread": 16,
    "disagreement": 0.11,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -98,
+   "trend30": -69,
    "roster_pct": 0.8354
   },
   {
@@ -5324,7 +5528,7 @@
    "vorp": -36.0,
    "points": 161.0,
    "points_source": "proj",
-   "tier": 7,
+   "tier": 6,
    "sources": {
     "fc": 139,
     "ffc": 225,
@@ -5332,13 +5536,14 @@
     "sadp": 137
    },
    "consensus_rank": 159.2,
+   "mkt_rank": 167,
    "spread": 89,
    "disagreement": 0.51,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 18,
+   "trend30": 29,
    "roster_pct": 0.8143
   },
   {
@@ -5351,21 +5556,22 @@
    "vorp": -38.2,
    "points": 158.8,
    "points_source": "proj",
-   "tier": 5,
+   "tier": 4,
    "sources": {
-    "fc": 115,
+    "fc": 114,
     "ffc": 139,
     "proj": 144,
     "sadp": 94
    },
-   "consensus_rank": 123.0,
+   "consensus_rank": 122.8,
+   "mkt_rank": 116,
    "spread": 50,
    "disagreement": 0.36,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -99,
+   "trend30": -108,
    "roster_pct": 0.9145
   },
   {
@@ -5380,14 +5586,15 @@
    "points_source": "proj",
    "tier": 10,
    "sources": {
-    "fc": 155,
+    "fc": 159,
     "ffc": 203,
     "proj": 161,
     "sadp": 179
    },
-   "consensus_rank": 174.5,
-   "spread": 48,
-   "disagreement": 0.25,
+   "consensus_rank": 175.5,
+   "mkt_rank": 180,
+   "spread": 44,
+   "disagreement": 0.23,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
@@ -5405,7 +5612,7 @@
    "vorp": -39.7,
    "points": 157.3,
    "points_source": "proj",
-   "tier": 5,
+   "tier": 4,
    "sources": {
     "fc": 111,
     "ffc": 150,
@@ -5413,13 +5620,14 @@
     "sadp": 103
    },
    "consensus_rank": 127.8,
+   "mkt_rank": 121,
    "spread": 47,
    "disagreement": 0.33,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 122,
+   "trend30": 23,
    "roster_pct": 0.4785
   },
   {
@@ -5432,21 +5640,22 @@
    "vorp": -42.0,
    "points": 155.0,
    "points_source": "proj",
-   "tier": 9,
+   "tier": 8,
    "sources": {
-    "fc": 147,
+    "fc": 152,
     "ffc": 239,
     "proj": 150,
     "sadp": 144
    },
-   "consensus_rank": 170.0,
+   "consensus_rank": 171.2,
+   "mkt_rank": 178,
    "spread": 95,
    "disagreement": 0.51,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 47,
+   "trend30": 44,
    "roster_pct": 0.6343
   },
   {
@@ -5459,21 +5668,22 @@
    "vorp": -43.5,
    "points": 153.5,
    "points_source": "proj",
-   "tier": 8,
+   "tier": 7,
    "sources": {
-    "fc": 146,
+    "fc": 144,
     "ffc": 196,
     "proj": 151,
     "sadp": 129
    },
-   "consensus_rank": 155.5,
+   "consensus_rank": 155.0,
+   "mkt_rank": 156,
    "spread": 67,
    "disagreement": 0.39,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 40,
+   "trend30": 56,
    "roster_pct": 0.84
   },
   {
@@ -5486,7 +5696,7 @@
    "vorp": -46.1,
    "points": 150.9,
    "points_source": "proj",
-   "tier": 9,
+   "tier": 8,
    "sources": {
     "fc": 149,
     "ffc": 222,
@@ -5494,13 +5704,14 @@
     "sadp": 163
    },
    "consensus_rank": 172.0,
+   "mkt_rank": 178,
    "spread": 73,
    "disagreement": 0.39,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 91,
+   "trend30": 97,
    "roster_pct": 0.6637
   },
   {
@@ -5513,14 +5724,15 @@
    "vorp": -46.4,
    "points": 161.2,
    "points_source": "proj",
-   "tier": 10,
+   "tier": 11,
    "sources": {
-    "fc": 123,
+    "fc": 124,
     "ffc": 117,
     "proj": 128,
     "sadp": 123
    },
-   "consensus_rank": 122.8,
+   "consensus_rank": 123.0,
+   "mkt_rank": 121,
    "spread": 11,
    "disagreement": 0.08,
    "ecr": null,
@@ -5540,21 +5752,22 @@
    "vorp": -47.1,
    "points": 160.5,
    "points_source": "proj",
-   "tier": 12,
+   "tier": 13,
    "sources": {
-    "fc": 138,
+    "fc": 137,
     "ffc": 112,
     "proj": 131,
     "sadp": 127
    },
-   "consensus_rank": 127.0,
-   "spread": 26,
+   "consensus_rank": 126.8,
+   "mkt_rank": 125,
+   "spread": 25,
    "disagreement": 0.18,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -95,
+   "trend30": -92,
    "roster_pct": 0.8551
   },
   {
@@ -5567,21 +5780,22 @@
    "vorp": -50.3,
    "points": 157.3,
    "points_source": "proj",
-   "tier": 8,
+   "tier": 9,
    "sources": {
-    "fc": 99,
+    "fc": 98,
     "ffc": 95,
     "proj": 139,
     "sadp": 104
    },
-   "consensus_rank": 109.2,
+   "consensus_rank": 109.0,
+   "mkt_rank": 99,
    "spread": 44,
    "disagreement": 0.35,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 484,
+   "trend30": 510,
    "roster_pct": 0.9063
   },
   {
@@ -5594,21 +5808,22 @@
    "vorp": -52.2,
    "points": 155.4,
    "points_source": "proj",
-   "tier": 9,
+   "tier": 10,
    "sources": {
-    "fc": 105,
+    "fc": 107,
     "ffc": 125,
     "proj": 143,
     "sadp": 115
    },
-   "consensus_rank": 122.0,
-   "spread": 38,
-   "disagreement": 0.28,
+   "consensus_rank": 122.5,
+   "mkt_rank": 116,
+   "spread": 36,
+   "disagreement": 0.26,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 401,
+   "trend30": 350,
    "roster_pct": 0.8854
   },
   {
@@ -5621,21 +5836,22 @@
    "vorp": -52.9,
    "points": 144.1,
    "points_source": "proj",
-   "tier": 10,
+   "tier": 8,
    "sources": {
-    "fc": 156,
+    "fc": 155,
     "ffc": 226,
     "proj": 160,
     "sadp": 167
    },
-   "consensus_rank": 177.2,
-   "spread": 70,
-   "disagreement": 0.36,
+   "consensus_rank": 177.0,
+   "mkt_rank": 183,
+   "spread": 71,
+   "disagreement": 0.37,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -139,
+   "trend30": -134,
    "roster_pct": 0.2892
   },
   {
@@ -5648,7 +5864,7 @@
    "vorp": -52.9,
    "points": 154.7,
    "points_source": "proj",
-   "tier": 10,
+   "tier": 11,
    "sources": {
     "fc": 122,
     "ffc": 115,
@@ -5656,13 +5872,14 @@
     "sadp": 121
    },
    "consensus_rank": 126.0,
+   "mkt_rank": 119,
    "spread": 31,
    "disagreement": 0.22,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 121,
+   "trend30": 123,
    "roster_pct": 0.8091
   },
   {
@@ -5675,7 +5892,7 @@
    "vorp": -54.6,
    "points": 142.4,
    "points_source": "proj",
-   "tier": 10,
+   "tier": 9,
    "sources": {
     "fc": 165,
     "ffc": 240,
@@ -5683,13 +5900,14 @@
     "sadp": 156
    },
    "consensus_rank": 180.8,
+   "mkt_rank": 187,
    "spread": 84,
    "disagreement": 0.43,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -9,
+   "trend30": -13,
    "roster_pct": 0.5801
   },
   {
@@ -5702,20 +5920,21 @@
    "vorp": -55.2,
    "points": 141.8,
    "points_source": "proj",
-   "tier": 8,
+   "tier": 7,
    "sources": {
     "fc": 145,
     "proj": 163,
     "sadp": 126
    },
    "consensus_rank": 144.7,
+   "mkt_rank": 136,
    "spread": 37,
    "disagreement": 0.23,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -110,
+   "trend30": -107,
    "roster_pct": 0.811
   },
   {
@@ -5730,19 +5949,20 @@
    "points_source": "proj",
    "tier": 9,
    "sources": {
-    "fc": 144,
+    "fc": 146,
     "ffc": 199,
     "proj": 182,
     "sadp": 176
    },
-   "consensus_rank": 175.2,
-   "spread": 55,
-   "disagreement": 0.29,
+   "consensus_rank": 175.8,
+   "mkt_rank": 174,
+   "spread": 53,
+   "disagreement": 0.28,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -157,
+   "trend30": -177,
    "roster_pct": 0.5538
   },
   {
@@ -5755,7 +5975,7 @@
    "vorp": -56.1,
    "points": 140.9,
    "points_source": "proj",
-   "tier": 7,
+   "tier": 6,
    "sources": {
     "fc": 140,
     "ffc": 171,
@@ -5763,13 +5983,14 @@
     "sadp": 157
    },
    "consensus_rank": 158.2,
+   "mkt_rank": 156,
    "spread": 31,
    "disagreement": 0.18,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -97,
+   "trend30": -93,
    "roster_pct": 0.8107
   },
   {
@@ -5782,21 +6003,22 @@
    "vorp": -61.0,
    "points": 136.0,
    "points_source": "proj",
-   "tier": 6,
+   "tier": 4,
    "sources": {
-    "fc": 119,
+    "fc": 118,
     "ffc": 109,
     "proj": 170,
     "sadp": 114
    },
-   "consensus_rank": 128.0,
+   "consensus_rank": 127.8,
+   "mkt_rank": 114,
    "spread": 61,
    "disagreement": 0.43,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 224,
+   "trend30": 241,
    "roster_pct": 0.9099
   },
   {
@@ -5809,13 +6031,14 @@
    "vorp": -66.7,
    "points": 130.3,
    "points_source": "proj",
-   "tier": 11,
+   "tier": 10,
    "sources": {
-    "fc": 195,
+    "fc": 196,
     "proj": 176,
     "sadp": 215
    },
-   "consensus_rank": 195.3,
+   "consensus_rank": 195.7,
+   "mkt_rank": 206,
    "spread": 39,
    "disagreement": 0.19,
    "ecr": null,
@@ -5842,6 +6065,7 @@
     "sadp": 228
    },
    "consensus_rank": 223.3,
+   "mkt_rank": 245,
    "spread": 82,
    "disagreement": 0.34,
    "ecr": null,
@@ -5861,21 +6085,22 @@
    "vorp": -70.5,
    "points": 137.1,
    "points_source": "proj",
-   "tier": 13,
+   "tier": 14,
    "sources": {
-    "fc": 142,
+    "fc": 143,
     "ffc": 131,
     "proj": 167,
     "sadp": 134
    },
-   "consensus_rank": 143.5,
+   "consensus_rank": 143.8,
+   "mkt_rank": 136,
    "spread": 36,
    "disagreement": 0.23,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 45,
+   "trend30": 47,
    "roster_pct": 0.713
   },
   {
@@ -5890,19 +6115,20 @@
    "points_source": "proj",
    "tier": 10,
    "sources": {
-    "fc": 160,
+    "fc": 157,
     "ffc": 236,
     "proj": 195,
     "sadp": 198
    },
-   "consensus_rank": 197.2,
-   "spread": 76,
-   "disagreement": 0.36,
+   "consensus_rank": 196.5,
+   "mkt_rank": 197,
+   "spread": 79,
+   "disagreement": 0.37,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -168,
+   "trend30": -171,
    "roster_pct": 0.298
   },
   {
@@ -5915,15 +6141,16 @@
    "vorp": -72.9,
    "points": 134.7,
    "points_source": "proj",
-   "tier": 14,
+   "tier": 15,
    "sources": {
-    "fc": 148,
+    "fc": 150,
     "ffc": 149,
     "proj": 169,
     "sadp": 151
    },
-   "consensus_rank": 154.2,
-   "spread": 21,
+   "consensus_rank": 154.8,
+   "mkt_rank": 150,
+   "spread": 20,
    "disagreement": 0.12,
    "ecr": null,
    "ecr_stddev": null,
@@ -5948,6 +6175,7 @@
     "sadp": 320
    },
    "consensus_rank": 253.5,
+   "mkt_rank": 320,
    "spread": 133,
    "disagreement": 0.5,
    "ecr": null,
@@ -5973,6 +6201,7 @@
     "sadp": 216
    },
    "consensus_rank": 202.0,
+   "mkt_rank": 216,
    "spread": 28,
    "disagreement": 0.13,
    "ecr": null,
@@ -5992,21 +6221,22 @@
    "vorp": -76.3,
    "points": 131.3,
    "points_source": "proj",
-   "tier": 15,
+   "tier": 16,
    "sources": {
-    "fc": 168,
+    "fc": 167,
     "ffc": 170,
     "proj": 171,
     "sadp": 153
    },
-   "consensus_rank": 165.5,
+   "consensus_rank": 165.2,
+   "mkt_rank": 163,
    "spread": 18,
    "disagreement": 0.1,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 80,
+   "trend30": 92,
    "roster_pct": 0.3084
   },
   {
@@ -6019,21 +6249,22 @@
    "vorp": -77.0,
    "points": 130.6,
    "points_source": "proj",
-   "tier": 14,
+   "tier": 15,
    "sources": {
-    "fc": 153,
+    "fc": 151,
     "ffc": 180,
     "proj": 172,
     "sadp": 159
    },
-   "consensus_rank": 166.0,
-   "spread": 27,
-   "disagreement": 0.15,
+   "consensus_rank": 165.5,
+   "mkt_rank": 163,
+   "spread": 29,
+   "disagreement": 0.16,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -218,
+   "trend30": -207,
    "roster_pct": 0.2451
   },
   {
@@ -6048,19 +6279,20 @@
    "points_source": "proj",
    "tier": 10,
    "sources": {
-    "fc": 114,
+    "fc": 113,
     "ffc": 132,
     "proj": 173,
     "sadp": 125
    },
-   "consensus_rank": 136.0,
-   "spread": 59,
-   "disagreement": 0.39,
+   "consensus_rank": 135.8,
+   "mkt_rank": 123,
+   "spread": 60,
+   "disagreement": 0.4,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 95,
+   "trend30": 76,
    "roster_pct": 0.4147
   },
   {
@@ -6073,21 +6305,22 @@
    "vorp": -80.2,
    "points": 127.4,
    "points_source": "proj",
-   "tier": 18,
+   "tier": 19,
    "sources": {
-    "fc": 188,
+    "fc": 187,
     "ffc": 145,
     "proj": 174,
     "sadp": 182
    },
-   "consensus_rank": 172.2,
-   "spread": 43,
-   "disagreement": 0.23,
+   "consensus_rank": 172.0,
+   "mkt_rank": 171,
+   "spread": 42,
+   "disagreement": 0.22,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -12,
+   "trend30": -4,
    "roster_pct": 0.2788
   },
   {
@@ -6100,7 +6333,7 @@
    "vorp": -80.5,
    "points": 127.1,
    "points_source": "proj",
-   "tier": 17,
+   "tier": 18,
    "sources": {
     "fc": 182,
     "ffc": 192,
@@ -6108,13 +6341,14 @@
     "sadp": 168
    },
    "consensus_rank": 179.2,
+   "mkt_rank": 181,
    "spread": 24,
    "disagreement": 0.12,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -83,
+   "trend30": -82,
    "roster_pct": 0.7498
   },
   {
@@ -6135,13 +6369,14 @@
     "sadp": 174
    },
    "consensus_rank": 164.5,
+   "mkt_rank": 160,
    "spread": 39,
    "disagreement": 0.22,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 6,
+   "trend30": 8,
    "roster_pct": 0.5703
   },
   {
@@ -6154,7 +6389,7 @@
    "vorp": -82.4,
    "points": 125.2,
    "points_source": "proj",
-   "tier": 15,
+   "tier": 16,
    "sources": {
     "fc": 166,
     "ffc": 205,
@@ -6162,13 +6397,14 @@
     "sadp": 173
    },
    "consensus_rank": 180.5,
+   "mkt_rank": 181,
    "spread": 39,
    "disagreement": 0.2,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 79,
+   "trend30": 82,
    "roster_pct": 0.5478
   },
   {
@@ -6181,21 +6417,22 @@
    "vorp": -83.9,
    "points": 248.8,
    "points_source": "proj",
-   "tier": 10,
+   "tier": 9,
    "sources": {
-    "fc": 151,
+    "fc": 147,
     "ffc": 251,
     "proj": 213,
     "sadp": 207
    },
-   "consensus_rank": 205.5,
-   "spread": 100,
-   "disagreement": 0.45,
+   "consensus_rank": 204.5,
+   "mkt_rank": 202,
+   "spread": 104,
+   "disagreement": 0.47,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -223,
+   "trend30": -207,
    "roster_pct": 0.2862
   },
   {
@@ -6210,19 +6447,20 @@
    "points_source": "proj",
    "tier": 12,
    "sources": {
-    "fc": 184,
+    "fc": 181,
     "ffc": 259,
     "proj": 214,
-    "sadp": 297
+    "sadp": 295
    },
-   "consensus_rank": 238.5,
-   "spread": 113,
+   "consensus_rank": 237.2,
+   "mkt_rank": 245,
+   "spread": 114,
    "disagreement": 0.45,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -15,
+   "trend30": -10,
    "roster_pct": 0.1726
   },
   {
@@ -6237,19 +6475,20 @@
    "points_source": "proj",
    "tier": 10,
    "sources": {
-    "fc": 157,
+    "fc": 158,
     "ffc": 198,
     "proj": 217,
     "sadp": 175
    },
-   "consensus_rank": 186.8,
-   "spread": 60,
-   "disagreement": 0.3,
+   "consensus_rank": 187.0,
+   "mkt_rank": 177,
+   "spread": 59,
+   "disagreement": 0.29,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -91,
+   "trend30": -97,
    "roster_pct": 0.4462
   },
   {
@@ -6269,6 +6508,7 @@
     "sadp": 208
    },
    "consensus_rank": 215.7,
+   "mkt_rank": 226,
    "spread": 47,
    "disagreement": 0.2,
    "ecr": null,
@@ -6295,6 +6535,7 @@
     "sadp": 211
    },
    "consensus_rank": 217.7,
+   "mkt_rank": 234,
    "spread": 74,
    "disagreement": 0.32,
    "ecr": null,
@@ -6314,7 +6555,7 @@
    "vorp": -88.0,
    "points": 119.6,
    "points_source": "proj",
-   "tier": 19,
+   "tier": 20,
    "sources": {
     "fc": 189,
     "ffc": 133,
@@ -6322,13 +6563,14 @@
     "sadp": 165
    },
    "consensus_rank": 168.0,
+   "mkt_rank": 162,
    "spread": 56,
    "disagreement": 0.31,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -47,
+   "trend30": -41,
    "roster_pct": 0.6302
   },
   {
@@ -6348,6 +6590,7 @@
     "sadp": 300
    },
    "consensus_rank": 225.3,
+   "mkt_rank": 274,
    "spread": 171,
    "disagreement": 0.71,
    "ecr": null,
@@ -6367,21 +6610,22 @@
    "vorp": -94.0,
    "points": 66.2,
    "points_source": "proj",
-   "tier": 11,
+   "tier": 12,
    "sources": {
-    "fc": 133,
+    "fc": 130,
     "ffc": 140,
     "proj": 133,
     "sadp": 135
    },
-   "consensus_rank": 135.2,
-   "spread": 7,
-   "disagreement": 0.05,
+   "consensus_rank": 134.5,
+   "mkt_rank": 135,
+   "spread": 10,
+   "disagreement": 0.07,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -262,
+   "trend30": -235,
    "roster_pct": 0.8688
   },
   {
@@ -6401,6 +6645,7 @@
     "sadp": 210
    },
    "consensus_rank": 212.0,
+   "mkt_rank": 222,
    "spread": 42,
    "disagreement": 0.19,
    "ecr": null,
@@ -6427,6 +6672,7 @@
     "sadp": 195
    },
    "consensus_rank": 188.3,
+   "mkt_rank": 215,
    "spread": 100,
    "disagreement": 0.49,
    "ecr": null,
@@ -6446,7 +6692,7 @@
    "vorp": -96.0,
    "points": 64.2,
    "points_source": "proj",
-   "tier": 13,
+   "tier": 14,
    "sources": {
     "fc": 164,
     "ffc": 211,
@@ -6454,13 +6700,14 @@
     "sadp": 155
    },
    "consensus_rank": 166.8,
+   "mkt_rank": 177,
    "spread": 74,
    "disagreement": 0.41,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 99,
+   "trend30": 101,
    "roster_pct": 0.3158
   },
   {
@@ -6473,21 +6720,22 @@
    "vorp": -96.0,
    "points": 64.2,
    "points_source": "proj",
-   "tier": 14,
+   "tier": 16,
    "sources": {
-    "fc": 177,
+    "fc": 178,
     "ffc": 172,
     "proj": 138,
     "sadp": 180
    },
-   "consensus_rank": 166.8,
+   "consensus_rank": 167.0,
+   "mkt_rank": 177,
    "spread": 42,
    "disagreement": 0.23,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 19,
+   "trend30": 17,
    "roster_pct": 0.7288
   },
   {
@@ -6508,13 +6756,14 @@
     "sadp": 158
    },
    "consensus_rank": 188.5,
+   "mkt_rank": 176,
    "spread": 67,
    "disagreement": 0.33,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 6,
+   "trend30": 7,
    "roster_pct": 0.5801
   },
   {
@@ -6527,21 +6776,22 @@
    "vorp": -96.6,
    "points": 111.0,
    "points_source": "proj",
-   "tier": 10,
+   "tier": 11,
    "sources": {
-    "fc": 121,
+    "fc": 119,
     "ffc": 189,
     "proj": 193,
     "sadp": 95
    },
-   "consensus_rank": 149.5,
+   "consensus_rank": 149.0,
+   "mkt_rank": 134,
    "spread": 98,
    "disagreement": 0.6,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -1069,
+   "trend30": -1033,
    "roster_pct": 0.9738
   },
   {
@@ -6554,14 +6804,15 @@
    "vorp": -96.7,
    "points": 100.3,
    "points_source": "proj",
-   "tier": 11,
+   "tier": 9,
    "sources": {
-    "fc": 187,
+    "fc": 188,
     "ffc": 223,
     "proj": 209,
     "sadp": 177
    },
-   "consensus_rank": 199.0,
+   "consensus_rank": 199.2,
+   "mkt_rank": 196,
    "spread": 46,
    "disagreement": 0.21,
    "ecr": null,
@@ -6581,21 +6832,22 @@
    "vorp": -96.8,
    "points": 100.2,
    "points_source": "proj",
-   "tier": 10,
+   "tier": 8,
    "sources": {
-    "fc": 162,
+    "fc": 161,
     "ffc": 194,
     "proj": 210,
     "sadp": 150
    },
-   "consensus_rank": 179.0,
+   "consensus_rank": 178.8,
+   "mkt_rank": 168,
    "spread": 60,
    "disagreement": 0.31,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -83,
+   "trend30": -80,
    "roster_pct": 0.9038
   },
   {
@@ -6608,7 +6860,7 @@
    "vorp": -97.0,
    "points": 110.6,
    "points_source": "proj",
-   "tier": 19,
+   "tier": 21,
    "sources": {
     "fc": 191,
     "ffc": 224,
@@ -6616,6 +6868,7 @@
     "sadp": 227
    },
    "consensus_rank": 209.0,
+   "mkt_rank": 214,
    "spread": 36,
    "disagreement": 0.16,
    "ecr": null,
@@ -6635,21 +6888,22 @@
    "vorp": -97.3,
    "points": 62.9,
    "points_source": "proj",
-   "tier": 12,
+   "tier": 13,
    "sources": {
-    "fc": 152,
+    "fc": 148,
     "ffc": 168,
     "proj": 141,
     "sadp": 149
    },
-   "consensus_rank": 152.5,
+   "consensus_rank": 151.5,
+   "mkt_rank": 155,
    "spread": 27,
    "disagreement": 0.16,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 52,
+   "trend30": 68,
    "roster_pct": 0.7664
   },
   {
@@ -6662,14 +6916,15 @@
    "vorp": -97.5,
    "points": 62.7,
    "points_source": "proj",
-   "tier": 15,
+   "tier": 17,
    "sources": {
-    "fc": 196,
+    "fc": 197,
     "proj": 142,
     "sadp": 184
    },
-   "consensus_rank": 174.0,
-   "spread": 54,
+   "consensus_rank": 174.3,
+   "mkt_rank": 190,
+   "spread": 55,
    "disagreement": 0.29,
    "ecr": null,
    "ecr_stddev": null,
@@ -6688,7 +6943,7 @@
    "vorp": -98.2,
    "points": 62.0,
    "points_source": "proj",
-   "tier": 12,
+   "tier": 13,
    "sources": {
     "fc": 163,
     "ffc": 173,
@@ -6696,13 +6951,14 @@
     "sadp": 146
    },
    "consensus_rank": 156.8,
+   "mkt_rank": 161,
    "spread": 28,
    "disagreement": 0.16,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -160,
+   "trend30": -159,
    "roster_pct": 0.7743
   },
   {
@@ -6722,6 +6978,7 @@
     "sadp": 222
    },
    "consensus_rank": 194.0,
+   "mkt_rank": 217,
    "spread": 74,
    "disagreement": 0.35,
    "ecr": null,
@@ -6748,6 +7005,7 @@
     "sadp": 301
    },
    "consensus_rank": 208.3,
+   "mkt_rank": 238,
    "spread": 152,
    "disagreement": 0.68,
    "ecr": null,
@@ -6773,6 +7031,7 @@
     "sadp": 194
    },
    "consensus_rank": 206.0,
+   "mkt_rank": 194,
    "spread": 24,
    "disagreement": 0.11,
    "ecr": null,
@@ -6792,21 +7051,22 @@
    "vorp": -100.8,
    "points": 106.8,
    "points_source": "proj",
-   "tier": 14,
+   "tier": 15,
    "sources": {
-    "fc": 150,
+    "fc": 153,
     "ffc": 141,
     "proj": 197,
     "sadp": 171
    },
-   "consensus_rank": 164.8,
+   "consensus_rank": 165.5,
+   "mkt_rank": 155,
    "spread": 56,
    "disagreement": 0.31,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 193,
+   "trend30": 189,
    "roster_pct": 0.5949
   },
   {
@@ -6819,14 +7079,15 @@
    "vorp": -101.9,
    "points": 105.7,
    "points_source": "proj",
-   "tier": 16,
+   "tier": 17,
    "sources": {
-    "fc": 175,
+    "fc": 177,
     "ffc": 162,
     "proj": 198,
     "sadp": 186
    },
-   "consensus_rank": 180.2,
+   "consensus_rank": 180.8,
+   "mkt_rank": 175,
    "spread": 36,
    "disagreement": 0.18,
    "ecr": null,
@@ -6846,21 +7107,22 @@
    "vorp": -102.4,
    "points": 105.2,
    "points_source": "proj",
-   "tier": 19,
+   "tier": 21,
    "sources": {
-    "fc": 190,
+    "fc": 192,
     "ffc": 191,
     "proj": 199,
     "sadp": 189
    },
-   "consensus_rank": 192.2,
+   "consensus_rank": 192.8,
+   "mkt_rank": 191,
    "spread": 10,
    "disagreement": 0.05,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -22,
+   "trend30": -24,
    "roster_pct": 0.3998
   },
   {
@@ -6873,21 +7135,22 @@
    "vorp": -102.7,
    "points": 104.9,
    "points_source": "proj",
-   "tier": 13,
+   "tier": 14,
    "sources": {
-    "fc": 143,
+    "fc": 142,
     "ffc": 193,
     "proj": 200,
     "sadp": 140
    },
-   "consensus_rank": 169.0,
+   "consensus_rank": 168.8,
+   "mkt_rank": 158,
    "spread": 60,
    "disagreement": 0.33,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 262,
+   "trend30": 281,
    "roster_pct": 0.4042
   },
   {
@@ -6907,6 +7170,7 @@
     "sadp": 201
    },
    "consensus_rank": 189.0,
+   "mkt_rank": 208,
    "spread": 62,
    "disagreement": 0.3,
    "ecr": null,
@@ -6932,6 +7196,7 @@
     "sadp": 246
    },
    "consensus_rank": 199.5,
+   "mkt_rank": 246,
    "spread": 93,
    "disagreement": 0.43,
    "ecr": null,
@@ -6958,6 +7223,7 @@
     "sadp": 214
    },
    "consensus_rank": 199.3,
+   "mkt_rank": 198,
    "spread": 32,
    "disagreement": 0.15,
    "ecr": null,
@@ -6977,7 +7243,7 @@
    "vorp": -107.6,
    "points": 52.6,
    "points_source": "proj",
-   "tier": 13,
+   "tier": 14,
    "sources": {
     "fc": 172,
     "ffc": 174,
@@ -6985,13 +7251,14 @@
     "sadp": 164
    },
    "consensus_rank": 166.8,
+   "mkt_rank": 170,
    "spread": 17,
    "disagreement": 0.09,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -98,
+   "trend30": -102,
    "roster_pct": 0.6012
   },
   {
@@ -7004,7 +7271,7 @@
    "vorp": -108.0,
    "points": 52.2,
    "points_source": "proj",
-   "tier": 15,
+   "tier": 16,
    "sources": {
     "fc": 180,
     "ffc": 197,
@@ -7012,13 +7279,14 @@
     "sadp": 178
    },
    "consensus_rank": 178.2,
+   "mkt_rank": 185,
    "spread": 39,
    "disagreement": 0.2,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 43,
+   "trend30": 50,
    "roster_pct": 0.3125
   },
   {
@@ -7037,6 +7305,7 @@
     "sadp": 240
    },
    "consensus_rank": 199.5,
+   "mkt_rank": 240,
    "spread": 81,
    "disagreement": 0.38,
    "ecr": null,
@@ -7062,6 +7331,7 @@
     "sadp": 209
    },
    "consensus_rank": 207.0,
+   "mkt_rank": 209,
    "spread": 4,
    "disagreement": 0.02,
    "ecr": null,
@@ -7081,21 +7351,22 @@
    "vorp": -109.3,
    "points": 98.3,
    "points_source": "proj",
-   "tier": 21,
+   "tier": 23,
    "sources": {
-    "fc": 197,
+    "fc": 195,
     "ffc": 229,
     "proj": 207,
     "sadp": 212
    },
-   "consensus_rank": 211.2,
-   "spread": 32,
-   "disagreement": 0.14,
+   "consensus_rank": 210.8,
+   "mkt_rank": 212,
+   "spread": 34,
+   "disagreement": 0.15,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -24,
+   "trend30": -19,
    "roster_pct": 0.5171
   },
   {
@@ -7114,6 +7385,7 @@
     "sadp": 226
    },
    "consensus_rank": 217.0,
+   "mkt_rank": 226,
    "spread": 18,
    "disagreement": 0.08,
    "ecr": null,
@@ -7133,21 +7405,22 @@
    "vorp": -111.0,
    "points": 96.6,
    "points_source": "proj",
-   "tier": 15,
+   "tier": 16,
    "sources": {
-    "fc": 167,
+    "fc": 168,
     "ffc": 228,
     "proj": 211,
     "sadp": 147
    },
-   "consensus_rank": 188.2,
+   "consensus_rank": 188.5,
+   "mkt_rank": 181,
    "spread": 81,
    "disagreement": 0.4,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -175,
+   "trend30": -181,
    "roster_pct": 0.6702
   },
   {
@@ -7166,6 +7439,7 @@
     "sadp": 199
    },
    "consensus_rank": 205.5,
+   "mkt_rank": 199,
    "spread": 13,
    "disagreement": 0.06,
    "ecr": null,
@@ -7185,7 +7459,7 @@
    "vorp": -112.8,
    "points": 94.8,
    "points_source": "proj",
-   "tier": 18,
+   "tier": 19,
    "sources": {
     "fc": 186,
     "ffc": 237,
@@ -7193,6 +7467,7 @@
     "sadp": 170
    },
    "consensus_rank": 202.0,
+   "mkt_rank": 198,
    "spread": 67,
    "disagreement": 0.31,
    "ecr": null,
@@ -7212,7 +7487,7 @@
    "vorp": -113.1,
    "points": 94.5,
    "points_source": "proj",
-   "tier": 16,
+   "tier": 17,
    "sources": {
     "fc": 173,
     "ffc": 159,
@@ -7220,13 +7495,14 @@
     "sadp": 154
    },
    "consensus_rank": 175.5,
+   "mkt_rank": 162,
    "spread": 62,
    "disagreement": 0.33,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 73,
+   "trend30": 82,
    "roster_pct": 0.049
   },
   {
@@ -7245,6 +7521,7 @@
     "sadp": 225
    },
    "consensus_rank": 194.5,
+   "mkt_rank": 225,
    "spread": 61,
    "disagreement": 0.29,
    "ecr": null,
@@ -7270,6 +7547,7 @@
     "sadp": 224
    },
    "consensus_rank": 226.0,
+   "mkt_rank": 224,
    "spread": 4,
    "disagreement": 0.02,
    "ecr": null,
@@ -7295,6 +7573,7 @@
     "sadp": 202
    },
    "consensus_rank": 210.5,
+   "mkt_rank": 202,
    "spread": 17,
    "disagreement": 0.08,
    "ecr": null,
@@ -7320,6 +7599,7 @@
     "sadp": 242
    },
    "consensus_rank": 204.0,
+   "mkt_rank": 242,
    "spread": 76,
    "disagreement": 0.35,
    "ecr": null,
@@ -7339,21 +7619,22 @@
    "vorp": -117.9,
    "points": 42.3,
    "points_source": "proj",
-   "tier": 14,
+   "tier": 15,
    "sources": {
-    "fc": 178,
+    "fc": 176,
     "ffc": 202,
     "proj": 168,
     "sadp": 169
    },
-   "consensus_rank": 179.2,
+   "consensus_rank": 178.8,
+   "mkt_rank": 182,
    "spread": 34,
    "disagreement": 0.18,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 56,
+   "trend30": 67,
    "roster_pct": 0.2135
   },
   {
@@ -7373,6 +7654,7 @@
     "sadp": 206
    },
    "consensus_rank": 189.3,
+   "mkt_rank": 174,
    "spread": 78,
    "disagreement": 0.38,
    "ecr": null,
@@ -7398,6 +7680,7 @@
     "sadp": 213
    },
    "consensus_rank": 222.0,
+   "mkt_rank": 213,
    "spread": 18,
    "disagreement": 0.08,
    "ecr": null,
@@ -7423,6 +7706,7 @@
     "sadp": 204
    },
    "consensus_rank": 212.5,
+   "mkt_rank": 204,
    "spread": 17,
    "disagreement": 0.07,
    "ecr": null,
@@ -7448,6 +7732,7 @@
     "sadp": 248
    },
    "consensus_rank": 240.5,
+   "mkt_rank": 248,
    "spread": 15,
    "disagreement": 0.06,
    "ecr": null,
@@ -7467,14 +7752,15 @@
    "vorp": -121.2,
    "points": 86.4,
    "points_source": "proj",
-   "tier": 20,
+   "tier": 22,
    "sources": {
-    "fc": 192,
+    "fc": 193,
     "ffc": 185,
     "proj": 222,
     "sadp": 172
    },
-   "consensus_rank": 192.8,
+   "consensus_rank": 193.0,
+   "mkt_rank": 183,
    "spread": 50,
    "disagreement": 0.24,
    "ecr": null,
@@ -7501,6 +7787,7 @@
     "sadp": 217
    },
    "consensus_rank": 227.3,
+   "mkt_rank": 230,
    "spread": 25,
    "disagreement": 0.1,
    "ecr": null,
@@ -7527,6 +7814,7 @@
     "sadp": 185
    },
    "consensus_rank": 221.0,
+   "mkt_rank": 220,
    "spread": 69,
    "disagreement": 0.29,
    "ecr": null,
@@ -7551,6 +7839,7 @@
     "sadp": 252
    },
    "consensus_rank": null,
+   "mkt_rank": 252,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -7576,6 +7865,7 @@
     "sadp": 231
    },
    "consensus_rank": 233.5,
+   "mkt_rank": 231,
    "spread": 5,
    "disagreement": 0.02,
    "ecr": null,
@@ -7600,6 +7890,7 @@
     "sadp": 253
    },
    "consensus_rank": null,
+   "mkt_rank": 253,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -7624,6 +7915,7 @@
     "sadp": 254
    },
    "consensus_rank": null,
+   "mkt_rank": 254,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -7649,6 +7941,7 @@
     "sadp": 187
    },
    "consensus_rank": 183.0,
+   "mkt_rank": 187,
    "spread": 8,
    "disagreement": 0.04,
    "ecr": null,
@@ -7673,6 +7966,7 @@
     "sadp": 273
    },
    "consensus_rank": null,
+   "mkt_rank": 273,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -7700,13 +7994,14 @@
     "sadp": 203
    },
    "consensus_rank": 220.5,
+   "mkt_rank": 212,
    "spread": 92,
    "disagreement": 0.39,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -13,
+   "trend30": -12,
    "roster_pct": 0.3602
   },
   {
@@ -7719,13 +8014,14 @@
    "vorp": -129.1,
    "points": 78.5,
    "points_source": "proj",
-   "tier": 20,
+   "tier": 22,
    "sources": {
-    "fc": 193,
+    "fc": 194,
     "proj": 226,
     "sadp": 181
    },
-   "consensus_rank": 200.0,
+   "consensus_rank": 200.3,
+   "mkt_rank": 188,
    "spread": 45,
    "disagreement": 0.21,
    "ecr": null,
@@ -7751,6 +8047,7 @@
     "sadp": 183
    },
    "consensus_rank": 182.0,
+   "mkt_rank": 183,
    "spread": 2,
    "disagreement": 0.01,
    "ecr": null,
@@ -7775,6 +8072,7 @@
     "sadp": 255
    },
    "consensus_rank": null,
+   "mkt_rank": 255,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -7800,6 +8098,7 @@
     "sadp": 223
    },
    "consensus_rank": 225.0,
+   "mkt_rank": 223,
    "spread": 4,
    "disagreement": 0.02,
    "ecr": null,
@@ -7824,6 +8123,7 @@
     "sadp": 304
    },
    "consensus_rank": null,
+   "mkt_rank": 304,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -7849,6 +8149,7 @@
     "sadp": 323
    },
    "consensus_rank": 253.0,
+   "mkt_rank": 323,
    "spread": 140,
    "disagreement": 0.52,
    "ecr": null,
@@ -7873,6 +8174,7 @@
     "sadp": 239
    },
    "consensus_rank": null,
+   "mkt_rank": 239,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -7899,6 +8201,7 @@
     "sadp": 251
    },
    "consensus_rank": 215.3,
+   "mkt_rank": 208,
    "spread": 85,
    "disagreement": 0.37,
    "ecr": null,
@@ -7923,6 +8226,7 @@
     "sadp": 276
    },
    "consensus_rank": null,
+   "mkt_rank": 276,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -7948,6 +8252,7 @@
     "sadp": 218
    },
    "consensus_rank": 224.0,
+   "mkt_rank": 218,
    "spread": 12,
    "disagreement": 0.05,
    "ecr": null,
@@ -7972,6 +8277,7 @@
     "sadp": 313
    },
    "consensus_rank": null,
+   "mkt_rank": 313,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -7998,6 +8304,7 @@
     "sadp": 190
    },
    "consensus_rank": 194.3,
+   "mkt_rank": 198,
    "spread": 21,
    "disagreement": 0.1,
    "ecr": null,
@@ -8023,6 +8330,7 @@
     "sadp": 244
    },
    "consensus_rank": 238.0,
+   "mkt_rank": 244,
    "spread": 12,
    "disagreement": 0.05,
    "ecr": null,
@@ -8047,6 +8355,7 @@
     "sadp": 271
    },
    "consensus_rank": null,
+   "mkt_rank": 271,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8071,6 +8380,7 @@
     "sadp": 321
    },
    "consensus_rank": null,
+   "mkt_rank": 321,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8096,6 +8406,7 @@
     "sadp": 235
    },
    "consensus_rank": 212.0,
+   "mkt_rank": 235,
    "spread": 46,
    "disagreement": 0.2,
    "ecr": null,
@@ -8117,19 +8428,20 @@
    "points_source": "proj",
    "tier": 20,
    "sources": {
-    "fc": 194,
+    "fc": 190,
     "ffc": 238,
     "proj": 234,
     "sadp": 298
    },
-   "consensus_rank": 241.0,
-   "spread": 104,
-   "disagreement": 0.41,
+   "consensus_rank": 240.0,
+   "mkt_rank": 242,
+   "spread": 108,
+   "disagreement": 0.42,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 9,
+   "trend30": 17,
    "roster_pct": 0.1375
   },
   {
@@ -8147,6 +8459,7 @@
     "sadp": 269
    },
    "consensus_rank": null,
+   "mkt_rank": 269,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8172,6 +8485,7 @@
     "sadp": 221
    },
    "consensus_rank": 205.5,
+   "mkt_rank": 221,
    "spread": 31,
    "disagreement": 0.14,
    "ecr": null,
@@ -8197,6 +8511,7 @@
     "sadp": 188
    },
    "consensus_rank": 211.5,
+   "mkt_rank": 188,
    "spread": 47,
    "disagreement": 0.21,
    "ecr": null,
@@ -8223,6 +8538,7 @@
     "sadp": 192
    },
    "consensus_rank": 199.3,
+   "mkt_rank": 178,
    "spread": 78,
    "disagreement": 0.36,
    "ecr": null,
@@ -8247,6 +8563,7 @@
     "sadp": 256
    },
    "consensus_rank": null,
+   "mkt_rank": 256,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8272,6 +8589,7 @@
     "sadp": 197
    },
    "consensus_rank": 194.0,
+   "mkt_rank": 197,
    "spread": 6,
    "disagreement": 0.03,
    "ecr": null,
@@ -8298,6 +8616,7 @@
     "sadp": 230
    },
    "consensus_rank": 224.3,
+   "mkt_rank": 218,
    "spread": 31,
    "disagreement": 0.13,
    "ecr": null,
@@ -8323,6 +8642,7 @@
     "sadp": 243
    },
    "consensus_rank": 243.0,
+   "mkt_rank": 243,
    "spread": 0,
    "disagreement": 0.0,
    "ecr": null,
@@ -8349,6 +8669,7 @@
     "sadp": 233
    },
    "consensus_rank": 246.7,
+   "mkt_rank": 251,
    "spread": 36,
    "disagreement": 0.14,
    "ecr": null,
@@ -8373,6 +8694,7 @@
     "sadp": 310
    },
    "consensus_rank": null,
+   "mkt_rank": 310,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8398,6 +8720,7 @@
     "sadp": 317
    },
    "consensus_rank": 278.0,
+   "mkt_rank": 317,
    "spread": 78,
    "disagreement": 0.27,
    "ecr": null,
@@ -8422,6 +8745,7 @@
     "sadp": 258
    },
    "consensus_rank": null,
+   "mkt_rank": 258,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8446,6 +8770,7 @@
     "sadp": 262
    },
    "consensus_rank": null,
+   "mkt_rank": 262,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8471,6 +8796,7 @@
     "sadp": 205
    },
    "consensus_rank": 222.5,
+   "mkt_rank": 205,
    "spread": 35,
    "disagreement": 0.15,
    "ecr": null,
@@ -8495,6 +8821,7 @@
     "sadp": 237
    },
    "consensus_rank": null,
+   "mkt_rank": 237,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8519,6 +8846,7 @@
     "sadp": 241
    },
    "consensus_rank": null,
+   "mkt_rank": 241,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8543,6 +8871,7 @@
     "sadp": 275
    },
    "consensus_rank": null,
+   "mkt_rank": 275,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8568,6 +8897,7 @@
     "sadp": 229
    },
    "consensus_rank": 215.0,
+   "mkt_rank": 229,
    "spread": 28,
    "disagreement": 0.12,
    "ecr": null,
@@ -8592,6 +8922,7 @@
     "sadp": 247
    },
    "consensus_rank": null,
+   "mkt_rank": 247,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8617,6 +8948,7 @@
     "sadp": 232
    },
    "consensus_rank": 236.5,
+   "mkt_rank": 232,
    "spread": 9,
    "disagreement": 0.04,
    "ecr": null,
@@ -8642,6 +8974,7 @@
     "sadp": 316
    },
    "consensus_rank": 259.5,
+   "mkt_rank": 316,
    "spread": 113,
    "disagreement": 0.41,
    "ecr": null,
@@ -8669,13 +9002,14 @@
     "sadp": 238
    },
    "consensus_rank": 228.0,
+   "mkt_rank": 220,
    "spread": 77,
    "disagreement": 0.32,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -40,
+   "trend30": -36,
    "roster_pct": 0.6108
   },
   {
@@ -8694,6 +9028,7 @@
     "sadp": 306
    },
    "consensus_rank": 255.0,
+   "mkt_rank": 306,
    "spread": 102,
    "disagreement": 0.38,
    "ecr": null,
@@ -8718,6 +9053,7 @@
     "sadp": 274
    },
    "consensus_rank": null,
+   "mkt_rank": 274,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8742,6 +9078,7 @@
     "sadp": 289
    },
    "consensus_rank": null,
+   "mkt_rank": 289,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8766,6 +9103,7 @@
     "sadp": 260
    },
    "consensus_rank": null,
+   "mkt_rank": 260,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8790,6 +9128,7 @@
     "sadp": 281
    },
    "consensus_rank": null,
+   "mkt_rank": 281,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8815,6 +9154,7 @@
     "sadp": 196
    },
    "consensus_rank": 201.0,
+   "mkt_rank": 196,
    "spread": 10,
    "disagreement": 0.05,
    "ecr": null,
@@ -8839,6 +9179,7 @@
     "sadp": 270
    },
    "consensus_rank": null,
+   "mkt_rank": 270,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8858,7 +9199,7 @@
    "vorp": -155.7,
    "points": 51.9,
    "points_source": "proj",
-   "tier": 17,
+   "tier": 18,
    "sources": {
     "fc": 179,
     "ffc": 200,
@@ -8866,6 +9207,7 @@
     "sadp": 160
    },
    "consensus_rank": 195.8,
+   "mkt_rank": 180,
    "spread": 84,
    "disagreement": 0.4,
    "ecr": null,
@@ -8890,6 +9232,7 @@
     "sadp": 288
    },
    "consensus_rank": null,
+   "mkt_rank": 288,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8914,6 +9257,7 @@
     "sadp": 282
    },
    "consensus_rank": null,
+   "mkt_rank": 282,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8938,6 +9282,7 @@
     "sadp": 263
    },
    "consensus_rank": null,
+   "mkt_rank": 263,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8962,6 +9307,7 @@
     "sadp": 264
    },
    "consensus_rank": null,
+   "mkt_rank": 264,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -8986,6 +9332,7 @@
     "sadp": 287
    },
    "consensus_rank": null,
+   "mkt_rank": 287,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9010,6 +9357,7 @@
     "sadp": 292
    },
    "consensus_rank": null,
+   "mkt_rank": 292,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9034,6 +9382,7 @@
     "sadp": 280
    },
    "consensus_rank": null,
+   "mkt_rank": 280,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9059,6 +9408,7 @@
     "sadp": 249
    },
    "consensus_rank": 247.5,
+   "mkt_rank": 249,
    "spread": 3,
    "disagreement": 0.01,
    "ecr": null,
@@ -9083,6 +9433,7 @@
     "sadp": 308
    },
    "consensus_rank": null,
+   "mkt_rank": 308,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9107,6 +9458,7 @@
     "sadp": 272
    },
    "consensus_rank": null,
+   "mkt_rank": 272,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9131,6 +9483,7 @@
     "sadp": 284
    },
    "consensus_rank": null,
+   "mkt_rank": 284,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9156,6 +9509,7 @@
     "sadp": 245
    },
    "consensus_rank": 246.5,
+   "mkt_rank": 245,
    "spread": 3,
    "disagreement": 0.01,
    "ecr": null,
@@ -9181,6 +9535,7 @@
     "sadp": 315
    },
    "consensus_rank": 282.0,
+   "mkt_rank": 315,
    "spread": 66,
    "disagreement": 0.22,
    "ecr": null,
@@ -9206,6 +9561,7 @@
     "sadp": 314
    },
    "consensus_rank": 282.0,
+   "mkt_rank": 314,
    "spread": 64,
    "disagreement": 0.22,
    "ecr": null,
@@ -9230,6 +9586,7 @@
     "sadp": 257
    },
    "consensus_rank": null,
+   "mkt_rank": 257,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9254,6 +9611,7 @@
     "sadp": 312
    },
    "consensus_rank": null,
+   "mkt_rank": 312,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9278,6 +9636,7 @@
     "sadp": 294
    },
    "consensus_rank": null,
+   "mkt_rank": 294,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9302,6 +9661,7 @@
     "sadp": 279
    },
    "consensus_rank": null,
+   "mkt_rank": 279,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9326,6 +9686,7 @@
     "sadp": 278
    },
    "consensus_rank": null,
+   "mkt_rank": 278,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9350,6 +9711,7 @@
     "sadp": 266
    },
    "consensus_rank": null,
+   "mkt_rank": 266,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9374,6 +9736,7 @@
     "sadp": 267
    },
    "consensus_rank": null,
+   "mkt_rank": 267,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9398,6 +9761,7 @@
     "sadp": 268
    },
    "consensus_rank": null,
+   "mkt_rank": 268,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9422,6 +9786,7 @@
     "sadp": 283
    },
    "consensus_rank": null,
+   "mkt_rank": 283,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9447,6 +9812,7 @@
     "sadp": 200
    },
    "consensus_rank": 229.0,
+   "mkt_rank": 200,
    "spread": 58,
    "disagreement": 0.24,
    "ecr": null,
@@ -9471,6 +9837,7 @@
     "sadp": 290
    },
    "consensus_rank": null,
+   "mkt_rank": 290,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9496,6 +9863,7 @@
     "sadp": 191
    },
    "consensus_rank": 219.0,
+   "mkt_rank": 191,
    "spread": 56,
    "disagreement": 0.24,
    "ecr": null,
@@ -9521,6 +9889,7 @@
     "sadp": 322
    },
    "consensus_rank": 287.0,
+   "mkt_rank": 322,
    "spread": 70,
    "disagreement": 0.23,
    "ecr": null,
@@ -9546,6 +9915,7 @@
     "sadp": 307
    },
    "consensus_rank": 281.5,
+   "mkt_rank": 307,
    "spread": 51,
    "disagreement": 0.17,
    "ecr": null,
@@ -9571,6 +9941,7 @@
     "sadp": 277
    },
    "consensus_rank": 269.0,
+   "mkt_rank": 277,
    "spread": 16,
    "disagreement": 0.06,
    "ecr": null,
@@ -9596,6 +9967,7 @@
     "sadp": 250
    },
    "consensus_rank": 256.0,
+   "mkt_rank": 250,
    "spread": 12,
    "disagreement": 0.04,
    "ecr": null,
@@ -9621,6 +9993,7 @@
     "sadp": 286
    },
    "consensus_rank": 274.5,
+   "mkt_rank": 286,
    "spread": 23,
    "disagreement": 0.08,
    "ecr": null,
@@ -9646,6 +10019,7 @@
     "sadp": 302
    },
    "consensus_rank": 283.0,
+   "mkt_rank": 302,
    "spread": 38,
    "disagreement": 0.13,
    "ecr": null,
@@ -9671,6 +10045,7 @@
     "sadp": 265
    },
    "consensus_rank": 259.0,
+   "mkt_rank": 265,
    "spread": 12,
    "disagreement": 0.04,
    "ecr": null,
@@ -9696,6 +10071,7 @@
     "sadp": 236
    },
    "consensus_rank": 245.0,
+   "mkt_rank": 236,
    "spread": 18,
    "disagreement": 0.07,
    "ecr": null,
@@ -9721,6 +10097,7 @@
     "sadp": 261
    },
    "consensus_rank": 258.0,
+   "mkt_rank": 261,
    "spread": 6,
    "disagreement": 0.02,
    "ecr": null,
@@ -9746,6 +10123,7 @@
     "sadp": 305
    },
    "consensus_rank": 281.0,
+   "mkt_rank": 305,
    "spread": 48,
    "disagreement": 0.16,
    "ecr": null,
@@ -9771,6 +10149,7 @@
     "sadp": 285
    },
    "consensus_rank": 272.0,
+   "mkt_rank": 285,
    "spread": 26,
    "disagreement": 0.09,
    "ecr": null,
@@ -9796,6 +10175,7 @@
     "sadp": 309
    },
    "consensus_rank": 284.5,
+   "mkt_rank": 309,
    "spread": 49,
    "disagreement": 0.16,
    "ecr": null,
@@ -9820,6 +10200,7 @@
     "sadp": 299
    },
    "consensus_rank": null,
+   "mkt_rank": 299,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9839,7 +10220,7 @@
    "vorp": -222.7,
    "points": 110.0,
    "points_source": "proj",
-   "tier": 12,
+   "tier": 13,
    "sources": {
     "fc": 183,
     "ffc": 253,
@@ -9847,13 +10228,14 @@
     "sadp": 296
    },
    "consensus_rank": 249.2,
+   "mkt_rank": 244,
    "spread": 113,
    "disagreement": 0.43,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 6,
+   "trend30": 3,
    "roster_pct": 0.06
   },
   {
@@ -9872,6 +10254,7 @@
     "sadp": 219
    },
    "consensus_rank": 242.5,
+   "mkt_rank": 219,
    "spread": 47,
    "disagreement": 0.18,
    "ecr": null,
@@ -9891,7 +10274,7 @@
    "vorp": -230.8,
    "points": 101.9,
    "points_source": "proj",
-   "tier": 13,
+   "tier": 14,
    "sources": {
     "fc": 185,
     "ffc": 217,
@@ -9899,13 +10282,14 @@
     "sadp": 220
    },
    "consensus_rank": 222.2,
+   "mkt_rank": 207,
    "spread": 82,
    "disagreement": 0.35,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": -34,
+   "trend30": -35,
    "roster_pct": 0.1936
   },
   {
@@ -9923,6 +10307,7 @@
     "sadp": 291
    },
    "consensus_rank": null,
+   "mkt_rank": 291,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9947,6 +10332,7 @@
     "sadp": 259
    },
    "consensus_rank": null,
+   "mkt_rank": 259,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -9972,6 +10358,7 @@
     "sadp": 303
    },
    "consensus_rank": 285.5,
+   "mkt_rank": 303,
    "spread": 35,
    "disagreement": 0.12,
    "ecr": null,
@@ -9996,6 +10383,7 @@
     "sadp": 318
    },
    "consensus_rank": null,
+   "mkt_rank": 318,
    "spread": null,
    "disagreement": null,
    "ecr": null,
@@ -10015,20 +10403,21 @@
    "vorp": -288.6,
    "points": 44.1,
    "points_source": "proj",
-   "tier": 12,
+   "tier": 13,
    "sources": {
-    "fc": 181,
+    "fc": 184,
     "proj": 269,
-    "sadp": 295
+    "sadp": 297
    },
-   "consensus_rank": 248.3,
-   "spread": 114,
+   "consensus_rank": 250.0,
+   "mkt_rank": 240,
+   "spread": 113,
    "disagreement": 0.43,
    "ecr": null,
    "ecr_stddev": null,
    "ecr_best": null,
    "ecr_worst": null,
-   "trend30": 42,
+   "trend30": 40,
    "roster_pct": 0.1501
   },
   {
@@ -10047,6 +10436,7 @@
     "sadp": 319
    },
    "consensus_rank": 294.5,
+   "mkt_rank": 319,
    "spread": 49,
    "disagreement": 0.16,
    "ecr": null,
@@ -10072,6 +10462,7 @@
     "sadp": 293
    },
    "consensus_rank": 282.0,
+   "mkt_rank": 293,
    "spread": 22,
    "disagreement": 0.07,
    "ecr": null,
@@ -10097,6 +10488,7 @@
     "sadp": 193
    },
    "consensus_rank": 232.5,
+   "mkt_rank": 193,
    "spread": 79,
    "disagreement": 0.32,
    "ecr": null,
@@ -10122,6 +10514,7 @@
     "sadp": 234
    },
    "consensus_rank": 253.5,
+   "mkt_rank": 234,
    "spread": 39,
    "disagreement": 0.15,
    "ecr": null,
@@ -10147,6 +10540,7 @@
     "sadp": 311
    },
    "consensus_rank": 292.5,
+   "mkt_rank": 311,
    "spread": 37,
    "disagreement": 0.12,
    "ecr": null,

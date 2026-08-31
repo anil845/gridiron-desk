@@ -27,6 +27,9 @@
   #cmd:focus { border-color: #ffd60a; }
   #status { font-size: 15px; min-height: 20px; padding: 3px 2px; }
   #status.err { color: #ff5252; } #status.ok { color: #4cd964; }
+  #status.unk { background: #8a3800; color: #fff; font-size: 18px; font-weight: 800; padding: 6px 10px; }
+  .buy { color: #4cd964; font-weight: 800; } .fade { color: #ff5252; font-weight: 800; }
+  tr.curve td { opacity: .45; }
   #picker { background: #161616; border: 1px solid #444; }
   #picker div { padding: 3px 10px; font-size: 18px; display: grid; grid-template-columns: 1fr 44px 46px 70px; gap: 8px; }
   #picker div.sel { background: #ffd60a; color: #000; }
@@ -241,7 +244,7 @@ function fillSlots(picks, byId, cfg) {
   picks.forEach(function (pk) {
     var pos = byId[pk.pid] ? byId[pk.pid].position : "?";
     for (var i = 0; i < slots.length; i++) {
-      if (!slots[i].pick && slots[i].elig.indexOf(pos) >= 0) { slots[i].pick = pk; return; }
+      if (!slots[i].pick && (slots[i].elig.indexOf(pos) >= 0 || (pos === "?" && slots[i].slot === "BN"))) { slots[i].pick = pk; return; }
     }
     slots.push({ slot: "??", elig: [], pick: pk });   // over-rostered: still counted
   });
@@ -320,6 +323,7 @@ if (typeof document !== "undefined") (function () {
   var state = { picks: [] };
   var redo = [];
   var filter = "ALL";
+  var pendingUnknown = null;
   var pickerSel = 0, cands = [];
   var $ = function (id) { return document.getElementById(id); };
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
@@ -357,7 +361,19 @@ if (typeof document !== "undefined") (function () {
   }
 
   // --- input ---------------------------------------------------------------
+  function commitUnknown() {
+    if (!pendingUnknown) { setStatus("nothing pending — Enter on an unmatched name first", "err"); return; }
+    var u = pendingUnknown; pendingUnknown = null;
+    $("cmd").value = ""; cands = []; $("picker").hidden = true;
+    state.picks.push({ pid: "unk:" + normName(u.name) + ":" + state.picks.length,
+                       name: u.name, pos: "?", price: u.price, team: u.team,
+                       at: Date.now(), unknown: true });
+    redo = [];
+    save(); render();
+    setStatus("UNKNOWN committed: " + u.name + " " + money(u.price) + " → " + CONFIG.TEAMS[u.team], "ok");
+  }
   function onInput() {
+    pendingUnknown = null;
     var d = derive(state, IDX, CONFIG);
     var cmd = parseCommand($("cmd").value);
     cands = cmd.player ? matchPlayers(cmd.player, IDX.list, d.drafted).slice(0, 7) : [];
@@ -378,7 +394,22 @@ if (typeof document !== "undefined") (function () {
   function onEnter() {
     var cmd = parseCommand($("cmd").value);
     if (!cmd.player) { setStatus("player?", "err"); return; }
-    if (!cands.length) { setStatus("no undrafted player matches '" + cmd.player + "'", "err"); return; }
+    if (!cands.length) {
+      // Unknown player (deep sleeper not in the dataset). Never committed by
+      // Enter — a typo of a real name must not slip in on muscle memory.
+      // Offer a Ctrl+Enter confirmation instead, on a loud banner.
+      var t0 = matchTeam(cmd.team, CONFIG);
+      if (cmd.price !== null && cmd.price >= 1 && !t0.err) {
+        var d0 = derive(state, IDX, CONFIG), tm = d0.teams[t0.idx];
+        if (cmd.price > tm.money) { setStatus(CONFIG.TEAMS[t0.idx] + " only has " + money(tm.money) + " — check the price", "err"); return; }
+        if (tm.open === 0) { setStatus(CONFIG.TEAMS[t0.idx] + " has no open slots — check the team", "err"); return; }
+        pendingUnknown = { name: cmd.player, price: cmd.price, team: t0.idx };
+        setStatus("UNKNOWN PLAYER “" + cmd.player + "” — Ctrl+Enter commits " + money(cmd.price) + " → " + CONFIG.TEAMS[t0.idx] + " · Enter does nothing (typo?)", "unk");
+      } else {
+        setStatus("no player matches '" + cmd.player + "'" + (cmd.price === null ? " · price?" : "") + (t0.err ? " · " + t0.err : ""), "err");
+      }
+      return;
+    }
     if (cmd.price === null || cmd.price < 1) { setStatus("price? (e.g. gib 47 kev)", "err"); return; }
     var t = matchTeam(cmd.team, CONFIG);
     if (t.err) { setStatus(t.err, "err"); return; }
@@ -392,7 +423,8 @@ if (typeof document !== "undefined") (function () {
   }
   $("cmd").addEventListener("input", onInput);
   $("cmd").addEventListener("keydown", function (e) {
-    if (e.key === "Enter") { e.preventDefault(); onEnter(); }
+    if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) { e.preventDefault(); commitUnknown(); }
+    else if (e.key === "Enter") { e.preventDefault(); onEnter(); }
     else if (e.key === "ArrowDown") { e.preventDefault(); if (cands.length) { pickerSel = (pickerSel + 1) % cands.length; renderPicker(derive(state, IDX, CONFIG), parseCommand($("cmd").value)); } }
     else if (e.key === "ArrowUp") { e.preventDefault(); if (cands.length) { pickerSel = (pickerSel - 1 + cands.length) % cands.length; renderPicker(derive(state, IDX, CONFIG), parseCommand($("cmd").value)); } }
     else if (e.key === "Escape") { $("cmd").value = ""; onInput(); setStatus(""); }
@@ -467,8 +499,18 @@ if (typeof document !== "undefined") (function () {
         var p = a.p, tk = p.position + ":" + p.tier, t = d.tiers[tk];
         var bar = t ? '<span class="bar' + (t.left <= 1 ? " low" : "") + '"><i style="width:' + Math.round(100 * t.left / t.total) + '%"></i></span> <span class="dim">' + t.left + '/' + t.total + '</span>' : "";
         var srcs = p.sources ? Object.keys(p.sources).map(function (k) { return k + " " + p.sources[k]; }).join("  ") : "";
-        var sp = p.disagreement == null ? "" : '<span class="sprd' + (p.disagreement >= CONFIG.DISAGREE_MIN ? " hi" : "") + '" title="' + esc(srcs) + '">' + p.disagreement.toFixed(2) + '</span>';
-        return '<tr><td class="r num adj">' + money(a.adj) + '</td><td title="' + esc(srcs) + '">' + esc(p.name) + '</td><td class="pos ' + p.position + '">' + p.position + '</td><td>' + esc(p.team || "") +
+        // P = model (projection) rank, M = market consensus (fc/ffc/sadp mean).
+        // ▲ proj better than market (buy) / ▼ proj worse (fade). Caveat: when
+        // the market sources cluster and only proj diverges, trust the market.
+        var sp = "";
+        if (p.disagreement != null) {
+          var pr = p.sources && p.sources.proj, mk = p.mkt_rank;
+          var arrow = (pr != null && mk != null && pr !== mk) ? (pr < mk ? '<span class="buy">▲</span>' : '<span class="fade">▼</span>') : "";
+          var lbl = (pr != null && mk != null) ? ("P" + pr + "/M" + mk) : p.disagreement.toFixed(2);
+          sp = '<span class="sprd' + (p.disagreement >= CONFIG.DISAGREE_MIN ? " hi" : "") + '" title="' + esc(srcs) + '">' + arrow + lbl + '</span>';
+        }
+        var mut = p.points_source === "curve";   // no projection: rank-curve scale, not comparable
+        return '<tr' + (mut ? ' class="curve"' : "") + '><td class="r num adj">' + money(a.adj) + '</td><td title="' + esc(srcs) + '">' + esc(p.name) + (mut ? " *" : "") + '</td><td class="pos ' + p.position + '">' + p.position + '</td><td>' + esc(p.team || "") +
           '</td><td class="r num dim">' + (p.bye || "") + '</td><td class="r num base">' + money(p.value) + '</td><td class="r num">' + sp + '</td><td class="r num dim">' + (p.vorp == null ? "" : Math.round(p.vorp)) +
           '</td><td class="num">' + (p.tier == null ? "" : "T" + p.tier + " " + bar) + '</td></tr>';
       }).join("");
@@ -509,7 +551,8 @@ if (typeof document !== "undefined") (function () {
   }
 
   document.title = CONFIG.LEAGUE_NAME + " — Draft Board";
-  $("lgbanner").textContent = CONFIG.LEAGUE_NAME + " · " + CONFIG.NUM_TEAMS + " teams · $" + CONFIG.BUDGET;
+  $("lgbanner").textContent = CONFIG.LEAGUE_NAME + " · " + CONFIG.NUM_TEAMS + " teams · $" + CONFIG.BUDGET +
+    " · built " + (BOARD_DATA && BOARD_DATA.meta ? BOARD_DATA.meta.generated_at.replace("T", " ") : "NO DATA");
   restore();
   render();
   if (!BOARD_DATA) setStatus("NO BOARD DATA embedded — run python build_board.py", "err");
