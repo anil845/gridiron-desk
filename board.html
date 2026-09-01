@@ -125,7 +125,8 @@
   .mkv { color: var(--good); font-weight: 800; }
   .mkm { color: #ff9d4d; font-weight: 800; }
   .urg { color: #fff; background: #b3261e; border-radius: 6px; padding: 1px 6px; font-size: 11px; font-weight: 800; }
-  .byewarn { color: #ffb454; font-weight: 800; }   /* amber: a tiebreaker, not an alarm — red is reserved for injury and buy-now urgency */
+  .byewarn { color: #ffb454; font-weight: 800; }   /* amber: a tiebreaker, not an alarm — red is reserved for buy-now urgency */
+  #stale { color: #fff; background: #b3261e; border-radius: 8px; padding: 2px 10px; font-size: 13px; font-weight: 800; }
   #legend { font-size: 11px; color: var(--dim); margin: 2px 0 6px; line-height: 1.9; border: 1px solid var(--line);
             border-radius: 10px; padding: 6px 10px; background: var(--panel2); }
   #legend .lg { color: var(--gold); letter-spacing: .12em; font-size: 9px; font-weight: 800; margin-right: 4px; }
@@ -199,7 +200,7 @@
         <span class="bar" style="width:36px"><i style="width:70%"></i></span> players left in tier · <span class="bar low" style="width:36px"><i style="width:20%"></i></span> tier almost gone</div>
       <div><b class="lg">STATUS</b> <span class="inj">Q</span> questionable — think twice (hover for body part) · <span class="inj out">IR</span> <span class="inj out">PUP</span> <span class="inj out">SUS</span> likely out — ignore · red is only ever buy-now ·
         <span class="cuff">CUFF</span> handcuff — backup who inherits a stud's role (hover names the starter) · <span class="cuff mine">MY CUFF</span> backs up YOUR starter — its <span class="mkv">+$N ins</span> = extra you alone can justify paying (never shown to keep Pay honest, never nominated for you) ·
-        📰 news this build (hover) · <span class="byewarn">6×2</span> amber = bye stack, a tiebreaker between similar players (red is reserved for injury &amp; buy-now) ·
+        📰 news this build (hover) · 🔥 trending — heavy Sleeper adds in 24h, expect the room to chase · <span class="byewarn">6×2</span> amber = bye stack, a tiebreaker between similar players ·
         <span class="dim">* faded = no projection, trust the price less · bn only / no slot = your roster can't start / can't fit them</span></div>
       <div><b class="lg">URGENT</b> <span class="urg">LAST 2 · to $34</span> = a position YOU still need is nearly dry and rivals outnumber the supply — musical chairs; the $ is your licensed overbid ceiling (Pay + half the drop to the cliff)</div>
       <div><b class="lg">ROOM</b> gold bars = money left · <span class="flag">1.25x ⚠</span> manager overpaying · heat <span class="hot">red</span> = position going over value, <span class="cold">green</span> = bargains there · max bid <span class="hot">red</span> = you're pot-committed</div>
@@ -218,6 +219,7 @@
     <h2>My squad <span id="need" class="dim"></span></h2>
     <table id="roster"></table>
     <div id="byes" class="dim" style="margin-top:4px;font-size:11px"></div>
+    <div id="plan" class="dim" style="margin-top:2px;font-size:11px"></div>
     <div class="btns">
       <button id="copy">Copy state JSON</button>
       <button id="load">Load JSON</button>
@@ -299,6 +301,8 @@ var CONFIG = /*LEAGUE_CONFIG*/{
   // Bye stacking: warn on a player's bye when I already roster this many
   // skill players (QB/RB/WR/TE) sharing that week. K/DEF are streamable.
   BYE_STACK_WARN: 2,
+  // Banner alarm when the opened board's data is older than this many hours.
+  STALE_HOURS: 12,
   POSITIONS: ["QB", "RB", "WR", "TE", "K", "DEF"]
 }/*END_LEAGUE_CONFIG*/;
 
@@ -596,6 +600,30 @@ function derive(state, idx, cfg) {
            !(a.p.handcuff_pid && myPids[a.p.handcuff_pid]);
   }).slice(0, 8);
 
+  // Budget plan: split my remaining money across my open STARTING slots,
+  // weighted by the best still-available player each slot could claim (greedy,
+  // no double-claiming), with $1 held for every open slot (bench included).
+  var plan = [];
+  if (me.open > 0) {
+    var claimed = {}, weights = [];
+    me.slots.forEach(function (s) {
+      if (s.pick || s.slot === "BN") return;
+      var best = null;
+      for (var i = 0; i < available.length; i++) {
+        var a = available[i];
+        if (!claimed[a.p.player_id] && s.elig.indexOf(a.p.position) >= 0) { best = a; break; }
+      }
+      if (best) claimed[best.p.player_id] = 1;
+      weights.push({ slot: s.slot, w: best ? Math.max(1, best.adj) : 1 });
+    });
+    var wsum = 0;
+    weights.forEach(function (x) { wsum += x.w - 1; });
+    var distributable = Math.max(0, me.money - me.open);   // $1 stays reserved per open slot
+    plan = weights.map(function (x) {
+      return { slot: x.slot, dollars: Math.round(1 + (wsum > 0 ? (x.w - 1) / wsum * distributable : 0)) };
+    });
+  }
+
   // Urgency: for each position I still need, how many quality players remain
   // vs how many RIVAL teams still have an open starting slot there. When
   // supply <= URGENT_REMAINING and rival demand >= supply, someone is getting
@@ -631,7 +659,7 @@ function derive(state, idx, cfg) {
     remainingMoney: remainingMoney, remainingSlots: remainingSlots, remainingDisc: remainingDisc,
     heat: heat, tiers: tiers, available: available, noms: noms,
     myFit: myFit, myPids: myPids, myByes: myByes, demand: demand, liveRepl: liveRepl,
-    urgent: urgent, rivalsNeed: rivalsNeed
+    urgent: urgent, rivalsNeed: rivalsNeed, plan: plan
   };
 }
 
@@ -949,6 +977,7 @@ if (typeof document !== "undefined") (function () {
         if (p.handcuff_of) badges += ' <span class="cuff' + (myPids[p.handcuff_pid] ? ' mine' : '') +
           '" title="handcuff of ' + esc(p.handcuff_of) + '">' + (myPids[p.handcuff_pid] ? 'MY CUFF' : 'CUFF') + '</span>';
         if (p.news) badges += ' <span title="' + esc(p.news) + '">📰</span>';
+        if (p.trending) badges += ' <span title="' + p.trending.toLocaleString() + ' Sleeper adds in 24h — the room has heard of them; expect chasing">🔥</span>';
         return '<tr data-pid="' + p.player_id + '"' + (cls.trim() ? ' class="' + cls.trim() + '"' : "") + '><td class="r num adj">' + money(a.adj) + mk + '</td><td title="' + esc(srcs) + '">' + esc(p.name) + (mut ? " *" : "") + badges + fitTag + '</td><td class="pos ' + p.position + '">' + p.position + '</td><td>' + esc(p.team || "") +
           '</td><td class="r num">' + byeCell + '</td><td class="r num base">' + money(p.value) + '</td><td class="r num">' + sp + '</td><td class="r num dim">' + (p.vorp == null ? "" : Math.round(p.vorp)) +
           '</td><td class="num">' + (p.tier == null ? "" : '<span class="tier t' + Math.min(p.tier, 4) + '">T' + p.tier + '</span> ' + bar) + '</td></tr>';
@@ -989,6 +1018,13 @@ if (typeof document !== "undefined") (function () {
       return n >= CONFIG.BYE_STACK_WARN ? '<span class="byewarn">wk ' + w + ' ×' + n + '</span>' : 'wk ' + w + ' ×' + n;
     }).join(" · ") : "";
 
+    // budget plan for my open starting slots
+    var bnLeft = me.slots.filter(function (s) { return !s.pick && s.slot === "BN"; }).length;
+    $("plan").innerHTML = d.plan.length
+      ? 'plan: ' + d.plan.map(function (x) { return x.slot + ' <b class="num" style="color:var(--gold2)">$' + x.dollars + '</b>'; }).join(" · ") +
+        (bnLeft ? ' <span class="dim">· ' + bnLeft + '×BN $1</span>' : "")
+      : "";
+
     // recent
     var rec = state.picks.slice(-6).reverse();
     $("recent").innerHTML = '<div class="label">Last picks · #' + state.picks.length + '</div>' + (rec.length ? rec.map(function (pk) {
@@ -1000,14 +1036,24 @@ if (typeof document !== "undefined") (function () {
       Object.keys(m.replacement_rank_starter).map(function (k) { return k + m.replacement_rank_starter[k]; }).join(" ") : "NO BOARD DATA — run build_board.py";
   }
 
+  function checkStale() {
+    var el = $("stale");
+    if (!el || !BOARD_DATA || !BOARD_DATA.meta) return;
+    var age = (Date.now() - new Date(BOARD_DATA.meta.generated_at).getTime()) / 36e5;
+    el.hidden = !(age >= CONFIG.STALE_HOURS);
+    if (!el.hidden) el.textContent = "⚠ DATA " + (age >= 48 ? Math.round(age / 24) + " DAYS" : Math.round(age) + "h") + " OLD — rebuild before drafting";
+  }
   var newsItems = (BOARD_DATA && BOARD_DATA.meta && BOARD_DATA.meta.news) || [];
   $("newsbox").innerHTML = newsItems.length ? newsItems.map(function (n) {
     return '<div><span class="dim num">' + esc((n.date || "").slice(5)) + '</span> <b>' + esc(n.headline) + '</b></div>';
   }).join("") : '<div class="dim">no headlines in this build — rebuild to refresh</div>';
   document.title = CONFIG.LEAGUE_NAME + " — Draft Board";
   $("lgbanner").innerHTML = '<span class="lg-name">' + esc(CONFIG.LEAGUE_NAME) + '</span>' +
+    '<span id="stale" hidden></span>' +
     '<span class="lg-meta num">' + CONFIG.NUM_TEAMS + ' teams · $' + CONFIG.BUDGET + ' · built ' +
     esc(BOARD_DATA && BOARD_DATA.meta ? BOARD_DATA.meta.generated_at.replace("T", " ") : "NO DATA") + '</span>';
+  checkStale();
+  setInterval(checkStale, 600000);   // re-check every 10 min through a long draft night
   restore();
   render();
   if (!BOARD_DATA) setStatus("NO BOARD DATA embedded — run python build_board.py", "err");

@@ -69,6 +69,9 @@ TIER_DROP, TIER_MIN, TIER_MAX = 0.10, 2, 6
 
 # ESPN public news feed (headline dump + per-player markers).
 ESPN_NEWS_URL = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/news?limit=50"
+# Sleeper trending adds (24h add counts across all Sleeper leagues) — "what
+# the room heard this week". Cached 3h.
+TRENDING_URL = "https://api.sleeper.app/v1/players/nfl/trending/add?limit=100"
 # A backup RB is a "high-value handcuff" when his team's starter is worth at
 # least this much — the lottery ticket that inherits a bell-cow role.
 HANDCUFF_MIN_STARTER = 25
@@ -524,7 +527,26 @@ def fetch_news(force, notes):
         return []
 
 
-def assign_intel(players, news):
+def fetch_trending(force, notes):
+    """Sleeper 24h trending adds -> {sleeper_id: count}. Degrades to {}."""
+    import requests
+    path = os.path.join(DATA_DIR, "sleeper_trending.json")
+
+    def _get():
+        r = requests.get(TRENDING_URL, headers={"User-Agent": USER_AGENT}, timeout=30)
+        r.raise_for_status()
+        return r.text
+    try:
+        rows = json.loads(_cached(path, _get, force, max_age_h=3))
+        out = {str(x["player_id"]): int(x["count"]) for x in rows if x.get("player_id")}
+        notes.append(f"Sleeper trending: {len(out)} players with 24h add counts (cached 3h)")
+        return out
+    except Exception as exc:  # noqa: BLE001 — optional source, must not fail the build
+        notes.append(f"Sleeper trending: unavailable ({exc}) - trending markers skipped")
+        return {}
+
+
+def assign_intel(players, news, trending):
     """Handcuffs, market classification, and news markers (see constants).
 
     Handcuff: for each NFL team, the second-best RB by projected points behind
@@ -535,6 +557,7 @@ def assign_intel(players, news):
     by_team = defaultdict(list)
     for p in players:
         p["handcuff_of"] = p["handcuff_pid"] = p["mkt_class"] = p["news"] = None
+        p["trending"] = trending.get(p["player_id"])
         if p["position"] == "RB" and p["team"] and p.get("points"):
             by_team[p["team"]].append(p)
     for team, rbs in by_team.items():
@@ -989,7 +1012,7 @@ def board_config(cfg):
         "OVERPAY_FLAG": 1.15, "OVERPAY_MIN_VALUE": 20, "DISAGREE_MIN": 0.4,
         "CUFF_INSURANCE": 0.15, "CUFF_INS_CAP": 12,
         "QUALITY_MIN": 10, "URGENT_REMAINING": 3, "URGENT_CAP": 12,
-        "BYE_STACK_WARN": 2,
+        "BYE_STACK_WARN": 2, "STALE_HOURS": 12,
         "POSITIONS": list(ALL_POS),
     }
 
@@ -1106,7 +1129,8 @@ def main(argv=None):
     vorp_to_dollars(cfg, players, starter_rank, roster_rank)
     assign_sources(players, ffc, proj, wf, espn)   # after dollars: proj rank uses vorp_roster
     news = fetch_news(args.force, notes)
-    assign_intel(players, news)
+    trending = fetch_trending(args.force, notes)
+    assign_intel(players, news, trending)
     qb_penalty_report(cfg, players, proj, sack_rates, lg_sack_rate, p6_rate, fumble_ratio)
     history = league_history_file(players)
 
@@ -1137,6 +1161,7 @@ def main(argv=None):
             "mkt_class": p.get("mkt_class"), "injury_status": p.get("injury_status"),
             "injury_note": p.get("injury_note"), "handcuff_of": p.get("handcuff_of"),
             "handcuff_pid": p.get("handcuff_pid"), "news": p.get("news"),
+            "trending": p.get("trending"),
             "ecr": p["ecr"], "ecr_stddev": p["ecr_stddev"],
             "ecr_best": p["ecr_best"], "ecr_worst": p["ecr_worst"],
             "trend30": p["trend30"], "roster_pct": p["roster_pct"],
