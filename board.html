@@ -222,6 +222,7 @@
     <div id="plan" class="dim" style="margin-top:2px;font-size:11px"></div>
     <div class="btns">
       <button id="copy">Copy state JSON</button>
+      <button id="exportbtn">Export rosters</button>
       <button id="load">Load JSON</button>
       <button id="bulkbtn">Paste picks</button>
       <button id="reset">Reset board</button>
@@ -467,6 +468,33 @@ function parseBulk(text, idx, alreadyDrafted, cfg) {
     rows.push(row);
   });
   return rows;
+}
+
+// Season seed: the final draft state as structured rosters. Embeds draft-night
+// values/points so a later "draft grade" replay grades against what was known
+// at the time, not against next week's rebuilt numbers.
+function exportState(state, idx, cfg, meta) {
+  var d = derive(state, idx, cfg);
+  return {
+    league: cfg.LEAGUE_NAME, yahoo_league_id: cfg.LEAGUE_ID,
+    exported_at: new Date().toISOString(),
+    data_built_at: meta ? meta.generated_at : null,
+    num_teams: cfg.NUM_TEAMS, budget: cfg.BUDGET,
+    teams: d.teams.map(function (t) {
+      return {
+        name: t.name, is_me: t.i === cfg.ME, spent: t.spent, remaining: t.money,
+        open_slots: t.open,
+        picks: t.picks.map(function (pk) {
+          var p = idx.byId[pk.pid] || {};
+          return { name: pk.name, position: p.position || pk.pos || "?",
+                   nfl_team: p.team || null, bye: p.bye || null, price: pk.price,
+                   value_at_draft: p.value || null, projected_points: p.points || null,
+                   pid: pk.pid };
+        })
+      };
+    }),
+    pick_log: state.picks
+  };
 }
 
 // Assign a team's picks to roster slots in ROSTER order (first eligible open slot).
@@ -839,6 +867,19 @@ if (typeof document !== "undefined") (function () {
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, function () { window.prompt("Copy this:", txt); });
     else window.prompt("Copy this:", txt);
   });
+  $("exportbtn").addEventListener("click", function () {
+    var out = exportState(state, IDX, CONFIG, BOARD_DATA && BOARD_DATA.meta);
+    var txt = JSON.stringify(out, null, 1);
+    var name = "rosters_" + CONFIG.LEAGUE_ID + "_" + new Date().toISOString().slice(0, 10) + ".json";
+    try {
+      var a = document.createElement("a");
+      a.href = "data:application/json;charset=utf-8," + encodeURIComponent(txt);
+      a.download = name; document.body.appendChild(a); a.click(); a.remove();
+    } catch (e) { /* download blocked (e.g. sandboxed preview): clipboard still fires */ }
+    var done = function () { setStatus("rosters exported: " + name + " (downloaded + copied — commit it to the repo)", "ok"); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, function () { window.prompt("Copy this:", txt); done(); });
+    else { window.prompt("Copy this:", txt); done(); }
+  });
   $("load").addEventListener("click", function () {
     var txt = window.prompt("Paste state JSON (replaces current board):");
     if (!txt) return;
@@ -1061,7 +1102,7 @@ if (typeof document !== "undefined") (function () {
   $("cmd").focus();
 })();
 
-if (typeof module !== "undefined") module.exports = { CONFIG: CONFIG, normName: normName, indexPlayers: indexPlayers, parseCommand: parseCommand, matchPlayers: matchPlayers, matchTeam: matchTeam, parseBulk: parseBulk, fillSlots: fillSlots, derive: derive, data: function () { return BOARD_DATA; } };
+if (typeof module !== "undefined") module.exports = { CONFIG: CONFIG, normName: normName, indexPlayers: indexPlayers, parseCommand: parseCommand, matchPlayers: matchPlayers, matchTeam: matchTeam, parseBulk: parseBulk, fillSlots: fillSlots, derive: derive, exportState: exportState, data: function () { return BOARD_DATA; } };
 </script>
 </body>
 </html>
