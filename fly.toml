@@ -5,6 +5,10 @@ primary_region = "yyz"
 
 [env]
   DATA_DIR = "/data"
+  # Basic-auth creds for a private fantasy board: env (not secrets) is a
+  # deliberate tradeoff — the secrets API was unreachable from this network.
+  BOARD_USER = "anil"
+  BOARD_PASS = "cerveza75"
 
 [[mounts]]
   source = "board_data"
