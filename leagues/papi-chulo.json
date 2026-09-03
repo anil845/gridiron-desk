@@ -1,7 +1,7 @@
 {
   "name": "The Papi Chulo Invitational",
   "yahoo_league_id": "701443",
-  "teams": 16,
+  "teams": 12,
   "budget": 200,
   "roster": {
     "QB": 1, "WR": 2, "RB": 2, "TE": 1,
@@ -17,7 +17,6 @@
     "fumble": 0, "fumble_lost": -2, "off_fumble_return_td": 6
   },
   "team_names": ["Cerveza Loco", "Hurts So Good", "fugazis", "Triple Double no assist",
-                 "Sweet Editions", "Just-In Time", "OHHenry!", "HOOT HOOT Owl-Man",
-                 "AB = MAYB", "Ready Aim Dart", "Never a Dowdle", "Fearless",
-                 "Slot 13", "Slot 14", "Slot 15", "Slot 16"]
+                 "Sweet Editions", "SILENCE OF THE LAMB", "Don't Joe Chasin' Waterfalls",
+                 "HOOT HOOT Owl-Man", "AB = MAYB", "JSN Bourne", "McCalvesarealright", "Fearless"]
 }
