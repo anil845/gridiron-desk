@@ -61,7 +61,8 @@
   #status.unk { background: #4a2410; border: 1px solid #a3541f; color: #ffd9b0; font-size: 16px; font-weight: 700; padding: 8px 12px; margin-top: 4px; }
   #picker { background: #101624; border: 1px solid var(--line2); border-radius: 10px; overflow: hidden; margin-top: 4px;
             box-shadow: 0 12px 30px rgba(0,0,0,.5); }
-  #picker div { padding: 5px 12px; font-size: 16px; display: grid; grid-template-columns: 1fr 44px 46px 96px; gap: 8px; align-items: center; }
+  #picker div { padding: 5px 12px; font-size: 16px; display: grid; grid-template-columns: 76px 48px 1fr 44px 46px; gap: 8px; align-items: center; }
+  #picker .pk { font-size: 22px; font-weight: 800; color: var(--gold2); text-align: right; }
   #picker div.sel { background: var(--gold); }
   #picker div.sel, #picker div.sel * { color: #161000 !important; background-color: transparent; }
   #picker div.sel { background: var(--gold); }
@@ -180,7 +181,7 @@
 
 <div id="cmdrow">
   <div>
-    <input id="cmd" autocomplete="off" spellcheck="false" placeholder="gib 47 kev — or click a player, then type price + team   |   Ctrl+Z undo">
+    <input id="cmd" autocomplete="off" spellcheck="false" placeholder="any order: gib 47 kev · kev 47 gib · 47 gib kev — or click a player   |   Ctrl+Z undo">
     <div id="lockchip" hidden></div>
     <div id="status"></div>
     <div id="picker" hidden></div>
@@ -283,6 +284,9 @@ var CONFIG = /*LEAGUE_CONFIG*/{
   ],
   FLEX_USAGE: { RB: 0.35, WR: 0.55, TE: 0.10 },
   BENCH_SHARE: { QB: 0.10, RB: 0.40, WR: 0.40, TE: 0.10 },
+  // Relative URL the board POSTs its state to after every pick. Works when
+  // served from the war-room server; fails silently over file:// (offline).
+  SYNC_PATH: "",
   OVERPAY_FLAG: 1.15,
   OVERPAY_MIN_VALUE: 20,
   DISAGREE_MIN: 0.4,
@@ -495,6 +499,49 @@ function exportState(state, idx, cfg, meta) {
     }),
     pick_log: state.picks
   };
+}
+
+// Order-free entry resolution: "gib 47 kev", "kev 47 gib", "47 gib kev",
+// "gib kev 47" all resolve. The price is the anchor token; both sides are
+// tried as (player, team) and (team, player), and one-sided text is split at
+// every boundary. The first interpretation where BOTH the player and the team
+// resolve wins; ties go to the canonical player-first order. With a locked
+// (clicked) player, team-only text like "47 kev" resolves without stealing
+// the lock.
+function resolveEntry(text, idx, drafted, cfg, preferTeamOnly) {
+  var toks = String(text || "").trim().split(/\s+/).filter(Boolean);
+  var pi = -1;
+  for (var i = 0; i < toks.length; i++) if (/^\$?\d+$/.test(toks[i])) { pi = i; break; }
+  function mk(playerQ, teamQ) {
+    var cands = playerQ ? matchPlayers(playerQ, idx.list, drafted) : [];
+    var t = teamQ ? matchTeam(teamQ, cfg) : { err: "team?" };
+    return { playerQ: playerQ, teamQ: teamQ, cands: cands, team: t,
+             valid: cands.length > 0 && !t.err,
+             teamOnly: !playerQ && teamQ && !t.err };
+  }
+  if (pi < 0) return { price: null, best: mk(toks.join(" "), "") };
+  var price = parseInt(toks[pi].replace("$", ""), 10);
+  var before = toks.slice(0, pi), after = toks.slice(pi + 1);
+  var options = [];
+  if (before.length && after.length) {
+    options.push(mk(before.join(" "), after.join(" ")));
+    options.push(mk(after.join(" "), before.join(" ")));
+  } else {
+    var side = before.length ? before : after;
+    if (preferTeamOnly && side.length) options.push(mk("", side.join(" ")));
+    for (var k = 1; k < side.length; k++)               // player ... team
+      options.push(mk(side.slice(0, side.length - k).join(" "), side.slice(side.length - k).join(" ")));
+    for (k = 1; k < side.length; k++)                   // team ... player
+      options.push(mk(side.slice(k).join(" "), side.slice(0, k).join(" ")));
+    if (side.length) options.push(mk(side.join(" "), ""));
+    if (!preferTeamOnly && side.length) options.push(mk("", side.join(" ")));
+  }
+  var best = null;
+  for (i = 0; i < options.length && !best; i++) {
+    if (options[i].valid || (options[i].teamOnly && preferTeamOnly)) best = options[i];
+  }
+  if (!best) best = options[0] || mk("", "");
+  return { price: price, best: best };
 }
 
 // Assign a team's picks to roster slots in ROSTER order (first eligible open slot).
@@ -711,6 +758,22 @@ if (typeof document !== "undefined") (function () {
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify({ picks: state.picks, savedAt: new Date().toISOString() })); }
     catch (e) { setStatus("localStorage write failed: " + e.message, "err"); }
+    syncPush();
+  }
+  // Mirror state to the war-room server after every change (debounced).
+  // Fire-and-forget: offline or file:// use fails silently — localStorage
+  // stays the source of truth, the server is a live read replica.
+  var syncTimer = null;
+  function syncPush() {
+    if (!CONFIG.SYNC_PATH || typeof fetch === "undefined") return;
+    clearTimeout(syncTimer);
+    syncTimer = setTimeout(function () {
+      try {
+        fetch(CONFIG.SYNC_PATH, { method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ league: CONFIG.LEAGUE_ID, savedAt: new Date().toISOString(), picks: state.picks }),
+          keepalive: true }).catch(function () {});
+      } catch (e) { /* offline / file:// — fine */ }
+    }, 400);
   }
   function restore() {
     try {
@@ -767,25 +830,34 @@ if (typeof document !== "undefined") (function () {
   function onInput() {
     pendingUnknown = null;
     var d = derive(state, IDX, CONFIG);
-    var cmd = parseCommand($("cmd").value);
-    if (locked && cmd.player) { locked = null; renderLock(); }   // typing a name overrides the click-lock
-    cands = cmd.player ? matchPlayers(cmd.player, IDX.list, d.drafted).slice(0, 7) : [];
+    var res = resolveEntry($("cmd").value, IDX, d.drafted, CONFIG, !!locked);
+    // typing a fresh player name (no price yet) overrides a click-lock
+    if (locked && res.price === null && res.best.playerQ && res.best.playerQ.length >= 2 && res.best.cands.length) { locked = null; renderLock(); }
+    cands = res.best.cands.slice(0, 8);
     pickerSel = 0;
-    renderPicker(d, cmd);
+    renderPicker(d, res);
   }
-  function renderPicker(d, cmd) {
+  function renderPicker(d, res) {
     var el = $("picker");
     if (!cands.length) { el.hidden = true; el.innerHTML = ""; return; }
-    var t = cmd.team ? matchTeam(cmd.team, CONFIG) : null;
-    var tail = (cmd.price !== null ? " " + money(cmd.price) : " price?") + (t ? (t.err ? " · " + t.err : " → " + CONFIG.TEAMS[t.idx]) : " · team?");
+    var t = res.best.teamQ ? res.best.team : null;
+    var tail = (res.price !== null ? " " + money(res.price) : " price?") + (t ? (t.err ? " · " + t.err : " → " + CONFIG.TEAMS[t.idx]) : " · team?");
     el.innerHTML = cands.map(function (p, i) {
-      return '<div class="' + (i === pickerSel ? "sel" : "") + '"><span>' + esc(p.name) + (i === pickerSel ? '<span class="dim">' + esc(tail) + '</span>' : "") +
-        '</span><span class="pos ' + p.position + '">' + p.position + '</span><span>' + esc(p.team || "") + '</span><span class="num r">' + money(d.adj(p)) + ' <span class="base">/' + money(p.value) + '</span></span></div>';
+      var u = d.urgent[p.position], adj = d.adj(p);
+      var mkb = p.mkt_class === "validated" ? ' <span class="mkv">◆</span>' : p.mkt_class === "mirage" ? ' <span class="mkm">!</span>' : "";
+      if (u && adj >= CONFIG.QUALITY_MIN) mkb += ' <span class="urg">LAST ' + u.remQ + '</span>';
+      if (p.injury_status) mkb += ' <span class="inj' + (p.injury_status === "Questionable" ? "" : " out") + '">' + esc(p.injury_status === "Questionable" ? "Q" : String(p.injury_status).toUpperCase().slice(0, 3)) + '</span>';
+      return '<div class="' + (i === pickerSel ? "sel" : "") + '"><span class="num pk">' + money(adj) + '</span><span class="base num">/' + money(p.value) + '</span><span>' + esc(p.name) + mkb + (i === pickerSel ? ' <span class="dim">' + esc(tail) + '</span>' : "") +
+        '</span><span class="pos ' + p.position + '">' + p.position + '</span><span>' + esc(p.team || "") + '</span></div>';
     }).join("");
     el.hidden = false;
   }
   function onEnter() {
-    var cmd = parseCommand($("cmd").value);
+    var dR = derive(state, IDX, CONFIG);
+    var res = resolveEntry($("cmd").value, IDX, dR.drafted, CONFIG, !!locked);
+    cands = res.best.cands.slice(0, 8);
+    if (pickerSel >= cands.length) pickerSel = 0;
+    var cmd = { player: res.best.playerQ, price: res.price, team: res.best.teamQ };
     if (locked && !cmd.player) {
       if (cmd.price === null || cmd.price < 1) { setStatus(locked.name + ": price? (e.g. 47 kev)", "err"); return; }
       var tl = matchTeam(cmd.team, CONFIG);
@@ -826,12 +898,16 @@ if (typeof document !== "undefined") (function () {
     $("cmd").value = ""; cands = []; $("picker").hidden = true;
     commit(p, cmd.price, t.idx);
   }
+  function refreshPicker() {
+    var d = derive(state, IDX, CONFIG);
+    renderPicker(d, resolveEntry($("cmd").value, IDX, d.drafted, CONFIG, !!locked));
+  }
   $("cmd").addEventListener("input", onInput);
   $("cmd").addEventListener("keydown", function (e) {
     if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) { e.preventDefault(); commitUnknown(); }
     else if (e.key === "Enter") { e.preventDefault(); onEnter(); }
-    else if (e.key === "ArrowDown") { e.preventDefault(); if (cands.length) { pickerSel = (pickerSel + 1) % cands.length; renderPicker(derive(state, IDX, CONFIG), parseCommand($("cmd").value)); } }
-    else if (e.key === "ArrowUp") { e.preventDefault(); if (cands.length) { pickerSel = (pickerSel - 1 + cands.length) % cands.length; renderPicker(derive(state, IDX, CONFIG), parseCommand($("cmd").value)); } }
+    else if (e.key === "ArrowDown") { e.preventDefault(); if (cands.length) { pickerSel = (pickerSel + 1) % cands.length; refreshPicker(); } }
+    else if (e.key === "ArrowUp") { e.preventDefault(); if (cands.length) { pickerSel = (pickerSel - 1 + cands.length) % cands.length; refreshPicker(); } }
     else if (e.key === "Escape") { locked = null; renderLock(); $("cmd").value = ""; onInput(); setStatus(""); }
   });
   document.addEventListener("keydown", function (e) {
@@ -1102,7 +1178,7 @@ if (typeof document !== "undefined") (function () {
   $("cmd").focus();
 })();
 
-if (typeof module !== "undefined") module.exports = { CONFIG: CONFIG, normName: normName, indexPlayers: indexPlayers, parseCommand: parseCommand, matchPlayers: matchPlayers, matchTeam: matchTeam, parseBulk: parseBulk, fillSlots: fillSlots, derive: derive, exportState: exportState, data: function () { return BOARD_DATA; } };
+if (typeof module !== "undefined") module.exports = { CONFIG: CONFIG, normName: normName, indexPlayers: indexPlayers, parseCommand: parseCommand, resolveEntry: resolveEntry, matchPlayers: matchPlayers, matchTeam: matchTeam, parseBulk: parseBulk, fillSlots: fillSlots, derive: derive, exportState: exportState, data: function () { return BOARD_DATA; } };
 </script>
 </body>
 </html>

@@ -1009,6 +1009,7 @@ def board_config(cfg):
         "TEAMS": teams, "ME": 0,
         "ROSTER": cfg["roster_slots"],
         "FLEX_USAGE": BASE_FLEX_USAGE, "BENCH_SHARE": BENCH_SHARE,
+        "SYNC_PATH": f"/state/{cfg['slug']}",
         "OVERPAY_FLAG": 1.15, "OVERPAY_MIN_VALUE": 20, "DISAGREE_MIN": 0.4,
         "CUFF_INSURANCE": 0.15, "CUFF_INS_CAP": 12,
         "QUALITY_MIN": 10, "URGENT_REMAINING": 3, "URGENT_CAP": 12,
