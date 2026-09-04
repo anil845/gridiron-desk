@@ -53,43 +53,58 @@ One glanceable page, board-style:
 5. **🎙 Podcast consensus** — see below. Badges on player rows, like the
    draft board's source model: agreement is boring, divergence is the signal.
 
-## Presentation layer — where you look
+## Presentation layer — the daily dashboard
 
-**No new app.** The war room (gridiron-war-room.fly.dev, same auth) becomes
-the season home. Its index grows three links per league: the draft board
-(archive), **the week page** (the living surface), and later a trends page.
+**One in-season dashboard, checked daily.** Hosted on the war room
+(gridiron-war-room.fly.dev/dash), same auth, both leagues baked into one page
+with a **league toggle** (papi | league) pinned at top, choice remembered.
+Design: **strip-style, simple, elegant** — calmer than the draft cockpit
+(daily reading, not 20-second bidding), same color grammar and tooltip
+receipts, single column on mobile. Every strip carries its own
+**freshness stamp** ("synced 6:02am") — trust comes from visible timestamps.
 
-**One week page per league** — `/week/<slug>` always shows the current week
-(`/week/<slug>/<N>` archives). Same cockpit design system as the draft board:
-dark, gold = money, the established color grammar (red act / amber caution /
-grey ignore / green good), tooltips carry receipts. Layout:
+Strips, top to bottom:
+1. **Today** — date, next lineup lock countdown, anything that fired
+   (inactive risk, claim deadline tonight, roster-staleness warning).
+2. **Matchup** — opponent name + **their full current roster**, both
+   projected totals, win prob + variance directive, close-call flags.
+   The opponent roster is first-class here: a "roster as of <date>" stamp
+   plus a diff badge ("+2 adds this week") so one glance against the Yahoo
+   app confirms it — this is the answer to "am I planning against reality?"
+3. **Projection movers** — daily snapshot diffs: any of my/opponent/watchlist
+   players whose weekly projection moved ≥2 pts since yesterday, with why
+   (news join). This is the "changing projections" feed.
+4. **News & 🎙** — fresh headlines + podcast stances on relevant players
+   only (my rosters, opponents, top waiver targets), newest first.
+5. **Waiver Intelligence** — the verdict cards (EARLY/CONTESTED/FRENZY/
+   INSURANCE/MIRAGE) with FAB bids and funding drops; fullest on Mon/Tue.
+6. **Usage movers** — snap/target/carry share deltas after each week's games.
 
-- **Hero** (where MAX BID lived): opponent, both projected totals, the win
-  probability, and the variance directive in words — "60% favorite → start
-  floors". The one number + one instruction that frames every other decision.
-- **Left — Waiver Intelligence**: verdict-sorted cards (EARLY first, FRENZY
-  last). Each card: player, verdict chip, suggested FAB + walk-away, the five
-  signal legs in one mini-row (our$ · FP rank · market velocity · usage Δ ·
-  context icon), and the funding move ("add X, drop Y" — every add names its
-  drop). Papi shows triage mode; League shows stash lane too.
-- **Middle — Matchup**: my optimal lineup vs theirs side by side, close-call
-  flags on <2pt decisions, bye/injury chips, and the K/DEF stream card
-  (this week + next, with the "your DEF's matchup is bottom-5 → stream X" flag).
-- **Right — Context strip**: usage movers (share deltas), news + 🎙 podcast
-  stances on relevant players, my FAB vs rivals' remaining FAB tracker.
-- Mobile: single column, hero first — Tuesday planning works from a phone.
+Delivery: nightly GitHub Action → sync all sources + snapshot projections →
+build dashboard → `flyctl deploy`. Telegram still pushes only Sunday
+inactives + Tuesday claim nudges; the dashboard is the daily *pull* surface —
+rich because you choose when to look.
 
-**Delivery pipeline** (static-bake, like the draft): nightly GitHub Action →
-sync data → `build_week.py` renders the pages → `flyctl deploy` (FLY_API_TOKEN
-secret) bakes them into the war room. No server smarts, no live queries, no
-new infrastructure to break.
+## Opponent-roster freshness — the staleness problem, solved in tiers
 
-**Viewing cadence — the minimal-noise contract:**
-- **Tuesday morning (~10 min)**: THE session. Telegram digest arrives with
-  the top-3 verdicts + a link; the week page is the full read; claims filed.
-- **Sunday pre-lock (~1 min)**: Telegram inactive alerts only; glance at the
-  hero if something fired. No browsing.
-- **Every other moment**: silence. Nothing pushes, nothing needs checking.
+The single biggest correctness risk: rivals add/drop and every projection,
+win prob, and FAB read goes quietly wrong.
+
+- **Tier A (the real fix): Yahoo Fantasy API.** Alive, OAuth2, read-only —
+  rosters, transactions, matchups, FAB balances. Requires an approved
+  developer application (personal/single-league use is a supported case;
+  README notes access was applied for in Aug — CHECK STATUS, resubmit if
+  needed). Once granted: one-time browser consent → cached refresh token →
+  nightly + pre-build sync of every roster in both leagues. Kills the manual
+  paste entirely and makes rival-FAB tracking exact.
+- **Tier B (until A lands): frictionless paste.** The dashboard itself gets a
+  "Paste transactions" box (the draft board's bulk-paste pattern): copy
+  Yahoo's transaction log page → paste → tolerant parser applies deltas →
+  staleness stamps reset. ~60 seconds, from the same page you're already on.
+- **Tier C (always): visible staleness.** Stamps on every roster-derived
+  number; the Today strip warns when rosters are >3 days old; a one-tap
+  "confirmed current" resets the stamp after a manual glance at Yahoo.
+  The system never *pretends* freshness it doesn't have.
 
 ## Data layer (automated, no LLM)
 
