@@ -12,3 +12,6 @@ env/
 # Cached source payloads (Sleeper JSON, nflverse CSVs). Large and re-fetchable;
 # never committed.
 data/
+
+# Yahoo OAuth token cache (data/ already ignored, belt+suspenders)
+data/yahoo_tokens.json
