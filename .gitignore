@@ -15,3 +15,6 @@ data/
 
 # Yahoo OAuth token cache (data/ already ignored, belt+suspenders)
 data/yahoo_tokens.json
+
+# Podcast caption cache (large, refetchable)
+seasons/podcast/vtt/
