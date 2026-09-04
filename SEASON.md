@@ -53,6 +53,44 @@ One glanceable page, board-style:
 5. **🎙 Podcast consensus** — see below. Badges on player rows, like the
    draft board's source model: agreement is boring, divergence is the signal.
 
+## Presentation layer — where you look
+
+**No new app.** The war room (gridiron-war-room.fly.dev, same auth) becomes
+the season home. Its index grows three links per league: the draft board
+(archive), **the week page** (the living surface), and later a trends page.
+
+**One week page per league** — `/week/<slug>` always shows the current week
+(`/week/<slug>/<N>` archives). Same cockpit design system as the draft board:
+dark, gold = money, the established color grammar (red act / amber caution /
+grey ignore / green good), tooltips carry receipts. Layout:
+
+- **Hero** (where MAX BID lived): opponent, both projected totals, the win
+  probability, and the variance directive in words — "60% favorite → start
+  floors". The one number + one instruction that frames every other decision.
+- **Left — Waiver Intelligence**: verdict-sorted cards (EARLY first, FRENZY
+  last). Each card: player, verdict chip, suggested FAB + walk-away, the five
+  signal legs in one mini-row (our$ · FP rank · market velocity · usage Δ ·
+  context icon), and the funding move ("add X, drop Y" — every add names its
+  drop). Papi shows triage mode; League shows stash lane too.
+- **Middle — Matchup**: my optimal lineup vs theirs side by side, close-call
+  flags on <2pt decisions, bye/injury chips, and the K/DEF stream card
+  (this week + next, with the "your DEF's matchup is bottom-5 → stream X" flag).
+- **Right — Context strip**: usage movers (share deltas), news + 🎙 podcast
+  stances on relevant players, my FAB vs rivals' remaining FAB tracker.
+- Mobile: single column, hero first — Tuesday planning works from a phone.
+
+**Delivery pipeline** (static-bake, like the draft): nightly GitHub Action →
+sync data → `build_week.py` renders the pages → `flyctl deploy` (FLY_API_TOKEN
+secret) bakes them into the war room. No server smarts, no live queries, no
+new infrastructure to break.
+
+**Viewing cadence — the minimal-noise contract:**
+- **Tuesday morning (~10 min)**: THE session. Telegram digest arrives with
+  the top-3 verdicts + a link; the week page is the full read; claims filed.
+- **Sunday pre-lock (~1 min)**: Telegram inactive alerts only; glance at the
+  hero if something fired. No browsing.
+- **Every other moment**: silence. Nothing pushes, nothing needs checking.
+
 ## Data layer (automated, no LLM)
 
 | What | Source | Cadence | Where it runs |
