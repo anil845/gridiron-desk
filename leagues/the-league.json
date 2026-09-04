@@ -8,6 +8,8 @@
     "K": 1, "DEF": 1, "BN": 5
   },
   "_comment": "IR excluded. 13 active spots. NO dedicated WR or TE slot.",
+  "waivers": { "claim_window_days": 1, "type": "FAB, continual rolling list tiebreak",
+               "process": "Game Time - Tuesday", "verified": "league settings PDF 2026-08" },
   "scoring": {
     "pass_yd": 0.04, "pass_td": 6, "interception": -2,
     "sack_taken": 0, "pick_six_thrown": 0,

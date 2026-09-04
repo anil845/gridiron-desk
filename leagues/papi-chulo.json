@@ -8,6 +8,8 @@
     "W/R/T": 1, "K": 1, "DEF": 1, "BN": 3
   },
   "_comment": "IR x2 excluded from active roster. 12 active spots.",
+  "waivers": { "claim_window_days": 2, "type": "FAB, reverse-standings tiebreak",
+               "process": "Game Time - Tuesday", "verified": "2026-09-04 from league settings" },
   "scoring": {
     "pass_yd": 0.04, "pass_td": 6, "interception": -3,
     "sack_taken": -1, "pick_six_thrown": -6,

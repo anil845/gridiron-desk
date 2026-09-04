@@ -56,9 +56,10 @@ ticks get silently skipped.
 ## Podcast synthesizer
 
 No listening, no audio transcription. Big fantasy shows post full episodes on
-YouTube → `yt-dlp --write-auto-sub` pulls the captions as text for free.
-(whisper.cpp + ffmpeg is the fallback for audio-only feeds; ffmpeg verified
-installed.)
+YouTube → `yt-dlp --write-auto-subs` pulls the captions as text for free.
+**Verified 2026-09-04**: Fantasy Footballers Ep. 1965 → 11k clean words in
+seconds. Feed list (7 shows) in `seasons/podcasts.json`. (whisper.cpp +
+ffmpeg is the fallback for audio-only feeds; ffmpeg verified installed.)
 
 Pipeline (nightly, automated):
 1. Fetch new episodes from the chosen shows' channels → captions → clean text.
@@ -71,14 +72,24 @@ Surfaced as: 🎙 badge + stance on week.html rows (hover = actual quotes), and 
 "pods vs model" disagreement list — same P/M philosophy as the draft board:
 when the pods and the projections disagree, that's exactly where to look.
 
-## Alerts (phone via ntfy, minimal-noise rules)
+## Alerts (Telegram, minimal-noise rules)
+
+Delivery: the existing **Telegram bot** identity (used by other repos / the
+mini). Design constraint: agenthqv2 sleeps and drops off the tailnet, so
+alerts must NOT run on the mini — the sweep scripts call the Telegram Bot API
+directly (one HTTPS POST with bot token + chat id, stored as GH Actions
+secrets). The mini keeps its agents; this system only borrows the bot
+identity. TODO at build time: pull BOT_TOKEN + chat_id from the existing
+setup (openclaw config on the mini, or the repo that uses it).
+
 
 1. **Sunday inactive sweep** (the one that justifies everything): every 15 min
    in the 11:00am–1:05pm window (in-script time gate), reads MY rosters, pulls
    inactives; if a starter is OUT → push "Papi: X is OUT — best bench: Y".
 2. **Tuesday waiver nudge**: claim-deadline reminder + top 3 targets + FAB
-   bids. Per-league claim windows encoded (League: 1 day; **Papi: verify —
-   never sourced from settings**).
+   bids. Claim windows verified and encoded in leagues/*.json — Papi: 2 days,
+   FAB, reverse-standings tiebreak; League: 1 day, FAB, continual rolling.
+   Both process at Tuesday game time.
 3. **Mid-week news** ONLY if it touches my roster or a top-5 waiver target.
    Nothing else pushes. Silence is the default.
 

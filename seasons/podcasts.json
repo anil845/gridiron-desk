@@ -1,0 +1,16 @@
+{
+  "_comment": "Podcast synthesizer feed list. Episodes pulled via YouTube captions (yt-dlp --write-auto-subs), no audio transcription. Pipeline verified 2026-09-04: Fantasy Footballers Ep. 1965 -> 11k clean words. channel_query is used with ytsearch/channel resolution during the week-4 build; pin exact channel URLs then.",
+  "shows": [
+    { "name": "The Fantasy Footballers", "channel_query": "Fantasy Footballers podcast", "cadence": "daily-ish", "verified_captions": true },
+    { "name": "ESPN Fantasy Focus", "channel_query": "Fantasy Focus ESPN podcast", "cadence": "daily" },
+    { "name": "Rotoworld FF Happy Hour", "channel_query": "Rotoworld Fantasy Football Happy Hour", "cadence": "daily" },
+    { "name": "Harris Football", "channel_query": "Harris Football podcast", "cadence": "2-3x/week" },
+    { "name": "Fantasy Football Today (CBS)", "channel_query": "Fantasy Football Today podcast", "cadence": "daily" },
+    { "name": "The Ringer Fantasy Football Show", "channel_query": "Ringer Fantasy Football Show", "cadence": "3x/week" },
+    { "name": "Matthew Berry Fantasy Life", "channel_query": "Matthew Berry Fantasy Life show", "cadence": "daily" }
+  ],
+  "extraction_schema": {
+    "player": "full name", "stance": "buy|sell|start|sit|add|drop|hold",
+    "strength": "1-3", "quote": "short supporting quote", "show": "", "episode_date": "YYYY-MM-DD"
+  }
+}
