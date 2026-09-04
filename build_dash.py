@@ -11,7 +11,9 @@ known opponent render a calm 'awaiting schedule' state.
 """
 
 import argparse
+import csv
 import datetime
+import io
 import json
 import os
 import re
@@ -22,6 +24,100 @@ import intel_week as iw
 
 LEAGUES = ["papi-chulo", "the-league"]
 MATCHUPS = os.path.join("seasons", "matchups.json")
+SNAPDIR = os.path.join("seasons", "snapshots")
+MOVE_THRESHOLD = 2.0   # weekly-projection points to count as a mover
+INJ_WORDS = re.compile(r"\b(out|doubtful|questionable|limited|dnp|ir|injured reserve|"
+                       r"suspend|placed on|ruled out|won'?t play|inactive|carted)\b", re.I)
+
+
+def _next_lock(week):
+    """Earliest kickoff of the week from the schedule -> (date, days_away)."""
+    path = os.path.join(bb.DATA_DIR, "nflverse_games.csv")
+    if not os.path.exists(path):
+        return None, None
+    days = []
+    for r in csv.DictReader(io.StringIO(open(path, encoding="utf-8").read())):
+        if r.get("season") == str(bb.SEASON) and r.get("game_type") == "REG" and r.get("week") == str(week) and r.get("gameday"):
+            try:
+                days.append(datetime.date.fromisoformat(r["gameday"]))
+            except ValueError:
+                pass
+    if not days:
+        return None, None
+    first = min(days)
+    return first.isoformat(), (first - datetime.date.today()).days
+
+
+def _snapshot_diff(slug, board, proj, week, srates, lgr, p6r, fr, scoring):
+    """Write today's snapshot (proj pts + injury per player); diff vs the most
+    recent OLDER snapshot to surface movers. First run has no prior -> []."""
+    os.makedirs(SNAPDIR, exist_ok=True)
+    today = {}
+    for pid, e in proj.items():
+        pl = e.get("player", {})
+        pos = pl.get("position")
+        if pos not in bb.SKILL + ("K", "DEF"):
+            continue
+        name = (f"{pl.get('first_name', '')} {pl.get('last_name', '')}".strip() if pos != "DEF" else pl.get("last_name", ""))
+        pts, _o = bw.week_points({"pid": pid, "name": name, "position": pos}, proj, scoring, srates, lgr, p6r, fr)
+        today[pid] = {"name": name, "pos": pos, "pts": round(pts, 1) if pts is not None else None,
+                      "inj": board.get(pid, {}).get("injury_status")}
+    stamp = datetime.date.today().isoformat()
+    cur_path = os.path.join(SNAPDIR, f"{slug}_w{week}_{stamp}.json")
+    priors = sorted(p for p in os.listdir(SNAPDIR) if p.startswith(f"{slug}_w{week}_") and p != os.path.basename(cur_path))
+    movers = []
+    if priors:
+        prev = json.load(open(os.path.join(SNAPDIR, priors[-1]), encoding="utf-8"))
+        for pid, now in today.items():
+            was = prev.get(pid)
+            if not was:
+                continue
+            if now["pts"] is not None and was.get("pts") is not None and abs(now["pts"] - was["pts"]) >= MOVE_THRESHOLD:
+                movers.append({"pid": pid, "name": now["name"], "pos": now["pos"],
+                               "delta": round(now["pts"] - was["pts"], 1), "pts": now["pts"], "kind": "proj"})
+            elif now["inj"] != was.get("inj") and (now["inj"] or was.get("inj")):
+                movers.append({"pid": pid, "name": now["name"], "pos": now["pos"],
+                               "from": was.get("inj"), "to": now["inj"], "kind": "status"})
+    json.dump(today, open(cur_path, "w", encoding="utf-8"))
+    return movers
+
+
+def _today(out, movers, board, me, week):
+    """The punch-list: only things that need a decision, ranked, capped at 6.
+    Empty list = the calm all-clear."""
+    items = []
+    lock_date, days = _next_lock(week)
+    # 1) roster holes (open starting slots)
+    open_start = [s for s in (out.get("me", {}).get("open") or []) if s not in ("BN",)]
+    if open_start:
+        items.append({"u": "act", "text": f"Fill your open {', '.join(open_start)} — lineup incomplete"})
+    # 2) injured starters (my optimal lineup)
+    for p in (out.get("me", {}).get("lineup") or []):
+        if p.get("inj"):
+            sev = "act" if p["inj"] in ("Out", "IR", "Doubtful") else "soon"
+            items.append({"u": sev, "text": f"{p['name']} is {p['inj']} — {'replace' if sev=='act' else 'monitor'} at {p.get('slot','')}"})
+    # 3) projection/status movers on MY players
+    my_pids = {pk["pid"] for pk in me["picks"]} if me else set()
+    for m in movers:
+        if m["pid"] in my_pids:
+            if m["kind"] == "proj":
+                items.append({"u": "fyi", "text": f"{m['name']} projection {'up' if m['delta']>0 else 'down'} {abs(m['delta'])} to {m['pts']}"})
+            else:
+                items.append({"u": "soon", "text": f"{m['name']} status: {m.get('from') or 'active'} -> {m.get('to') or 'active'}"})
+    # 4) waiver claim window (surface Sun-Tue, both leagues process Tuesday)
+    dow = datetime.date.today().weekday()  # Mon=0
+    if dow in (6, 0, 1):  # Sun/Mon/Tue
+        actionable = [w for w in (out.get("waivers") or []) if w["verdict"] not in ("WATCH", "FORMAT MIRAGE")]
+        if actionable:
+            items.append({"u": "soon", "text": f"Waivers process Tuesday — {len(actionable)} live target"
+                          + ("s" if len(actionable) != 1 else "") + f", top: {actionable[0]['name']}"})
+    # 5) news touching my roster with injury/status keywords
+    for n in (out.get("intel") or []):
+        if INJ_WORDS.search(n["headline"]):
+            items.append({"u": "soon", "text": f"{n['player']}: {n['headline'].split(': ', 1)[-1][:80]}"})
+    rank = {"act": 0, "soon": 1, "fyi": 2}
+    items.sort(key=lambda x: rank.get(x["u"], 3))
+    return {"lock_date": lock_date, "lock_days": days, "items": items[:6]}
 
 
 def compute_league(slug, week, force, ctx):
@@ -92,6 +188,10 @@ def compute_league(slug, week, force, ctx):
     # waiver intelligence (reuse intel_week internals lightly)
     out["waivers"], out["stream"] = _waivers(cfg, slug, week, board, proj, me, ctx, force)
     out["intel"], out["podcast"] = _context(slug, board, me, opp)
+    movers = _snapshot_diff(slug, board, proj, week, srates, lgr, p6r, fr, cfg["scoring"])
+    out["movers"] = [m for m in movers if m["pid"] in ({pk["pid"] for pk in me["picks"]} if me else set())
+                     or board.get(m["pid"], {}).get("value", 0) >= 12][:10]
+    out["today"] = _today(out, movers, board, me, week)
     return out
 
 

@@ -1,5 +1,5 @@
 {
- "built": "2026-09-04T14:36:37",
+ "built": "2026-09-04T14:54:42",
  "week": 1,
  "leagues": {
   "papi-chulo": {
@@ -329,7 +329,7 @@
      "improve": -0.8,
      "ecr": 101.0,
      "owned": 82.12,
-     "vel": 0.2,
+     "vel": 0.18,
      "usage": null,
      "trending": 8415,
      "injury": null,
@@ -346,7 +346,7 @@
      "our_pts": 9.4,
      "improve": -2.2,
      "ecr": 108.0,
-     "owned": 57.35,
+     "owned": 57.29,
      "vel": -0.15,
      "usage": null,
      "trending": null,
@@ -365,7 +365,7 @@
      "improve": -2.2,
      "ecr": 100.0,
      "owned": 75.19,
-     "vel": 0.4,
+     "vel": 0.38,
      "usage": null,
      "trending": null,
      "injury": null,
@@ -382,8 +382,8 @@
      "our_pts": 9.4,
      "improve": -2.2,
      "ecr": 109.0,
-     "owned": 18.38,
-     "vel": 0.04,
+     "owned": 18.4,
+     "vel": 0.03,
      "usage": null,
      "trending": null,
      "injury": null,
@@ -436,7 +436,7 @@
      "our_pts": 10.6,
      "improve": -3.0,
      "ecr": 94.0,
-     "owned": 62.0,
+     "owned": 61.99,
      "vel": 0.37,
      "usage": null,
      "trending": 6488,
@@ -455,7 +455,7 @@
      "improve": -3.0,
      "ecr": 68.0,
      "owned": 92.21,
-     "vel": 0.21,
+     "vel": 0.2,
      "usage": null,
      "trending": null,
      "injury": null,
@@ -472,8 +472,8 @@
      "our_pts": 17.4,
      "improve": -3.1,
      "ecr": null,
-     "owned": 93.2,
-     "vel": 0.08,
+     "owned": 93.19,
+     "vel": 0.07,
      "usage": null,
      "trending": null,
      "injury": null,
@@ -490,8 +490,8 @@
      "our_pts": 10.4,
      "improve": -3.2,
      "ecr": 79.0,
-     "owned": 80.67,
-     "vel": 0.27,
+     "owned": 80.66,
+     "vel": 0.26,
      "usage": null,
      "trending": null,
      "injury": "Questionable",
@@ -511,8 +511,8 @@
       "our_pts": 8.0,
       "improve": 0.0,
       "ecr": null,
-      "owned": 2.11,
-      "vel": 0.32,
+      "owned": 2.15,
+      "vel": 0.3,
       "usage": null,
       "trending": 14012,
       "injury": null,
@@ -529,8 +529,8 @@
       "our_pts": 7.9,
       "improve": 0.0,
       "ecr": null,
-      "owned": 72.44,
-      "vel": 0.26,
+      "owned": 72.43,
+      "vel": 0.25,
       "usage": null,
       "trending": 9800,
       "injury": null,
@@ -547,7 +547,7 @@
       "our_pts": 7.5,
       "improve": 0.0,
       "ecr": null,
-      "owned": 52.52,
+      "owned": 52.5,
       "vel": 0.16,
       "usage": null,
       "trending": 21918,
@@ -676,7 +676,18 @@
      "n": 1,
      "quote": "very few hot hands in his career; frustrating back and forth"
     }
-   ]
+   ],
+   "movers": [],
+   "today": {
+    "lock_date": "2026-09-09",
+    "lock_days": 5,
+    "items": [
+     {
+      "u": "act",
+      "text": "Fill your open K, DEF — lineup incomplete"
+     }
+    ]
+   }
   },
   "the-league": {
    "name": "The League",
