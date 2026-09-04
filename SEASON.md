@@ -23,10 +23,28 @@ One glanceable page, board-style:
    scoring, start/sit calls with close-call flags (<2pt = judgment, not math),
    win probability, and the variance directive: favorite → floors,
    underdog → ceilings + correlated stacks.
-2. **Waiver board** — FA pool (relevant players − all rostered), ranked by
-   improvement over MY weakest starter (papi) or roster value added (league),
-   with a suggested FAB bid derived from the gap + my remaining budget +
-   competition (other teams' needs from their rosters).
+2. **Waiver board — the intelligence core.** Not a projections list: five
+   independent signal legs joined per candidate (the draft board's source
+   model, weaponized for waivers), each verified live 2026-09-04:
+
+   | Leg | Source | What it knows |
+   |---|---|---|
+   | Value (ours) | league-scored weekly + ROS VORP vs MY weakest starter | worth *in this league, on this roster* — exists nowhere online |
+   | Experts | FantasyPros weekly + ROS + in-season waiver ranks (scraped ecrData); WalterFootball weekly | what analysts think, with disagreement stddev |
+   | Market | ESPN roster% **velocity** + %started (24h deltas); Sleeper trending adds/drops | what the crowd is *doing*, and how late you are |
+   | Usage | nflverse snap/route/target/carry share deltas wk-over-wk | the leading indicator — opportunity moves before points |
+   | Context | injury to the man ahead (handcuff map), news, podcast stances | why it's happening |
+
+   The intelligence is the **triangulation verdict**, printed per candidate:
+   - usage↑, experts flat, market flat → **EARLY — bid low, beat the market**
+   - usage↑, market surging → **CONTESTED — pay fair FAB, window closing**
+   - market surging, usage flat → **FRENZY — fade** (the Malik Davis pattern)
+   - my starter hurt, his cuff free → **INSURANCE — bid to $X**
+   - experts high, our-league scoring low → **FORMAT MIRAGE — skip**
+
+   FAB bid engine: net roster gain × positional scarcity × rival demand
+   (tracked rosters + their remaining FAB) × league mode (papi triage /
+   league speculation). Suggests open bid + walk-away, like the draft board.
 3. **K/DEF stream card** — this week + next week: opponent offense strength,
    opposing QB sack/INT proneness, dome, miss-penalty scoring. Auto-flags
    "your DEF has a bottom-5 matchup → stream X".
