@@ -64,6 +64,25 @@ def _teams_from(node):
     return out
 
 
+def _txns_from(node):
+    """add/drop/trade transactions with FAB bids from /transactions JSON."""
+    out = []
+    txt = json.dumps(node)
+    for tx in re.finditer(r'"type":"(add/drop|add|drop|trade|commish)".*?(?="type":"(?:add|drop|trade|commish)"|$)', txt, re.S):
+        blk = tx.group(0)
+        fab = re.search(r'"faab_bid":"?(\d+)"?', blk)
+        ts = re.search(r'"timestamp":"?(\d+)"?', blk)
+        adds = re.findall(r'"transaction_data":\[\{"type":"add".*?"name":\{"full":"([^"]+)"', blk)
+        drops = re.findall(r'"transaction_data":\[?\{"type":"drop".*?"name":\{"full":"([^"]+)"', blk)
+        team = re.search(r'"destination_team_name":"([^"]+)"', blk) or re.search(r'"nickname":"([^"]+)"', blk)
+        if adds or drops:
+            out.append({"date": ts.group(1) if ts else None, "team": team.group(1) if team else None,
+                        "type": tx.group(1), "fab": int(fab.group(1)) if fab else None,
+                        "adds": [{"name": a} for a in adds], "drops": [{"name": d} for d in drops],
+                        "targeted": adds})
+    return out
+
+
 def sync_league(slug, key):
     st = get(f"league/{key}/standings")
     teams = _teams_from(st)
@@ -72,6 +91,14 @@ def sync_league(slug, key):
         with open(os.path.join("seasons", f"{slug}_standings.json"), "w", encoding="utf-8") as fh:
             json.dump({"league_key": key, "teams": teams}, fh, indent=1, ensure_ascii=False)
         print(f"  {slug}: wrote standings for {len(teams)} teams")
+    try:
+        tx = get(f"league/{key}/transactions")
+        txns = _txns_from(tx)
+        with open(os.path.join("seasons", f"{slug}_transactions.json"), "w", encoding="utf-8") as fh:
+            json.dump({"league_key": key, "txns": txns}, fh, indent=1, ensure_ascii=False)
+        print(f"  {slug}: wrote {len(txns)} transactions")
+    except Exception as exc:  # noqa: BLE001
+        print(f"  {slug}: transactions skipped ({exc})")
     return len(teams)
 
 

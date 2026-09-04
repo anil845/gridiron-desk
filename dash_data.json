@@ -1,5 +1,5 @@
 {
- "built": "2026-09-04T09:38:57",
+ "built": "2026-09-04T09:58:46",
  "week": 1,
  "leagues": {
   "papi-chulo": {
@@ -312,6 +312,7 @@
      "is_me": false
     }
    ],
+   "activity": null,
    "my_record": {
     "rec": "0-0",
     "rank": 1,

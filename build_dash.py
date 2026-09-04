@@ -77,6 +77,7 @@ def compute_league(slug, week, force, ctx):
 
     # standings + season tracking
     out["standings"] = _standings(slug, rosters, me, opp_name)
+    out["activity"] = _activity(slug, board)
     if out.get("opp") and out["standings"]:
         rec = next((t for t in out["standings"] if t["name"].lower().startswith((opp_name or "").lower())), None)
         if rec:
@@ -92,6 +93,30 @@ def compute_league(slug, week, force, ctx):
     out["waivers"], out["stream"] = _waivers(cfg, slug, week, board, proj, me, ctx, force)
     out["intel"], out["podcast"] = _context(slug, board, me, opp)
     return out
+
+
+def _activity(slug, board):
+    """League transaction feed + per-team FAB spent, from seasons/<slug>_transactions.json
+    (Yahoo sync or manual paste). 'notable' flags moves for players our board
+    values highly — i.e. a rival grabbing a real asset, not a dart."""
+    path = os.path.join("seasons", f"{slug}_transactions.json")
+    if not os.path.exists(path):
+        return None
+    txns = json.load(open(path, encoding="utf-8")).get("txns", [])
+    valmap = {bb.norm_name(p["name"]): p.get("value", 0) for p in board.values()}
+    fab_spent = {}
+    recent = []
+    for t in txns:
+        if t.get("fab"):
+            fab_spent[t.get("team")] = fab_spent.get(t.get("team"), 0) + t["fab"]
+        val = max((valmap.get(bb.norm_name(a["name"]), 0) for a in t.get("adds", [])), default=0)
+        recent.append({"team": t.get("team"), "fab": t.get("fab"),
+                       "adds": [a["name"] for a in t.get("adds", [])],
+                       "drops": [d["name"] for d in t.get("drops", [])],
+                       "date": t.get("date"), "type": t.get("type"), "notable": val >= 15})
+    recent.reverse()   # newest first
+    top_fab = sorted(fab_spent.items(), key=lambda kv: -kv[1])[:5]
+    return {"recent": recent[:12], "fab_spent": [{"team": k, "spent": v} for k, v in top_fab], "n": len(txns)}
 
 
 def _standings(slug, rosters, me, opp_name):
