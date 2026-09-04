@@ -1,0 +1,5 @@
+{
+  "_comment": "Weekly opponent per league. Replaced by Yahoo API once its access is approved. Keys are week numbers (strings).",
+  "papi-chulo": { "1": "JSN Bourne" },
+  "the-league": {}
+}

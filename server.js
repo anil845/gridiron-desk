@@ -41,12 +41,19 @@ const server = http.createServer((req, res) => {
   let m;
   if (req.method === "GET" && (url === "/" || url === "/index.html")) {
     const links = boards().map(s => `<li><a href="/board/${s}">${s}</a> · <a href="/state/${s}">state</a></li>`).join("");
+    const dash = fs.existsSync(path.join(__dirname, "dash.html")) ? '<p><a href="/dash"><b>Season dashboard →</b></a></p>' : "";
     res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
-    return res.end(`<h3>gridiron war room</h3><ul>${links}</ul>`);
+    return res.end(`<h3>gridiron war room</h3>${dash}<p>draft boards:</p><ul>${links}</ul>`);
   }
   if (req.method === "GET" && (m = url.match(/^\/board\/([a-z0-9-]+)$/))) {
     const f = path.join(__dirname, `board_${m[1]}.html`);
     if (!fs.existsSync(f)) { res.writeHead(404); return res.end("no such board"); }
+    res.writeHead(200, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" });
+    return res.end(fs.readFileSync(f));
+  }
+  if (req.method === "GET" && (url === "/dash" || url === "/dash.html")) {
+    const f = path.join(__dirname, "dash.html");
+    if (!fs.existsSync(f)) { res.writeHead(404); return res.end("no dashboard yet"); }
     res.writeHead(200, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" });
     return res.end(fs.readFileSync(f));
   }

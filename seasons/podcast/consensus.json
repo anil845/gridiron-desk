@@ -1,0 +1,820 @@
+{
+ "built": "2026-09-04T09:15:11",
+ "episodes": 52,
+ "players": [
+  {
+   "player": "Jahmyr Gibbs",
+   "norm": "jahmyr gibbs",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "no reason to draft anyone other than Gibbs with the 1.01"
+    }
+   ]
+  },
+  {
+   "player": "De'Von Achane",
+   "norm": "devon achane",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "bang the table one final time; third best running back in football"
+    }
+   ]
+  },
+  {
+   "player": "D'Andre Swift",
+   "norm": "dandre swift",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "D'Andre Swift, especially early season, will be a steal"
+    }
+   ]
+  },
+  {
+   "player": "Marvin Harrison Jr.",
+   "norm": "marvin harrison",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "humongous season, outkick his ADP; better red zone threat, secure target share"
+    }
+   ]
+  },
+  {
+   "player": "James Cook",
+   "norm": "james cook",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "James Cook is an elite running back, will score a ton of touchdowns"
+    }
+   ]
+  },
+  {
+   "player": "Jaxon Smith-Njigba",
+   "norm": "jaxon smithnjigba",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "far more target market share of his team; same tier as Amon-Ra"
+    }
+   ]
+  },
+  {
+   "player": "Amon-Ra St. Brown",
+   "norm": "amonra st brown",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "would love to get Amon-Ra St. Brown at the 10 spot"
+    }
+   ]
+  },
+  {
+   "player": "Justin Jefferson",
+   "norm": "justin jefferson",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "Andy wasting no time in selecting Justin Jefferson"
+    }
+   ]
+  },
+  {
+   "player": "A.J. Brown",
+   "norm": "aj brown",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "A.J. Brown, an elite wide receiver one, did fall to me"
+    }
+   ]
+  },
+  {
+   "player": "Drake London",
+   "norm": "drake london",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "we've talked that situation down enough; good value at the 2-3 turn"
+    }
+   ]
+  },
+  {
+   "player": "Brock Bowers",
+   "norm": "brock bowers",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "what a value, Brock Bowers in the third round"
+    }
+   ]
+  },
+  {
+   "player": "Jeremiyah Love",
+   "norm": "jeremiyah love",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "at the 2-3 turn you're near his floor with crazy upside"
+    }
+   ]
+  },
+  {
+   "player": "Jadarian Price",
+   "norm": "jadarian price",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "situation for a first-round back is pretty perfect; could be something special"
+    }
+   ]
+  },
+  {
+   "player": "Cam Skattebo",
+   "norm": "cam skattebo",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "hold",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "elite talent, but I'd want him as my running back three"
+    }
+   ]
+  },
+  {
+   "player": "Luther Burden",
+   "norm": "luther burden",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "Luther Burden, baby. Finally it worked out"
+    }
+   ]
+  },
+  {
+   "player": "Davante Adams",
+   "norm": "davante adams",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "more and more bullish on Davante Adams; really successful season"
+    }
+   ]
+  },
+  {
+   "player": "Rome Odunze",
+   "norm": "rome odunze",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "been an idiot on Odunze per the world, but he's a good player"
+    }
+   ]
+  },
+  {
+   "player": "Lamar Jackson",
+   "norm": "lamar jackson",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "full forgiveness of last year for Lamar; he's going to be solid"
+    }
+   ]
+  },
+  {
+   "player": "Parker Washington",
+   "norm": "parker washington",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "could be the premier one on this team; I believe in both"
+    }
+   ]
+  },
+  {
+   "player": "Joe Burrow",
+   "norm": "joe burrow",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "Joe Burrow at the 6.07 is outrageous, tremendous value"
+    }
+   ]
+  },
+  {
+   "player": "J.K. Dobbins",
+   "norm": "jk dobbins",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "at the beginning of the year, feel pretty strong it will be Dobbins"
+    }
+   ]
+  },
+  {
+   "player": "Jayden Daniels",
+   "norm": "jayden daniels",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "Jayden Daniels in the seventh round is truly a ridiculous value"
+    }
+   ]
+  },
+  {
+   "player": "Tucker Kraft",
+   "norm": "tucker kraft",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "recovering from an ACL, I don't care; seventh rounder Tucker Kraft"
+    }
+   ]
+  },
+  {
+   "player": "Dajon Stribling",
+   "norm": "dajon stribling",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "most talented, highest target share rookie; fantasy impact in year one"
+    }
+   ]
+  },
+  {
+   "player": "KC Concepcion",
+   "norm": "kc concepcion",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "rookie-rookie; both players will have a fantasy impact in year one"
+    }
+   ]
+  },
+  {
+   "player": "DK Metcalf",
+   "norm": "dk metcalf",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "whatever you guys do, don't draft DK Metcalf; devastated if sniped"
+    }
+   ]
+  },
+  {
+   "player": "Mike Washington Jr.",
+   "norm": "mike washington",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "enough smoke; moved him up to around 140 carries"
+    }
+   ]
+  },
+  {
+   "player": "Chuba Hubbard",
+   "norm": "chuba hubbard",
+   "lean": "sell",
+   "score": -2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "very few hot hands in his career; frustrating back and forth"
+    }
+   ]
+  },
+  {
+   "player": "Christian McCaffrey",
+   "norm": "christian mccaffrey",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "still a little hesitant; would take JSN and Amon-Ra over McCaffrey"
+    }
+   ]
+  },
+  {
+   "player": "Kenneth Walker III",
+   "norm": "kenneth walker",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "good work honoring Ken Walker to be a first-round selection"
+    }
+   ]
+  },
+  {
+   "player": "Saquon Barkley",
+   "norm": "saquon barkley",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "Saquon Barkley, you're a second-round pick"
+    }
+   ]
+  },
+  {
+   "player": "Malik Nabers",
+   "norm": "malik nabers",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "did not like the press conference, 'I'll play when I'm ready'"
+    }
+   ]
+  },
+  {
+   "player": "Chris Olave",
+   "norm": "chris olave",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "I'm going to take Chris Olave to go with A.J. Brown"
+    }
+   ]
+  },
+  {
+   "player": "MarShawn Lloyd",
+   "norm": "marshawn lloyd",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "couldn't draft him over Skattebo or Bucky; betting on a super fragile guy"
+    }
+   ]
+  },
+  {
+   "player": "Jameson Williams",
+   "norm": "jameson williams",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "I would take Jameson Williams, that's who I want to take"
+    }
+   ]
+  },
+  {
+   "player": "Tyler Warren",
+   "norm": "tyler warren",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "had my eye on possibly going Tyler Warren"
+    }
+   ]
+  },
+  {
+   "player": "Christian Watson",
+   "norm": "christian watson",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "Christian Watson is still here in round five; me and Betts are Watson bros"
+    }
+   ]
+  },
+  {
+   "player": "Drake Maye",
+   "norm": "drake maye",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "Drake Maye, A.J. Brown stack; don't feel like I overpaid"
+    }
+   ]
+  },
+  {
+   "player": "Terry McLaurin",
+   "norm": "terry mclaurin",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "Terry McLaurin here could serve as a huge value"
+    }
+   ]
+  },
+  {
+   "player": "Jonah Coleman",
+   "norm": "jonah coleman",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "Jonah Coleman scares me far more than R.J. Harvey does"
+    }
+   ]
+  },
+  {
+   "player": "Jaylen Warren",
+   "norm": "jaylen warren",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "Steelers backfield, I'm on the Warren side; take the shot"
+    }
+   ]
+  },
+  {
+   "player": "Rico Dowdle",
+   "norm": "rico dowdle",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "I'm just always on the Rico side"
+    }
+   ]
+  },
+  {
+   "player": "Alec Pierce",
+   "norm": "alec pierce",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "guy I thought I would easily get in the eighth"
+    }
+   ]
+  },
+  {
+   "player": "Caleb Williams",
+   "norm": "caleb williams",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "Caleb, my guy"
+    }
+   ]
+  },
+  {
+   "player": "Dak Prescott",
+   "norm": "dak prescott",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "Dak available in the eighth round, that's tough; stack with Pickens"
+    }
+   ]
+  },
+  {
+   "player": "Ashton Jeanty",
+   "norm": "ashton jeanty",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "not the situation where I view Jeanty as McCaffrey was last year"
+    }
+   ]
+  },
+  {
+   "player": "Emeka Egbuka",
+   "norm": "emeka egbuka",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "definitely feels like turf toe; maybe he drops in ADP"
+    }
+   ]
+  },
+  {
+   "player": "Jonathan Brooks",
+   "norm": "jonathan brooks",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "if one takes over it should be Brooks, but can't count on either"
+    }
+   ]
+  },
+  {
+   "player": "Bucky Irving",
+   "norm": "bucky irving",
+   "lean": "mixed",
+   "score": 0,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "getting Swift, Price, Bucky Irving 3-4-5, I love that"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "I don't want to draft Bucky; Gainwell taking the passing work"
+    }
+   ]
+  },
+  {
+   "player": "Brian Thomas Jr.",
+   "norm": "brian thomas",
+   "lean": "mixed",
+   "score": 0,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "route tree utilization minimal; big plays and nothing else"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "2026-09-03",
+     "quote": "top 10 wide receiver in the past; look at the bull case"
+    }
+   ]
+  }
+ ]
+}

@@ -3,6 +3,6 @@
 FROM node:22-slim
 WORKDIR /app
 COPY server.js ./
-COPY board_papi-chulo.html board_the-league.html ./
+COPY board_papi-chulo.html board_the-league.html dash.html ./
 EXPOSE 8080
 CMD ["node", "server.js"]
