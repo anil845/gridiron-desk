@@ -90,13 +90,18 @@ rich because you choose when to look.
 The single biggest correctness risk: rivals add/drop and every projection,
 win prob, and FAB read goes quietly wrong.
 
-- **Tier A (the real fix): Yahoo Fantasy API.** Alive, OAuth2, read-only —
-  rosters, transactions, matchups, FAB balances. Requires an approved
-  developer application (personal/single-league use is a supported case;
-  README notes access was applied for in Aug — CHECK STATUS, resubmit if
-  needed). Once granted: one-time browser consent → cached refresh token →
-  nightly + pre-build sync of every roster in both leagues. Kills the manual
-  paste entirely and makes rival-FAB tracking exact.
+- **Tier A (the real fix, currently GATED): Yahoo Fantasy API.** OAuth2 flow
+  fully built and working (yahoo_auth.py; app 3SbSCHnB, creds in .env, tokens
+  cached) — consent + token exchange succeed on both oob and localhost
+  redirects. BUT every fantasy endpoint returns
+  `oauth_problem="additional_authorization_required"`: the self-created app
+  has OpenID Connect + TW Auction permissions only, no Fantasy Sports scope
+  (Yahoo no longer offers a Fantasy checkbox at app creation — tested
+  2026-09-04). Unlock requires developer-access approval at
+  sports.yahoo.com/developer/access (cite app 3SbSCHnB, "personal read-only,
+  two own leagues, single user"). The moment it's granted, re-run
+  `python yahoo_auth.py url` and sync flips on — zero further code. Until
+  then, Tier B carries everything.
 - **Tier B (until A lands): frictionless paste.** The dashboard itself gets a
   "Paste transactions" box (the draft board's bulk-paste pattern): copy
   Yahoo's transaction log page → paste → tolerant parser applies deltas →
