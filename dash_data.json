@@ -1,5 +1,5 @@
 {
- "built": "2026-09-04T09:16:40",
+ "built": "2026-09-04T09:38:57",
  "week": 1,
  "leagues": {
   "papi-chulo": {
@@ -172,10 +172,153 @@
      }
     ],
     "total": 116.5,
-    "roster_as_of": "2026-09-03T11:26:10.584Z"
+    "roster_as_of": "2026-09-03T11:26:10.584Z",
+    "record": "0-0",
+    "pf": 0.0
    },
    "winp": 42,
    "directive": "Underdog — start ceilings, stack correlated players.",
+   "standings": [
+    {
+     "name": "Cerveza Loco",
+     "rank": 1,
+     "wins": 0,
+     "losses": 0,
+     "ties": 0,
+     "pf": 0.0,
+     "pa": 0.0,
+     "streak": "",
+     "is_me": true
+    },
+    {
+     "name": "Hurts So Good",
+     "rank": 2,
+     "wins": 0,
+     "losses": 0,
+     "ties": 0,
+     "pf": 0.0,
+     "pa": 0.0,
+     "streak": "",
+     "is_me": false
+    },
+    {
+     "name": "fugazis",
+     "rank": 3,
+     "wins": 0,
+     "losses": 0,
+     "ties": 0,
+     "pf": 0.0,
+     "pa": 0.0,
+     "streak": "",
+     "is_me": false
+    },
+    {
+     "name": "Triple Double no assist",
+     "rank": 4,
+     "wins": 0,
+     "losses": 0,
+     "ties": 0,
+     "pf": 0.0,
+     "pa": 0.0,
+     "streak": "",
+     "is_me": false
+    },
+    {
+     "name": "Sweet Editions",
+     "rank": 5,
+     "wins": 0,
+     "losses": 0,
+     "ties": 0,
+     "pf": 0.0,
+     "pa": 0.0,
+     "streak": "",
+     "is_me": false
+    },
+    {
+     "name": "SILENCE OF THE LAMB",
+     "rank": 6,
+     "wins": 0,
+     "losses": 0,
+     "ties": 0,
+     "pf": 0.0,
+     "pa": 0.0,
+     "streak": "",
+     "is_me": false
+    },
+    {
+     "name": "Don't Joe Chasin' Waterfalls",
+     "rank": 7,
+     "wins": 0,
+     "losses": 0,
+     "ties": 0,
+     "pf": 0.0,
+     "pa": 0.0,
+     "streak": "",
+     "is_me": false
+    },
+    {
+     "name": "HOOT HOOT Owl-Man",
+     "rank": 8,
+     "wins": 0,
+     "losses": 0,
+     "ties": 0,
+     "pf": 0.0,
+     "pa": 0.0,
+     "streak": "",
+     "is_me": false
+    },
+    {
+     "name": "AB = MAYB",
+     "rank": 9,
+     "wins": 0,
+     "losses": 0,
+     "ties": 0,
+     "pf": 0.0,
+     "pa": 0.0,
+     "streak": "",
+     "is_me": false
+    },
+    {
+     "name": "JSN Bourne",
+     "rank": 10,
+     "wins": 0,
+     "losses": 0,
+     "ties": 0,
+     "pf": 0.0,
+     "pa": 0.0,
+     "streak": "",
+     "is_me": false
+    },
+    {
+     "name": "McCalvesarealright",
+     "rank": 11,
+     "wins": 0,
+     "losses": 0,
+     "ties": 0,
+     "pf": 0.0,
+     "pa": 0.0,
+     "streak": "",
+     "is_me": false
+    },
+    {
+     "name": "Fearless",
+     "rank": 12,
+     "wins": 0,
+     "losses": 0,
+     "ties": 0,
+     "pf": 0.0,
+     "pa": 0.0,
+     "streak": "",
+     "is_me": false
+    }
+   ],
+   "my_record": {
+    "rec": "0-0",
+    "rank": 1,
+    "pf": 0.0,
+    "pa": 0.0,
+    "of": 12
+   },
    "waivers": [
     {
      "name": "Mark Andrews",

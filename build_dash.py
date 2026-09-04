@@ -75,10 +75,39 @@ def compute_league(slug, week, force, ctx):
         else:
             out["opp"] = {"name": opp_name or "awaiting schedule", "lineup": [], "total": None}
 
+    # standings + season tracking
+    out["standings"] = _standings(slug, rosters, me, opp_name)
+    if out.get("opp") and out["standings"]:
+        rec = next((t for t in out["standings"] if t["name"].lower().startswith((opp_name or "").lower())), None)
+        if rec:
+            out["opp"]["record"] = f"{rec['wins']}-{rec['losses']}" + (f"-{rec['ties']}" if rec['ties'] else "")
+            out["opp"]["pf"] = rec["pf"]
+    if me and out["standings"]:
+        mine = next((t for t in out["standings"] if t.get("is_me")), None)
+        if mine:
+            out["my_record"] = {"rec": f"{mine['wins']}-{mine['losses']}" + (f"-{mine['ties']}" if mine['ties'] else ""),
+                                "rank": mine["rank"], "pf": mine["pf"], "pa": mine["pa"], "of": len(out["standings"])}
+
     # waiver intelligence (reuse intel_week internals lightly)
     out["waivers"], out["stream"] = _waivers(cfg, slug, week, board, proj, me, ctx, force)
     out["intel"], out["podcast"] = _context(slug, board, me, opp)
     return out
+
+
+def _standings(slug, rosters, me, opp_name):
+    """Live standings from seasons/<slug>_standings.json (Yahoo sync or manual);
+    preseason fallback synthesizes 0-0-0 from the roster list so the strip
+    renders from week 0."""
+    path = os.path.join("seasons", f"{slug}_standings.json")
+    my_name = me["name"] if me else None
+    if os.path.exists(path):
+        teams = json.load(open(path, encoding="utf-8")).get("teams", [])
+    else:
+        teams = [{"name": t["name"], "rank": i + 1, "wins": 0, "losses": 0, "ties": 0,
+                  "pf": 0.0, "pa": 0.0, "streak": ""} for i, t in enumerate(rosters["teams"])]
+    for t in teams:
+        t["is_me"] = (t["name"] == my_name)
+    return teams
 
 
 def _context(slug, board, me, opp):
