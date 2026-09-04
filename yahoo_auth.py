@@ -112,7 +112,17 @@ def main():
 
 
 def main_test():
-    d = get("users;use_login=1/games;game_keys=nfl/leagues")
+    try:
+        d = get("users;use_login=1/games;game_keys=nfl/leagues")
+    except requests.exceptions.HTTPError as e:
+        if e.response is not None and "additional_authorization_required" in e.response.text:
+            print("\nAUTH OK but NO FANTASY SCOPE: the app authenticated you, but it has no")
+            print("Fantasy Sports read permission attached. Add it on the app's edit page")
+            print("(developer.yahoo.com/apps -> gridiron-desk -> API Permissions), or if the")
+            print("option isn't there, request access at sports.yahoo.com/developer/access.")
+            print("Re-run `python yahoo_auth.py url` after enabling it. Token cache is fine.")
+            return
+        raise
     txt = json.dumps(d)
     import re
     names = re.findall(r'"name":"([^"]+)"', txt)
