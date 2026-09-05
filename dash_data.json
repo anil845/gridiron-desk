@@ -1,5 +1,5 @@
 {
- "built": "2026-09-04T14:54:42",
+ "built": "2026-09-04T20:44:56",
  "week": 1,
  "leagues": {
   "papi-chulo": {
@@ -38,7 +38,7 @@
       "slot": "RB",
       "name": "Jahmyr Gibbs",
       "pos": "RB",
-      "pts": 22.5,
+      "pts": 23.6,
       "opp": "NO",
       "inj": null
      },
@@ -46,7 +46,7 @@
       "slot": "RB",
       "name": "Travis Etienne",
       "pos": "RB",
-      "pts": 13.9,
+      "pts": 15.1,
       "opp": "DET",
       "inj": null
      },
@@ -67,7 +67,7 @@
       "inj": null
      }
     ],
-    "total": 109.8,
+    "total": 112.1,
     "bench": [
      {
       "name": "Brian Thomas",
@@ -82,7 +82,7 @@
      {
       "name": "Tyrone Tracy",
       "pos": "RB",
-      "pts": 5.5
+      "pts": 3.7
      },
      {
       "name": "Alvin Kamara",
@@ -158,7 +158,7 @@
       "slot": "K",
       "name": "Ka'imi Fairbairn",
       "pos": "K",
-      "pts": 7.5,
+      "pts": 6.6,
       "opp": "BUF",
       "inj": null
      },
@@ -171,13 +171,13 @@
       "inj": null
      }
     ],
-    "total": 116.5,
+    "total": 115.6,
     "roster_as_of": "2026-09-03T11:26:10.584Z",
     "record": "0-0",
     "pf": 0.0
    },
-   "winp": 42,
-   "directive": "Underdog — start ceilings, stack correlated players.",
+   "winp": 46,
+   "directive": "Coin flip — start your best, ignore variance.",
    "standings": [
     {
      "name": "Cerveza Loco",
@@ -503,118 +503,156 @@
     }
    ],
    "stream": {
-    "K": [
-     {
-      "name": "Spencer Shrader",
-      "pos": "K",
-      "opp": "BAL",
-      "our_pts": 8.0,
-      "improve": 0.0,
-      "ecr": null,
-      "owned": 2.15,
-      "vel": 0.3,
-      "usage": null,
-      "trending": 14012,
-      "injury": null,
-      "handcuff_of_mine": null,
-      "verdict": "WATCH",
-      "why": "monitor",
-      "bid": 0,
-      "walk": 2
-     },
-     {
-      "name": "Jake Bates",
-      "pos": "K",
-      "opp": "NO",
-      "our_pts": 7.9,
-      "improve": 0.0,
-      "ecr": null,
-      "owned": 72.43,
-      "vel": 0.25,
-      "usage": null,
-      "trending": 9800,
-      "injury": null,
-      "handcuff_of_mine": null,
-      "verdict": "WATCH",
-      "why": "monitor",
-      "bid": 0,
-      "walk": 2
-     },
-     {
-      "name": "Tyler Loop",
-      "pos": "K",
-      "opp": "IND",
-      "our_pts": 7.5,
-      "improve": 0.0,
-      "ecr": null,
-      "owned": 52.5,
-      "vel": 0.16,
-      "usage": null,
-      "trending": 21918,
-      "injury": null,
-      "handcuff_of_mine": null,
-      "verdict": "WATCH",
-      "why": "monitor",
-      "bid": 0,
-      "walk": 2
-     }
-    ],
-    "DEF": [
-     {
-      "name": "Chargers",
-      "pos": "DEF",
-      "opp": "ARI",
-      "our_pts": 8.3,
-      "improve": 0.0,
-      "ecr": null,
-      "owned": null,
-      "vel": null,
-      "usage": null,
-      "trending": 4752,
-      "injury": null,
-      "handcuff_of_mine": null,
-      "verdict": "WATCH",
-      "why": "monitor",
-      "bid": 0,
-      "walk": 2
-     },
-     {
-      "name": "Steelers",
-      "pos": "DEF",
-      "opp": "ATL",
-      "our_pts": 8.1,
-      "improve": 0.0,
-      "ecr": null,
-      "owned": null,
-      "vel": null,
-      "usage": null,
-      "trending": 8529,
-      "injury": null,
-      "handcuff_of_mine": null,
-      "verdict": "WATCH",
-      "why": "monitor",
-      "bid": 0,
-      "walk": 2
-     },
-     {
-      "name": "Raiders",
-      "pos": "DEF",
-      "opp": "MIA",
-      "our_pts": 7.8,
-      "improve": 0.0,
-      "ecr": null,
-      "owned": null,
-      "vel": null,
-      "usage": null,
-      "trending": 24864,
-      "injury": null,
-      "handcuff_of_mine": null,
-      "verdict": "WATCH",
-      "why": "monitor",
-      "bid": 0,
-      "walk": 2
-     }
-    ]
+    "this": {
+     "K": [
+      {
+       "name": "Matt Gay",
+       "pos": "K",
+       "opp": "MIA",
+       "our_pts": 7.3,
+       "improve": 0.0,
+       "ecr": null,
+       "owned": 1.62,
+       "vel": -0.02,
+       "usage": null,
+       "trending": null,
+       "injury": null,
+       "handcuff_of_mine": null,
+       "verdict": "WATCH",
+       "why": "monitor",
+       "bid": 0,
+       "walk": 2
+      },
+      {
+       "name": "Jake Bates",
+       "pos": "K",
+       "opp": "NO",
+       "our_pts": 7.1,
+       "improve": 0.0,
+       "ecr": null,
+       "owned": 72.43,
+       "vel": 0.25,
+       "usage": null,
+       "trending": 9800,
+       "injury": null,
+       "handcuff_of_mine": null,
+       "verdict": "WATCH",
+       "why": "monitor",
+       "bid": 0,
+       "walk": 2
+      },
+      {
+       "name": "Spencer Shrader",
+       "pos": "K",
+       "opp": "BAL",
+       "our_pts": 7.0,
+       "improve": 0.0,
+       "ecr": null,
+       "owned": 2.15,
+       "vel": 0.3,
+       "usage": null,
+       "trending": 14012,
+       "injury": null,
+       "handcuff_of_mine": null,
+       "verdict": "WATCH",
+       "why": "monitor",
+       "bid": 0,
+       "walk": 2
+      }
+     ],
+     "DEF": [
+      {
+       "name": "Chargers",
+       "pos": "DEF",
+       "opp": "ARI",
+       "our_pts": 8.3,
+       "improve": 0.0,
+       "ecr": null,
+       "owned": null,
+       "vel": null,
+       "usage": null,
+       "trending": 4752,
+       "injury": null,
+       "handcuff_of_mine": null,
+       "verdict": "WATCH",
+       "why": "monitor",
+       "bid": 0,
+       "walk": 2
+      },
+      {
+       "name": "Steelers",
+       "pos": "DEF",
+       "opp": "ATL",
+       "our_pts": 8.1,
+       "improve": 0.0,
+       "ecr": null,
+       "owned": null,
+       "vel": null,
+       "usage": null,
+       "trending": 8529,
+       "injury": null,
+       "handcuff_of_mine": null,
+       "verdict": "WATCH",
+       "why": "monitor",
+       "bid": 0,
+       "walk": 2
+      },
+      {
+       "name": "Raiders",
+       "pos": "DEF",
+       "opp": "MIA",
+       "our_pts": 7.8,
+       "improve": 0.0,
+       "ecr": null,
+       "owned": null,
+       "vel": null,
+       "usage": null,
+       "trending": 24864,
+       "injury": null,
+       "handcuff_of_mine": null,
+       "verdict": "WATCH",
+       "why": "monitor",
+       "bid": 0,
+       "walk": 2
+      }
+     ]
+    },
+    "next": {
+     "K": [
+      {
+       "name": "Tyler Loop",
+       "our_pts": 7.4,
+       "opp": "NO"
+      },
+      {
+       "name": "Tyler Bass",
+       "our_pts": 7.3,
+       "opp": "DET"
+      },
+      {
+       "name": "Will Reichard",
+       "our_pts": 7.3,
+       "opp": "CHI"
+      }
+     ],
+     "DEF": [
+      {
+       "name": "Ravens",
+       "our_pts": 7.0,
+       "opp": "NO"
+      },
+      {
+       "name": "Chargers",
+       "our_pts": 6.9,
+       "opp": "LV"
+      },
+      {
+       "name": "Buccaneers",
+       "our_pts": 6.8,
+       "opp": "CLE"
+      }
+     ]
+    }
    },
    "intel": [
     {
@@ -632,6 +670,9 @@
      "lean": "buy",
      "score": 3,
      "n": 1,
+     "shows": [
+      "The Fantasy Footballers"
+     ],
      "quote": "no reason to draft anyone other than Gibbs with the 1.01"
     },
     {
@@ -639,6 +680,9 @@
      "lean": "buy",
      "score": 2,
      "n": 1,
+     "shows": [
+      "The Fantasy Footballers"
+     ],
      "quote": "far more target market share of his team; same tier as Amon-Ra"
     },
     {
@@ -646,6 +690,9 @@
      "lean": "buy",
      "score": 2,
      "n": 1,
+     "shows": [
+      "The Fantasy Footballers"
+     ],
      "quote": "we've talked that situation down enough; good value at the 2-3 turn"
     },
     {
@@ -653,6 +700,9 @@
      "lean": "buy",
      "score": 2,
      "n": 1,
+     "shows": [
+      "The Fantasy Footballers"
+     ],
      "quote": "elite talent, but I'd want him as my running back three"
     },
     {
@@ -660,6 +710,9 @@
      "lean": "buy",
      "score": 2,
      "n": 1,
+     "shows": [
+      "The Fantasy Footballers"
+     ],
      "quote": "full forgiveness of last year for Lamar; he's going to be solid"
     },
     {
@@ -667,6 +720,9 @@
      "lean": "buy",
      "score": 2,
      "n": 1,
+     "shows": [
+      "The Fantasy Footballers"
+     ],
      "quote": "Jayden Daniels in the seventh round is truly a ridiculous value"
     },
     {
@@ -674,6 +730,9 @@
      "lean": "sell",
      "score": -2,
      "n": 1,
+     "shows": [
+      "The Fantasy Footballers"
+     ],
      "quote": "very few hot hands in his career; frustrating back and forth"
     }
    ],

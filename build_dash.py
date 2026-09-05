@@ -186,7 +186,15 @@ def compute_league(slug, week, force, ctx):
                                 "rank": mine["rank"], "pf": mine["pf"], "pa": mine["pa"], "of": len(out["standings"])}
 
     # waiver intelligence (reuse intel_week internals lightly)
-    out["waivers"], out["stream"] = _waivers(cfg, slug, week, board, proj, me, ctx, force)
+    out["waivers"], stream_this = _waivers(cfg, slug, week, board, proj, me, ctx, force)
+    # forward-looking K/DEF: this week + next week's best streamers by matchup
+    try:
+        proj_next = bw.fetch_week_proj(week + 1, force)
+        rostered = {pk["pid"] for t in rosters["teams"] for pk in t["picks"]}
+        stream_next = _streamers(cfg, proj_next, rostered, ctx)
+    except Exception:  # noqa: BLE001
+        stream_next = {}
+    out["stream"] = {"this": stream_this, "next": stream_next}
     out["intel"], out["podcast"] = _context(slug, board, me, opp)
     movers = _snapshot_diff(slug, board, proj, week, srates, lgr, p6r, fr, cfg["scoring"])
     out["movers"] = [m for m in movers if m["pid"] in ({pk["pid"] for pk in me["picks"]} if me else set())
@@ -235,6 +243,27 @@ def _standings(slug, rosters, me, opp_name):
     return teams
 
 
+def _streamers(cfg, proj, rostered, ctx):
+    """Top-3 available K and DEF by league-scored weekly points + opponent,
+    for any week's projections. Powers the forward-looking stream card."""
+    srates, lgr, p6r, fr = ctx
+    out = {"K": [], "DEF": []}
+    for pid, e in proj.items():
+        if pid in rostered:
+            continue
+        pl = e.get("player", {})
+        pos = pl.get("position")
+        if pos not in ("K", "DEF"):
+            continue
+        name = pl.get("last_name", "") if pos == "DEF" else f"{pl.get('first_name', '')} {pl.get('last_name', '')}".strip()
+        pts, opp = bw.week_points({"pid": pid, "name": name, "position": pos}, proj, cfg["scoring"], srates, lgr, p6r, fr)
+        if pts is not None:
+            out[pos].append({"name": name, "our_pts": round(pts, 1), "opp": opp})
+    for pos in out:
+        out[pos] = sorted(out[pos], key=lambda c: -c["our_pts"])[:3]
+    return out
+
+
 def _context(slug, board, me, opp):
     """News + podcast stances for players on my roster, my opponent's, or hot
     waiver names. Filtered so the strip is signal, not a firehose."""
@@ -254,9 +283,11 @@ def _context(slug, board, me, opp):
         for pl in pc.get("players", []):
             if pl["norm"] in relevant and abs(pl["score"]) >= 2:
                 top = pl["stances"][0] if pl["stances"] else {}
+                shows = sorted({s.get("show") for s in pl.get("stances", []) if s.get("show")})
                 pods.append({"player": pl["player"], "lean": pl["lean"], "score": pl["score"],
-                             "n": pl["n_shows"], "quote": top.get("quote", "")})
-    return news[:8], sorted(pods, key=lambda p: -abs(p["score"]))[:8]
+                             "n": pl["n_shows"], "shows": shows, "quote": top.get("quote", "")})
+    # true multi-show consensus first, then single takes
+    return news[:8], sorted(pods, key=lambda p: (-p["n"], -abs(p["score"])))[:10]
 
 
 _MATCHUP_CACHE = None
