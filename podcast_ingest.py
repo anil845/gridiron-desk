@@ -66,7 +66,7 @@ def extract_stances(text, show, date):
     prompt = SCHEMA_PROMPT + text[:40000]
     try:
         r = subprocess.run(["claude", "-p"], input=prompt, capture_output=True,
-                           text=True, timeout=300, encoding="utf-8")
+                           text=True, timeout=300, encoding="utf-8", errors="replace")
         out = r.stdout.strip()
         m = re.search(r"\[.*\]", out, re.S)   # tolerate any stray wrapper text
         rows = json.loads(m.group(0)) if m else []
@@ -83,30 +83,60 @@ def extract_stances(text, show, date):
     return clean
 
 
+def _run(cmd, timeout):
+    """subprocess with encoding-safe capture (yt-dlp emits cp1252 smart quotes)."""
+    return subprocess.run(cmd, capture_output=True, text=True, timeout=timeout,
+                          encoding="utf-8", errors="replace")
+
+
 def fetch_captions(query, n, force):
-    """yt-dlp: N recent episodes matching a channel query -> list of
-    (title, date, vid, vtt_path). Only fetches captions for episodes not
-    already cached; --dateafter limits to the backfill window."""
+    """List recent episodes (fast metadata), then pull captions ONE at a time
+    with a short per-episode timeout — robust to slow/rate-limited videos.
+    Returns [(title, date, vid, vtt_path)] for episodes with captions on disk."""
     os.makedirs(os.path.join(OUT, "vtt"), exist_ok=True)
-    tmpl = os.path.join(OUT, "vtt", "%(upload_date)s_%(id)s.%(ext)s")
     cutoff = (datetime.date.today() - datetime.timedelta(days=BACKFILL_DAYS)).strftime("%Y%m%d")
-    cmd = ["python", "-m", "yt_dlp", f"ytsearch{n}:{query}",
-           "--skip-download", "--write-auto-subs", "--sub-langs", "en-en,en",
-           "--dateafter", cutoff, "--no-warnings", "--ignore-errors",
-           "--match-filter", "duration > 900",   # real episodes, not shorts/clips
-           "-o", tmpl, "--print", "%(upload_date)s|%(id)s|%(title)s"]
+    # 1) fast list: ids/dates/durations only, no downloads
+    lst = ["python", "-m", "yt_dlp", f"ytsearch{n}:{query}", "--flat-playlist",
+           "--no-warnings", "--print", "%(id)s|%(upload_date)s|%(title)s|%(duration)s"]
     try:
-        r = subprocess.run(cmd, capture_output=True, text=True, timeout=900, encoding="utf-8")
+        r = _run(lst, 120)
     except Exception as exc:  # noqa: BLE001
-        print(f"  yt-dlp failed ({exc})", file=sys.stderr)
+        print(f"  list failed ({exc})", file=sys.stderr, flush=True)
         return []
-    eps = []
+    wanted = []
     for line in (r.stdout or "").splitlines():
-        if "|" in line:
-            date, vid, title = (line.split("|", 2) + ["", "", ""])[:3]
-            vtt = sorted(glob.glob(os.path.join(OUT, "vtt", f"{date}_{vid}.*.vtt")))
-            if vtt:
-                eps.append((title, date, vid, vtt[0]))
+        parts = line.split("|")
+        if len(parts) < 4:
+            continue
+        vid, date, title, dur = parts[0], parts[1], "|".join(parts[2:-1]), parts[-1]
+        if vid.startswith("UC") or len(vid) != 11:   # channel/playlist rows, not videos
+            continue
+        try:
+            long_enough = float(dur) > 900
+        except ValueError:
+            long_enough = True   # unknown duration (flat list) — try it
+        if date and date != "NA" and date < cutoff:
+            continue
+        wanted.append((vid, date, title, long_enough))
+    # 2) per-episode caption pull with individual timeout
+    eps, got = [], 0
+    tmpl = os.path.join(OUT, "vtt", "%(upload_date)s_%(id)s.%(ext)s")
+    for vid, date, title, long_enough in wanted:
+        rawf_glob = glob.glob(os.path.join(OUT, "raw", f"*_{vid}.json"))
+        cached = glob.glob(os.path.join(OUT, "vtt", f"*_{vid}.*.vtt"))
+        if rawf_glob and not force:
+            continue   # already extracted
+        if not cached:
+            try:
+                _run(["python", "-m", "yt_dlp", f"https://www.youtube.com/watch?v={vid}",
+                      "--skip-download", "--write-auto-subs", "--sub-langs", "en-en,en",
+                      "--no-warnings", "-o", tmpl], 90)
+            except Exception:  # noqa: BLE001
+                continue
+            cached = glob.glob(os.path.join(OUT, "vtt", f"*_{vid}.*.vtt"))
+        if cached:
+            eps.append((title, date, vid, sorted(cached)[0]))
+            got += 1
     return eps
 
 
