@@ -1,0 +1,74 @@
+[
+ {
+  "player": "Kyle Pitts",
+  "norm": "kyle pitts",
+  "stance": "sell",
+  "strength": 3,
+  "quote": "I am absolutely not taking Kyle Pitts in the sixth round",
+  "show": "Harris Football",
+  "date": "NA"
+ },
+ {
+  "player": "Josh Downs",
+  "norm": "josh downs",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "at his price, there are just so many other receivers I prefer",
+  "show": "Harris Football",
+  "date": "NA"
+ },
+ {
+  "player": "Malik Nabers",
+  "norm": "malik nabers",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "to pretend there's no risk and take him ahead of healthy guys, I'm not",
+  "show": "Harris Football",
+  "date": "NA"
+ },
+ {
+  "player": "DeVonta Smith",
+  "norm": "devonta smith",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "take Neighbors ahead of guys who are healthy, DeVonta Smith",
+  "show": "Harris Football",
+  "date": "NA"
+ },
+ {
+  "player": "Zay Flowers",
+  "norm": "zay flowers",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "healthy guys like Zay Flowers preferred over Nabers at that price",
+  "show": "Harris Football",
+  "date": "NA"
+ },
+ {
+  "player": "Tee Higgins",
+  "norm": "tee higgins",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "not taking Neighbors ahead of names like Tee Higgins",
+  "show": "Harris Football",
+  "date": "NA"
+ },
+ {
+  "player": "Omarion Hampton",
+  "norm": "omarion hampton",
+  "stance": "sell",
+  "strength": 3,
+  "quote": "I am all the way out on Hampton at an early second-round pick",
+  "show": "Harris Football",
+  "date": "NA"
+ },
+ {
+  "player": "Jeremiyah Love",
+  "norm": "jeremiyah love",
+  "stance": "sell",
+  "strength": 3,
+  "quote": "RB13 price with a high ankle sprain, I am just all the way out",
+  "show": "Harris Football",
+  "date": "NA"
+ }
+]

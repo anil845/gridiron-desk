@@ -1,0 +1,416 @@
+[
+ {
+  "player": "Ja'Marr Chase",
+  "norm": "jamarr chase",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "he could easily outperform Bijan Robinson",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Puka Nacua",
+  "norm": "puka nacua",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "he's an absolute star, on pace for 188 targets",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Bijan Robinson",
+  "norm": "bijan robinson",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "you're going to like your team better if you pick Bijan second",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Josh Jacobs",
+  "norm": "josh jacobs",
+  "stance": "hold",
+  "strength": 2,
+  "quote": "I would just hold it as long as you could",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Jacksonville Jaguars DST",
+  "norm": "jacksonville jaguars dst",
+  "stance": "start",
+  "strength": 3,
+  "quote": "the Jaguars are the best one, play the Browns week one",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Los Angeles Chargers DST",
+  "norm": "los angeles chargers dst",
+  "stance": "start",
+  "strength": 2,
+  "quote": "they get Arizona and Las Vegas in weeks one and two",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Jaxon Smith-Njigba",
+  "norm": "jaxon smithnjigba",
+  "stance": "buy",
+  "strength": 3,
+  "quote": "He is so damn good, I'm basically buying him",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Christian McCaffrey",
+  "norm": "christian mccaffrey",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "I'm a big McCaffrey guy, you're going to like your build",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Brock Bowers",
+  "norm": "brock bowers",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "I take him at the two-three turn over Jeanty",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Rashee Rice",
+  "norm": "rashee rice",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "a little cautious, but one of the best picks in fantasy",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Xavier Worthy",
+  "norm": "xavier worthy",
+  "stance": "hold",
+  "strength": 2,
+  "quote": "high upside wide receiver being slept on, but expendable",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Emmett Johnson",
+  "norm": "emmett johnson",
+  "stance": "add",
+  "strength": 2,
+  "quote": "you could drop Worthy for Emmett Johnson, ranks first among handcuffs",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Samaje Perine",
+  "norm": "samaje perine",
+  "stance": "add",
+  "strength": 1,
+  "quote": "Perine's an underrated handcuff",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Drake London",
+  "norm": "drake london",
+  "stance": "buy",
+  "strength": 3,
+  "quote": "I would take London over Justin Jefferson",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "A.J. Brown",
+  "norm": "aj brown",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "I'd have more fun drafting AJ Brown",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Jacory Croskey-Merritt",
+  "norm": "jacory croskeymerritt",
+  "stance": "hold",
+  "strength": 2,
+  "quote": "Bill's too good to drop",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Rachaad White",
+  "norm": "rachaad white",
+  "stance": "add",
+  "strength": 2,
+  "quote": "Rachaad White might be better value, could take over the role",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Derrick Henry",
+  "norm": "derrick henry",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "if Derrick Henry's there at eight, I'd take him",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Bucky Irving",
+  "norm": "bucky irving",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "I would have taken Bucky Irving there",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "MarShawn Lloyd",
+  "norm": "marshawn lloyd",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "doesn't make sense to not take Lloyd, he'll be the goal line back",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "DJ Moore",
+  "norm": "dj moore",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "I would definitely draft DJ Moore over Jadarian Price",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Jadarian Price",
+  "norm": "jadarian price",
+  "stance": "sit",
+  "strength": 2,
+  "quote": "I'd try to sit him in week one against New England",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Jaxson Dart",
+  "norm": "jaxson dart",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "the dip of Jackson Dart is a little ridiculous, he makes plays",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Luther Burden",
+  "norm": "luther burden",
+  "stance": "hold",
+  "strength": 1,
+  "quote": "I don't buy him at the 3-4 turn, buy at 4-5 turn",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Rome Odunze",
+  "norm": "rome odunze",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "rather have Odunze late fifth than Burden early fourth",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Dejon Stribling",
+  "norm": "dejon stribling",
+  "stance": "add",
+  "strength": 2,
+  "quote": "great late round flyer, could be a league winner",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Quentin Johnston",
+  "norm": "quentin johnston",
+  "stance": "add",
+  "strength": 1,
+  "quote": "I would still take Quentin Johnston over Stribling",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Josh Downs",
+  "norm": "josh downs",
+  "stance": "add",
+  "strength": 1,
+  "quote": "I'll have a lot of Josh Downs as a late pick",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Rhamondre Stevenson",
+  "norm": "rhamondre stevenson",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "some statistical regression coming, I haven't been drafting him",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Kyren Williams",
+  "norm": "kyren williams",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "chance Kyren is a huge bust, I've been avoiding him",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Jaylen Waddle",
+  "norm": "jaylen waddle",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "He's not my guy, wouldn't take him in the third round",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "De'Von Achane",
+  "norm": "devon achane",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Achane's a more explosive, more dynamic player than Javonte",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Javonte Williams",
+  "norm": "javonte williams",
+  "stance": "sell",
+  "strength": 1,
+  "quote": "the worst running back that has a great role",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Alvin Kamara",
+  "norm": "alvin kamara",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "Kamara is just not that good of a player, horrible as a rusher",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Chase Brown",
+  "norm": "chase brown",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Chase Brown and Omarion Hampton is the best start from 11",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Omarion Hampton",
+  "norm": "omarion hampton",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Chase Brown and Omarion Hampton is the best start from 11",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Kenneth Walker",
+  "norm": "kenneth walker",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "any combination of Chase Brown, Hampton, and Ken Walker for me",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "CeeDee Lamb",
+  "norm": "ceedee lamb",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "not taking a receiver at pick 11 unless it's Lamb",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Woody Marks",
+  "norm": "woody marks",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "third round pick in PPR, we should go Marks there",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Joe Burrow",
+  "norm": "joe burrow",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "I would not take him in the fifth, would in the sixth",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Jared Goff",
+  "norm": "jared goff",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "a gift in the fourth round, I'll have a lot of Goff",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Isaiah Likely",
+  "norm": "isaiah likely",
+  "stance": "add",
+  "strength": 1,
+  "quote": "I'll have a lot of Likely, the later tight ends",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Mike Evans",
+  "norm": "mike evans",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "I would go with Evans and Loveland over AJ Brown and Downs",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Colston Loveland",
+  "norm": "colston loveland",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "I would go with Evans and Loveland over AJ Brown and Downs",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Kyler Murray",
+  "norm": "kyler murray",
+  "stance": "sell",
+  "strength": 1,
+  "quote": "Kyler might be just a bad quarterback at this point",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Jordyn Tyson",
+  "norm": "jordyn tyson",
+  "stance": "sit",
+  "strength": 1,
+  "quote": "going to miss at least a month, no training camp, so injury prone",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ }
+]

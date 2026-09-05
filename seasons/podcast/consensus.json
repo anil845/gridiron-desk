@@ -1,164 +1,84 @@
 {
- "built": "2026-09-04T09:15:11",
- "episodes": 52,
+ "built": "2026-09-05T07:56:30",
+ "episodes_files": 29,
+ "stances": 645,
  "players": [
   {
-   "player": "Jahmyr Gibbs",
-   "norm": "jahmyr gibbs",
+   "player": "Luther Burden",
+   "norm": "luther burden",
    "lean": "buy",
-   "score": 3,
-   "n_shows": 1,
+   "score": 17,
+   "n_shows": 5,
    "stances": [
     {
      "stance": "buy",
      "strength": 3,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "no reason to draft anyone other than Gibbs with the 1.01"
-    }
-   ]
-  },
-  {
-   "player": "De'Von Achane",
-   "norm": "devon achane",
-   "lean": "buy",
-   "score": 3,
-   "n_shows": 1,
-   "stances": [
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "massive upside swing that I really really like"
+    },
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "I love Luther Burden... I think a monster year is coming for him"
+    },
     {
      "stance": "buy",
      "strength": 3,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "bang the table one final time; third best running back in football"
-    }
-   ]
-  },
-  {
-   "player": "D'Andre Swift",
-   "norm": "dandre swift",
-   "lean": "buy",
-   "score": 3,
-   "n_shows": 1,
-   "stances": [
+     "date": "NA",
+     "quote": "wide receiver 26 at the 601, that's so amazing"
+    },
     {
      "stance": "buy",
-     "strength": 3,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "D'Andre Swift, especially early season, will be a steal"
-    }
-   ]
-  },
-  {
-   "player": "Marvin Harrison Jr.",
-   "norm": "marvin harrison",
-   "lean": "buy",
-   "score": 3,
-   "n_shows": 1,
-   "stances": [
-    {
-     "stance": "buy",
-     "strength": 3,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "humongous season, outkick his ADP; better red zone threat, secure target share"
-    }
-   ]
-  },
-  {
-   "player": "James Cook",
-   "norm": "james cook",
-   "lean": "buy",
-   "score": 2,
-   "n_shows": 1,
-   "stances": [
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "give me some Burden, all in on the Bears offense"
+    },
     {
      "stance": "buy",
      "strength": 2,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "James Cook is an elite running back, will score a ton of touchdowns"
-    }
-   ]
-  },
-  {
-   "player": "Jaxon Smith-Njigba",
-   "norm": "jaxon smithnjigba",
-   "lean": "buy",
-   "score": 2,
-   "n_shows": 1,
-   "stances": [
+     "date": "NA",
+     "quote": "Luther Burden, baby, finally it worked out"
+    },
     {
-     "stance": "buy",
+     "stance": "start",
      "strength": 2,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "far more target market share of his team; same tier as Amon-Ra"
-    }
-   ]
-  },
-  {
-   "player": "Amon-Ra St. Brown",
-   "norm": "amonra st brown",
-   "lean": "buy",
-   "score": 2,
-   "n_shows": 1,
-   "stances": [
+     "date": "NA",
+     "quote": "I want Burden in my lineup against Carolina"
+    },
     {
      "stance": "buy",
-     "strength": 2,
+     "strength": 1,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "would love to get Amon-Ra St. Brown at the 10 spot"
-    }
-   ]
-  },
-  {
-   "player": "Justin Jefferson",
-   "norm": "justin jefferson",
-   "lean": "buy",
-   "score": 2,
-   "n_shows": 1,
-   "stances": [
+     "date": "NA",
+     "quote": "high-flying Ben Johnson offense with some exciting pieces"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I don't buy him at the 3-4 turn, buy at 4-5 turn"
+    },
     {
      "stance": "buy",
-     "strength": 2,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "Andy wasting no time in selecting Justin Jefferson"
-    }
-   ]
-  },
-  {
-   "player": "A.J. Brown",
-   "norm": "aj brown",
-   "lean": "buy",
-   "score": 2,
-   "n_shows": 1,
-   "stances": [
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "tough to pass up, but a question mark with the injury"
+    },
     {
-     "stance": "buy",
-     "strength": 2,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "A.J. Brown, an elite wide receiver one, did fall to me"
-    }
-   ]
-  },
-  {
-   "player": "Drake London",
-   "norm": "drake london",
-   "lean": "buy",
-   "score": 2,
-   "n_shows": 1,
-   "stances": [
-    {
-     "stance": "buy",
-     "strength": 2,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "we've talked that situation down enough; good value at the 2-3 turn"
+     "stance": "sell",
+     "strength": 1,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "Rome Odunze, not Luther Burden"
     }
    ]
   },
@@ -166,95 +86,187 @@
    "player": "Brock Bowers",
    "norm": "brock bowers",
    "lean": "buy",
-   "score": 2,
-   "n_shows": 1,
+   "score": 16,
+   "n_shows": 5,
    "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Best player I've ever seen, better than every other tight end"
+    },
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "Bowers is going to be an absolute monster this season"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "my number one tight end in preseason rankings, nowhere for him to go"
+    },
     {
      "stance": "buy",
      "strength": 2,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "what a value, Brock Bowers in the third round"
-    }
-   ]
-  },
-  {
-   "player": "Jeremiyah Love",
-   "norm": "jeremiyah love",
-   "lean": "buy",
-   "score": 2,
-   "n_shows": 1,
-   "stances": [
+     "date": "NA",
+     "quote": "I take him at the two-three turn over Jeanty"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "already tight end one for me, doesn't make me nervous"
+    },
     {
      "stance": "buy",
      "strength": 2,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "at the 2-3 turn you're near his floor with crazy upside"
-    }
-   ]
-  },
-  {
-   "player": "Jadarian Price",
-   "norm": "jadarian price",
-   "lean": "buy",
-   "score": 2,
-   "n_shows": 1,
-   "stances": [
+     "date": "NA",
+     "quote": "what a value, third round Brock Bowers"
+    },
     {
      "stance": "buy",
      "strength": 2,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "situation for a first-round back is pretty perfect; could be something special"
-    }
-   ]
-  },
-  {
-   "player": "Cam Skattebo",
-   "norm": "cam skattebo",
-   "lean": "buy",
-   "score": 2,
-   "n_shows": 1,
-   "stances": [
+     "date": "NA",
+     "quote": "Bowers is viable at 108, that much of a difference maker"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "a little too aggressive in a big 14-team league at pick six"
+    },
     {
      "stance": "hold",
-     "strength": 2,
+     "strength": 1,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "elite talent, but I'd want him as my running back three"
+     "date": "NA",
+     "quote": "worried they double Bowers, but Kubiak eases concerns"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Cousins gets the ball out. That's going to favor Bowers and Jeanty."
     }
    ]
   },
   {
-   "player": "Luther Burden",
-   "norm": "luther burden",
+   "player": "Chase Brown",
+   "norm": "chase brown",
    "lean": "buy",
-   "score": 2,
-   "n_shows": 1,
+   "score": 15,
+   "n_shows": 4,
    "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "Chase Brown to me is a top 10 or 11 pick"
+    },
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "If you're new to the show, we love Chase Brown."
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "I have him at six, some value with the Bengals"
+    },
     {
      "stance": "buy",
      "strength": 2,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "Luther Burden, baby. Finally it worked out"
+     "date": "NA",
+     "quote": "Chase Brown and Omarion Hampton is the best start from 11"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Turnkey guy, a little early to me"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "love the Chase Brown Kenneth Walker third strategy"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "won't play many third downs, not a reason to hate Chase Brown"
     }
    ]
   },
   {
-   "player": "Davante Adams",
-   "norm": "davante adams",
+   "player": "Jahmyr Gibbs",
+   "norm": "jahmyr gibbs",
    "lean": "buy",
-   "score": 2,
-   "n_shows": 1,
+   "score": 15,
+   "n_shows": 5,
    "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "my pick here isn't hard; I go Gibbs, Chase, Bijan"
+    },
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "Jahmyr Gibbs and Bijan Robinson right there at one, two"
+    },
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "no reason to draft anyone other than Gibbs at 1.01"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "We're going Gibbs at number four, we feel good"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "If I can get one of them two guys, I'm happy"
+    },
     {
      "stance": "buy",
      "strength": 2,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "more and more bullish on Davante Adams; really successful season"
+     "date": "NA",
+     "quote": "I do think it's Gibbs one"
     }
    ]
   },
@@ -262,31 +274,245 @@
    "player": "Rome Odunze",
    "norm": "rome odunze",
    "lean": "buy",
-   "score": 2,
-   "n_shows": 1,
+   "score": 14,
+   "n_shows": 5,
    "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "still think he has wide receiver one upside, tremendous value"
+    },
     {
      "stance": "buy",
      "strength": 2,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "been an idiot on Odunze per the world, but he's a good player"
+     "date": "NA",
+     "quote": "high-flying Ben Johnson offense with some exciting pieces"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "give me some Odunze, all in on all the Bears"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "rather have Odunze late fifth than Burden early fourth"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "valid picks, definitely have upside and play in awesome offenses"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "have Odunze a couple spots higher than Burden"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Ben Johnson said he needs to get Rome Odunze the football."
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "very legit argument whether you want Luther Burden this year versus Roma Odunze"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "still think he's a good player, top 10 pick reason"
     }
    ]
   },
   {
-   "player": "Lamar Jackson",
-   "norm": "lamar jackson",
+   "player": "Colston Loveland",
+   "norm": "colston loveland",
    "lean": "buy",
-   "score": 2,
-   "n_shows": 1,
+   "score": 14,
+   "n_shows": 4,
    "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "my breakout, bold prediction he finishes as the number one tight end"
+    },
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "going to score the most points for any tight end this season"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "Loveland at four, could break the mold into top two"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "Loveland's a riser; would have taken him in round four without question"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "high-flying Ben Johnson offense with some exciting pieces"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I would go with Evans and Loveland over AJ Brown and Downs"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "totally fine with Loveland the round before"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "maybe he's more of an early to mid third round guy"
+    }
+   ]
+  },
+  {
+   "player": "DeVonta Smith",
+   "norm": "devonta smith",
+   "lean": "buy",
+   "score": 13,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "my ride or die this year, top five at his position upside"
+    },
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "ideally DeVonta Smith falls there; I like Smith better than Nabers"
+    },
     {
      "stance": "buy",
      "strength": 2,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "full forgiveness of last year for Lamar; he's going to be solid"
+     "date": "NA",
+     "quote": "been my wide receiver one in a couple of drafts recently"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "DeVonta Smith, awesome pick, who is a phenomenal player"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "flag player, very much would have taken DeVonta"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "take Neighbors ahead of guys who are healthy, DeVonta Smith"
+    }
+   ]
+  },
+  {
+   "player": "D'Andre Swift",
+   "norm": "dandre swift",
+   "lean": "buy",
+   "score": 13,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "overlooked solid RB2, I'm in on Swift, RB19"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "it could be a monster season for Swift"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "I like D'Andre Swift at cost a lot"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "if I could get them as my RB1 in round four"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "early season will be a steal"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "high-flying Ben Johnson offense with some exciting pieces"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "He could be a top 10 guy, but still a round four pick, not three."
     }
    ]
   },
@@ -294,15 +520,678 @@
    "player": "Parker Washington",
    "norm": "parker washington",
    "lean": "buy",
-   "score": 2,
-   "n_shows": 1,
+   "score": 13,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "feels like the Jaguars wide receiver one, I think Parker has a big year"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I'm still all in on Parker Washington"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "quite a riser; be prepared for his name in round four"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Parker Washington is 64th overall. Very, very good value."
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "seems like he's going to be the wide receiver one, nice floor"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "could be the premier one on this team"
+    }
+   ]
+  },
+  {
+   "player": "Bucky Irving",
+   "norm": "bucky irving",
+   "lean": "buy",
+   "score": 13,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "start",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "easy top 20 play, big fan the rest of the season"
+    },
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "love taking Irving as that round five flex pivot point"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "what he can give us is far beyond what Kyren can"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "if I could get them as my RB1 in round four"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Swift, Price, Bucky Irving 3-4-5, I love that"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I would have taken Bucky Irving there"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "I'm aboard, he's a flag player, but going high now"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I don't want to draft Bucky, Gainwell taking passing work"
+    }
+   ]
+  },
+  {
+   "player": "Justin Herbert",
+   "norm": "justin herbert",
+   "lean": "buy",
+   "score": 12,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "going to have his best fantasy season ever under Mike McDaniel"
+    },
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "my breakout for 2026, comes out red-hot and has a really great season"
+    },
+    {
+     "stance": "start",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I would start Herbert for sure rather than Dart"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Caleb Williams or Justin Herbert? Herbert. I would put Herbert ahead of Dak."
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Frisky quarterback pick, Herbert, let's do it"
+    }
+   ]
+  },
+  {
+   "player": "Bijan Robinson",
+   "norm": "bijan robinson",
+   "lean": "buy",
+   "score": 12,
+   "n_shows": 7,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "Bijan Robinson right there at one, two... should go for the most money"
+    },
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I think Bijan's in for a mammoth season, potential RB1"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "very nervous about the Falcons, quarterback situation really scary"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "you're going to like your team better if you pick Bijan second"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "I'm not a believer in the Falcons"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "feel a lot more comfortable if you take Bijan in round one"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "If I can get one of them two guys, I'm happy"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "number two pick, that's where I have him ranked, no question"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I'm still going Bijan over Ja'Marr Chase at number two"
+    }
+   ]
+  },
+  {
+   "player": "Drake London",
+   "norm": "drake london",
+   "lean": "buy",
+   "score": 11,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I would take London over Justin Jefferson"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "very nervous, straightforward path to a disappointing season"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "moved Drake London ahead of Malik Nabers and Justin Jefferson"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Absolutely tickled he fell to me, taking Drake London"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "100% got it right, the upside favors London and AJ Brown"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I really have come around on Drake London, fantastic prospect"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "talked that situation down enough, man, he's here"
+    }
+   ]
+  },
+  {
+   "player": "Caleb Williams",
+   "norm": "caleb williams",
+   "lean": "buy",
+   "score": 10,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "would not be shocked to see him inside the top five"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "consistent Vegas totals around 50 in Bears games"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "I think Caleb Williams has a big year"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "top 10 quarterback, want a piece of this Bears offense"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "I think Caleb Williams has a big year this year"
+    }
+   ]
+  },
+  {
+   "player": "Jameson Williams",
+   "norm": "jameson williams",
+   "lean": "buy",
+   "score": 10,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "wide receiver 25 at the back of the fifth, that's how you win"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "Jamo crushed when there was no Sam LaPorta"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "going to way out-perform that ADP if varied usage continues"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "valid picks, definitely have upside and play in awesome offenses"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "also a flag player, I get him a lot"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "that's who I want to take at wide receiver"
+    }
+   ]
+  },
+  {
+   "player": "TreVeyon Henderson",
+   "norm": "treveyon henderson",
+   "lean": "sell",
+   "score": -10,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 3,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "the worst pick in fantasy this year so far; me too, bad"
+    },
+    {
+     "stance": "sit",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "he'll be low in our rank, a terrifying week one start"
+    },
+    {
+     "stance": "sell",
+     "strength": 3,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "Henderson at his ADP is still out of control"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "almost definitely not doing that, could play 20% of the snaps"
+    }
+   ]
+  },
+  {
+   "player": "Jordan Addison",
+   "norm": "jordan addison",
+   "lean": "buy",
+   "score": 10,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "first rookie wide receivers off the board, Addison has the highest ceiling"
+    },
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "I think Jordan Addison has a monster year... big believer in this entire Saints offense"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I love the value on Jordan Addison."
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "there could be a big breakout coming from Addison"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "Addison's a little bit trickier, possible breakout but smaller sample"
+    }
+   ]
+  },
+  {
+   "player": "Ja'Marr Chase",
+   "norm": "jamarr chase",
+   "lean": "buy",
+   "score": 9,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Best receiver, feel the best about Chase, most trade value"
+    },
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "give me Ja'Marr Chase as wide receiver one"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "he could easily outperform Bijan Robinson"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "I actually go Chase second, over Bijan Robinson"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "saw Ja'Marr Chase's knee bend very awkwardly, a little nervous"
+    }
+   ]
+  },
+  {
+   "player": "Christian McCaffrey",
+   "norm": "christian mccaffrey",
+   "lean": "buy",
+   "score": 9,
+   "n_shows": 4,
    "stances": [
     {
      "stance": "buy",
      "strength": 2,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "could be the premier one on this team; I believe in both"
+     "date": "NA",
+     "quote": "I'm a big McCaffrey guy, you're going to like your build"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Number one player every week until he tears his Achilles, great value"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "I would have gone McCaffrey at number three in full PPR"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "if he's healthy, he will be a league winning running back"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I have Christian McCaffrey as a top two back"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "still a little hesitant, would take JSN and Amon-Ra over him"
+    }
+   ]
+  },
+  {
+   "player": "A.J. Brown",
+   "norm": "aj brown",
+   "lean": "buy",
+   "score": 9,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "AJ Brown is in for a monster monster season"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "100% got it right, the upside favors the two that you took"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "elite wide receiver one fell to me"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I'd have more fun drafting AJ Brown"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "As long as we got AJ Brown, we're good"
+    }
+   ]
+  },
+  {
+   "player": "Lamar Jackson",
+   "norm": "lamar jackson",
+   "lean": "buy",
+   "score": 9,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I have Lamar Jackson at four, higher than consensus, monster season"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Lamar's going to have a great season, should have been MVP"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I have no problem taking him as the second QB off the board."
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "full forgiveness of last year, he's going to be solid"
+    }
+   ]
+  },
+  {
+   "player": "Trey McBride",
+   "norm": "trey mcbride",
+   "lean": "buy",
+   "score": 9,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "differencemaking tight end, ahead of Bowers in full PPR"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Trey McBride, rocking and rolling with top of class picks"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "tight ends that don't make me nervous"
+    },
+    {
+     "stance": "hold",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I'm not worried about McBride busting, still the number one target"
     }
    ]
   },
@@ -310,21 +1199,2710 @@
    "player": "Joe Burrow",
    "norm": "joe burrow",
    "lean": "buy",
-   "score": 2,
-   "n_shows": 1,
+   "score": 8,
+   "n_shows": 5,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "give me Joe Burrow, I'm all in on the Bengals offense"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Brings me a great deal of pleasure, Joe Burrow"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "happily walked away from my draft with Joe Burrow"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "going as a top five quarterback, he makes me nervous"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Burrow at the 6.07 is a tremendous value"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I would not take him in the fifth, would in the sixth"
+    }
+   ]
+  },
+  {
+   "player": "Justin Jefferson",
+   "norm": "justin jefferson",
+   "lean": "buy",
+   "score": 8,
+   "n_shows": 5,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "one player to invest in for the rest of their career"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "push in a bunch of chips, fewer things can go wrong"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "wasting no time selecting Justin Jefferson"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "barring injury he's gonna finish as a top five wide receiver"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "Jefferson with the unsettled quarterback play scares me"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "St. Brown should go ahead of Jefferson"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Of course I'm taking Justin Jefferson top 15."
+    }
+   ]
+  },
+  {
+   "player": "Jayden Reed",
+   "norm": "jayden reed",
+   "lean": "buy",
+   "score": 8,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Reed is very cheap and should be very productive. Potential starter."
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "Reed and Downs rarely go this high, players we really like"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "number one among receivers in fantasy points per target"
+    },
+    {
+     "stance": "start",
+     "strength": 1,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "Jayden Reed can be viable this week with increased target share"
+    }
+   ]
+  },
+  {
+   "player": "Tyler Warren",
+   "norm": "tyler warren",
+   "lean": "buy",
+   "score": 8,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "Tyler Warren's ceiling is extremely high"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "floor is a little more secure with Tyler Warren"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "Warren at three, doesn't make me nervous"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "had my eye on possibly going Tyler Warren"
+    }
+   ]
+  },
+  {
+   "player": "De'Von Achane",
+   "norm": "devon achane",
+   "lean": "buy",
+   "score": 8,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "if you can get him in round two, you do that"
+    },
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "bang the table, third best running back in football"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Achane's a more explosive, more dynamic player than Javonte"
+    }
+   ]
+  },
+  {
+   "player": "CeeDee Lamb",
+   "norm": "ceedee lamb",
+   "lean": "buy",
+   "score": 7,
+   "n_shows": 5,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "Lamb just feels like such a slam dunk to me"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "prefer to stack Dak with Lamb, more of a floor"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "This guy is going to have to score some TDs"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "not taking a receiver at pick 11 unless it's Lamb"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "St. Brown should go ahead of Lamb"
+    }
+   ]
+  },
+  {
+   "player": "Jalen Hurts",
+   "norm": "jalen hurts",
+   "lean": "buy",
+   "score": 7,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "riding or dying once again with Jalen Hurts as my QB1"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Eagles offense is going to cook this year, Hurts a value"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Going to take Jalen Hurts because it's a superflex league"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I prefer Hurts a little bit more. Like his offensive line."
+    }
+   ]
+  },
+  {
+   "player": "Zay Flowers",
+   "norm": "zay flowers",
+   "lean": "buy",
+   "score": 7,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "late third, early fourth, Flowers to me feels like stealing"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "league winner if he gets more red zone usage this year"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "wish Zay Flowers had lasted to here"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "healthy guys like Zay Flowers preferred over Nabers at that price"
+    }
+   ]
+  },
+  {
+   "player": "Jordan Mason",
+   "norm": "jordan mason",
+   "lean": "buy",
+   "score": 7,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "draft steal, thousand rushing yards, draft him a round ahead"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "a lot of players that we really like"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "last guy where I can depend on his workload"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Jordan Mason is one pick after Blake Corum. Okay."
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "high-end flexes or number two running backs in Warren and Mason"
+    }
+   ]
+  },
+  {
+   "player": "Jaxon Smith-Njigba",
+   "norm": "jaxon smithnjigba",
+   "lean": "buy",
+   "score": 7,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "He is so damn good, I'm basically buying him"
+    },
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "my number one wide receiver, top 13 player, it's gonna be phenomenal"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "far more target market share, same tier as Amon-Ra"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "have not been taking a lot of JSN where he's been going"
+    }
+   ]
+  },
+  {
+   "player": "Isaiah Likely",
+   "norm": "isaiah likely",
+   "lean": "buy",
+   "score": 7,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "I really like Isaiah Likely this year in PPR"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Best value at tight end, Likely. Still not a top 100 pick."
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "honorable mention if he's the number two pass catcher"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "I don't think they're that much different"
+    },
+    {
+     "stance": "add",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I'll have a lot of Likely, the later tight ends"
+    }
+   ]
+  },
+  {
+   "player": "Puka Nacua",
+   "norm": "puka nacua",
+   "lean": "buy",
+   "score": 7,
+   "n_shows": 2,
    "stances": [
     {
      "stance": "buy",
      "strength": 2,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "Joe Burrow at the 6.07 is outrageous, tremendous value"
+     "date": "NA",
+     "quote": "he's an absolute star, on pace for 188 targets"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Taking Puka and hoping for the best with Stafford"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Who are you taking fourth overall? Puka."
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "seems like Puka will be playing week one"
     }
    ]
   },
   {
-   "player": "J.K. Dobbins",
-   "norm": "jk dobbins",
+   "player": "Jadarian Price",
+   "norm": "jadarian price",
+   "lean": "buy",
+   "score": 7,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I love Price, I love the opportunity, late sixth round value"
+    },
+    {
+     "stance": "sit",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I'd try to sit him in week one against New England"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "have Price as a low-end number two running back, as early as round five"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "Price has a chance to run away with this job... I like Price quite a bit"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "first-round back situation is pretty perfect, could be special"
+    }
+   ]
+  },
+  {
+   "player": "Jared Goff",
+   "norm": "jared goff",
+   "lean": "buy",
+   "score": 7,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Goff to me is the biggest riser, one of the biggest steals on draft day."
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "a gift in the fourth round, I'll have a lot of Goff"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Jared Goff MVP here, kind of team that's going to win"
+    }
+   ]
+  },
+  {
+   "player": "Amon-Ra St. Brown",
+   "norm": "amonra st brown",
+   "lean": "buy",
+   "score": 7,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "should go ahead of CeeDee Lamb and Justin Jefferson without question"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Really strong feeling about St. Brown"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "would love to get Amon-Ra at the 10 spot"
+    }
+   ]
+  },
+  {
+   "player": "Tee Higgins",
+   "norm": "tee higgins",
+   "lean": "buy",
+   "score": 7,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "hold",
+     "strength": 2,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "an as advertised wide receiver two, not top 12 upside"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "top 16 wide receiver per game four of last five years"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "my two would be McConkey and Higgins"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "not taking Neighbors ahead of names like Tee Higgins"
+    }
+   ]
+  },
+  {
+   "player": "Harold Fannin Jr.",
+   "norm": "harold fannin",
+   "lean": "buy",
+   "score": 6,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "he's just so good, underrated right now, tier one next year"
+    },
+    {
+     "stance": "hold",
+     "strength": 2,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "still a tight end one but serious pause given that offense"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "a lot of players that we really like"
+    }
+   ]
+  },
+  {
+   "player": "Christian Watson",
+   "norm": "christian watson",
+   "lean": "buy",
+   "score": 6,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "I'm so in on Watson this year, number one wide receiver on Packers"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Christian Watson still here in round five, Watson bros"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "makes sense to be high on this Green Bay pass catching group"
+    }
+   ]
+  },
+  {
+   "player": "Chris Godwin",
+   "norm": "chris godwin",
+   "lean": "buy",
+   "score": 6,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "like him too much to pass up, so much better than Pollard"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Godwin is the wide receiver one in the Tampa offense when he's healthy"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "a lot of players that we really like"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "you feel good about Chris Godwin with Baker Mayfield"
+    }
+   ]
+  },
+  {
+   "player": "Romeo Doubs",
+   "norm": "romeo doubs",
+   "lean": "buy",
+   "score": 6,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I'm in on Romeo Doubs as a sleeper, he's a riser"
+    },
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Doubs needs to be rostered in 12 team formats"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "might be able to just start for you, in a good offense"
+    }
+   ]
+  },
+  {
+   "player": "Drake Maye",
+   "norm": "drake maye",
+   "lean": "buy",
+   "score": 6,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "He's going to have a huge year, upside is everything"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Way too early, I would not have taken Drake Maye there"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "top five, top three quarterback in Drake Maye"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Drake Maye, A.J. Brown stack, don't feel I overpaid"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Drake Maye or Joe Burrow? It's gonna be Maye."
+    }
+   ]
+  },
+  {
+   "player": "Breece Hall",
+   "norm": "breece hall",
+   "lean": "sell",
+   "score": -6,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "made my hate list, insane for a running back in a committee"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Breece Hall is just a guy that Dave is not feeling this year."
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I think Breece Hall is a fade, bad offensive line"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "I like Etienne better than Breece Hall"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "taking discounts on potential league winners here"
+    }
+   ]
+  },
+  {
+   "player": "Antonio Gibson",
+   "norm": "antonio gibson",
+   "lean": "sell",
+   "score": -6,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "super concerned at his current ADP, I'm going to drop him even further"
+    },
+    {
+     "stance": "sell",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "do not draft him, running back 21 is way too high"
+    }
+   ]
+  },
+  {
+   "player": "James Cook",
+   "norm": "james cook",
+   "lean": "buy",
+   "score": 6,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I think I'm too low on him, RB3 with significant upside"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "elite running back, will score a ton of touchdowns"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "third down PPR flex play but that's about it"
+    }
+   ]
+  },
+  {
+   "player": "Jordan Love",
+   "norm": "jordan love",
+   "lean": "buy",
+   "score": 5,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "we just vastly underrate Jordan Love"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "my QB6, higher than industry ranking, offense put much more in his lap"
+    },
+    {
+     "stance": "sit",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "I have Jordan Love outside my top 20 this week"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Best single value at quarterback is Jordan Love. Love should be in tier four."
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "give me some Jordan Love if you're down in the QB18-19 range"
+    }
+   ]
+  },
+  {
+   "player": "Kyle Pitts",
+   "norm": "kyle pitts",
+   "lean": "sell",
+   "score": -5,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "drop",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "you're rolling tight end 30 out there every week"
+    },
+    {
+     "stance": "sell",
+     "strength": 3,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "I am absolutely not taking Kyle Pitts in the sixth round"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "makes me really nervous whatever this quarterback room looks like"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "generational tight end, should be treated as a wide receiver in fantasy"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Kyle Pitts or George Kittle? Pitts. Not Kittle."
+    }
+   ]
+  },
+  {
+   "player": "Ladd McConkey",
+   "norm": "ladd mcconkey",
+   "lean": "buy",
+   "score": 5,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "top 12 wide receiver upside is Ladd McConkey"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "I love Ladd McConkey there"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "I think Ladd McConkey is a really good player"
+    }
+   ]
+  },
+  {
+   "player": "Mike Evans",
+   "norm": "mike evans",
+   "lean": "buy",
+   "score": 5,
+   "n_shows": 5,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Very dependable, 1,000 yards, 10 touchdowns guaranteed"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "might get top five, top eight wide receiver production for super cheap"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "no way I'm ever going to take Mike Evans in the fifth round"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "just throw it somewhere near Mike Evans, he's coming down with it"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I would go with Evans and Loveland over AJ Brown and Downs"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "those who hammered Mike Evans this summer maybe not so smart"
+    }
+   ]
+  },
+  {
+   "player": "Wan'Dale Robinson",
+   "norm": "wandale robinson",
+   "lean": "buy",
+   "score": 5,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "looking for Robinson to have an immediate role in that New York offense"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "somebody you might be able to start in PPR formats"
+    },
+    {
+     "stance": "start",
+     "strength": 1,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "probably starting Wan'Dale Robinson no matter what"
+    },
+    {
+     "stance": "add",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "late round flyer, last round of your draft take him"
+    }
+   ]
+  },
+  {
+   "player": "Chris Rodriguez Jr.",
+   "norm": "chris rodriguez",
+   "lean": "buy",
+   "score": 5,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "very late round player I've rostered a bunch this summer"
+    },
+    {
+     "stance": "add",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "could take over for Tuten, really valid round 10 or 11 pick"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "you're usually going to use him close to the goal line"
+    },
+    {
+     "stance": "add",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Chris Rodriguez or Josh Jacobs? Rodriguez."
+    }
+   ]
+  },
+  {
+   "player": "Kenneth Gainwell",
+   "norm": "kenneth gainwell",
+   "lean": "buy",
+   "score": 5,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "late round flyer Kenneth Gainwell should be on your radar, basically free"
+    },
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "he's a sleeper for you this year"
+    }
+   ]
+  },
+  {
+   "player": "Xavier Worthy",
+   "norm": "xavier worthy",
+   "lean": "buy",
+   "score": 5,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "more involved in the passing offense than people might expect"
+    },
+    {
+     "stance": "hold",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "high upside wide receiver being slept on, but expendable"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "young talented player robbed of his second season by injury"
+    }
+   ]
+  },
+  {
+   "player": "Rachaad White",
+   "norm": "rachaad white",
+   "lean": "buy",
+   "score": 5,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "must stash on your bench in pretty much every format"
+    },
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Rachaad White might be better value, could take over the role"
+    }
+   ]
+  },
+  {
+   "player": "Javonte Williams",
+   "norm": "javonte williams",
+   "lean": "buy",
+   "score": 5,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "You'll see Javonte at the top. Feel good about him as RB2."
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "if dead set on a running back, Williams is who I would take"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "not a household name but they will know very soon"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "the worst running back that has a great role"
+    }
+   ]
+  },
+  {
+   "player": "Patrick Mahomes",
+   "norm": "patrick mahomes",
+   "lean": "buy",
+   "score": 5,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "clearly the highest elite floor, he's my QB1"
+    },
+    {
+     "stance": "hold",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "still looks like Patrick Mahomes, he's good"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Superflex, you have to draft two quarterbacks, happy with that"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "He's the one that makes me the most nervous. Rushing is going to crater."
+    }
+   ]
+  },
+  {
+   "player": "Nico Collins",
+   "norm": "nico collins",
+   "lean": "buy",
+   "score": 5,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "One of my favorite receivers in the league right now"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "one of the top 10 receivers in the league"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "George Pickens or Nico Collins? Nico."
+    }
+   ]
+  },
+  {
+   "player": "Quinshon Judkins",
+   "norm": "quinshon judkins",
+   "lean": "buy",
+   "score": 5,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "I'm just higher, I get him everywhere"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "buyer's remorse over DJ Moore ahead of Quinshon Judkins"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "Judkins if I want to go running back, end of the tier"
+    }
+   ]
+  },
+  {
+   "player": "Blake Corum",
+   "norm": "blake corum",
+   "lean": "buy",
+   "score": 5,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Round eight. I will take that chance in the middle of my draft."
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "Blake Corum's going to win you the league if Kyren gets hurt"
+    }
+   ]
+  },
+  {
+   "player": "Dameon Pierce",
+   "norm": "dameon pierce",
+   "lean": "buy",
+   "score": 5,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "borderline top 20 running back, take him over Josh Jacobs and Breece Hall"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "we're all in on Dameon Pierce, he will be higher"
+    }
+   ]
+  },
+  {
+   "player": "Jeremiah Love",
+   "norm": "jeremiah love",
+   "lean": "buy",
+   "score": 5,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "potential league winner, keep pouncing on Jeremiah Love"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "near his floor and still crazy upside at the 2-3 turn"
+    }
+   ]
+  },
+  {
+   "player": "Brock Purdy",
+   "norm": "brock purdy",
+   "lean": "buy",
+   "score": 4,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "every season as a starter he's been a top 10 quarterback"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Goff and Purdy are the two who have moved up the most for me."
+    }
+   ]
+  },
+  {
+   "player": "George Pickens",
+   "norm": "george pickens",
+   "lean": "buy",
+   "score": 4,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "shooting the moon with Pickens, more interesting in best ball"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "I think Pickens is a great pick, too"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "might be a little bit overdrafted but needs to be on radars"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "had a huge summer and is being drafted highly deservedly so"
+    }
+   ]
+  },
+  {
+   "player": "Chris Olave",
+   "norm": "chris olave",
+   "lean": "buy",
+   "score": 4,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "sit",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "I'm just not that interested, dangerous times for Chris Olave"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "I love Olave"
+    },
+    {
+     "stance": "hold",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I want Olave here at that seventh round price tag"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "Olave, awesome pick"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Rashee Rice or Chris Olave? Olave."
+    }
+   ]
+  },
+  {
+   "player": "Terry McLaurin",
+   "norm": "terry mclaurin",
+   "lean": "buy",
+   "score": 4,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "steadily dropping, really nervous about the Washington offensive line"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "highest rated receiver left on my board; I have a McLaurin problem"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "could serve as a huge value in the sixth"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "I like McLaurin"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "Terry McLaurin available here, go right back to receiver"
+    }
+   ]
+  },
+  {
+   "player": "Quentin Johnston",
+   "norm": "quentin johnston",
+   "lean": "buy",
+   "score": 4,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "S tier value, could be in for a huge season"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I went with Quentin Johnston who's going around pick 100."
+    },
+    {
+     "stance": "add",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I would still take Quentin Johnston over Stribling"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "there's never a great time to take Quentin Johnston"
+    }
+   ]
+  },
+  {
+   "player": "Josh Jacobs",
+   "norm": "josh jacobs",
+   "lean": "sell",
+   "score": -4,
+   "n_shows": 6,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "fine letting somebody else have Jacobs, buried in the rankings"
+    },
+    {
+     "stance": "hold",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I would just hold it as long as you could"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "I like that pick, steady, Green Bay good"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "too rich in round three without clarity on the suspension"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "no good sign with what's going on with Josh Jacobs right now"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Maybe he plays at some point, maybe he doesn't play at all."
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "you see Josh Jacobs there, obviously that's not happening"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "taking discounts on potential league winners here"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "court date moved up is good news for Jacobs investors"
+    }
+   ]
+  },
+  {
+   "player": "Juwan Johnson",
+   "norm": "juwan johnson",
+   "lean": "buy",
+   "score": 4,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "moved way up my rankings, ahead of Isaiah Likely, much cheaper"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "love Juwan Johnson, he's in my top 10 tight ends"
+    }
+   ]
+  },
+  {
+   "player": "Chris Bell",
+   "norm": "chris bell",
+   "lean": "buy",
+   "score": 4,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "could be a breakout season, fun end of draft dart throw"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "a true sleeper you can get in the last round"
+    }
+   ]
+  },
+  {
+   "player": "Mike Washington",
+   "norm": "mike washington",
+   "lean": "buy",
+   "score": 4,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "if you do draft Jeanty you want to make sure you grab Mike Washington"
+    },
+    {
+     "stance": "add",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "if Jeanty doesn't play week one, Washington would be my RB2"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "enough smoke, moved him up to around 140 carries"
+    }
+   ]
+  },
+  {
+   "player": "Rashee Rice",
+   "norm": "rashee rice",
+   "lean": "buy",
+   "score": 4,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "top 20 fantasy wide receiver, mid-tier WR2 assuming he stays healthy"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "a little cautious, but one of the best picks in fantasy"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "taking discounts on potential league winners here"
+    }
+   ]
+  },
+  {
+   "player": "Derrick Henry",
+   "norm": "derrick henry",
+   "lean": "buy",
+   "score": 4,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "if Derrick Henry's there at eight, I'd take him"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "I needed Derrick Henry, need to get on the board with running backs"
+    }
+   ]
+  },
+  {
+   "player": "Rhamondre Stevenson",
+   "norm": "rhamondre stevenson",
+   "lean": "buy",
+   "score": 4,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "some statistical regression coming, I haven't been drafting him"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "open lane to be the guy in New England"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "MarShawn Lloyd or Rhamondre Stevenson? Rhamondre."
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "could make you feel pretty good about Rhamondre early"
+    },
+    {
+     "stance": "start",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Ramondre is the lead guy, doing everything better"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "still treating Rhamondre as just a usable flex"
+    }
+   ]
+  },
+  {
+   "player": "Jonathan Taylor",
+   "norm": "jonathan taylor",
+   "lean": "buy",
+   "score": 4,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Jonathan Taylor was about to go, value"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "James Cook, Jonathan Taylor, or Christian McCaffrey? Jonathan Taylor."
+    }
+   ]
+  },
+  {
+   "player": "Travis Etienne",
+   "norm": "travis etienne",
+   "lean": "buy",
+   "score": 4,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "like him better than Breece Hall and Javonte"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Best value at running back, Travis Etienne at the three-four turn."
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "I think you took the wrong running back"
+    },
+    {
+     "stance": "hold",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "long way from saying Robinson will completely scuttle Etienne's fantasy value"
+    }
+   ]
+  },
+  {
+   "player": "Courtland Sutton",
+   "norm": "courtland sutton",
+   "lean": "buy",
+   "score": 4,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "more of a narrow target tree, Sutton raises up"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "going to lead the team in end zone targets"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "since doing this draft I would have taken Sutton"
+    }
+   ]
+  },
+  {
+   "player": "Tom Brady",
+   "norm": "tom brady",
+   "lean": "buy",
+   "score": 4,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "QB5, don't bet against Tom Brady, no concern at all"
+    },
+    {
+     "stance": "hold",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I have Brady at QB5, I'm not moving him off that"
+    }
+   ]
+  },
+  {
+   "player": "Kadarius Toney",
+   "norm": "kadarius toney",
+   "lean": "sell",
+   "score": -4,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Wan'Dale makes Kadarius Toney irrelevant to me"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "if I had to drop one of them I'd rather take Skyy Moore"
+    }
+   ]
+  },
+  {
+   "player": "Rashaad Penny",
+   "norm": "rashaad penny",
+   "lean": "buy",
+   "score": 4,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "zero RB dart throw, when healthy top 10 running back"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Rashaad Penny probably needs to go up a round or two"
+    }
+   ]
+  },
+  {
+   "player": "Jahan Dotson",
+   "norm": "jahan dotson",
+   "lean": "buy",
+   "score": 4,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "another riser, having a great camp, him over Curtis Samuel"
+    },
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "could be a pleasant surprise for those who can stash him"
+    }
+   ]
+  },
+  {
+   "player": "Malik Willis",
+   "norm": "malik willis",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "rushing gives you a floor, top 12 not out of the question"
+    },
+    {
+     "stance": "add",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Willis could be the best running quarterback in the NFL this year."
+    }
+   ]
+  },
+  {
+   "player": "Dontayvion Wicks",
+   "norm": "dontayvion wicks",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "keep drafting Wicks instead of taking a kicker or defense"
+    }
+   ]
+  },
+  {
+   "player": "Ashton Jeanty",
+   "norm": "ashton jeanty",
+   "lean": "sell",
+   "score": -3,
+   "n_shows": 5,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "my bust for this upcoming season, might be closer to RB17 than RB10"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "why would you take on the injury risk unnecessarily"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Generational rookie, kind of terrified the Raiders are gonna suck"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "should be more like the two-three turn; ankle injury, nervous about Raiders"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Expected to play week one justifies keeping him in this tier. Round two pick."
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "defenses stack the box, offensive line improved but not great"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "not what Christian McCaffrey was last year"
+    }
+   ]
+  },
+  {
+   "player": "Dalton Kincaid",
+   "norm": "dalton kincaid",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "first in every per-route category, top five if routes rise"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "could start hot, everything from Buffalo has been really positive"
+    }
+   ]
+  },
+  {
+   "player": "Terrance Ferguson",
+   "norm": "terrance ferguson",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "keeps moving up, McVay seems to love this guy"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "intriguing dark horse for tier one tight end"
+    }
+   ]
+  },
+  {
+   "player": "Tetairoa McMillan",
+   "norm": "tetairoa mcmillan",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "one of the most talented receivers in the whole NFL right now"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "both of those guys are fine in this range"
+    }
+   ]
+  },
+  {
+   "player": "Zach Charbonnet",
+   "norm": "zach charbonnet",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Charbonnet should be rising up, becomes an elite running back option"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "could have a really strong start to the season"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "IR stash, maybe a touchdown vulture later in the year"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "on IR and will be slow played when he returns"
+    }
+   ]
+  },
+  {
+   "player": "Brenton Strange",
+   "norm": "brenton strange",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "flag tight end, take him all over; Trey McBride is my model"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "band-aid at tight end, fine, gets more targets if Meyers misses"
+    }
+   ]
+  },
+  {
+   "player": "Jacksonville Jaguars DST",
+   "norm": "jacksonville jaguars dst",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "start",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "the Jaguars are the best one, play the Browns week one"
+    }
+   ]
+  },
+  {
+   "player": "Mark Andrews",
+   "norm": "mark andrews",
+   "lean": "sell",
+   "score": -3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "drop",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "I think you can safely drop those guys"
+    }
+   ]
+  },
+  {
+   "player": "Christian Kirk",
+   "norm": "christian kirk",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I have a lot of Christian Kirk leagues, banking on this Jaguars offense"
+    },
+    {
+     "stance": "start",
+     "strength": 1,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "inside top 30 wide receivers, it's a nice matchup"
+    }
+   ]
+  },
+  {
+   "player": "Rico Dowdle",
+   "norm": "rico dowdle",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "start",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "high-end flex low-end RB2 this week, tremendous workload"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I'm just always on the Rico side"
+    }
+   ]
+  },
+  {
+   "player": "Jauan Jennings",
+   "norm": "jauan jennings",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "start",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "upgraded him to low-end wide receiver one territory"
+    }
+   ]
+  },
+  {
+   "player": "Michael Carter",
+   "norm": "michael carter",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "undervalued, certainly the better value in the Jets running attack"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Michael Carter's not going away, they're going to use him"
+    }
+   ]
+  },
+  {
+   "player": "Elijah Moore",
+   "norm": "elijah moore",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "the guy you should be buying in this offense, made the love list"
+    }
+   ]
+  },
+  {
+   "player": "Brian Robinson",
+   "norm": "brian robinson",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "as a sleeper he's absolutely worth taking, worth a flyer"
+    },
+    {
+     "stance": "add",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "goal line back from day one, looked good in the preseason"
+    }
+   ]
+  },
+  {
+   "player": "Tank Dell",
+   "norm": "tank dell",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "tank Dell is going to be a thing, one of my favorite late round flyers"
+    }
+   ]
+  },
+  {
+   "player": "Tyquan Thornton",
+   "norm": "tyquan thornton",
+   "lean": "sell",
+   "score": -3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "drop",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "somebody that probably shouldn't be drafted except in a deep Dynasty league"
+    }
+   ]
+  },
+  {
+   "player": "Pat Freiermuth",
+   "norm": "pat freiermuth",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I still want Pat Freiermuth, depressed ADP is good"
+    }
+   ]
+  },
+  {
+   "player": "Jaylen Warren",
+   "norm": "jaylen warren",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I'm on the Warren side, seventh-round RB3 shot"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "high-end flexes or number two running backs in Warren and Mason"
+    }
+   ]
+  },
+  {
+   "player": "Leonard Fournette",
+   "norm": "leonard fournette",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "the volume is going to be insane here"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "he probably still has that pass catching role locked down"
+    }
+   ]
+  },
+  {
+   "player": "JuJu Smith-Schuster",
+   "norm": "juju smithschuster",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I'm all in on JuJu, JuJu is the guy"
+    }
+   ]
+  },
+  {
+   "player": "Gabriel Davis",
+   "norm": "gabriel davis",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I'm all in on Gabriel Davis, could outperform Diggs"
+    }
+   ]
+  },
+  {
+   "player": "Albert Okwuegbunam",
+   "norm": "albert okwuegbunam",
+   "lean": "sell",
+   "score": -3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I'm out, he's a big fade"
+    }
+   ]
+  },
+  {
+   "player": "Rondale Moore",
+   "norm": "rondale moore",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Moore needs to be rostered in way more leagues, should be 80 percent"
+    }
+   ]
+  },
+  {
+   "player": "Jeff Wilson",
+   "norm": "jeff wilson",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I'm getting him everywhere I can"
+    }
+   ]
+  },
+  {
+   "player": "Tim Patrick",
+   "norm": "tim patrick",
+   "lean": "sell",
+   "score": -3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "drop",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "full tear of his Achilles, season-ending"
+    }
+   ]
+  },
+  {
+   "player": "Nick Chubb",
+   "norm": "nick chubb",
+   "lean": "buy",
+   "score": 3,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I have Chubb higher than consensus, due for a big year"
+    }
+   ]
+  },
+  {
+   "player": "Matthew Stafford",
+   "norm": "matthew stafford",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "massive regression is coming, QB12 is too high"
+    },
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "regression will merely be to QB5, pick him up basically for free"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "flag player, my QB5, best offense with best weapons"
+    }
+   ]
+  },
+  {
+   "player": "Kenneth Walker",
+   "norm": "kenneth walker",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "top six running back, number one RB not out of range"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "definitely a little nervous, one of the more boom or bust running backs"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "a faller, I feel like he won't be ready week one"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "if you get those guys at the one-two turn, fantastic"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "any combination of Chase Brown, Hampton, and Ken Walker for me"
+    }
+   ]
+  },
+  {
+   "player": "Cincinnati Bengals DST",
+   "norm": "cincinnati bengals dst",
    "lean": "buy",
    "score": 2,
    "n_shows": 1,
@@ -333,14 +3911,14 @@
      "stance": "buy",
      "strength": 2,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "at the beginning of the year, feel pretty strong it will be Dobbins"
+     "date": "NA",
+     "quote": "both the Bengals and the Cowboys as top 12 fantasy defenses"
     }
    ]
   },
   {
-   "player": "Jayden Daniels",
-   "norm": "jayden daniels",
+   "player": "Dallas Cowboys DST",
+   "norm": "dallas cowboys dst",
    "lean": "buy",
    "score": 2,
    "n_shows": 1,
@@ -349,8 +3927,47 @@
      "stance": "buy",
      "strength": 2,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "Jayden Daniels in the seventh round is truly a ridiculous value"
+     "date": "NA",
+     "quote": "both the Bengals and the Cowboys as top 12 fantasy defenses"
+    }
+   ]
+  },
+  {
+   "player": "Travis Hunter",
+   "norm": "travis hunter",
+   "lean": "sell",
+   "score": -2,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "not a full-time wide receiver, won't play 80% of snaps"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "for now just a role player on offense, maybe a small role player"
+    }
+   ]
+  },
+  {
+   "player": "Michael Penix",
+   "norm": "michael penix",
+   "lean": "sell",
+   "score": -2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I don't have any faith in Penix and Tua. None."
     }
    ]
   },
@@ -365,46 +3982,167 @@
      "stance": "buy",
      "strength": 2,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "recovering from an ACL, I don't care; seventh rounder Tucker Kraft"
+     "date": "NA",
+     "quote": "seventh rounder Tucker Kraft, easy pick, ACL don't care"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "if he comes back healthy, I think he could be there"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "leverage that tight end depth to improve yourself at wide receiver"
     }
    ]
   },
   {
-   "player": "Dajon Stribling",
-   "norm": "dajon stribling",
-   "lean": "buy",
-   "score": 2,
-   "n_shows": 1,
+   "player": "Kyren Williams",
+   "norm": "kyren williams",
+   "lean": "sell",
+   "score": -2,
+   "n_shows": 3,
    "stances": [
     {
-     "stance": "add",
+     "stance": "sell",
      "strength": 2,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "most talented, highest target share rookie; fantasy impact in year one"
+     "date": "NA",
+     "quote": "chance Kyren is a huge bust, I've been avoiding him"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "RB five, seven, nine the last 3 years; it will continue"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I'm not taking him in round three anymore. He's a round four pick."
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "I would rather take Bucky"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "he's someone rising up my ranks a little bit"
     }
    ]
   },
   {
-   "player": "KC Concepcion",
-   "norm": "kc concepcion",
+   "player": "Garrett Wilson",
+   "norm": "garrett wilson",
    "lean": "buy",
    "score": 2,
-   "n_shows": 1,
+   "n_shows": 4,
    "stances": [
     {
-     "stance": "add",
+     "stance": "buy",
+     "strength": 3,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "stunned that he's available in the fourth round"
+    },
+    {
+     "stance": "sell",
      "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "I don't want any Jets, just is not a high upside player"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "He was my red flag guy, just not drafting anymore"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Zach Wilson can't support multiple fantasy wide receivers"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "rookie-rookie; both players will have a fantasy impact in year one"
+     "date": "NA",
+     "quote": "Garrett Wilson or Luther Burden? Wilson."
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "Wilson would be behind those guys, but he's in that conversation"
     }
    ]
   },
   {
-   "player": "DK Metcalf",
-   "norm": "dk metcalf",
+   "player": "Cam Skattebo",
+   "norm": "cam skattebo",
+   "lean": "sell",
+   "score": -2,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "that's my bust, very touchdown dependent, I have no shares this year"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "nice if you get him in the fifth round"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "I've dropped Skattebo, don't really want to be drafting the Giants"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "Skattebo at 60 was not a real wow great pick"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "elite talent but a headache, want him as RB3"
+    }
+   ]
+  },
+  {
+   "player": "Sam LaPorta",
+   "norm": "sam laporta",
    "lean": "buy",
    "score": 2,
    "n_shows": 1,
@@ -412,25 +4150,207 @@
     {
      "stance": "buy",
      "strength": 2,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "whatever you guys do, don't draft DK Metcalf; devastated if sniped"
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "really high on LaPorta and his upside this season"
     }
    ]
   },
   {
-   "player": "Mike Washington Jr.",
-   "norm": "mike washington",
+   "player": "David Montgomery",
+   "norm": "david montgomery",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "might be a classic dead zone wasted pick on a running back"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "has a lock on a three down role, Montgomery is being undervalued"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "don't like anything about the Bears run game right now"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "Montgomery is obviously still a decent pick"
+    }
+   ]
+  },
+  {
+   "player": "Jonathon Brooks",
+   "norm": "jonathon brooks",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "an okay pick in this range, Brooks's job to lose"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "upside shot in the eighth round, won't ruin your draft"
+    }
+   ]
+  },
+  {
+   "player": "Michael Pittman Jr.",
+   "norm": "michael pittman",
    "lean": "buy",
    "score": 2,
    "n_shows": 1,
    "stances": [
     {
-     "stance": "add",
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "huge role for Pittsburgh in the red zone, Rodgers now has his guy"
+    }
+   ]
+  },
+  {
+   "player": "Stefon Diggs",
+   "norm": "stefon diggs",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "could be the quarterback's best friend, 20 to 25% of the targets"
+    }
+   ]
+  },
+  {
+   "player": "Alec Pierce",
+   "norm": "alec pierce",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "he is back at practice, so I've moved him up the ranks"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "thought I would easily get in the eighth"
+    }
+   ]
+  },
+  {
+   "player": "Jayden Daniels",
+   "norm": "jayden daniels",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "really concerned about his ability to stay on the field"
+    },
+    {
+     "stance": "buy",
      "strength": 2,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "enough smoke; moved him up to around 140 carries"
+     "date": "NA",
+     "quote": "in the seventh round, truly a ridiculous value"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Intrigued by the upside of Jayden Daniels"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "lock up a quarterback here, but not super safe without Tunsil"
+    }
+   ]
+  },
+  {
+   "player": "Matthew Golden",
+   "norm": "matthew golden",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "really coming around on Golden, moved him up 18 spots"
+    }
+   ]
+  },
+  {
+   "player": "George Kittle",
+   "norm": "george kittle",
+   "lean": "sell",
+   "score": -2,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "sit",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I don't know if you can start him, there is some major risk"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "somebody I'm a little bit lower on, too"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "Kittle's tempting, Homer Simpson drool moment"
     }
    ]
   },
@@ -439,36 +4359,904 @@
    "norm": "chuba hubbard",
    "lean": "sell",
    "score": -2,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "drafting Chuba Hubbard expecting the full workload... might be a little concerning"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "if you want to draft Hubbard, I wouldn't blame you"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "frustrating back and forth, warm-handed running back"
+    }
+   ]
+  },
+  {
+   "player": "Najee Harris",
+   "norm": "najee harris",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "people aren't paying close enough attention to this Najee Harris signing"
+    }
+   ]
+  },
+  {
+   "player": "Los Angeles Chargers DST",
+   "norm": "los angeles chargers dst",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "start",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "they get Arizona and Las Vegas in weeks one and two"
+    }
+   ]
+  },
+  {
+   "player": "Emmett Johnson",
+   "norm": "emmett johnson",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "you could drop Worthy for Emmett Johnson, ranks first among handcuffs"
+    }
+   ]
+  },
+  {
+   "player": "DJ Moore",
+   "norm": "dj moore",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "top 13 play this year, moved way up for me"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I would definitely draft DJ Moore over Jadarian Price"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "I would absolutely not take DJ Moore in round four"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I'm just a little bit down on DJ Moore, below consensus"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "finally got him above the tier of Rome and Marvin Harrison Jr."
+    }
+   ]
+  },
+  {
+   "player": "Jaxson Dart",
+   "norm": "jaxson dart",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "the dip of Jackson Dart is a little ridiculous, he makes plays"
+    },
+    {
+     "stance": "hold",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "huge fan, but I am nervous about his production, at least early in the season"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "elevating mobile quarterbacks who might absolutely stink as throwers"
+    },
+    {
+     "stance": "sit",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "definitely still lean Herbert in week one"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I've had him QB5 all off season, like Dart's long-term outlook"
+    }
+   ]
+  },
+  {
+   "player": "Dejon Stribling",
+   "norm": "dejon stribling",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "great late round flyer, could be a league winner"
+    }
+   ]
+  },
+  {
+   "player": "Jaylen Waddle",
+   "norm": "jaylen waddle",
+   "lean": "sell",
+   "score": -2,
    "n_shows": 1,
    "stances": [
     {
      "stance": "sell",
      "strength": 2,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "very few hot hands in his career; frustrating back and forth"
+     "date": "NA",
+     "quote": "He's not my guy, wouldn't take him in the third round"
     }
    ]
   },
   {
-   "player": "Christian McCaffrey",
-   "norm": "christian mccaffrey",
+   "player": "Omarion Hampton",
+   "norm": "omarion hampton",
    "lean": "sell",
-   "score": -1,
+   "score": -2,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 3,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "I am all the way out on Hampton at an early second-round pick"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Chase Brown and Omarion Hampton is the best start from 11"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Taking the upside with Omarion Hampton, that's a good pick"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "Hampton doesn't belong in that group for many reasons"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Hampton kind of brings up the rear of that group at RB 11"
+    }
+   ]
+  },
+  {
+   "player": "Josh Allen",
+   "norm": "josh allen",
+   "lean": "sell",
+   "score": -2,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Taking Josh Allen because this is a superflex league"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "He might be the worst value in all of fantasy football."
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "no, I'm not moving up Allen, wait on quarterback"
+    }
+   ]
+  },
+  {
+   "player": "Sam Darnold",
+   "norm": "sam darnold",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "start",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "I'm a Sam Darnold believer, if he's your best option I would start him"
+    }
+   ]
+  },
+  {
+   "player": "Zack Moss",
+   "norm": "zack moss",
+   "lean": "sell",
+   "score": -2,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I want no part of Zack Moss, healthy scratch"
+    },
+    {
+     "stance": "add",
+     "strength": 1,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "maybe we could buy Moss at a big steep discount right now"
+    }
+   ]
+  },
+  {
+   "player": "Robert Woods",
+   "norm": "robert woods",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "he is the value in the Tennessee wide receiver corps"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Robert Woods is not part of the future"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I'm in on Robert Woods, give me Robert Woods"
+    }
+   ]
+  },
+  {
+   "player": "AJ Dillon",
+   "norm": "aj dillon",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "AJ Dillon over Antonio Gibson, agreed 100 percent"
+    }
+   ]
+  },
+  {
+   "player": "Damien Harris",
+   "norm": "damien harris",
+   "lean": "sell",
+   "score": -2,
    "n_shows": 1,
    "stances": [
     {
      "stance": "sell",
      "strength": 1,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "still a little hesitant; would take JSN and Amon-Ra over McCaffrey"
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Gibson over Damien Harris, I agree"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Damien Harris is a nice player but he ain't James Cook"
     }
    ]
   },
   {
-   "player": "Kenneth Walker III",
-   "norm": "kenneth walker",
+   "player": "Kenny Golladay",
+   "norm": "kenny golladay",
+   "lean": "sell",
+   "score": -2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "made himself irrelevant, not healthy not effective anymore"
+    }
+   ]
+  },
+  {
+   "player": "Jeremiyah Love",
+   "norm": "jeremiyah love",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 3,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "RB13 price with a high ankle sprain, I am just all the way out"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "I would have taken Jeremiah Love and his upside over Etienne"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "If you want Jeremiah Love, then draft him... I really believe in him this year"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "My tier would have Javonte, Love, Kyren, and Travis Etienne."
+    }
+   ]
+  },
+  {
+   "player": "Hunter Henry",
+   "norm": "hunter henry",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I like Hunter Henry in Bill O'Brien offense, two tight end sets"
+    }
+   ]
+  },
+  {
+   "player": "Ty Chandler",
+   "norm": "ty chandler",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "clear backup to Alexander Mattison, he becomes pretty interesting"
+    }
+   ]
+  },
+  {
+   "player": "T.J. Hockenson",
+   "norm": "tj hockenson",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I do really like TJ Hockenson in that passing game"
+    }
+   ]
+  },
+  {
+   "player": "Darnell Washington",
+   "norm": "darnell washington",
+   "lean": "sell",
+   "score": -2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sit",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "can't imagine him being a standalone fantasy option"
+    }
+   ]
+  },
+  {
+   "player": "Kenny Pickett",
+   "norm": "kenny pickett",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "second year in the system, offense vastly improved this year"
+    }
+   ]
+  },
+  {
+   "player": "De'Zhaun Stribling",
+   "norm": "dezhaun stribling",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "interesting late round pick, certainly more interesting than Woody Marks"
+    }
+   ]
+  },
+  {
+   "player": "Jaleel McLaughlin",
+   "norm": "jaleel mclaughlin",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "one to stash... I think he's a second-half guy... draft and stash"
+    }
+   ]
+  },
+  {
+   "player": "R.J. Harvey",
+   "norm": "rj harvey",
+   "lean": "sell",
+   "score": -2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "doesn't feel like they want R.J. Harvey to be their guy this year"
+    }
+   ]
+  },
+  {
+   "player": "Caleb Douglas",
+   "norm": "caleb douglas",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I'm taking my shot on Caleb Douglas, playing 75% of snaps"
+    }
+   ]
+  },
+  {
+   "player": "Malik Washington",
+   "norm": "malik washington",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I prefer Malik Washington, serviceable PPR guy catching five passes"
+    }
+   ]
+  },
+  {
+   "player": "Travis Kelce",
+   "norm": "travis kelce",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "hold",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I do think he's going to catch 100 balls this year"
+    }
+   ]
+  },
+  {
+   "player": "Isaiah McKenzie",
+   "norm": "isaiah mckenzie",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I do really like Isaiah McKenzie, late round flyer"
+    }
+   ]
+  },
+  {
+   "player": "Devin Singletary",
+   "norm": "devin singletary",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "it's the Devin Singletary show, he's actually a discount"
+    }
+   ]
+  },
+  {
+   "player": "Allen Lazard",
+   "norm": "allen lazard",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "still way underrated, boring but good"
+    }
+   ]
+  },
+  {
+   "player": "Kayshon Boutte",
+   "norm": "kayshon boutte",
+   "lean": "sell",
+   "score": -2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "drop",
+     "strength": 2,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "don't think there's enough there for Boutte to be on the fantasy radar"
+    }
+   ]
+  },
+  {
+   "player": "Khalil Herbert",
+   "norm": "khalil herbert",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I like him a lot as a stash"
+    }
+   ]
+  },
+  {
+   "player": "Josh Palmer",
+   "norm": "josh palmer",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Palmer is the real deal, he just needs an opportunity"
+    }
+   ]
+  },
+  {
+   "player": "Gerald Everett",
+   "norm": "gerald everett",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "could make his way into every week play in 12 team leagues"
+    }
+   ]
+  },
+  {
+   "player": "Matt Ryan",
+   "norm": "matt ryan",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "start",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "play him in week one if you don't have a locked in starter"
+    }
+   ]
+  },
+  {
+   "player": "Joe Mixon",
+   "norm": "joe mixon",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I think Mixon has a big year"
+    }
+   ]
+  },
+  {
+   "player": "Tyreek Hill",
+   "norm": "tyreek hill",
+   "lean": "sell",
+   "score": -2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "that's a massive downgrade in talent and chemistry"
+    }
+   ]
+  },
+  {
+   "player": "Cooper Kupp",
+   "norm": "cooper kupp",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "hold",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "quarterback proof, team proof, but enough to move him below Chase"
+    }
+   ]
+  },
+  {
+   "player": "KJ Hamler",
+   "norm": "kj hamler",
+   "lean": "sell",
+   "score": -2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "drop",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Broncos plan to waive Hamler with non-football illness designation"
+    }
+   ]
+  },
+  {
+   "player": "Marvin Mims",
+   "norm": "marvin mims",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "really interesting late round rookie, impact in second half"
+    }
+   ]
+  },
+  {
+   "player": "Jerry Jeudy",
+   "norm": "jerry jeudy",
+   "lean": "buy",
+   "score": 2,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "gonna have to come up a spot or two in my rankings"
+    }
+   ]
+  },
+  {
+   "player": "Kyler Murray",
+   "norm": "kyler murray",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Live by the sword, I've been hyping this guy up"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I'm nervous with Kyler. Would not put him in the same tier."
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "others receiving votes on the love list"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "I think Murray might run a lot this year"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Kyler might be just a bad quarterback at this point"
+    }
+   ]
+  },
+  {
+   "player": "Baker Mayfield",
+   "norm": "baker mayfield",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "sit",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "he's not fantasy relevant, he's my quarterback 32"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "contract year, pissed off Baker, weapons are back healthy"
+    }
+   ]
+  },
+  {
+   "player": "Tyler Shough",
+   "norm": "tyler shough",
    "lean": "buy",
    "score": 1,
    "n_shows": 1,
@@ -476,63 +5264,340 @@
     {
      "stance": "buy",
      "strength": 1,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "good work honoring Ken Walker to be a first-round selection"
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "QB2 with upside, gets you points with his legs"
     }
    ]
   },
   {
    "player": "Saquon Barkley",
    "norm": "saquon barkley",
-   "lean": "sell",
-   "score": -1,
-   "n_shows": 1,
-   "stances": [
-    {
-     "stance": "sell",
-     "strength": 1,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "Saquon Barkley, you're a second-round pick"
-    }
-   ]
-  },
-  {
-   "player": "Malik Nabers",
-   "norm": "malik nabers",
-   "lean": "sell",
-   "score": -1,
-   "n_shows": 1,
-   "stances": [
-    {
-     "stance": "sell",
-     "strength": 1,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "did not like the press conference, 'I'll play when I'm ready'"
-    }
-   ]
-  },
-  {
-   "player": "Chris Olave",
-   "norm": "chris olave",
    "lean": "buy",
    "score": 1,
-   "n_shows": 1,
+   "n_shows": 2,
    "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "I don't trust Saquon Barkley"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "That's just a value pick for me, smart pick"
+    },
     {
      "stance": "buy",
      "strength": 1,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "I'm going to take Chris Olave to go with A.J. Brown"
+     "date": "NA",
+     "quote": "a lot of reasons to be really interested in this offense"
     }
    ]
   },
   {
    "player": "MarShawn Lloyd",
    "norm": "marshawn lloyd",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "doesn't make sense to not take Lloyd, he'll be the goal line back"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "now is the time to start thinking about Marshawn Lloyd"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "let Josh Jacobs be the reminder, super fragile guy"
+    },
+    {
+     "stance": "sit",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I would sit Marshawn Lloyd and play Luther Burden instead"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Marshon Lloyd, okay, fine, but I'd be circling Jordan Mason"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "near the highest upside of the players in this range"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "MarShawn Lloyd, Jonathan Brooks, Jaylen Warren. Dave said the same."
+    }
+   ]
+  },
+  {
+   "player": "Bhayshul Tuten",
+   "norm": "bhayshul tuten",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I've cooled on Tuten, backfield could be a total stay-away mess"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "upside swings, what if Tuten is a league winner"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "Tuten starting to scare me, I've kind of cooled on him"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "fifth round, a little higher than I want, not outrageous"
+    }
+   ]
+  },
+  {
+   "player": "Jakobi Meyers",
+   "norm": "jakobi meyers",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "schedule honestly just awful for him and Meyers on the perimeter"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "seen him go round 12, that's way too cheap"
+    }
+   ]
+  },
+  {
+   "player": "Emeka Egbuka",
+   "norm": "emeka egbuka",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "McMillan is way safer than Egbuka, we don't know what to expect"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "both of those guys are fine in this range"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "feels like turf toe, maybe drops in ADP"
+    }
+   ]
+  },
+  {
+   "player": "Josh Downs",
+   "norm": "josh downs",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "Reed and Downs rarely go this high, players we really like"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "at his price, there are just so many other receivers I prefer"
+    },
+    {
+     "stance": "add",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "I'll have a lot of Josh Downs as a late pick"
+    }
+   ]
+  },
+  {
+   "player": "Kyle Monangai",
+   "norm": "kyle monangai",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "moved Monangai down 14 spots, you can get him later"
+    },
+    {
+     "stance": "add",
+     "strength": 1,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "I like Monangai late"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "standalone value hard to find except very deep league"
+    }
+   ]
+  },
+  {
+   "player": "Jacory Croskey-Merritt",
+   "norm": "jacory croskeymerritt",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "hold",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Bill's too good to drop"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "running back picks that are kind of down for me"
+    }
+   ]
+  },
+  {
+   "player": "Jake Ferguson",
+   "norm": "jake ferguson",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "band-aid at tight end, fine, also have upside with injuries"
+    }
+   ]
+  },
+  {
+   "player": "Kirk Cousins",
+   "norm": "kirk cousins",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sit",
+     "strength": 1,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "Not really fantasy relevant as a quarterback, not even in two quarterback leagues"
+    }
+   ]
+  },
+  {
+   "player": "Samaje Perine",
+   "norm": "samaje perine",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Perine's an underrated handcuff"
+    }
+   ]
+  },
+  {
+   "player": "Jordyn Tyson",
+   "norm": "jordyn tyson",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sit",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "going to miss at least a month, no training camp, so injury prone"
+    }
+   ]
+  },
+  {
+   "player": "Aaron Rodgers",
+   "norm": "aaron rodgers",
    "lean": "sell",
    "score": -1,
    "n_shows": 1,
@@ -540,15 +5605,160 @@
     {
      "stance": "sell",
      "strength": 1,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "couldn't draft him over Skattebo or Bucky; betting on a super fragile guy"
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Rodgers is the punishment"
     }
    ]
   },
   {
-   "player": "Jameson Williams",
-   "norm": "jameson williams",
+   "player": "Davante Adams",
+   "norm": "davante adams",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 4,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 3,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "Davante is one of my do not draft players this year"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "I'd rather have a higher ceiling play than Devonte Adams"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "such a touchdown machine, I've been getting him a lot"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "very touchdown-reliant... I don't know that he lives up to what he did last year"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "more and more bullish, the old man has been rising"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "crazy touchdown upside, injury away from wide receiver one"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Davante Adams or Jameson Williams? Adams."
+    }
+   ]
+  },
+  {
+   "player": "Tyrone Tracy",
+   "norm": "tyrone tracy",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "start",
+     "strength": 1,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "probably starting Tyrone Tracy no matter what"
+    }
+   ]
+  },
+  {
+   "player": "Pat Bryant",
+   "norm": "pat bryant",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "beat reporter says WR2 by year end; okay, man"
+    }
+   ]
+  },
+  {
+   "player": "Tony Pollard",
+   "norm": "tony pollard",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "Godwin's going to be so much better than Pollard"
+    }
+   ]
+  },
+  {
+   "player": "Jaylin Noel",
+   "norm": "jaylin noel",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "don't hate Noel as the answer, roster him a week or two"
+    }
+   ]
+  },
+  {
+   "player": "Treylon Burks",
+   "norm": "treylon burks",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "a lot of bad juju, late round player if you're dealing with him at all"
+    },
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "hate has gone too far, but outside my top 50, late flyer"
+    }
+   ]
+  },
+  {
+   "player": "Jalen Coker",
+   "norm": "jalen coker",
    "lean": "buy",
    "score": 1,
    "n_shows": 1,
@@ -557,14 +5767,234 @@
      "stance": "buy",
      "strength": 1,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "I would take Jameson Williams, that's who I want to take"
+     "date": "NA",
+     "quote": "Jalen Coker, 134th. All very, very good."
     }
    ]
   },
   {
-   "player": "Tyler Warren",
-   "norm": "tyler warren",
+   "player": "Khalil Shakir",
+   "norm": "khalil shakir",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "start",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Shakir had a huge game against Houston, eight catches for 110 yards."
+    }
+   ]
+  },
+  {
+   "player": "C.J. Stroud",
+   "norm": "cj stroud",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "not worried about Stroud, not really fantasy relevant outside Dynasty leagues"
+    }
+   ]
+  },
+  {
+   "player": "K.J. Osborn",
+   "norm": "kj osborn",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Osborn I think is pretty interesting, wide receiver 35 in my ranks"
+    }
+   ]
+  },
+  {
+   "player": "Skyy Moore",
+   "norm": "skyy moore",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "best chance to be wide receiver one for Mahomes, outside top 130 is wrong"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "to me should be dropping, he's a faller"
+    }
+   ]
+  },
+  {
+   "player": "Trayveon Williams",
+   "norm": "trayveon williams",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "I think Trayveon Williams is a good running back"
+    }
+   ]
+  },
+  {
+   "player": "Chris Evans",
+   "norm": "chris evans",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "not ready to say Chris Evans is the insurance running back you want"
+    }
+   ]
+  },
+  {
+   "player": "George Holani",
+   "norm": "george holani",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "the Holani hive can kindly shut up"
+    },
+    {
+     "stance": "add",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "still a good dart throw late in your drafts, you can stash"
+    }
+   ]
+  },
+  {
+   "player": "Anthony Richardson",
+   "norm": "anthony richardson",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "Dynasty Superflex, still might be somebody you should keep on your bench"
+    }
+   ]
+  },
+  {
+   "player": "Adonai Mitchell",
+   "norm": "adonai mitchell",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "their number two wide receiver and probably number two target"
+    }
+   ]
+  },
+  {
+   "player": "Rashid Shaheed",
+   "norm": "rashid shaheed",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "Cooper Kupp decent role could hurt the upside of Shaheed"
+    }
+   ]
+  },
+  {
+   "player": "Carnell Tate",
+   "norm": "carnell tate",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "excited to see Carnell Tate in Tennessee where I think he'll get a big target share"
+    },
+    {
+     "stance": "drop",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "I've dropped Tate even further, would have taken Sutton"
+    }
+   ]
+  },
+  {
+   "player": "Jonathan Brooks",
+   "norm": "jonathan brooks",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "Jonathan Brooks drumbeat in Carolina is getting louder every single second"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "week to week, can't really count on either of them"
+    }
+   ]
+  },
+  {
+   "player": "Gunnar Helm",
+   "norm": "gunnar helm",
    "lean": "buy",
    "score": 1,
    "n_shows": 1,
@@ -572,57 +6002,137 @@
     {
      "stance": "buy",
      "strength": 1,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "had my eye on possibly going Tyler Warren"
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "I actually really like Gunner Helm, their young tight end who flashed"
     }
    ]
   },
   {
-   "player": "Christian Watson",
-   "norm": "christian watson",
+   "player": "Robbie Anderson",
+   "norm": "robbie anderson",
    "lean": "buy",
    "score": 1,
    "n_shows": 1,
    "stances": [
     {
-     "stance": "buy",
+     "stance": "add",
      "strength": 1,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "Christian Watson is still here in round five; me and Betts are Watson bros"
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Baker Mayfield loves throwing it deep, Robbie Anderson's guy"
     }
    ]
   },
   {
-   "player": "Drake Maye",
-   "norm": "drake maye",
+   "player": "Jayden Higgins",
+   "norm": "jayden higgins",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "with Boutte more of a rotation there"
+    }
+   ]
+  },
+  {
+   "player": "Julio Jones",
+   "norm": "julio jones",
    "lean": "buy",
    "score": 1,
    "n_shows": 1,
    "stances": [
     {
-     "stance": "buy",
+     "stance": "add",
      "strength": 1,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "Drake Maye, A.J. Brown stack; don't feel like I overpaid"
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Julio Jones would be the preference right now, looked very good in practices"
     }
    ]
   },
   {
-   "player": "Terry McLaurin",
-   "norm": "terry mclaurin",
+   "player": "Russell Gage",
+   "norm": "russell gage",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sit",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Russell Gage is banged up, Julio would be the preference"
+    }
+   ]
+  },
+  {
+   "player": "Diontae Johnson",
+   "norm": "diontae johnson",
    "lean": "buy",
    "score": 1,
    "n_shows": 1,
    "stances": [
     {
-     "stance": "buy",
+     "stance": "hold",
      "strength": 1,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "Terry McLaurin here could serve as a huge value"
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Diontae Johnson is fine with Trubisky under center"
+    }
+   ]
+  },
+  {
+   "player": "James Robinson",
+   "norm": "james robinson",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "hold",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "a little skeptical Robinson is going to be as efficient and productive"
+    }
+   ]
+  },
+  {
+   "player": "Damien Williams",
+   "norm": "damien williams",
+   "lean": "sell",
+   "score": -1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "sit",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "pump the brakes a little bit on the Damien Williams thing"
+    }
+   ]
+  },
+  {
+   "player": "Rex Burkhead",
+   "norm": "rex burkhead",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "looking for a lottery ticket, you get Rex"
     }
    ]
   },
@@ -637,94 +6147,30 @@
      "stance": "add",
      "strength": 1,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "Jonah Coleman scares me far more than R.J. Harvey does"
+     "date": "NA",
+     "quote": "scares me far more than R.J. Harvey does"
     }
    ]
   },
   {
-   "player": "Jaylen Warren",
-   "norm": "jaylen warren",
+   "player": "KC Concepcion",
+   "norm": "kc concepcion",
    "lean": "buy",
    "score": 1,
    "n_shows": 1,
    "stances": [
     {
-     "stance": "buy",
+     "stance": "add",
      "strength": 1,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "Steelers backfield, I'm on the Warren side; take the shot"
+     "date": "NA",
+     "quote": "rookie shots, will have a fantasy impact year one"
     }
    ]
   },
   {
-   "player": "Rico Dowdle",
-   "norm": "rico dowdle",
-   "lean": "buy",
-   "score": 1,
-   "n_shows": 1,
-   "stances": [
-    {
-     "stance": "buy",
-     "strength": 1,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "I'm just always on the Rico side"
-    }
-   ]
-  },
-  {
-   "player": "Alec Pierce",
-   "norm": "alec pierce",
-   "lean": "buy",
-   "score": 1,
-   "n_shows": 1,
-   "stances": [
-    {
-     "stance": "buy",
-     "strength": 1,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "guy I thought I would easily get in the eighth"
-    }
-   ]
-  },
-  {
-   "player": "Caleb Williams",
-   "norm": "caleb williams",
-   "lean": "buy",
-   "score": 1,
-   "n_shows": 1,
-   "stances": [
-    {
-     "stance": "buy",
-     "strength": 1,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "Caleb, my guy"
-    }
-   ]
-  },
-  {
-   "player": "Dak Prescott",
-   "norm": "dak prescott",
-   "lean": "buy",
-   "score": 1,
-   "n_shows": 1,
-   "stances": [
-    {
-     "stance": "buy",
-     "strength": 1,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "Dak available in the eighth round, that's tough; stack with Pickens"
-    }
-   ]
-  },
-  {
-   "player": "Ashton Jeanty",
-   "norm": "ashton jeanty",
+   "player": "Tyler Allgeier",
+   "norm": "tyler allgeier",
    "lean": "buy",
    "score": 1,
    "n_shows": 1,
@@ -733,14 +6179,30 @@
      "stance": "hold",
      "strength": 1,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "not the situation where I view Jeanty as McCaffrey was last year"
+     "date": "NA",
+     "quote": "borderline running back three, no matter what"
     }
    ]
   },
   {
-   "player": "Emeka Egbuka",
-   "norm": "emeka egbuka",
+   "player": "Greg Dulcich",
+   "norm": "greg dulcich",
+   "lean": "buy",
+   "score": 1,
+   "n_shows": 1,
+   "stances": [
+    {
+     "stance": "add",
+     "strength": 1,
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "more opportunity for Greg Dulcich, maybe more two tight end sets"
+    }
+   ]
+  },
+  {
+   "player": "Justin Fields",
+   "norm": "justin fields",
    "lean": "sell",
    "score": -1,
    "n_shows": 1,
@@ -748,48 +6210,113 @@
     {
      "stance": "sell",
      "strength": 1,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "definitely feels like turf toe; maybe he drops in ADP"
+     "show": "Rotoworld FF Happy Hour",
+     "date": "NA",
+     "quote": "Lamar Jackson more likely to have the season everyone expects from Fields"
     }
    ]
   },
   {
-   "player": "Jonathan Brooks",
-   "norm": "jonathan brooks",
-   "lean": "buy",
-   "score": 1,
-   "n_shows": 1,
-   "stances": [
-    {
-     "stance": "hold",
-     "strength": 1,
-     "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "if one takes over it should be Brooks, but can't count on either"
-    }
-   ]
-  },
-  {
-   "player": "Bucky Irving",
-   "norm": "bucky irving",
+   "player": "Dak Prescott",
+   "norm": "dak prescott",
    "lean": "mixed",
    "score": 0,
-   "n_shows": 1,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "when healthy he's a top 10 fantasy quarterback, super high floor"
+    },
+    {
+     "stance": "drop",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "putting one crisp dollar on Dak Prescott and that is it"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "Dak is really really low, not that he's a bad pick"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Dak stands out, can stack with Pickens"
+    }
+   ]
+  },
+  {
+   "player": "Bo Nix",
+   "norm": "bo nix",
+   "lean": "mixed",
+   "score": 0,
+   "n_shows": 4,
    "stances": [
     {
      "stance": "buy",
      "strength": 2,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "getting Swift, Price, Bucky Irving 3-4-5, I love that"
+     "date": "NA",
+     "quote": "He's got some huge upside. Love the addition of Jaylen Waddle."
     },
     {
      "stance": "sell",
      "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "elevating mobile quarterbacks who might absolutely stink as throwers"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "remove the 40-point game and he's QB14, mid-tier QB2"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Following up with Nix, that's my first QB"
+    }
+   ]
+  },
+  {
+   "player": "Dallas Goedert",
+   "norm": "dallas goedert",
+   "lean": "mixed",
+   "score": 0,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "drop",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "let's start with zero, I'm not interested"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "I don't want to draft Bucky; Gainwell taking the passing work"
+     "date": "NA",
+     "quote": "best value is an Eagle, sometimes a late tight end with Dallas"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "probably going to start the season really hot, could have big games"
     }
    ]
   },
@@ -798,21 +6325,266 @@
    "norm": "brian thomas",
    "lean": "mixed",
    "score": 0,
-   "n_shows": 1,
+   "n_shows": 4,
    "stances": [
     {
      "stance": "sell",
-     "strength": 1,
+     "strength": 3,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "route tree utilization minimal; big plays and nothing else"
+     "date": "NA",
+     "quote": "schedule is shadow realm hell, could be most dropped player"
+    },
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "I love Brian Thomas Jr., he's always open"
+    },
+    {
+     "stance": "start",
+     "strength": 3,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "Brian Thomas is nothing short of fantastic, nice matchup with Indianapolis"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "I'm much lower on than most people"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "not a lot of indications this regime sees him as a clear WR1"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "little concerned about Thomas"
     },
     {
      "stance": "buy",
      "strength": 1,
      "show": "The Fantasy Footballers",
-     "date": "2026-09-03",
-     "quote": "top 10 wide receiver in the past; look at the bull case"
+     "date": "NA",
+     "quote": "highest upside, been a top 10 wide receiver in the past"
+    }
+   ]
+  },
+  {
+   "player": "Trevor Lawrence",
+   "norm": "trevor lawrence",
+   "lean": "mixed",
+   "score": 0,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "worried about Trevor Lawrence, the schedule is god awful"
+    },
+    {
+     "stance": "start",
+     "strength": 1,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "QB13 going up against the Colts, made the love list"
+    }
+   ]
+  },
+  {
+   "player": "Malik Nabers",
+   "norm": "malik nabers",
+   "lean": "mixed",
+   "score": 0,
+   "n_shows": 5,
+   "stances": [
+    {
+     "stance": "start",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "I think Malik Nabers has a nice game here"
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "to pretend there's no risk and take him ahead of healthy guys, I'm not"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Malik Nabers or DeVonta Smith? Nabers. Everything you agree on."
+    },
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "did not like the press conference, might not play week one"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "Nabers and Jefferson scare the crap out of me, obviously with the injury"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "ESPN Fantasy Focus",
+     "date": "NA",
+     "quote": "taking discounts on potential league winners here"
+    }
+   ]
+  },
+  {
+   "player": "DK Metcalf",
+   "norm": "dk metcalf",
+   "lean": "mixed",
+   "score": 0,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "we saw DK Metcalf lose out on targets down the stretch"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "devastated if sniped, whatever you do don't draft DK Metcalf"
+    }
+   ]
+  },
+  {
+   "player": "Marvin Harrison Jr.",
+   "norm": "marvin harrison",
+   "lean": "mixed",
+   "score": 0,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 3,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "humongous season, outkick his ADP, 16.8 points with seven targets"
+    },
+    {
+     "stance": "sit",
+     "strength": 2,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "I'm gonna let somebody else roll the dice on Marvin Harrison"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "I don't really draft MHJ, don't draft the worst teams"
+    }
+   ]
+  },
+  {
+   "player": "J.K. Dobbins",
+   "norm": "jk dobbins",
+   "lean": "mixed",
+   "score": 0,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "at the beginning of the year it will be Dobbins"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "running back picks that are kind of down for me"
+    },
+    {
+     "stance": "sell",
+     "strength": 1,
+     "show": "Matthew Berry Fantasy Life",
+     "date": "NA",
+     "quote": "J.K. Dobbins... is struggling to stay healthy"
+    }
+   ]
+  },
+  {
+   "player": "Alvin Kamara",
+   "norm": "alvin kamara",
+   "lean": "mixed",
+   "score": 0,
+   "n_shows": 2,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "Kamara is just not that good of a player, horrible as a rusher"
+    },
+    {
+     "stance": "buy",
+     "strength": 2,
+     "show": "The Ringer Fantasy Football Show",
+     "date": "NA",
+     "quote": "Ball carrier I trust, 40 screens a game for the Saints"
+    }
+   ]
+  },
+  {
+   "player": "Woody Marks",
+   "norm": "woody marks",
+   "lean": "mixed",
+   "score": 0,
+   "n_shows": 3,
+   "stances": [
+    {
+     "stance": "sell",
+     "strength": 2,
+     "show": "Fantasy Football Today (CBS)",
+     "date": "NA",
+     "quote": "I don't like drafting Marks unless it's a very very late pick"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "The Fantasy Footballers",
+     "date": "NA",
+     "quote": "third round pick in PPR, we should go Marks there"
+    },
+    {
+     "stance": "buy",
+     "strength": 1,
+     "show": "Harris Football",
+     "date": "NA",
+     "quote": "I take Woody Marks a lot, people don't understand the split"
     }
    ]
   }

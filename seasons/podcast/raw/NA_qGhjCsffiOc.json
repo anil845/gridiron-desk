@@ -1,0 +1,398 @@
+[
+ {
+  "player": "Puka Nacua",
+  "norm": "puka nacua",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Who are you taking fourth overall? Puka.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Jonathan Taylor",
+  "norm": "jonathan taylor",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "James Cook, Jonathan Taylor, or Christian McCaffrey? Jonathan Taylor.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Nico Collins",
+  "norm": "nico collins",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "George Pickens or Nico Collins? Nico.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Chris Olave",
+  "norm": "chris olave",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "Rashee Rice or Chris Olave? Olave.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Malik Nabers",
+  "norm": "malik nabers",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Malik Nabers or DeVonta Smith? Nabers. Everything you agree on.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Garrett Wilson",
+  "norm": "garrett wilson",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "Garrett Wilson or Luther Burden? Wilson.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Rhamondre Stevenson",
+  "norm": "rhamondre stevenson",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "MarShawn Lloyd or Rhamondre Stevenson? Rhamondre.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Davante Adams",
+  "norm": "davante adams",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "Davante Adams or Jameson Williams? Adams.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Kyle Pitts",
+  "norm": "kyle pitts",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "Kyle Pitts or George Kittle? Pitts. Not Kittle.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Justin Herbert",
+  "norm": "justin herbert",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Caleb Williams or Justin Herbert? Herbert. I would put Herbert ahead of Dak.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Drake Maye",
+  "norm": "drake maye",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "Drake Maye or Joe Burrow? It's gonna be Maye.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Jordan Love",
+  "norm": "jordan love",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Best single value at quarterback is Jordan Love. Love should be in tier four.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Jared Goff",
+  "norm": "jared goff",
+  "stance": "buy",
+  "strength": 3,
+  "quote": "Goff to me is the biggest riser, one of the biggest steals on draft day.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Travis Etienne",
+  "norm": "travis etienne",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Best value at running back, Travis Etienne at the three-four turn.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Blake Corum",
+  "norm": "blake corum",
+  "stance": "buy",
+  "strength": 3,
+  "quote": "Round eight. I will take that chance in the middle of my draft.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Kyren Williams",
+  "norm": "kyren williams",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "I'm not taking him in round three anymore. He's a round four pick.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Jordan Mason",
+  "norm": "jordan mason",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "Jordan Mason is one pick after Blake Corum. Okay.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Quentin Johnston",
+  "norm": "quentin johnston",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "I went with Quentin Johnston who's going around pick 100.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Parker Washington",
+  "norm": "parker washington",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Parker Washington is 64th overall. Very, very good value.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Jalen Coker",
+  "norm": "jalen coker",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "Jalen Coker, 134th. All very, very good.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Jordan Addison",
+  "norm": "jordan addison",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "I love the value on Jordan Addison.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Jayden Reed",
+  "norm": "jayden reed",
+  "stance": "buy",
+  "strength": 3,
+  "quote": "Reed is very cheap and should be very productive. Potential starter.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Isaiah Likely",
+  "norm": "isaiah likely",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Best value at tight end, Likely. Still not a top 100 pick.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Josh Allen",
+  "norm": "josh allen",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "He might be the worst value in all of fantasy football.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "MarShawn Lloyd",
+  "norm": "marshawn lloyd",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "MarShawn Lloyd, Jonathan Brooks, Jaylen Warren. Dave said the same.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Josh Jacobs",
+  "norm": "josh jacobs",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "Maybe he plays at some point, maybe he doesn't play at all.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Chris Rodriguez",
+  "norm": "chris rodriguez",
+  "stance": "add",
+  "strength": 1,
+  "quote": "Chris Rodriguez or Josh Jacobs? Rodriguez.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Brock Bowers",
+  "norm": "brock bowers",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "Cousins gets the ball out. That's going to favor Bowers and Jeanty.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Ashton Jeanty",
+  "norm": "ashton jeanty",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Expected to play week one justifies keeping him in this tier. Round two pick.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Rome Odunze",
+  "norm": "rome odunze",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "Ben Johnson said he needs to get Rome Odunze the football.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Khalil Shakir",
+  "norm": "khalil shakir",
+  "stance": "start",
+  "strength": 1,
+  "quote": "Shakir had a huge game against Houston, eight catches for 110 yards.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Lamar Jackson",
+  "norm": "lamar jackson",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "I have no problem taking him as the second QB off the board.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Jalen Hurts",
+  "norm": "jalen hurts",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "I prefer Hurts a little bit more. Like his offensive line.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Kyler Murray",
+  "norm": "kyler murray",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "I'm nervous with Kyler. Would not put him in the same tier.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Bo Nix",
+  "norm": "bo nix",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "He's got some huge upside. Love the addition of Jaylen Waddle.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Brock Purdy",
+  "norm": "brock purdy",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Goff and Purdy are the two who have moved up the most for me.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Patrick Mahomes",
+  "norm": "patrick mahomes",
+  "stance": "sell",
+  "strength": 1,
+  "quote": "He's the one that makes me the most nervous. Rushing is going to crater.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Malik Willis",
+  "norm": "malik willis",
+  "stance": "add",
+  "strength": 1,
+  "quote": "Willis could be the best running quarterback in the NFL this year.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Chase Brown",
+  "norm": "chase brown",
+  "stance": "buy",
+  "strength": 3,
+  "quote": "If you're new to the show, we love Chase Brown.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Javonte Williams",
+  "norm": "javonte williams",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "You'll see Javonte at the top. Feel good about him as RB2.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Jeremiyah Love",
+  "norm": "jeremiyah love",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "My tier would have Javonte, Love, Kyren, and Travis Etienne.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "D'Andre Swift",
+  "norm": "dandre swift",
+  "stance": "hold",
+  "strength": 1,
+  "quote": "He could be a top 10 guy, but still a round four pick, not three.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Breece Hall",
+  "norm": "breece hall",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "Breece Hall is just a guy that Dave is not feeling this year.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ },
+ {
+  "player": "Justin Jefferson",
+  "norm": "justin jefferson",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "Of course I'm taking Justin Jefferson top 15.",
+  "show": "The Fantasy Footballers",
+  "date": "NA"
+ }
+]

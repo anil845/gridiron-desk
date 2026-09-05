@@ -1,0 +1,587 @@
+[
+ {
+  "player": "CeeDee Lamb",
+  "norm": "ceedee lamb",
+  "stance": "buy",
+  "strength": 3,
+  "quote": "Lamb just feels like such a slam dunk to me",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "George Pickens",
+  "norm": "george pickens",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "I think Pickens is a great pick, too",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Ashton Jeanty",
+  "norm": "ashton jeanty",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "why would you take on the injury risk unnecessarily",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Drake London",
+  "norm": "drake london",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "moved Drake London ahead of Malik Nabers and Justin Jefferson",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Malik Nabers",
+  "norm": "malik nabers",
+  "stance": "sell",
+  "strength": 1,
+  "quote": "Nabers and Jefferson scare the crap out of me, obviously with the injury",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Justin Jefferson",
+  "norm": "justin jefferson",
+  "stance": "sell",
+  "strength": 1,
+  "quote": "Jefferson with the unsettled quarterback play scares me",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Luther Burden",
+  "norm": "luther burden",
+  "stance": "buy",
+  "strength": 3,
+  "quote": "massive upside swing that I really really like",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Chris Olave",
+  "norm": "chris olave",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "Olave, awesome pick",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "DeVonta Smith",
+  "norm": "devonta smith",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "DeVonta Smith, awesome pick, who is a phenomenal player",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Ladd McConkey",
+  "norm": "ladd mcconkey",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "I think Ladd McConkey is a really good player",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "D'Andre Swift",
+  "norm": "dandre swift",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "it could be a monster season for Swift",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Tetairoa McMillan",
+  "norm": "tetairoa mcmillan",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "one of the most talented receivers in the whole NFL right now",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Emeka Egbuka",
+  "norm": "emeka egbuka",
+  "stance": "sell",
+  "strength": 1,
+  "quote": "McMillan is way safer than Egbuka, we don't know what to expect",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Christian Watson",
+  "norm": "christian watson",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "makes sense to be high on this Green Bay pass catching group",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Mike Evans",
+  "norm": "mike evans",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "might get top five, top eight wide receiver production for super cheap",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Bucky Irving",
+  "norm": "bucky irving",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "what he can give us is far beyond what Kyren can",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Kyren Williams",
+  "norm": "kyren williams",
+  "stance": "sell",
+  "strength": 1,
+  "quote": "I would rather take Bucky",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Bhayshul Tuten",
+  "norm": "bhayshul tuten",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "upside swings, what if Tuten is a league winner",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Garrett Wilson",
+  "norm": "garrett wilson",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "I don't want any Jets, just is not a high upside player",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Rome Odunze",
+  "norm": "rome odunze",
+  "stance": "hold",
+  "strength": 1,
+  "quote": "valid picks, definitely have upside and play in awesome offenses",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Jameson Williams",
+  "norm": "jameson williams",
+  "stance": "hold",
+  "strength": 1,
+  "quote": "valid picks, definitely have upside and play in awesome offenses",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Cam Skattebo",
+  "norm": "cam skattebo",
+  "stance": "sell",
+  "strength": 1,
+  "quote": "I've dropped Skattebo, don't really want to be drafting the Giants",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Sam LaPorta",
+  "norm": "sam laporta",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "really high on LaPorta and his upside this season",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "David Montgomery",
+  "norm": "david montgomery",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "might be a classic dead zone wasted pick on a running back",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Terry McLaurin",
+  "norm": "terry mclaurin",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "steadily dropping, really nervous about the Washington offensive line",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "TreVeyon Henderson",
+  "norm": "treveyon henderson",
+  "stance": "sell",
+  "strength": 1,
+  "quote": "almost definitely not doing that, could play 20% of the snaps",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Jonathon Brooks",
+  "norm": "jonathon brooks",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "an okay pick in this range, Brooks's job to lose",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Chris Godwin",
+  "norm": "chris godwin",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "a lot of players that we really like",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Jayden Reed",
+  "norm": "jayden reed",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Reed and Downs rarely go this high, players we really like",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Josh Downs",
+  "norm": "josh downs",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Reed and Downs rarely go this high, players we really like",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Quentin Johnston",
+  "norm": "quentin johnston",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "S tier value, could be in for a huge season",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Harold Fannin Jr.",
+  "norm": "harold fannin",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "a lot of players that we really like",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Jordan Mason",
+  "norm": "jordan mason",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "a lot of players that we really like",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Michael Pittman Jr.",
+  "norm": "michael pittman",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "huge role for Pittsburgh in the red zone, Rodgers now has his guy",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Stefon Diggs",
+  "norm": "stefon diggs",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "could be the quarterback's best friend, 20 to 25% of the targets",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "DK Metcalf",
+  "norm": "dk metcalf",
+  "stance": "sell",
+  "strength": 1,
+  "quote": "we saw DK Metcalf lose out on targets down the stretch",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Marvin Harrison Jr.",
+  "norm": "marvin harrison",
+  "stance": "sell",
+  "strength": 1,
+  "quote": "I don't really draft MHJ, don't draft the worst teams",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Josh Jacobs",
+  "norm": "josh jacobs",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "fine letting somebody else have Jacobs, buried in the rankings",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "MarShawn Lloyd",
+  "norm": "marshawn lloyd",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "near the highest upside of the players in this range",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Jordan Love",
+  "norm": "jordan love",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "we just vastly underrate Jordan Love",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Alec Pierce",
+  "norm": "alec pierce",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "he is back at practice, so I've moved him up the ranks",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Jayden Daniels",
+  "norm": "jayden daniels",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "really concerned about his ability to stay on the field",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Jordan Addison",
+  "norm": "jordan addison",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "there could be a big breakout coming from Addison",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Brian Thomas Jr.",
+  "norm": "brian thomas",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "I'm much lower on than most people",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Jakobi Meyers",
+  "norm": "jakobi meyers",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "seen him go round 12, that's way too cheap",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Wan'Dale Robinson",
+  "norm": "wandale robinson",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "somebody you might be able to start in PPR formats",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Romeo Doubs",
+  "norm": "romeo doubs",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "might be able to just start for you, in a good offense",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Dallas Goedert",
+  "norm": "dallas goedert",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "probably going to start the season really hot, could have big games",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Matthew Golden",
+  "norm": "matthew golden",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "really coming around on Golden, moved him up 18 spots",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Dalton Kincaid",
+  "norm": "dalton kincaid",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "could start hot, everything from Buffalo has been really positive",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Kyle Monangai",
+  "norm": "kyle monangai",
+  "stance": "sell",
+  "strength": 1,
+  "quote": "moved Monangai down 14 spots, you can get him later",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Zach Charbonnet",
+  "norm": "zach charbonnet",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "could have a really strong start to the season",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Chris Rodriguez Jr.",
+  "norm": "chris rodriguez",
+  "stance": "add",
+  "strength": 1,
+  "quote": "could take over for Tuten, really valid round 10 or 11 pick",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Kyler Murray",
+  "norm": "kyler murray",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "I think Murray might run a lot this year",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Juwan Johnson",
+  "norm": "juwan johnson",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "moved way up my rankings, ahead of Isaiah Likely, much cheaper",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Isaiah Likely",
+  "norm": "isaiah likely",
+  "stance": "hold",
+  "strength": 1,
+  "quote": "I don't think they're that much different",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "J.K. Dobbins",
+  "norm": "jk dobbins",
+  "stance": "sell",
+  "strength": 1,
+  "quote": "running back picks that are kind of down for me",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Jacory Croskey-Merritt",
+  "norm": "jacory croskeymerritt",
+  "stance": "sell",
+  "strength": 1,
+  "quote": "running back picks that are kind of down for me",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "George Kittle",
+  "norm": "george kittle",
+  "stance": "sell",
+  "strength": 1,
+  "quote": "somebody I'm a little bit lower on, too",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Chris Bell",
+  "norm": "chris bell",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "could be a breakout season, fun end of draft dart throw",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Jake Ferguson",
+  "norm": "jake ferguson",
+  "stance": "hold",
+  "strength": 1,
+  "quote": "band-aid at tight end, fine, also have upside with injuries",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Brenton Strange",
+  "norm": "brenton strange",
+  "stance": "hold",
+  "strength": 1,
+  "quote": "band-aid at tight end, fine, gets more targets if Meyers misses",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Terrance Ferguson",
+  "norm": "terrance ferguson",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "keeps moving up, McVay seems to love this guy",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Chuba Hubbard",
+  "norm": "chuba hubbard",
+  "stance": "hold",
+  "strength": 1,
+  "quote": "if you want to draft Hubbard, I wouldn't blame you",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ },
+ {
+  "player": "Dak Prescott",
+  "norm": "dak prescott",
+  "stance": "sell",
+  "strength": 1,
+  "quote": "Dak is really really low, not that he's a bad pick",
+  "show": "Fantasy Football Today (CBS)",
+  "date": "NA"
+ }
+]

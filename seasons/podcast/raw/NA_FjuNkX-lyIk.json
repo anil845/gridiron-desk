@@ -1,0 +1,326 @@
+[
+ {
+  "player": "Ja'Marr Chase",
+  "norm": "jamarr chase",
+  "stance": "buy",
+  "strength": 3,
+  "quote": "Best receiver, feel the best about Chase, most trade value",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Saquon Barkley",
+  "norm": "saquon barkley",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "I don't trust Saquon Barkley",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Saquon Barkley",
+  "norm": "saquon barkley",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "That's just a value pick for me, smart pick",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Jahmyr Gibbs",
+  "norm": "jahmyr gibbs",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "We're going Gibbs at number four, we feel good",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Josh Allen",
+  "norm": "josh allen",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Taking Josh Allen because this is a superflex league",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Lamar Jackson",
+  "norm": "lamar jackson",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Lamar's going to have a great season, should have been MVP",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Jalen Hurts",
+  "norm": "jalen hurts",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "Going to take Jalen Hurts because it's a superflex league",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "CeeDee Lamb",
+  "norm": "ceedee lamb",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "This guy is going to have to score some TDs",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Joe Burrow",
+  "norm": "joe burrow",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Brings me a great deal of pleasure, Joe Burrow",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Patrick Mahomes",
+  "norm": "patrick mahomes",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "Superflex, you have to draft two quarterbacks, happy with that",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Amon-Ra St. Brown",
+  "norm": "amonra st brown",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Really strong feeling about St. Brown",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Derrick Henry",
+  "norm": "derrick henry",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "I needed Derrick Henry, need to get on the board with running backs",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Bijan Robinson",
+  "norm": "bijan robinson",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "I'm not a believer in the Falcons",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Drake London",
+  "norm": "drake london",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Absolutely tickled he fell to me, taking Drake London",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Nico Collins",
+  "norm": "nico collins",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "One of my favorite receivers in the league right now",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Christian McCaffrey",
+  "norm": "christian mccaffrey",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Number one player every week until he tears his Achilles, great value",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Drake Maye",
+  "norm": "drake maye",
+  "stance": "buy",
+  "strength": 3,
+  "quote": "He's going to have a huge year, upside is everything",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Drake Maye",
+  "norm": "drake maye",
+  "stance": "sell",
+  "strength": 2,
+  "quote": "Way too early, I would not have taken Drake Maye there",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Ashton Jeanty",
+  "norm": "ashton jeanty",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Generational rookie, kind of terrified the Raiders are gonna suck",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Brock Bowers",
+  "norm": "brock bowers",
+  "stance": "buy",
+  "strength": 3,
+  "quote": "Best player I've ever seen, better than every other tight end",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Jayden Daniels",
+  "norm": "jayden daniels",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "Intrigued by the upside of Jayden Daniels",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Brian Thomas Jr.",
+  "norm": "brian thomas",
+  "stance": "buy",
+  "strength": 3,
+  "quote": "I love Brian Thomas Jr., he's always open",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Puka Nacua",
+  "norm": "puka nacua",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Taking Puka and hoping for the best with Stafford",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Chase Brown",
+  "norm": "chase brown",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Turnkey guy, a little early to me",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Mike Evans",
+  "norm": "mike evans",
+  "stance": "buy",
+  "strength": 3,
+  "quote": "Very dependable, 1,000 yards, 10 touchdowns guaranteed",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "A.J. Brown",
+  "norm": "aj brown",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "As long as we got AJ Brown, we're good",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Josh Jacobs",
+  "norm": "josh jacobs",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "I like that pick, steady, Green Bay good",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Omarion Hampton",
+  "norm": "omarion hampton",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Taking the upside with Omarion Hampton, that's a good pick",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Bo Nix",
+  "norm": "bo nix",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "Following up with Nix, that's my first QB",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Trey McBride",
+  "norm": "trey mcbride",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Trey McBride, rocking and rolling with top of class picks",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Alvin Kamara",
+  "norm": "alvin kamara",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Ball carrier I trust, 40 screens a game for the Saints",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Justin Herbert",
+  "norm": "justin herbert",
+  "stance": "buy",
+  "strength": 1,
+  "quote": "Frisky quarterback pick, Herbert, let's do it",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Kyler Murray",
+  "norm": "kyler murray",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Live by the sword, I've been hyping this guy up",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Jonathan Taylor",
+  "norm": "jonathan taylor",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Jonathan Taylor was about to go, value",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Jared Goff",
+  "norm": "jared goff",
+  "stance": "buy",
+  "strength": 2,
+  "quote": "Jared Goff MVP here, kind of team that's going to win",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ },
+ {
+  "player": "Aaron Rodgers",
+  "norm": "aaron rodgers",
+  "stance": "sell",
+  "strength": 1,
+  "quote": "Rodgers is the punishment",
+  "show": "The Ringer Fantasy Football Show",
+  "date": "NA"
+ }
+]
