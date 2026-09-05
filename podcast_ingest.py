@@ -22,6 +22,11 @@ import sys
 FEEDS = os.path.join("seasons", "podcasts.json")
 OUT = os.path.join("seasons", "podcast")
 STANCES = ("buy", "sell", "start", "sit", "add", "drop", "hold")
+BACKFILL_DAYS = int(os.environ.get("BACKFILL_DAYS", "30"))
+
+
+def _now():
+    return datetime.datetime.now().isoformat(timespec="seconds")
 
 SCHEMA_PROMPT = """You are extracting fantasy-football player opinions from a podcast transcript.
 Output ONLY a JSON array, no prose, no markdown fences. One object per DISTINCT
@@ -79,25 +84,46 @@ def extract_stances(text, show, date):
 
 
 def fetch_captions(query, n, force):
-    """yt-dlp: recent episodes matching a channel query -> list of (title, date, vtt_path)."""
+    """yt-dlp: N recent episodes matching a channel query -> list of
+    (title, date, vid, vtt_path). Only fetches captions for episodes not
+    already cached; --dateafter limits to the backfill window."""
     os.makedirs(os.path.join(OUT, "vtt"), exist_ok=True)
     tmpl = os.path.join(OUT, "vtt", "%(upload_date)s_%(id)s.%(ext)s")
-    cmd = ["python", "-m", "yt_dlp", f"ytsearch{n}:{query} full episode",
+    cutoff = (datetime.date.today() - datetime.timedelta(days=BACKFILL_DAYS)).strftime("%Y%m%d")
+    cmd = ["python", "-m", "yt_dlp", f"ytsearch{n}:{query}",
            "--skip-download", "--write-auto-subs", "--sub-langs", "en-en,en",
-           "--no-warnings", "-o", tmpl, "--print", "%(upload_date)s|%(id)s|%(title)s"]
+           "--dateafter", cutoff, "--no-warnings", "--ignore-errors",
+           "--match-filter", "duration > 900",   # real episodes, not shorts/clips
+           "-o", tmpl, "--print", "%(upload_date)s|%(id)s|%(title)s"]
     try:
-        r = subprocess.run(cmd, capture_output=True, text=True, timeout=600, encoding="utf-8")
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=900, encoding="utf-8")
     except Exception as exc:  # noqa: BLE001
         print(f"  yt-dlp failed ({exc})", file=sys.stderr)
         return []
     eps = []
-    for line in r.stdout.splitlines():
+    for line in (r.stdout or "").splitlines():
         if "|" in line:
             date, vid, title = (line.split("|", 2) + ["", "", ""])[:3]
             vtt = sorted(glob.glob(os.path.join(OUT, "vtt", f"{date}_{vid}.*.vtt")))
             if vtt:
-                eps.append((title, date, vtt[0]))
+                eps.append((title, date, vid, vtt[0]))
     return eps
+
+
+def aggregate_from_disk():
+    """Rebuild consensus.json from every raw/*.json on disk (accumulates
+    across backfill runs)."""
+    rows = []
+    for f in glob.glob(os.path.join(OUT, "raw", "*.json")):
+        try:
+            rows.extend(json.load(open(f, encoding="utf-8")))
+        except Exception:  # noqa: BLE001
+            pass
+    cons = aggregate(rows)
+    with open(os.path.join(OUT, "consensus.json"), "w", encoding="utf-8") as fh:
+        json.dump({"built": _now(), "episodes_files": len(glob.glob(os.path.join(OUT, "raw", "*.json"))),
+                   "stances": len(rows), "players": cons}, fh, indent=1, ensure_ascii=False)
+    return rows, cons
 
 
 def aggregate(all_rows):
@@ -137,22 +163,24 @@ def main():
         return
 
     feeds = json.load(open(FEEDS, encoding="utf-8"))
-    all_rows = []
+    new_eps = 0
     for show in feeds["shows"]:
-        print(f"[{show['name']}] fetching {args.shows} recent...", file=sys.stderr)
-        for title, date, vtt in fetch_captions(show["channel_query"], args.shows, args.force):
+        print(f"[{show['name']}] fetching up to {args.shows} from last {BACKFILL_DAYS}d...", file=sys.stderr, flush=True)
+        for title, date, vid, vtt in fetch_captions(show["channel_query"], args.shows, args.force):
+            rawf = os.path.join(OUT, "raw", f"{date}_{vid}.json")
+            if os.path.exists(rawf) and not args.force:
+                continue   # already extracted this episode
             text = clean_vtt(vtt)
+            if len(text.split()) < 500:   # skip clips/empty caption tracks
+                continue
             rows = extract_stances(text, show["name"], date or datetime.date.today().isoformat())
-            print(f"  {date} {title[:50]}: {len(rows)} stances", file=sys.stderr)
-            all_rows.extend(rows)
-            with open(os.path.join(OUT, "raw", f"{date}_{norm(show['name'])[:20]}.json"), "w", encoding="utf-8") as fh:
+            with open(rawf, "w", encoding="utf-8") as fh:
                 json.dump(rows, fh, indent=1)
-    consensus = aggregate(all_rows)
-    with open(os.path.join(OUT, "consensus.json"), "w", encoding="utf-8") as fh:
-        json.dump({"built": datetime.datetime.now().isoformat(timespec="seconds"),
-                   "episodes": len(all_rows), "players": consensus}, fh, indent=1)
-    print(f"\naggregated {len(all_rows)} stances -> {len(consensus)} players", file=sys.stderr)
-    for p in consensus[:12]:
+            new_eps += 1
+            print(f"  [{date}] {title[:55]}: {len(rows)} stances", file=sys.stderr, flush=True)
+    all_rows, consensus = aggregate_from_disk()
+    print(f"\n+{new_eps} new episodes · {len(all_rows)} total stances -> {len(consensus)} players", file=sys.stderr)
+    for p in consensus[:15]:
         print(f"  {p['lean']:5s} {p['score']:>+3d} ({p['n_shows']}sh) {p['player']}", file=sys.stderr)
 
 
